@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* mainIndex.css */
+
+/*------------- Section -------------*/
+section {
+	width: 1920px;
+	height: 1000px;
+	background-color: purple;
+}
+
+article {
+	width: 500px;
+	height: 500px;
+	color: black;
+}
+
+#article1 {
+	background-color: white;
+}
+
+#article2 {
+	color: white;
+	background-color: black;
+}
+
+/************** SlideShowBox **************/
+#slideShowBox {
+	width: 400px;
+	height: 400px;
+	background-color: black;
+/* 	overflow: hidden; 영역 벗어나면 숨김 */
+}
+
+#slideShowBox img {
+	width: 400px;
+	height: 400px;
+}
+
+/*------------- Section 끝 -------------*/

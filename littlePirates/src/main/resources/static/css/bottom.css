@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* bottom.css */
+
+/*------------- Footer -------------*/
+#bottomBox {
+	width: 1920px;
+	height: 100px;
+	background-color: grey;
+}
+
+/************** BottomLogoBox **************/
+#bottomLogoBox {
+	float: left;
+	width: 200px;
+	height: 100px;
+}
+
+#bottomLogoBox a img {
+	float: left;
+	height: 100px;
+}
+
+/************** BottomMenuBox **************/
+#bottomMenuBox {
+	float: right;
+	width: 1720px;
+	height: 100px;
+	color: white;
+	font-size: 30px;
+}
+
+/************** FooterBox **************/
+#footerBox {
+	width: 1920px;
+	height: 100px;
+	background-color: pink;
+	color: white;
+}
+
+#footerBox p {
+	font-size: 20px;
+	float: left;
+	width: 20%;
+	height: 30px;
+	margin-top: 35px;
+	cursor: pointer;
+}
+
+#footerBox p:hover {
+	color: black;
+}
+
+/*------------- Footer 끝 -------------*/
