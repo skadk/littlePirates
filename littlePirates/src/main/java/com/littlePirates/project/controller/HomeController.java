@@ -15,24 +15,24 @@ public class HomeController {
 	@RequestMapping("/checkList")
 	public String checkList() {
 		
-		return "checkList/treasureMap";
+		return "menu/checkList/treasureMap";
 	}
 	
 	@RequestMapping("/board")
 	public String board() {
 		
-		return "menu/board";
+		return "menu/board/board";
 	}
 	
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 		
-		return "menu/boardText";
+		return "menu/board/boardText";
 	}
 	
 	@RequestMapping("/anonymusBoard")
 	public String anonymusBoard() {
 		
-		return "menu/anonymusBoard";
+		return "menu/board/anonymusBoard";
 	}
 }
