@@ -26,10 +26,10 @@
 					메인 인덱스입니다.<br>
 					안녕하세요 test입니다<br>
 					화이팅
-				</article>	
+				</article>
 			</section>
 			<!-- bottom -->
-            <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
 	</body>
 </html>

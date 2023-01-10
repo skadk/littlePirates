@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* board.css */
+
+section {
+	width: 1920px;
+	height: 1000px;
+	background-color: black;
+}
+
+#sideMenuBox {
+	display: inline-block;
+	width: 200px;
+	height:500px;
+	background-color: pink;
+}
+
+#boardBox {
+	display: inline-block;
+	width:1620px;
+	heigth:1000px;
+	background-color: yellow;
+}

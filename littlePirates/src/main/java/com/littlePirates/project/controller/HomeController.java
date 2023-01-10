@@ -12,4 +12,27 @@ public class HomeController {
 		return "mainIndex";
 	}
 	
+	@RequestMapping("/checkList")
+	public String checkList() {
+		
+		return "checkList/treasureMap";
+	}
+	
+	@RequestMapping("/board")
+	public String board() {
+		
+		return "menu/board";
+	}
+	
+	@RequestMapping("/board/boardText")
+	public String boardText() {
+		
+		return "menu/boardText";
+	}
+	
+	@RequestMapping("/anonymusBoard")
+	public String anonymusBoard() {
+		
+		return "menu/anonymusBoard";
+	}
 }
