@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>자유게시물</title>
+		<title>장터게시물</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
@@ -14,7 +14,7 @@
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			자유게시물입니다
+			장터게시물입니다
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
