@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>익명 게시판</title>
+		<title>테스트페이지</title>
  		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
@@ -21,28 +21,40 @@
 					<p><a href="<c:url value='/freePresent'/>">나눔게시판</a></p>
 					<p><a href="<c:url value='/fleaMarket'/>">장터게시판</a></p>
 				</div>
-				<div id="boardBox">
-					익명게시판 내용
-					<table border="1">
-						<tr>
-							<th>게시글 번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성 시간</th>
-						</tr>
-						<tr>
-							<th>1</th>
-							<th><a href="<c:url value='/anonymusBoard/anonymusBoardText'/>">뻘글ㅅㄱ</a></th>
-							<th>선원1</th>
-							<th>2023-01-10</th>
-						</tr>
-	<%-- 					<c:forEach var="brd" items="${ brdList }">
-							<tr><td>${ brd.boardNo }</td>
-								<td>${ brd.memId }</td>
-								<td>${ brd.boardText }</td>
-								<td><fmt:formatDate value="${brd.boardDate }" pattern="yy-MM-dd HH:mm"/></td></tr>
-						</c:forEach> --%>
-					</table>
+			<div id="test">
+				<h1>나눔게시판 내용</h1>
+					<div id="boardBox">
+						<div class="boarTextBox">
+						rkskekfk
+						</div>
+						<div class="boarTextBox">
+						asdfasdf
+						</div>
+						<div class="boarTextBox">
+						asdfasdf
+						</div>
+						<div class="boarTextBox">
+						adsfasdf
+						</div>
+						<div class="boarTextBox">
+						asdfasdf
+						</div>
+						<div class="boarTextBox">
+						asdfasdf
+						</div>
+						<div class="boarTextBox">
+						asdfasdf
+						</div>
+						<div class="boarTextBox">
+						adsfasfasdf
+						</div>
+						<div class="boarTextBox">
+						adsfasfasdf
+						</div>
+						<div class="boarTextBox">
+						adsfasfasdf
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- bottom -->
