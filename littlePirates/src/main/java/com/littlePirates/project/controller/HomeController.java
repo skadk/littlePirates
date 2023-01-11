@@ -35,4 +35,48 @@ public class HomeController {
 		
 		return "menu/board/anonymusBoard";
 	}
+	
+	@RequestMapping("/anonymusBoard/anonymusBoardText")
+	public String anounymusBoardText() {
+		
+		return "menu/board/anonymusBoardText";
+		
+	}
+	
+	@RequestMapping("/freePresent")
+	public String freePresent() {
+		
+		return "menu/board/freePresent";
+	}
+	
+	@RequestMapping("/freePresent/freePresentText")
+	public String freePresentText() {
+		
+		return "menu/board/freePresentText";
+	}
+	
+	@RequestMapping("/fleaMarket")
+	public String fleaMarket() {
+		
+		return "menu/board/fleaMarket";
+	}
+
+	@RequestMapping("/fleaMarket/fleaMarketText")
+	public String fleaMarketText() {
+		
+		return "menu/board/fleaMarketText";
+	}
+	
+	@RequestMapping("/freePresentTest")
+	public String freePresentTest() {
+		
+		return "menu/board/freePresentTest";
+	}
 }
+
+
+
+
+
+
+

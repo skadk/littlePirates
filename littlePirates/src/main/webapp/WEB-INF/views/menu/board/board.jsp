@@ -16,10 +16,10 @@
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			<section>
 				<div id="sideMenuBox">
-					<p>자유게시판</p>
+					<p><a href="<c:url value='/board'/>">자유게시판</a></p>
 					<p><a href="<c:url value='/anonymusBoard'/>">익명게시판</a></p>
-					<p>나눔</p>
-					<p>장터</p>
+					<p><a href="<c:url value='/freePresent'/>">나눔게시판</a></p>
+					<p><a href="<c:url value='/fleaMarket'/>">장터게시판</a></p>
 				</div>
 				<div id="boardBox">
 					자유게시판 내용

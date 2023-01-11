@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>익명 게시판</title>
+		<title>나눔 게시판</title>
  		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
@@ -22,7 +22,7 @@
 					<p><a href="<c:url value='/fleaMarket'/>">장터게시판</a></p>
 				</div>
 				<div id="boardBox">
-					익명게시판 내용
+					나눔게시판 내용
 					<table border="1">
 						<tr>
 							<th>게시글 번호</th>
@@ -32,8 +32,8 @@
 						</tr>
 						<tr>
 							<th>1</th>
-							<th><a href="<c:url value='/anonymusBoard/anonymusBoardText'/>">뻘글ㅅㄱ</a></th>
-							<th>선원1</th>
+							<th><a href="<c:url value='/freePresent/freePresentText'/>">뻘글ㅅㄱ</a></th>
+							<th>7조_화이팅</th>
 							<th>2023-01-10</th>
 						</tr>
 	<%-- 					<c:forEach var="brd" items="${ brdList }">
