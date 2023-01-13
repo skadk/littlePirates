@@ -12,11 +12,29 @@
 					</div>
 				</div>
 			</header>
-			<nav>
-				<div id="mainMenuBox">
-					메인 메뉴
-				</div>
-				<div id="subMenuBox">
-					서브 메뉴
-				</div>
-			</nav>
+			<c:if test="${empty sessionScope.sid }">
+				<nav>
+					<div id="kidsMainMenuBox">
+							<div class="kidsMainMenu" id="kidsMainMenu1">
+								<a href="<c:url value='/'/>"><img src="<c:url value='/image/공룡1작은거.png'/>"></a>
+							</div>
+							<div class="kidsMainMenu" id="kidsMainMenu2">
+								<a href="<c:url value='/'/>"><img src="<c:url value='/image/공룡2작은거.png'/>"></a>
+							</div>
+							<div class="kidsMainMenu" id="kidsMainMenu3">
+								<a href="<c:url value='/'/>"><img src="<c:url value='/image/공룡3작은거.png'/>"></a>
+							</div>
+							<div class="kidsMainMenu" id="kidsMainMenu4">
+								<a href="<c:url value='/'/>"><img src="<c:url value='/image/공룡4작은거.png'/>"></a>
+							</div>
+					</div>
+				</nav>
+			</c:if>
+			<c:if test="${not empty sessionScope.sid }">
+				<nav>
+					<div id="mainMenuBox">
+						<a href="<c:url value='/member/login'/>">로그인</a>
+						<a href="<c:url value='/member/signUp'/>">회원가입</a>
+					</div>
+				</nav>
+			</c:if>

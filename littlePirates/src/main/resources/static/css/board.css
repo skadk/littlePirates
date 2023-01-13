@@ -11,13 +11,13 @@ section {
 #sideMenuBox {
 	display: inline-block;
 	width: 200px;
-	height:500px;
+	height: 500px;
 	background-color: pink;
 }
 
 #boardBox {
 	display: inline-block;
-	width:1620px;
-	heigth:1000px;
+	width: 1620px;
+	heigth: 1000px;
 	background-color: yellow;
 }

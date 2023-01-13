@@ -35,4 +35,10 @@ public class HomeController {
 		
 		return "menu/board/anonymusBoard";
 	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "menu/member/login";
+	}
 }
