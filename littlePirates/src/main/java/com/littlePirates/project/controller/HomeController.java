@@ -24,6 +24,16 @@ public class HomeController {
 		return "menu/board/board";
 	}
 	
+	@RequestMapping("/kindergarten")
+	public String kindergarten() {
+		
+		return "menu/board/kindergarten";
+	}
+	@RequestMapping("/children")
+	public String children() {
+		
+		return "menu/board/children";
+	}
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 		
@@ -35,4 +45,5 @@ public class HomeController {
 		
 		return "menu/board/anonymusBoard";
 	}
+	
 }
