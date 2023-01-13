@@ -43,18 +43,6 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping("/freePresent")
-	public String freePresent() {
-		
-		return "menu/board/freePresent";
-	}
-	
-	@RequestMapping("/freePresent/freePresentText")
-	public String freePresentText() {
-		
-		return "menu/board/freePresentText";
-	}
-	
 	@RequestMapping("/fleaMarket")
 	public String fleaMarket() {
 		
@@ -66,13 +54,9 @@ public class HomeController {
 		
 		return "menu/board/fleaMarketText";
 	}
-	
-	@RequestMapping("/freePresentTest")
-	public String freePresentTest() {
-		
-		return "menu/board/freePresentTest";
-	}
 }
+	
+
 
 
 
