@@ -5,8 +5,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>나눔게시물</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
+		<title>꼬마 해적단</title>
+ 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/mainIndex.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
@@ -14,9 +14,12 @@
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			나눔게시물입니다
+			<section>
+				
+					
+			</section>
 			<!-- bottom -->
-			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+            <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
 	</body>
 </html>

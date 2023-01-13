@@ -1,15 +1,62 @@
 package com.littlePirates.project.controller;
 
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.littlePirates.project.model.ChecklistVO;
+import com.littlePirates.project.service.ChecklistService;
+
 
 @Controller
 public class HomeController {
-
+	
+	@Autowired
+	ChecklistService service;
+	
 	@RequestMapping("/")
 	public String index() {
 		
 		return "mainIndex";
+	}
+  
+/*********************** 체크리스트 ***************************/
+	//체크리스트 뷰 페이지 열기
+	@RequestMapping("/checklist")
+	public String checklist() {
+		
+		return "/checkList/checkListView";
+	}
+	
+	@RequestMapping("/checkList/checkList_Manner")
+	public String checkList_Manner() {
+		
+		return "/checkList/checkList_Manner";
+	}
+	
+	//체크리스트 청결 페이지 열기
+	@RequestMapping("/checkList/checkList_Clean")
+	public String checkList_Clean() {
+		
+		return "/checkList/checkList_Clean";
+	}
+
+	//체크리스트 식습관 페이지 열기
+	@RequestMapping("/checkList/checkList_Eat")
+	public String checkList_Eat() {
+		
+		return "/checkList/checkList_Eat";
+	}
+	
+	//체크리스트 질서 페이지 열기
+	@RequestMapping("/checkList/checkList_Order")
+	public String checkList_Order() {
+		
+		return "/checkList/checkList_Order";
 	}
 	
 	@RequestMapping("/checkList")
@@ -24,6 +71,16 @@ public class HomeController {
 		return "menu/board/board";
 	}
 	
+	@RequestMapping("/kindergarten")
+	public String kindergarten() {
+		
+		return "menu/board/kindergarten";
+	}
+	@RequestMapping("/children")
+	public String children() {
+		
+		return "menu/board/children";
+	}
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 		
@@ -41,6 +98,7 @@ public class HomeController {
 	public String login() {
 		
 		return "menu/member/login";
+
 }
 
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
@@ -48,18 +106,6 @@ public class HomeController {
 		
 		return "menu/board/anonymusBoardText";
 		
-	}
-	
-	@RequestMapping("/freePresent")
-	public String freePresent() {
-		
-		return "menu/board/freePresent";
-	}
-	
-	@RequestMapping("/freePresent/freePresentText")
-	public String freePresentText() {
-		
-		return "menu/board/freePresentText";
 	}
 	
 	@RequestMapping("/fleaMarket")
@@ -73,6 +119,7 @@ public class HomeController {
 		
 		return "menu/board/fleaMarketText";
 	}
+
 	
 	@RequestMapping("/freePresentTest")
 	public String freePresentTest() {
@@ -80,7 +127,11 @@ public class HomeController {
 		return "menu/board/freePresentTest";
 
 	}
+
+
 }
+	
+
 
 
 
