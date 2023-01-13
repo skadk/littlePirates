@@ -24,6 +24,16 @@ public class HomeController {
 		return "menu/board/board";
 	}
 	
+	@RequestMapping("/kindergarten")
+	public String kindergarten() {
+		
+		return "menu/board/kindergarten";
+	}
+	@RequestMapping("/children")
+	public String children() {
+		
+		return "menu/board/children";
+	}
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 		
@@ -36,6 +46,13 @@ public class HomeController {
 		return "menu/board/anonymusBoard";
 	}
 	
+
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "menu/member/login";
+}
+
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
 	public String anounymusBoardText() {
 		
@@ -54,6 +71,16 @@ public class HomeController {
 		
 		return "menu/board/fleaMarketText";
 	}
+
+	
+	@RequestMapping("/freePresentTest")
+	public String freePresentTest() {
+		
+		return "menu/board/freePresentTest";
+
+	}
+
+
 }
 	
 
