@@ -2,49 +2,74 @@
 
 /* board.css */
 
-
-
-#test{
-	display: inline-block;
-	width:1024px;
-	height:100%;
-	margin : 0 auto;
-	padding-bottom:12px;
+#mainBox{		/* 각 게시판 메인보드박스*/
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align: center;
+	width:1500px;
+	height:1200px;
+	background-color: blue;
 }
 
-#sideMenuBox {
-	display: inline-block;
-<<<<<<< HEAD
-	width: 200px;
-	height: 500px;
-=======
+#sideMenuBox {	/* 사이드 메뉴 박스*/
+	margin-top: 50px;
+	margin-right: 10px;
 	width: 100px;
 	height:300px;
->>>>>>> branch 'littlePirates_han' of https://github.com/skadk/littlePirates.git
 	background-color: pink;
 }
 
-#boardBox {
-	display : flex;
-	flex-wrap:wrap;
-	margin-top:12px;
-	
+#mainBoardBox{	/*mainBox 안에 표 or 게시물 등을 담는 박스*/
+	width:1024px;
+	height: 99%;
+	margin-left: 0px;
+	padding-bottom:12px;
+	background-color: green;
 }
 
-.boarTextBox{
-	display: inline-block;
-<<<<<<< HEAD
-	width: 1620px;
-	heigth: 1000px;
+#boardBox {	/* 나눔 장터 게시물 10개박스를 담는 박스?*/ 
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 12px;
 	background-color: yellow;
 }
-=======
-	width:180px;
+
+.boardPrdBox{	/*나눔 상품 게시물박스 10개*/
+	display: inline-block;
+	width: 180px;
 	height: 300px;
 	background-color: gray;
-	margin-right:24px;
-	margin-bottom:20;
+	margin-right: 24px;
+	margin-bottom: 20px;
+	border: 1px solid rgd(170, 170, 170);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.fleaMarketImg{	/*나눔장터게시판 사진크기 */
+	width: 100%;
+	height: 217;
+}
+
+.boardTextBox{	/*나눔장터 게시판 10개박스 제목 상세정보*/
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+}
+
+#fleaMarketTextBox{
+	display: inline-block;
+	width:340px;
+	height:300px; 
+}
+
+#fleaMarketTextTableBox{
+	display: inline-block;
+	width:340px;
+	height:400px; 
+	background-color: gray;
 }
 
 
->>>>>>> branch 'littlePirates_han' of https://github.com/skadk/littlePirates.git
+
