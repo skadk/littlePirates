@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* kidscafe.css */
+
+#selectbox {
+	width: 1920px;
+	height: 100px;
+}
+
+#clickbox {
+	position: absolute;
+	top: 23%;
+	right: 30px;
+	color: #e80911;
+	font-weight: bold;
+}
+
+#clickbox li {
+	display: inline-block;
+	width: 200px;
+	height: 30px;
+	text-align: center;
+}
+
+#select_map {
+	border: 1px solid black;
+	border-width: 1px 1px 0 1px;
+}
+
+#gather {
+	margin: 0 -6px;
+	border: 1px solid black;
+	border-width: 0 0 1px 0;
+}
+
+#clickbox a {
+	color: black;
+}
+
+#clickbox li a:hover {
+	color: #e80911;
+}
+
+a {
+	text-align: center;
+	text-decoration: none;
+}
