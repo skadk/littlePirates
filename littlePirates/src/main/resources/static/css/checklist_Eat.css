@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.container {  
+	display: grid;
+ 	grid-template-columns: 1fr;
+  	grid-template-rows: 0.3fr  4fr ;
+  	gap: 0px 0px;
+  	grid-auto-flow: row;
+  	grid-template-areas:
+  	"eatHeader"
+    "checklist_Section";
+    
+}
+
+.eatHeader{
+	width:1920px;
+	grid-area: eatHeader; 
+	background:gray;
+}
+
+.checklist_Section {
+	width:1920px;
+	height:600px;
+	position: relative;
+	grid-area: checklist_Section;
+	}
+	
+.checklist_Section_back{
+	width:1920px;
+	height:600px;
+	position:absolute;
+	z-index:0;
+}
+
+/*********************** grid area 설정 *******************/	
+
+.map2{
+	display:flex;
+	flex-wrap:wrap;
+	width:1730px;
+	height:520px;
+	margin:40px 0px 130px 130px;
+}
+.eat_Image{
+	width:345px;
+	height:260px;
+
+	margin:0;
+}
+
+#MM1{
+	background:#fae17f;
+}
+#MM2{
+	background:#fae17f;
+}
+#MM3{
+	background:#fa7f7f;
+}
+#MM4{
+	background:#fae17f;
+}
+#MM5{
+	background:#fae17f;
+}
+#MM6{
+	background:#fa7f7f;
+}
+#MM7{
+	background:#fae17f;	
+}
+#MM8{
+	background:#fae17f;	
+}
+#MM9{
+	background:#fae17f;	
+}
+#MM10{
+	background:#fa7f7f;
+}
