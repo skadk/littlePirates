@@ -46,6 +46,13 @@ public class HomeController {
 		return "menu/board/anonymusBoard";
 	}
 	
+
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "menu/member/login";
+}
+
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
 	public String anounymusBoardText() {
 		
@@ -81,6 +88,7 @@ public class HomeController {
 	public String freePresentTest() {
 		
 		return "menu/board/freePresentTest";
+
 	}
 
 }

@@ -3,10 +3,12 @@
 /* top.css */
 
 /*------------- Header -------------*/
+
+/************** HeaderBox **************/
 #headerBox {
-	background-color: red;
 	width: 1920px;
 	height: 100px;
+	filter: blur(1px);
 }
 
 /************** TopLogoBox **************/
@@ -29,12 +31,8 @@
 	font-weight: bold;
 	padding-top: 20px;
 	padding-right: 20px;
-	font-weight: bold;
-	padding-top: 20px;
-	padding-right: 20px;
 	font-size: 15px;
-	background-color: blue;
-	color: white;
+	color: black;
 }
 
 /*------------- Header 끝 -------------*/
@@ -42,13 +40,74 @@
 
 /*------------- Nav -------------*/
 
+nav {
+/* 	z-index: 200; */
+}
+
 /************** MainMenuBox **************/
 #mainMenuBox {
 	background-color: yellow;
 	width: 1920px;
 	height: 100px;
-	line-height: 80px;
 /* 	z-index: 30; */
+}
+
+#kidsMainMenuBox {
+	width: 1920px;
+	height: 970px;
+	font-size: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+/*  	z-index: 200; */
+ 	padding-top: 30px;
+}
+
+.kidsMainMenu {
+	width: 480px;
+	height: 970px;
+	line-height: 970px;
+	display: inline-block;
+ 	position: relative;
+}
+
+/* #kidsMainMenu1 a {
+	position: relative;
+} */
+
+#kidsMainMenu1 a img {
+	position: absolute;
+	bottom:100px;
+	left:65px;
+	width: 350px;
+  	transform: rotate(25deg);
+}
+
+#kidsMainMenu2 a img{
+	position: absolute;
+	top:100px;
+	left:65px;
+	width: 350px;
+  	transform: rotate(-25deg) scaleX(-1);
+}
+
+#kidsMainMenu3 a img {
+	position: absolute;
+	top:485px;
+	left:65px;
+	width: 350px;
+  	transform: rotate(0deg);
+}
+
+#kidsMainMenu4 a img{
+	position: absolute;
+	top:485px;
+	left:65px;
+	width: 350px;
+  	transform: rotate(-45deg);
+}
+
+.kidsMainMenu img {
+
 }
 
 /************** SubMenuBox **************/

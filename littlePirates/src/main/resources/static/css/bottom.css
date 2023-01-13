@@ -3,6 +3,10 @@
 /* bottom.css */
 
 /*------------- Footer -------------*/
+footer {
+	z-index: 10;
+}
+
 #bottomBox {
 	width: 1920px;
 	height: 100px;
