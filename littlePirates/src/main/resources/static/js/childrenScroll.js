@@ -1,11 +1,11 @@
-window.onload=()=>{
+$(document).ready(function() {
       document.querySelector('.dropbtn_click-1').onclick = ()=>{
-        dropdown();
+        dropdown2();
       }
       document.getElementsByClassName('region-1').onclick = ()=>{
-        showMenu(value);
+        showMenu2(value);
       };
-      dropdown = () => {
+      dropdown2 = () => {
 
         var v = document.querySelector('.dropdown-content-1');
         var dropbtn = document.querySelector('.dropbtn-1')
@@ -14,7 +14,7 @@ window.onload=()=>{
         dropbtn.style.borderColor = 'rgb(94, 94, 94)';
       }
 
-      showMenu=(value)=>{
+      showMenu2=(value)=>{
         var dropbtn_icon = document.querySelector('.dropbtn_icon-1');
         var dropbtn_content = document.querySelector('.dropbtn_content-1');
         var dropbtn_click = document.querySelector('.dropbtn_click-1');
@@ -25,7 +25,7 @@ window.onload=()=>{
         dropbtn_content.style.color = '#252525';
         dropbtn.style.borderColor = '#3992a8';
       }
-    }
+    });
     window.onclick= (e)=>{
       if(!e.target.matches('.dropbtn_click-1')){
         var dropdowns = document.getElementsByClassName("dropdown-content-1");
