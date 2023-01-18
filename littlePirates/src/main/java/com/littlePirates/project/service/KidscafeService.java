@@ -20,4 +20,9 @@ public class KidscafeService implements IKidscafeService {
 		// TODO Auto-generated method stub
 		return dao.listKidscafeInfo();
 	}
+
+	public ArrayList<KidscafeVO> listKidscafeInfo2() {
+		// TODO Auto-generated method stub
+		return dao.listKidscafeInfo2();
+	}
 }

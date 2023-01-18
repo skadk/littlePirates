@@ -15,6 +15,13 @@
  	<select id="listKidscafeInfo" resultMap="mapResult">
  		select *
  		FROM kidscafe
+ 		WHERE MOD(kcNo,2) = 1
+ 	</select>
+
+ 	<select id="listKidscafeInfo2" resultMap="mapResult">
+ 		select *
+ 		FROM kidscafe
+ 		WHERE MOD(kcNo,2) = 0
  	</select>
   
   </mapper>
