@@ -16,7 +16,7 @@
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
 			<section id="mainBox">
 				<div id="sideMenuBox">
-					<p><a href="<c:url value='/board'/>">자유게시판</a></p>
+					<a href="<c:url value='/board'/>">자유게시판</a>
 					<p><a href="<c:url value='/anonymusBoard'/>">익명게시판</a></p>
 					<p><a href="<c:url value='/fleaMarket'/>">나눔장터</a></p>
 					
