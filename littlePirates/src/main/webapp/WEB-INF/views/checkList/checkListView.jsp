@@ -19,42 +19,60 @@
 		<!-- top end-->
 				
 		<div class="container">
-		  <div class="checklistHeader">원하는 탭을 클릭</div>			
+		  <div class="checklistHeader">
+		  원하는 탭을 클릭
+		  </div>			
 		  	<div class="checklist_Section">
-				<img src="<c:url value='/image/checkListBack.jpg'/>">
-				<div class="menu">		
-			
-				          <div class="menu-item">
-				            <a href="<c:url value='/checkList/checkList_Manner'/>">예절</a>
-				          </div>
-				          <div class="menu-item">
-				            <a href="<c:url value='/checkList/checkList_Clean'/>">청결</a>
-				          </div>
-				          <div class="menu-item">
-				            <a href="<c:url value='/checkList/checkList_Eat'/>">식습관</a>
-				          </div>				     
-				        <%--   
-				          <div class="menu-item">
-				            <a href="<c:url value='/checkList/checkList_Order'/>">질서</a>
-				          </div> --%>
-				  <%-- 모달창 --%>				        
-     				<div class="black_bg">
-					</div>
+				<img class="menu_image"src="<c:url value='/image/checkListBack.jpg'/>">
+				<div class="menu">					
+				<%-- 청결 모달창 --%>	
+					
 					<div class="modal_wrap">
 					    <div class="modal_close">
-					    	<a href="#"></a>
+					    	<a href="#" onclick="return false"></a>
+					    </div>					    
+						<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
+						<iframe src="/checkList/checkList_Clean" id="chat_iframe">구현할 모달창 박스</iframe>    					    
+					</div>
+					<div class="modalBtn">청결	
+			  		</div>	
+		  		<%-- 청결 모달창 끝 --%>	
+		  		<%-- 식습관 모달창 --%>	
+					
+					<div class="modal_wrap2">
+					    <div class="modal_close2">
+					    	<a href="#" onclick="return false"></a>
+					    </div>					    
+						<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
+						<iframe src="/checkList/checkList_Eat" id="chat_iframe">구현할 모달창 박스</iframe>    					    
+					</div>
+					<div class="modalBtn2">식습관
+			  		</div>	
+		  		<%-- 청결 모달창 끝 --%>
+		  		
+<%-- 		            <div class="menu-item">
+		            	<a href="<c:url value='/checkList/checkList_Eat'/>">식습관</a>
+		            </div>			 --%>	     
+				
+				<%-- 매너 모달창 --%>				        
+     				<div class="black_bg">
+					</div>
+					<div class="modal_wrap3">
+					    <div class="modal_close3">
+					    	<a href="#" onclick="return false"></a>
 					    </div>					    
 				<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
 					<iframe src="/checkList/checkList_Manner" id="chat_iframe">구현할 모달창 박스</iframe>    					    
 					</div>
-				  <div class="modalBtn">모달창	
+				  <div class="modalBtn3">예절	
 				  </div>				  	
-				<%-- 모달창 끝 --%>    		
-  				</div>
-			</div>						
-		<!-- bottom -->
+				<%-- 매너 모달창 끝 --%>    		
+  			</div>
+		</div>						
+
+	   </div>
+	    		<!-- bottom -->
 	    <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	    <!-- bottom end-->
-	    </div>
 	</body>
 </html>

@@ -9,44 +9,33 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Manner.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 		<script src="<c:url value='/js/checklist_Manner.js'/>"></script>	
-	<!-- head -->
-	<c:import url="/WEB-INF/views/layout/head.jsp"/>
-	</head>
+
 <body>
-	<!-- top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-	<!-- top end-->
+
 		
-	<div class="container">
-		<div class="mannerHeader">
+	<div class="container2">
+		<div class="mannerHeader2">
 		<h2>예절 체크리스트</h2>
-		<div class="createChecklist">랜덤 체크리스트 생성</div>
+		<div class="createChecklist2">체크리스트 랜덤 재 생성</div>
 		</div>
-		<div class="checklist_Section">
-			<img src="<c:url value='/image/checkList_Mannermap.png'/>" class="checklist_Section_back">
-				<div class="mannerList">
+		<div class="checklist_Section2">
+			<img src="<c:url value='/image/checkList_Mannermap.png'/>" class="checklist_Section_back2">
+				<div class="mannerList2">
 					<c:forEach var="i" begin="1" end="5" step="1">
-					   	<div class="black_bg">
+					   	<div class="black_bg2">
 						</div>
-						<div class="modal_wrap">
-						    <div class="modal_close">
+						<div class="modal_wrap2">
+						    <div class="modal_close2">
 						    <a href="#"></a>
 						    </div>
-						    <div class="modal_ContentBox">
-						    	<div class="mannerName">체크리스트명</div>
-						        <div class="mannerEx">체크리스트내용</div>
-						        <div class="completion">체크완료</div>
-						    </div>
-						</div>					
-					<div class="mannerList_image" id="modal_btn${i}">					
+					    </div>					
+					<div class="mannerList2_image" id="modal_btn2${i}">					
 					</div>
 					</c:forEach>
 				</div>
 		</div>
 		
-	<!-- bottom -->
-	<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
-	<!-- bottom end-->
+
 	</div>
 	
 </body>

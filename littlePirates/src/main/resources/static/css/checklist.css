@@ -3,13 +3,12 @@
 .container {  
 	display: grid;
  	grid-template-columns: 1fr;
-  	grid-template-rows:0.3fr  4fr  1fr;
+  	grid-template-rows:0.3fr  4fr ;
   	gap: 0px 0px;
   	grid-auto-flow: row;
   	grid-template-areas:
   	"checklistHeader"
-    "checklist_nav"
-    "layout_bottom";
+    "checklist_nav" ;
 }
 .checklistHeader{
 	width:1920px;
@@ -38,7 +37,6 @@
 	justify-content :center;
 	align-items : center;
 	position:absolute;
-
 }
 
 .menu-item{
@@ -71,26 +69,23 @@
 
 	.modal_wrap{
         display: none;
-        width: 80vh;
-        height: 60vh;
+        width: 80%;
+        height: 900px;
         position: absolute;
         top:25%;
         left: 35%;
         margin: -250px 0 0 -250px;
-        background:#8bb4f7;
-        z-index: 2;
+        z-index: 101;
     }
     .black_bg{
         display: none;
         position: absolute;
         content: "";
-		width:1920px;
-		height:900px;
-        background-color:#e6e6e6;
-        top:-200px;
-        left:-50px;
-        z-index: 1;
-        opacity:0.8;
+		width:100vw;
+		height:100vh;
+        box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+        top:-9000px;
+        z-index: 100;        
     }
     .modal_close{
         width: 26px;
@@ -106,15 +101,98 @@
         background:url(https://img.icons8.com/metro/26/000000/close-window.png);
        
     }
-	.modal_ContentBox{
+    
+    .modalBtn{
+	font-size:50px;
+	cursor:pointer
+	}
+    /* ***************		모달창 1 끝	**************** */
+          
+    .modal_wrap2{
+        display: none;
+        width: 80%;
+        height: 900px;
+        position: absolute;
+        top:25%;
+        left: 35%;
+        margin: -250px 0 0 -250px;
+        z-index: 101;
+    }
+  
+    .modal_close2{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+    
+    .modal_close2> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(https://img.icons8.com/metro/26/000000/close-window.png);       
+    }
+    
+    .modalBtn2{
+	font-size:50px;
+	cursor:pointer
+	}
+    
+    /* ***************					**************** */
+    .modal_wrap3{
+        display: none;
+        width: 80%;
+        height: 900px;
+        position: absolute;
+        top:25%;
+        left: 35%;
+        margin: -250px 0 0 -250px;
+        z-index: 101;
+
+    }
+  
+    .modal_close3{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+    
+    .modal_close3> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(https://img.icons8.com/metro/26/000000/close-window.png);       
+    }
+    
+    .modalBtn3{
+	font-size:50px;
+	cursor:pointer
+	}
+	/******************** 모달창 3 끝 ************************/
+	     
+	#chat_iframe{
+	width: 2000px;
+    height: 1200px;
+    position : absolute;
+    left:-430px;
+    border-style:none;
+	}
+	
+	/* ***************		모달창 아이프레임	 끝	**************** */   
+    
+	
+/* 	.modal_ContentBox{
 	display:grid;
 	height:100%; 
   	grid-template-columns: repeat(4,1fr);
   	grid-template-rows: repeat(10,1fr); 
   	gap:0px 0px;
    
-	}
-	.mannerName{
+	} */
+/* 	.mannerName{
 	grid-area:mannername;
 	width:100%;
 	grid-column: 1 / 5;
@@ -137,11 +215,5 @@
 	}
 	.modalBtn{
 	cursor:pointer;
-	}
-/*
-	#chat_iframe{
-	width: 1920px;
-    height: 900px;
-	}
-*/	
-	/******************** 모달창 끝 ************************/
+	} */
+
