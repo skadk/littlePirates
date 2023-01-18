@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.littlePirates.project.model.KidscafeVO;
@@ -30,6 +31,15 @@ public class KidscafeController {
 		ArrayList<KidscafeVO> voList = service.listKidscafeInfo();
 		
 		return voList;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/kidscafe_map/search")
+	public String search(@RequestParam("searchAddress") String keyword) {
+		
+		String address = service.searchKidsCafe(keyword);
+		
+		return address;
 	}
 	
 	@RequestMapping("/kidscafe_sec")

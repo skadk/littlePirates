@@ -16,7 +16,6 @@ function loaddata() {
  			success:function(result){
  				for(var i=0; i<result.length; i++){
 					areaArr.push({location: result[i].kcName, lat: result[i].kclat, lng: result[i].kcLng});
-					
 				}
 				initMap();
  			},
@@ -121,6 +120,9 @@ function initMap() {
     naver.maps.Service.geocode({
         query: address
     }, function(status, response) {
+    
+        var searchAddress = $('#keyword').val();
+            
         if (status === naver.maps.Service.Status.ERROR) {
             return alert('Something Wrong!');
         }
@@ -143,7 +145,7 @@ function initMap() {
 
         infoWindow.setContent([
             '<div style="padding:10px;min-width:200px;line-height:150%;">',
-            '<h4 style="margin-top:5px;">검색 주소 : '+ address +'</h4><br />',
+            '<h4 style="margin-top:5px;">검색 상호명 : '+ searchAddress +'</h4><br />',
             htmlAddresses.join('<br />'),
             '</div>'
         ].join('\n'));
@@ -168,8 +170,26 @@ function initMap() {
 
     $('#submit').on('click', function(e) {
         e.preventDefault();
-
-        searchAddressToCoordinate($('#address').val());
+        
+        var searchAddress = $('#keyword').val();
+		$.ajax({
+	 			type:"post",
+	 			url:"/kidscafe_map/search",
+	 			data:{"searchAddress" : searchAddress},
+	 			dataType:"text",
+	 			success:function(result){
+	 				if (result != null){
+	 					alert("주소 받아오기 성공");
+				        searchAddressToCoordinate(result);
+					}
+	 			},
+	 			error:function(){
+	 				alert("실패");
+	 			},
+	 			complete:function(){
+	 				//alert("작업 완료");
+	 			}
+	 		}); // ajax 종료 
     });
 	}
 
@@ -305,7 +325,7 @@ function initMap() {
     	}
     
     for (var i=0, ii=markers.length; i<ii; i++) {
-    	console.log(markers[i] , getClickHandler(i));
+//    	console.log(markers[i] , getClickHandler(i));
         naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
     }
 

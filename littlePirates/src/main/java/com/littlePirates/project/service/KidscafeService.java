@@ -17,7 +17,15 @@ public class KidscafeService implements IKidscafeService {
 	
 	@Override
 	public ArrayList<KidscafeVO> listKidscafeInfo() {
-		// TODO Auto-generated method stub
+		
 		return dao.listKidscafeInfo();
+	}
+
+	@Override
+	public String searchKidsCafe(String keyword) {
+		
+		String searchAddress = dao.searchKidsCafe(keyword);
+
+		return searchAddress;
 	}
 }
