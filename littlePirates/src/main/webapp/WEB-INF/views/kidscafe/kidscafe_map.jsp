@@ -42,7 +42,7 @@
 				
 				<article>
 					<div class="search">
-						<input id="address" type="text" placeholder="검색할 주소"> 
+						<input id="keyword" type="text" placeholder="검색할 가게명"> 
 						<input id="submit" type="button" value="주소검색">
 					</div>
 					

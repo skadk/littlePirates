@@ -23,6 +23,13 @@
  		FROM kidscafe
  		WHERE MOD(kcNo,2) = 0
  	</select>
-  
+ 	
+ 	<!-- 키워드로 주소 찾기 -->
+ 	<select id="searchKidsCafe" parameterType="string" resultType="string">
+ 		SELECT kcAddress
+ 		FROM kidscafe
+ 		WHERE kcName=#{keyword}
+ 	</select>
+ 	
   </mapper>
   

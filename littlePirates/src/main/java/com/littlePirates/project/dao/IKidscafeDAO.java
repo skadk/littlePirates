@@ -6,6 +6,9 @@ import com.littlePirates.project.model.KidscafeVO;
 
 public interface IKidscafeDAO {
 	public ArrayList<KidscafeVO> listKidscafeInfo();
+	
+	public String searchKidsCafe(String keyword);
 
 	public ArrayList<KidscafeVO> listKidscafeInfo2();
+
 }
