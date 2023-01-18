@@ -16,6 +16,8 @@
 	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk"></script>
 	</head>
 	<body>
+		<!-- background -->
+		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>

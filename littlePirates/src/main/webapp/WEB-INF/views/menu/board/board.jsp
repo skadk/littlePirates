@@ -11,6 +11,8 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
 	<body>
+		<!-- background -->
+		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>

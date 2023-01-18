@@ -13,7 +13,9 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<!-- head end-->
 	</head>
-	<body>	
+	<body>
+		<!-- background -->
+		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<!-- top -->
 		<c:import url="/WEB-INF/views/layout/top.jsp"/>
 		<!-- top end-->

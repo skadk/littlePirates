@@ -9,7 +9,6 @@
 #backgroundBox::after {
     margin: 0;
     padding: 0;
-/*     box-sizing: border-box; */
 }
 
 .blur, 
@@ -24,13 +23,11 @@
 .blur{
     background-color: #F7FFF7;
     filter: blur(10px);
-/*     transform: scale(1.1); */
 }
 
 .particles{
 	transform-style: preserve-3d;
 	overflow: hidden;
-/*     z-index: 200; */
 /*     animation: rotate-container 10s infinite ease-in-out alternate; */
 }
 
@@ -43,7 +40,7 @@
         opacity: 1;
     }
     100%{
-        transform: translateY(45vw) rotateY(360deg);
+        transform: translateY(45vw) rotateY(1080deg);
         opacity: 0;
     }
 }
