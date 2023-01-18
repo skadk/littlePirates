@@ -33,8 +33,17 @@ public class KidscafeController {
 	}
 	
 	@RequestMapping("/kidscafe_sec")
-	public String kidscafe_sec() {
+	public String kidscafe_sec(Model model) {
+		ArrayList<KidscafeVO> voList = service.listKidscafeInfo();
+		model.addAttribute("voList", voList);
 		
 		return "kidscafe/kidscafe_sec";
+	}
+	
+	@RequestMapping("/kidscafe_third")
+	public String kidscafe_third() {
+		
+		
+		return "kidscafe/kidscafe_third";
 	}
 }

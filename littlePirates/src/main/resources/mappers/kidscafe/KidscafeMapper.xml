@@ -9,10 +9,11 @@
 		<result property="kcName" column="kcName" />
 		<result property="kclat" column="kclat" />
 		<result property="kcLng" column="kcLng" />
+		<result property="kcAddress" column="kcAddress" />
 	</resultMap>
 	
  	<select id="listKidscafeInfo" resultMap="mapResult">
- 		select kcName, kclat, kcLng
+ 		select *
  		FROM kidscafe
  	</select>
   
