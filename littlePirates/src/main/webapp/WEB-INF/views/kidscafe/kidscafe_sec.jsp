@@ -57,8 +57,20 @@
 								</select>
 						</div>
 						<br>
-						<table border="1">
+						<table border="1" class="table">
 								<c:forEach var="mapInfo" items="${voList }">
+									<tr>
+										<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />" width="180" height="120"></td>	
+										<td>${mapInfo.kcName }<br>
+											${mapInfo.kcAddress}<br>
+											운영시간<br>
+											전화번호<br>
+											평점</td>
+									</tr>
+								</c:forEach>
+							</table>
+							<table border="1" class="table">	
+								<c:forEach var="mapInfo" items="${voList2 }">
 									<tr>
 										<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />" width="180" height="120"></td>	
 										<td>${mapInfo.kcName }<br>
