@@ -75,6 +75,12 @@ public class HomeController {
 
 		return "menu/board/kindergarten";
 	}
+	
+	@RequestMapping("/nursery")
+	public String nursery() {
+		
+		return "menu/board/nursery";
+	}
 
 	@RequestMapping("/children")
 	public String children() {
@@ -117,6 +123,13 @@ public class HomeController {
 	public String freePresentTest() {
 
 		return "menu/board/freePresentTest";
+
+	}
+	
+	@RequestMapping("/board/boardWrite")
+	public String boardWrite() {
+		
+		return "menu/board/boardWrite";
 
 	}
 

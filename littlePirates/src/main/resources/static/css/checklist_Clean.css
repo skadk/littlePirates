@@ -3,7 +3,7 @@
 .container {  
 	display: grid;
  	grid-template-columns: 1fr;
-  	grid-template-rows: 0.3fr  4fr  1fr;
+  	grid-template-rows: 0.3fr  4fr ;
   	gap: 0px 0px;
   	grid-auto-flow: row;
   	grid-template-areas:
@@ -16,6 +16,7 @@
 	width:1920px;
 	grid-area: checklistClean; 
 	background:gray;
+	font-size:30px;
 }
 
 .checklist_Section {
@@ -46,23 +47,52 @@
 }
 
 .child{
+	
   flex-basis: 350px;
   height : 200px;
   border-radius: 50%;
-  background: #bccdeb;
 
 }
-.abc{
-	position:absolute;
+.child img{
+
   	width: 350px;
   	height : 200px;
    	border-radius: 50%;
+}
 
+.checked {
+	width:999px;
+}
+.checkBox{
+	position:absolute;
+	width: 350px;
+  	height : 200px;
+   	border-radius: 50%;
+}
+.checkBox img{
+	position:absolute;
+	width: 350px;
+  	height : 200px;
+   	border-radius: 50%;
+   	display:none;
 }
 .completeBox{
 	right:0%;
+	top:-50px;
 	position:absolute;
-	width:200px;
-	height:50px;
-	background: #7ed5f2;
+	width:240px;
+	height:70px;
+}
+.completeBox img{
+	width:70px;
+	height:70px;
+	border-radius:50%;
+	position:absolute;
+	display:none;
+}
+#bingoComplete2{
+	margin-left:70px;
+}
+#bingoComplete3{
+	margin-left:140px;
 }

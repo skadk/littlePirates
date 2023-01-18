@@ -25,6 +25,12 @@
 				</div>
 				<div id="mainBoardBox">
 					<h1>자유게시판 내용</h1>
+					<!-- 위 버튼 -->
+				<div align="right">
+					<button>
+					<a href="<c:url value='/board/boardWrite'/>">글쓰기</a>
+					</button>
+				</div>
 					<table border="1">
 						<tr>
 							<th>번호</th>
