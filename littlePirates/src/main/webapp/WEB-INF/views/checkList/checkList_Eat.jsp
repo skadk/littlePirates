@@ -8,14 +8,9 @@
 	<title>식습관 체크리스트</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Eat.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-	<!-- head -->
-	<c:import url="/WEB-INF/views/layout/head.jsp"/>
-	</head>
+
 	</head>
 <body>
-	<!-- top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-	<!-- top end-->
 	
  	<div class="container">
   		<div class="eatHeader">
@@ -34,8 +29,5 @@
 	
 	
 	
-	<!-- bottom -->
-		<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
-	<!-- bottom end-->
 </body>
 </html>

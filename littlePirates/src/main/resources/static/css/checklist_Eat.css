@@ -8,8 +8,8 @@
   	grid-auto-flow: row;
   	grid-template-areas:
   	"eatHeader"
-    "checklist_Section";
-    
+    "checklist_Section"    
+    "layout_bottom";
 }
 
 .eatHeader{
