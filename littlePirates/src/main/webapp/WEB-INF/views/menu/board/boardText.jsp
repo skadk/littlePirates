@@ -14,7 +14,11 @@
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			자유게시물입니다
+			<div id="mainBox">
+				<h2>자유게시물입니다</h2>
+				
+			</div>
+			
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>

@@ -127,6 +127,13 @@ public class HomeController {
 		return "menu/board/freePresentTest";
 
 	}
+	
+	@RequestMapping("/board/boardWrite")
+	public String boardWrite() {
+		
+		return "menu/board/boardWrite";
+
+	}
 
 
 }

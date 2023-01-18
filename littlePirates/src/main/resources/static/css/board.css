@@ -6,7 +6,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-	align: center;
+	
 	width:1500px;
 	height:1200px;
 	background-color: blue;
@@ -57,18 +57,63 @@
 	flex-direction: column;
 	padding: 8px;
 }
-
-#fleaMarketTextBox{
-	display: inline-block;
-	width:340px;
-	height:300px; 
+#fleaMarketMainBox{		/*나눔정터 게시물 메인박스*/
+	flex-direction: row;
+	justify-content: flex-end;
+	align: center;
+	width:1500px;
+	height:1200px;
+	background-color: blue;
+}
+#mainTwoBox{	/*나눔장처 게시물 이미지 + 상세정보 박스*/
+	display: flex;
+	width:800px;
+	height:500px;
 }
 
-#fleaMarketTextTableBox{
+#fleaMarketTextImgBox{ /*나눔장터 게시물 이미지 박스*/
 	display: inline-block;
-	width:340px;
+	width:400px;
 	height:400px; 
 	background-color: gray;
+	margin-top: 150px;
+	margin-right: 150px;
+}
+
+#fleaMarketTextTableBox{ /*나눔장터 게시물 상세정보 박스*/
+	display: inline-block;
+	width:400px;
+	height:400px; 
+	background-color: gray;
+	margin-top: 150px;
+	margin-left: 150px;
+}
+
+
+
+.replyBox{ /*게시물 댓글 박스*/
+
+	width:1500px;
+	height:400px;
+	background-color: green;
+	position: absolute; 
+	margin-top: 300px;
+}
+
+#replyTextBox{	/*댓글 작성 박스*/
+	display: inline-block;
+	width:800px;
+	height:50px;
+	font-size:20px;
+}
+
+#replyButton{	/*댓글 버튼*/
+	
+	display: inline-block;
+	width:80px;
+	height:50px;
+	font-size:20px;
+	margin-top: 10px;
 }
 
 
