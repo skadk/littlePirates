@@ -18,6 +18,8 @@
 		<script src="<c:url value='/js/MarkerClustering.js' />"></script>
 	</head>
 	<body>
+		<!-- background -->
+		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
