@@ -86,3 +86,11 @@ a {
 	background-repeat: no-repeat;
 }
 
+.table {
+	display: inline-block;
+	border:none;
+	/* border-spacing: td간의 간격) */
+	border-spacing: 30px;
+	font-weight: 300;
+	font-weight: bolder;
+}
