@@ -24,6 +24,7 @@
 	</select>
 	<select id="checklistInfo3" resultMap = "checklistResult">
 		SELECT * FROM checklist_history;
+		
 	</select>
   </mapper>
   
