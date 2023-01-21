@@ -1,91 +1,128 @@
 @charset "UTF-8";
 
 .container {  
+	/*
 	display: grid;
  	grid-template-columns: 1fr;
-  	grid-template-rows: 0.3fr  4fr ;
+  	grid-template-rows:  4fr ;
   	gap: 0px 0px;
   	grid-auto-flow: row;
   	grid-template-areas:
-  	"checklistClean"
+
     "checklist_nav"
-    "layout_bottom";
+ ;
+ */
 }
 
 .checklistClean{
-	width:1920px;
-	grid-area: checklistClean; 
-	background:gray;
-	font-size:30px;
+	width: 900px;
+    margin-left: 500px;
+	font-family: 'Dongle', sans-serif;
+	font-size: 80px;
+    position: absolute;
+    z-index: 100;
+    top: 120px;
+    height: 100px;
 }
 
 .checklist_Section {
 	width:1920px;
-	height:900px;
+	height:1150px;
 	position: relative;
-	grid-area: checklist_nav; 
 	}
 	
 .checklist_Section_back{
 	width:1920px;
-	height:900px;
+	height:1100px;
 	position:absolute;
 	z-index:0;
 }
-
+.textBox{
+	width:350px;
+	position:relative;
+	top:200px;
+	font-size:40px;
+	font-family: 'Dongle', sans-serif;
+}
 /* *********************** grid area 설정 ******************* */	
 
 .father{
   position : absolute;
   display:flex;
   flex-wrap:wrap;
-  margin-left:20%;
+ 
+  margin-left:15%;
   width:1200px;
-  justify-content : space-around;
-  align-items : center;
-  height: 900px;
+  height: 750px;
+  margin-top:300px;
 }
 
 .child{
-	
   flex-basis: 350px;
   height : 200px;
-  border-radius: 50%;
 
 }
 .child img{
-
+	position :absolute;
   	width: 350px;
   	height : 200px;
-   	border-radius: 50%;
+
 }
 
-.checked {
-	width:999px;
-}
-.checkBox{
+.childCheckImg{
+	width:350px;
+	height:200px;
+	border-radius: 50%;
+	display:none;
 	position:absolute;
-	width: 350px;
-  	height : 200px;
-   	border-radius: 50%;
 }
-.checkBox img{
-	position:absolute;
-	width: 350px;
-  	height : 200px;
-   	border-radius: 50%;
-   	display:none;
+#childCheckImg1{
+	top:50px;
+	left:10px;
 }
+#childCheckImg2{
+	top:50px;
+	left:410px;
+}
+#childCheckImg3{
+	top:50px;
+	left:810px;
+}
+#childCheckImg4{
+	top:350px;
+	left:10px;
+}
+#childCheckImg5{
+	top:350px;
+	left:410px;
+}
+#childCheckImg6{
+	top:350px;
+	left:810px;
+}
+#childCheckImg7{
+	top:650px;
+	left:10px;
+}
+#childCheckImg8{
+	top:650px;
+	left:410px;
+}
+#childCheckImg9{
+	top:650px;
+	left:810px;
+}
+/* ****************** 빙고 완료 갯수 박스******************** */
 .completeBox{
-	right:0%;
-	top:-50px;
+	right:4%;
+	top:80px;
 	position:absolute;
 	width:240px;
-	height:70px;
+	height:150px;
 }
 .completeBox img{
 	width:70px;
-	height:70px;
+	height:150px;
 	border-radius:50%;
 	position:absolute;
 	display:none;

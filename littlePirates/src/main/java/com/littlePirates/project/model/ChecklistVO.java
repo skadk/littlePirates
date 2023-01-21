@@ -1,28 +1,47 @@
 package com.littlePirates.project.model;
 
 public class ChecklistVO {
-	private String chl_No;
-	private String chl_Name;
-	private boolean Checked;
-	
-	public String getChl_No() {
-		return chl_No;
+	private int chlNo;
+	private String chlText;
+	private String chlImageName;
+	private int chhNo;
+	private String memId;
+	private String chhDate;
+	public int getChlNo() {
+		return chlNo;
 	}
-	public void setChl_No(String chl_No) {
-		this.chl_No = chl_No;
+	public void setChlNo(int chlNo) {
+		this.chlNo = chlNo;
 	}
-	public String getChl_Name() {
-		return chl_Name;
+	public String getChlText() {
+		return chlText;
 	}
-	public void setChl_Name(String chl_Name) {
-		this.chl_Name = chl_Name;
+	public void setChlText(String chlText) {
+		this.chlText = chlText;
 	}
-	public boolean isChecked() {
-		return Checked;
+	public String getChlImageName() {
+		return chlImageName;
 	}
-	public void setChecked(boolean checked) {
-		Checked = checked;
+	public void setChlImageName(String chlImageName) {
+		this.chlImageName = chlImageName;
 	}
-	
+	public int getChhNo() {
+		return chhNo;
+	}
+	public void setChhNo(int chhNo) {
+		this.chhNo = chhNo;
+	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+	public String getChhDate() {
+		return chhDate;
+	}
+	public void setChhDate(String chhDate) {
+		this.chhDate = chhDate;
+	}
 	
 }
