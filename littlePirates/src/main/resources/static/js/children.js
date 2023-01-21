@@ -1,4 +1,4 @@
-window.onload=()=>{
+$(document).ready(function(){
       document.querySelector('.dropbtn_click').onclick = ()=>{
         dropdown();
       }
@@ -25,7 +25,7 @@ window.onload=()=>{
         dropbtn_content.style.color = '#252525';
         dropbtn.style.borderColor = '#3992a8';
       }
-    }
+    });
     window.onclick= (e)=>{
       if(!e.target.matches('.dropbtn_click')){
         var dropdowns = document.getElementsByClassName("dropdown-content");

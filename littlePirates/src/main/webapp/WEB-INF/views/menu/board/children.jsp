@@ -113,7 +113,7 @@
 								class="dropbtn_content-1">Select a city...</span> <span
 								class="dropbtn_click-1"
 								style="font-family: Material Icons; font-size: 16px; color: #3b3b3b; float: right;"
-								onclick="dropdown()-1">arrow_drop_down</span>
+								onclick="dropdown2()">arrow_drop_down</span>
 						</button>
 
 						<div class="dropdown-content-1">
@@ -131,41 +131,75 @@
 			</div>
 
 			<!-- INFORMATION 1 -->
-			<div class="middle-right">
+			<a href="<c:url value='/kindergarten'/>">
+				<div class="middle-right">
+					<div class="middle-right-1">
 
-				<div class="middle-right-1">
-					<span>A 유치원 <br /> 정보
-					</span>
+						<div class="kindergartenImg1">
+							<span>A유치원 사진 </span>
+						</div>
+						<div class="kindergartenInfo1">
+							<span>A유치원 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+
+					</div>
+					<div class="middle-right-2">
+						<div class="kindergartenImg2">
+							<span>B유치원 사진 </span>
+						</div>
+						<div class="kindergartenInfo2">
+							<span>B유치원 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+					</div>
+					<div class="middle-right-3">
+						<div class="kindergartenImg3">
+							<span>C유치원 사진 </span>
+						</div>
+						<div class="kindergartenInfo3">
+							<span>C유치원 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+					</div>
 
 				</div>
-				<div class="middle-right-2">
-					<span>B 유치원 <br /> 정보
-					</span>
-				</div>
-				<div class="middle-right-3">
-					<span>C 유치원 <br /> 정보
-					</span>
-				</div>
-
-			</div>
+			</a>
 
 			<!-- INFORMATION 2 -->
-			<div class="middle-right-a">
+			<a href="<c:url value='/nursery'/>">
+				<div class="middle-right-a">
 
-				<div class="middle-right-1-1">
-					<span>A 어린이집 <br /> 정보
-					</span>
-				</div>
-				<div class="middle-right-2-1">
-					<span>B 어린이집 <br /> 정보
-					</span>
-				</div>
-				<div class="middle-right-3-1">
-					<span>C 어린이집 <br /> 정보
-					</span>
-				</div>
+					<div class="middle-right-1-1">
+						<div class="childrenImg1">
+							<span>A어린이집 사진 </span>
+						</div>
+						<div class="childrenInfo1">
+							<span>A어린이집 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+					</div>
+					<div class="middle-right-2-1">
+						<div class="childrenImg2">
+							<span>B어린이집 사진 </span>
+						</div>
+						<div class="childrenInfo2">
+							<span>B어린이집 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+					</div>
+					<div class="middle-right-3-1">
+						<div class="childrenImg3">
+							<span>C어린이집 사진 </span>
+						</div>
+						<div class="childrenInfo3">
+							<span>C어린이집 정보 <br />평점 <br />전화번호
+							</span>
+						</div>
+					</div>
 
-			</div>
+				</div>
+			</a>
 		</div>
 
 

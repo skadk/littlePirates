@@ -4,7 +4,7 @@
  
 var particles = document.getElementById("particles");
 var border = ["50%", "0%"];
-var colors = ["#FF6B6B", "#FFE66D", "#4472CA"];
+var colors = ["#FF6B6B", "#FFE66D", "#32CD32"];
 
 function createParticle(event) {
 
@@ -21,7 +21,7 @@ function createParticle(event) {
     div.style.borderRight = "10px solid transparent";
     div.style.borderLeft = "10px solid transparent";
     div.style.borderBottom = "20px solid " + colors[color];
-    div.style.animation = "move 10s ease-in infinite";
+    div.style.animation = "move 5s ease-in infinite";
 //    div.style.animation = "spin 5s linear infinite";
     
     div.innerHTML = "<img src='/image/treasureMap.png' width='30px' height='30px'/>";
