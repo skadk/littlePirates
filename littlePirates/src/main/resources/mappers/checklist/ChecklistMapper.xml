@@ -4,10 +4,27 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.littlePirates.project.dao.IChecklistDAO">
-	<update id="updateChecklist" parameterType="com.littlePirates.project.dao.IChecklistDAO">
-		UPDATE children
-		SET Checked=#{Checked}
-		WHERE chl_No=#{chl_No}	
-	</update>
+	  <resultMap id="checklistResult" type="com.littlePirates.project.model.ChecklistVO" >
+		<result property="chlNo" column="chlNo"	/>
+		<result property="chlText" column="chlText"	/>
+		<result property="chlImageName" column="chlImageName"	/>
+		<result property="chhNo" column="chhNo"	/>
+		<result property="memId" column="memId"	/>
+		<result property="chhDate" column="chhDate"	/>
+	  </resultMap>	
+	<select id ="checklistInfo" resultMap="checklistResult">
+		SELECT chlImageName FROM checklist
+		WHERE chlImageName Like "AC%"
+		ORDER BY RAND() LIMIT 4;
+	</select>
+	<select id="checklistInfo2" resultMap="checklistResult">
+		SELECT * FROM checklist
+		WHERE chlImageName Like "LH%"
+		ORDER BY RAND() LIMIT 9;		
+	</select>
+	<select id="checklistInfo3" resultMap = "checklistResult">
+		SELECT * FROM checklist_history;
+		
+	</select>
   </mapper>
   

@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import com.littlePirates.project.model.ChecklistVO;
 
 public interface IChecklistDAO {
-	public void updateCheckList(ChecklistVO Checked);
 
 	public ArrayList<ChecklistVO> checklistInfo();
+	
+	public ArrayList<ChecklistVO> checklistInfo2();
+	
+	public ArrayList<ChecklistVO> checklistInfo3();
 }
