@@ -15,8 +15,8 @@
 	grid-area:checklistHeader;
 	font-family: 'Dongle', sans-serif;
 	font-size: 6em;
-    color: #F1C164;
-	text-shadow: 5px 5px #2d63a7;
+    color: #ff9012;
+    text-shadow: 4px 4px #2d63a7;
 }
 .checklist_Section {
 	width:1920px;
@@ -177,17 +177,18 @@
     border-style:none;
 	}
 	.textBox{
-	display:none;
+/* 	display:none; */
 	position: absolute;
     margin-top: 70px;
-    margin-left: 1050px;
-    width: 350px;
+    margin-left: 1000px;
+    width: 400px;
     height: 170px;
-    font-size: 95px;
+    font-size: 65px;
 	font-family: 'Dongle', sans-serif;
-	color: #F1C164;
-	text-shadow: 0 0 7px #2d63a7, 0 0 10px #fff, 0 0 21px #2d63a7, 
-	/* Green glow */ 0 0 42px #8ed9f6, 0 0 82px #8ed9f6, 0 0 92px #8ed9f6, 0 0 102px #8ed9f6, 0 0 151px #8ed9f6;	
+	color: #ff9012;
+	text-shadow: 0 0 7px #2d63a7; /*0 0 10px #2d63a7, 0 0 21px #2d63a7;*/
+	/* Green glow 0 0 42px #8ed9f6, 0 0 82px #8ed9f6, 0 0 92px #8ed9f6, 0 0 102px #8ed9f6, 0 0 151px #8ed9f6;	
+	*/
 	}
 	
 	/* ************** *********************/
