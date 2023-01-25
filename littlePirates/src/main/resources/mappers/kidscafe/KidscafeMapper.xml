@@ -15,13 +15,6 @@
  	<select id="listKidscafeInfo" resultMap="mapResult">
  		select *
  		FROM kidscafe
- 		WHERE MOD(kcNo,2) = 1
- 	</select>
-
- 	<select id="listKidscafeInfo2" resultMap="mapResult">
- 		select *
- 		FROM kidscafe
- 		WHERE MOD(kcNo,2) = 0
  	</select>
  	
  	<!-- 키워드로 주소 찾기 -->
@@ -31,5 +24,19 @@
  		WHERE kcName=#{keyword}
  	</select>
  	
+ 	<!-- 키즈카페 키워드 검색 -->
+  <select id="kidscafeSearchkeyword" parameterType="string"  resultMap="mapResult">
+		SELECT * 
+		FROM kidscafe 			
+		WHERE kcName Like CONCAT ('%',#{kcName},'%')  						 				
+  </select>
+
+  <select id="kidscafeSearchsido" parameterType="string"  resultMap="mapResult">
+		SELECT * 	
+		FROM kidscafe 
+		where browsers=#{sido}; 						 				
+  </select>
+  
+  
   </mapper>
   

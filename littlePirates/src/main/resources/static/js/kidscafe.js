@@ -47,15 +47,11 @@ function initMap() {
         center: new naver.maps.LatLng(37.5511694, 126.9882266), //지도 시작 지점
         zoom: 13,
         zoomControl: true,
-        zoomControlOptions: {
-            style: naver.maps.ZoomControlStyle.SMALL,
-            position: naver.maps.Position.TOP_RIGHT
-        }
-        /* zoomControlOptions랑 이거랑 둘 중 선택
+        
         scaleControl: false,
         logoControl: false,
         mapDataControl: false
-        */
+        
     });
 
 	for (var i = 0; i < areaArr.length; i++) {
@@ -145,7 +141,7 @@ function initMap() {
 
         infoWindow.setContent([
             '<div style="padding:10px;min-width:200px;line-height:150%;">',
-            '<h4 style="margin-top:5px;">검색 상호명 : '+ searchAddress +'</h4><br />',
+            '<h4 style="margin-top:5px;"> 상호명 : '+ searchAddress +'</h4><br />',
             htmlAddresses.join('<br />'),
             '</div>'
         ].join('\n'));
@@ -179,7 +175,6 @@ function initMap() {
 	 			dataType:"text",
 	 			success:function(result){
 	 				if (result != null){
-	 					alert("주소 받아오기 성공");
 				        searchAddressToCoordinate(result);
 					}
 	 			},
@@ -330,3 +325,4 @@ function initMap() {
     }
 
 }
+
