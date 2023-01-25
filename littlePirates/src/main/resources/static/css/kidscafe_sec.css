@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* kidscafe_third.css */
+
+#selectbox {
+	width: 1920px;
+	height: 100px;
+}
+
+#clickbox {
+	position: absolute;
+	right: 30px;
+	color: #e80911;
+	font-weight: bold;
+}
+
+#clickbox li {
+	display: inline-block;
+	width: 200px;
+	height: 30px;
+	text-align: center;
+}
+
+#select_map {
+	border: 1px solid black;
+	border-width: 0 0 1px 0;
+}
+
+#gather {
+	margin: 0 -6px;
+	border: 1px solid black;
+	border-width: 1px 1px 0 1px;
+}
+
+#clickbox a {
+	color: black;
+}
+
+#clickbox li a:hover {
+	color: #e80911;
+}
+
+a {
+	text-align: center;
+	text-decoration: none;
+}
+
+.dropdown {
+	height: 80px;
+	font-size: 20px;
+	margin: 10px;
+	font-weight: bold;
+	color: rgb(50, 50, 50);
+}
+
+#browsers{
+    background-color: white;
+    border: 1px solid purple;
+    border-radius: 10px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+	margin-top: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	
+	
+	background-image:
+	linear-gradient(45deg, transparent 50%, gray 50%),
+	linear-gradient(135deg, gray 50%, transparent 50%),
+	radial-gradient(#ddd 70%, transparent 72%);
+	background-position:
+	calc(100% - 25px) calc(1em + 2px),
+	calc(100% - 18px) calc(1em + 2px),
+	calc(100% - .5em) .5em;
+	background-size:
+	7px 7px,
+	7px 7px,
+	1.5em 1.5em;
+	background-repeat: no-repeat;
+}
+
+.table {
+	display: inline-block;
+	border:none;
+	/* border-spacing: td간의 간격) */
+	border-spacing: 30px;
+	font-weight: 300;
+	font-weight: bolder;
+}

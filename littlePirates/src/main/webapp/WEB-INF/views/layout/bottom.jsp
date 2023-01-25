@@ -18,3 +18,4 @@
 					<p>ⓒ 코드 해적단 Corp.</p>
 				</div>
 			</footer>
+ 		<script src="<c:url value='/js/background.js'/>"></script>
