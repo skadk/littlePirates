@@ -22,4 +22,31 @@ public interface IChecklistDAO {
 	public ArrayList<ChecklistVO> selectChecklist(String memId);
 	
 	public String getChecklistText(String chlNo);
+	
+	public int searchMemId(String memId);
+	
+	public void insertTimes(HashMap<String, Object> map);
+	
+	public String checkDate(HashMap<String, Object> map);
+	
+	public String checkNo1(HashMap<String, Object> map);
+	public String checkNo2(HashMap<String, Object> map);
+	public String checkNo3(HashMap<String, Object> map);
+	public String checkNo4(HashMap<String, Object> map);
+	public String checkNo5(HashMap<String, Object> map);
+	public String checkNo6(HashMap<String, Object> map);
+	public String checkNo7(HashMap<String, Object> map);
+	public String checkNo8(HashMap<String, Object> map);
+	public String checkNo9(HashMap<String, Object> map);
+	
+	public void updateChecked1(HashMap<String, Object> map);
+	public void updateChecked2(HashMap<String, Object> map);
+	public void updateChecked3(HashMap<String, Object> map);
+	public void updateChecked4(HashMap<String, Object> map);
+	public void updateChecked5(HashMap<String, Object> map);
+	public void updateChecked6(HashMap<String, Object> map);
+	public void updateChecked7(HashMap<String, Object> map);
+	public void updateChecked8(HashMap<String, Object> map);
+	public void updateChecked9(HashMap<String, Object> map);
+
 }

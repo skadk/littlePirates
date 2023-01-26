@@ -1,16 +1,33 @@
 package com.littlePirates.project.service;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.littlePirates.project.model.ChecklistVO;
 
 public interface IChecklistService {
 	public ArrayList<ChecklistVO> checklistInfo();
+
 	public ArrayList<String> checklistInfo2();
+
 	public ArrayList<ChecklistVO> checklistInfo3();
-	void insertChecklist(ChecklistVO vo);
-	int ischhChecked(String memId);
+
+	public void insertChecklist(ChecklistVO vo);
+
+	public int ischhChecked(String memId);
+
 	public ArrayList<ChecklistVO> selectChecklist(String memId);
+
 	public String getChecklistText(String chlNo);
+
+	public int searchMemId(String memId);
+
+	public void insertTimes(String memId, int countMemId);
+
+	public String checkDate(String memId, String nowTime);
+	
+	public String checkNo(String memId, int checkedNo);
+	
+	public void updateChecked(String memId, int checkedNo, String nowTime);
+	
 }
