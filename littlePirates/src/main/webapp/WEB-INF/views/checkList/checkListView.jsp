@@ -14,12 +14,12 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<!-- head end-->
 	</head>
+
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
-		<!-- top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp"/>
-		<!-- top end-->
+	<div id="wrap">
+	
+		<!-- background & header -->
+		<c:import url="/WEB-INF/views/layout/header.jsp"/>
 				
 		<div class="container">
 		  <div class="checklistHeader">
@@ -71,5 +71,7 @@
 	    <!-- bottom -->
 	    <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	    <!-- bottom end-->
+	    
+	  </div>  
 	</body>
 </html>
