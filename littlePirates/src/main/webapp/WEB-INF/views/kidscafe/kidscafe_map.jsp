@@ -53,6 +53,8 @@
 					</div>
 					
 					
+					<!-- <div id="searchresult"></div> -->
+
 					<div id="searchresult" class="scroll_box"></div>
 
 				</article>
