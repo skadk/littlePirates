@@ -54,7 +54,7 @@
     }
 }
 
-@keyframes spin {
+@keyframes spin {s
   0% { transform: rotateY(0); }
   100%  { transform:rotateY(360deg); }
   }
