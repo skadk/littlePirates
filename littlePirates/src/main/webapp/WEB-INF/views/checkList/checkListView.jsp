@@ -23,7 +23,7 @@
 				
 		<div class="container">
 		  <div class="checklistHeader">
-		  체 크 리 스 트
+		  📔 우 리 들 의 체 크 리 스 트
 		  </div>			
 		  	<div class="checklist_Section">
 				<img class="menu_image"src="<c:url value='/image/checklistViewFinal.png'/>">
@@ -64,7 +64,7 @@
 			  		</div>	
 		  		<%-- 체크리스트 달성률 보기 --%>	  		
   			  </div>
-			 <div class="textBox"></div>
+			 <div class="textBox">깃발&#128681;,지도&#128220;,불가사리&#11088;를 눌러보세요</div>
 		    </div>
 		   </div>						
 

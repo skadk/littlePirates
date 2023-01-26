@@ -17,7 +17,7 @@
 
 		<div class="checklist_Section">
 				<div class="checklistClean">
-					 B I N G O
+					체 크 리 스 트 B I N G O
 				</div>
 			<img class="checklist_Section_back" src="<c:url value='/image/checkList_LH_Back.png'/>">
 
@@ -26,8 +26,7 @@
  					<div class="child" id="bingoBtn${status.count}">
  						<img id="bingoBtnImg${status.count}" src="<c:url value='/image/${vo.chlImageName}.png'/>">
 						<div class="textBox" id="textBox${status.count}">${vo.chlText}</div>
-					</div>
-							
+					</div>							
 					<div class="childCheck">
 						<img class="childCheckImg" id="childCheckImg${status.count}" src="<c:url value='/image/Good3.JPG'/>">
 					</div>
