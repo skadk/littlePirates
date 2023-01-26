@@ -13,10 +13,9 @@
 }
 
 .eatHeader{
-	width:1920px;
+	width:1080px;
 	height:100px;
 	grid-area: eatHeader; 
-	background:gray;
 	font-family: 'Dongle', sans-serif;
 	font-size:70px;
 	color: white;
@@ -51,9 +50,25 @@
 .dropdown {
 
     width:500px;
-    color:white;
+    font-family: 'Dongle', sans-serif;
+	font-size:35px;
+	color: white;
+    text-shadow: 4px 4px #2d63a7;
 }
-
+.selectBtn{
+	top: 120px;
+    left: 120px;
+    height: 50px;
+    width: 150px;
+    position: absolute;
+    text-align:center;
+    margin-left:50px;
+    border-radius:15%;
+ 	background-color:#a8ccff;
+	font-size:25px;
+	color: white;
+    text-shadow: 2px 2px #2d63a7;
+}
 .search{
 	grid-area:search;
 	width:1200px;
@@ -63,17 +78,24 @@
 }
 .search input{
 	width:1000px;
-	height:30px;
+	height:40px;
 }
 .search button{
 	width:100px;
-    color: #ff9012;
-    height:35px;
-    
+	font-size:35px;
+	color: white;
+    text-shadow: 4px 4px #2d63a7;
+    height:50px;
+    background-color:gray;
+    margin-left:50px;
+    border-style:none;
 }
 .dropdown_trigger {
     cursor: pointer;
-	height:50px;
+	height:70px;
+	width:100px;
+	margin-left:25px;
+	top:10px;
 }
 
 .dropdown_content {
@@ -81,9 +103,13 @@
     height:50px;
 }
 .searchResult{
-	width:1920px;
+	width:1800px;
 	height:500px;
 	grid-area:searchResult;
+	font-family: 'Dongle', sans-serif;
+	font-size:61px;
+	color: white;
+    text-shadow: 4px 4px #2d63a7;
 }
 .searchResult table{
 	width:1920px;
@@ -97,13 +123,15 @@
 .searchResult th{
 	color:white;
 	border:1px solid;
-
+	height:60px;
 }
 .searchResult td{
 	color:white;
 	border:1px solid;
 	text-align:center;
+	height:60px;
 }
+
 /*
 
 

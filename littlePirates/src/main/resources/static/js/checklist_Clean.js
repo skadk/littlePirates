@@ -9,7 +9,7 @@ $(function () {
 	const numberOfImages = 26;
 	const images = [];
 	for (let i = 1; i <= numberOfImages; i++) {
-	    images.push(`LH${i}.png`);
+	    images.push(`100${i}.png`);
 											  }
 //////////// (1) 랜덤 이미지 아홉개 박스에 생성 함수
 /*

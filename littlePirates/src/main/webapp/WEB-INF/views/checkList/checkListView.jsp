@@ -31,7 +31,7 @@
 				<%-- 생활 습관 체크리스트 --%>						
 					<div class="modal_wrap">
 					    <div class="modal_close">
-					    	<a href="#" onclick="return false"></a>
+					    	<a href="#" onclick="return false">닫기&#10062;</a>
 					    </div>					    
 						<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
 						<iframe src="/checkList/checkList_Clean" id="chat_iframe">구현할 모달창 박스</iframe>    					    
@@ -44,7 +44,7 @@
 					</div>
 					<div class="modal_wrap3">
 					    <div class="modal_close3">
-					    	<a href="#" onclick="return false"></a>
+					    	<a href="#" onclick="return false">닫기&#10062;</a>
 					    </div>					    
 					<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
 					<iframe src="/checkList/checkList_Manner" id="chat_iframe">구현할 모달창 박스</iframe>    					    
@@ -55,7 +55,7 @@
 				<%-- 체크리스트 달성률 보기 --%>						
 					<div class="modal_wrap2">
 					    <div class="modal_close2">
-					    	<a href="#" onclick="return false"></a>
+					    	<a href="#" onclick="return false">닫기&#10062;</a>
 					    </div>					    
 						<%-- 모달 창 안 컨텐츠 박스 구현 iframe 사용 --%>	    
 						<iframe src="/checkList/checkList_Eat" id="chat_iframe">구현할 모달창 박스</iframe>    					    
@@ -64,7 +64,7 @@
 			  		</div>	
 		  		<%-- 체크리스트 달성률 보기 --%>	  		
   			  </div>
-			 <div class="textBox">깃발&#128681;,지도&#128220;,불가사리&#11088;를 눌러보세요</div>
+			 <div class="textBox">&#128681;깃발&emsp;&emsp;을/를<br>&#128220;지도&emsp;&emsp;선택<br>&#11088;불가사리&emsp;하세요</div>
 		    </div>
 		   </div>						
 

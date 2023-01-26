@@ -4,11 +4,11 @@ import java.sql.Timestamp;
 
 public class ChecklistVO {
 	private int chlNo;
-	private String chlText;
+
 	private String chlImageName;
 	private int chhNo;
 	private String memId;
-	private Timestamp chhDate;
+	private String chhDate;
 	
 	private String chlNo1;
 	private String chlNo2;
@@ -19,6 +19,19 @@ public class ChecklistVO {
 	private String chlNo7;
 	private String chlNo8;
 	private String chlNo9;
+	
+	private String chlText1;
+	private String chlText2;
+	private String chlText3;
+	private String chlText4;
+	private String chlText5;
+	private String chlText6;
+	private String chlText7;
+	private String chlText8;
+	private String chlText9;
+
+	
+	
 	private Timestamp chlNo1_Checked;
 	private Timestamp chlNo2_Checked;
 	private Timestamp chlNo3_Checked;
@@ -37,12 +50,7 @@ public class ChecklistVO {
 	public void setChlNo(int chlNo) {
 		this.chlNo = chlNo;
 	}
-	public String getChlText() {
-		return chlText;
-	}
-	public void setChlText(String chlText) {
-		this.chlText = chlText;
-	}
+
 	public String getChlImageName() {
 		return chlImageName;
 	}
@@ -61,13 +69,182 @@ public class ChecklistVO {
 	public void setMemId(String memId) {
 		this.memId = memId;
 	}
-	public Timestamp getChhDate() {
+	public String getChhDate() {
 		return chhDate;
 	}
-	public void setChhDate(Timestamp chhDate) {
+	public void setChhDate(String chhDate) {
 		this.chhDate = chhDate;
 	}
 
+	
+	public String getChlText1() {
+		return chlText1;
+	}
+	public void setChlText1(String chlText1) {
+		this.chlText1 = chlText1;
+	}
+	public String getChlText2() {
+		return chlText2;
+	}
+	public void setChlText2(String chlText2) {
+		this.chlText2 = chlText2;
+	}
+	public String getChlText3() {
+		return chlText3;
+	}
+	public void setChlText3(String chlText3) {
+		this.chlText3 = chlText3;
+	}
+	public String getChlText4() {
+		return chlText4;
+	}
+	public void setChlText4(String chlText4) {
+		this.chlText4 = chlText4;
+	}
+	public String getChlText5() {
+		return chlText5;
+	}
+	public void setChlText5(String chlText5) {
+		this.chlText5 = chlText5;
+	}
+	public String getChlText6() {
+		return chlText6;
+	}
+	public void setChlText6(String chlText6) {
+		this.chlText6 = chlText6;
+	}
+	public String getChlText7() {
+		return chlText7;
+	}
+	public void setChlText7(String chlText7) {
+		this.chlText7 = chlText7;
+	}
+	public String getChlText8() {
+		return chlText8;
+	}
+	public void setChlText8(String chlText8) {
+		this.chlText8 = chlText8;
+	}
+	public String getChlText9() {
+		return chlText9;
+	}
+	public void setChlText9(String chlText9) {
+		this.chlText9 = chlText9;
+	}
+	
+	public void setChlText(int index,String chlText) {
+		switch(index) {
+		case 0:
+			this.chlText1 = chlText;
+			break;
+		case 1:
+			this.chlText2 = chlText;
+			break;
+		case 2:
+			this.chlText3 = chlText;
+			break;
+		case 3:
+			this.chlText4 = chlText;
+			break;
+		case 4:
+			this.chlText5 = chlText;
+			break;
+		case 5:
+			this.chlText6 = chlText;
+			break;
+		case 6:
+			this.chlText7 = chlText;
+			break;
+		case 7:
+			this.chlText8 = chlText;
+			break;
+		case 8:
+			this.chlText9 = chlText;
+			break;	
+		}	
+	}
+	
+	public String getChlText(int index) {
+		switch(index) {
+		case 0:
+			return this.chlText1;
+		case 1:
+			return this.chlText2;
+		case 2:
+			return this.chlText3;
+		case 3:
+			return this.chlText4;
+		case 4:
+			return this.chlText5;
+		case 5:
+			return this.chlText6;
+		case 6:
+			return this.chlText7;
+		case 7:
+			return this.chlText8;
+		case 8:
+			return this.chlText9;	
+		}
+			return null;
+	}
+	
+	
+	public void setChlNo(int index,String chlNo) {
+		switch(index) {
+		case 0:
+			this.chlNo1 = chlNo;
+			break;
+		case 1:
+			this.chlNo2 = chlNo;
+			break;
+		case 2:
+			this.chlNo3 = chlNo;
+			break;
+		case 3:
+			this.chlNo4 = chlNo;
+			break;
+		case 4:
+			this.chlNo5 = chlNo;
+			break;
+		case 5:
+			this.chlNo6 = chlNo;
+			break;
+		case 6:
+			this.chlNo7 = chlNo;
+			break;
+		case 7:
+			this.chlNo8 = chlNo;
+			break;
+		case 8:
+			this.chlNo9 = chlNo;
+			break;	
+		}	
+	}
+	
+	public String getChlNo(int index) {
+		switch(index) {
+		case 0:
+			return this.chlNo1;
+		case 1:
+			return this.chlNo2;
+		case 2:
+			return this.chlNo3;
+		case 3:
+			return this.chlNo4;
+		case 4:
+			return this.chlNo5;
+		case 5:
+			return this.chlNo6;
+		case 6:
+			return this.chlNo7;
+		case 7:
+			return this.chlNo8;
+		case 8:
+			return this.chlNo9;	
+		}
+			return null;
+	}
+	
 	
 	public String getChlNo1() {
 		return chlNo1;

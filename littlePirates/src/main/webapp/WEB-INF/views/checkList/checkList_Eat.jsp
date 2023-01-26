@@ -10,6 +10,7 @@
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 		<script src="<c:url value='/js/checklist_Eat.js'/>"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+	
 	</head>
 <body>
 	
@@ -22,30 +23,61 @@
   			<div class="checklist_Section">
  				<div class="dropdown">
 				    <!-- The trigger element -->
-				    <div class="dropdown_trigger">카테고리</div>				
+				    <div class="dropdown_trigger">회차 선택</div>				
 				    <!-- The content -->
-				    <div class="dropdown_content" id="check1">체크리스트 명</div>
-				    <div class="dropdown_content" id="check2">회차</div>				   	
+<!-- 				    <div class="dropdown_content" id="check1">체크리스트 명</div>
+				    <div class="dropdown_content" id="check2">회차</div>	 -->			   	
 				</div>
-				<div class="search"><input type="text"
+<!-- 				<div class="search"><input type="text"
 				 id="SearchChecklist" placeholder="검색" >
 				 <button class="searchBtn">검색</button>
-				</div>
+				</div> -->
  				<div class="searchResult">
- 				<table>
- 					<tr><th>회차</th><th>체크리스트 명</th><th>체크리스트 달성 날짜</th></tr>
- 					<c:forEach var="vo" items="${voList}" varStatus="status">
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo1}</td><td>${vo.chlNo1_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo2}</td><td>${vo.chlNo2_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo3}</td><td>${vo.chlNo3_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo4}</td><td>${vo.chlNo4_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo5}</td><td>${vo.chlNo5_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo6}</td><td>${vo.chlNo6_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo7}</td><td>${vo.chlNo7_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo8}</td><td>${vo.chlNo8_Checked}</td></tr>
- 						<tr><td>${vo.chhNo}</td><td>${vo.chlNo9}</td><td>${vo.chlNo9_Checked}</td></tr> 
- 					</c:forEach>
- 				</table>
+
+ 			<table id="dataTable">
+
+			  <c:forEach var="vo" items="${voList}" varStatus="status">
+			    <tr><th>회차</th><th>체크리스트 명</th><th>체크리스트 달성 날짜</th></tr>
+			    <tr>			    
+			      <td rowspan="9">${vo.chhNo}</td>
+			      <td>${vo.chlNo1}</td>
+			      <td>${vo.chlNo1_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo2}</td>
+			      <td>${vo.chlNo2_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo3}</td>
+			      <td>${vo.chlNo3_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo4}</td>
+			      <td>${vo.chlNo4_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo5}</td>
+			      <td>${vo.chlNo5_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo6}</td>
+			      <td>${vo.chlNo6_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo7}</td>
+			      <td>${vo.chlNo7_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo8}</td>
+			      <td>${vo.chlNo8_Checked}</td>
+			    </tr>
+			    <tr>
+			      <td>${vo.chlNo9}</td>
+			      <td>${vo.chlNo9_Checked}</td>
+			    </tr>
+			  </c:forEach>
+			</table>
+			
  				</div>
  				<div></div>
  

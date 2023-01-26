@@ -61,7 +61,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("/login")
-	public String login() {
+	public String login1() {
 		
 		return "menu/member/login";
 
@@ -101,7 +101,7 @@ public class HomeController {
 		
 		return "checkList/checkListView";
 	}
-}
+
 
 	
 	@RequestMapping("/board/boardWrite")
