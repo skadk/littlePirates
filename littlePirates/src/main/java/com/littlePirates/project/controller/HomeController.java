@@ -73,21 +73,16 @@ public class HomeController {
 	@RequestMapping("/kindergarten")
 	public String kindergarten() {
 
-		return "menu/board/kindergarten";
+		return "menu/children/kindergarten";
 	}
 	
 	@RequestMapping("/nursery")
 	public String nursery() {
 		
-		return "menu/board/nursery";
+		return "menu/children/nursery";
 	}
 
-	@RequestMapping("/children")
-	public String children() {
-
-		return "menu/board/children";
-	}
-
+	
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 
