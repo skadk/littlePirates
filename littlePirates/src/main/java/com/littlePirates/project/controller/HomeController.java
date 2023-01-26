@@ -40,27 +40,18 @@ public class HomeController {
 		return "/checkList/checkListView";
 	}
 
-	@RequestMapping("/board")
-	public String board() {
-
-		return "menu/board/board";
-	}
-
 	@RequestMapping("/kindergarten")
 	public String kindergarten() {
-
 
 		return "menu/children/kindergarten";
 
 	}
 
 	@RequestMapping("/nursery")
-	public String nursery() {
-
+	public String nursery() 
 		
 		return "menu/children/nursery";
 	}
-
 
 	@RequestMapping("/board/boardText")
 	public String boardText() {
@@ -109,5 +100,5 @@ public class HomeController {
 		return "menu/board/boardWrite";
 
 	}
-
+  
 }
