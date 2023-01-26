@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 .container {  
-	display: grid;
+	position: relative;
+    display: grid;
+    left: -600px;
  	grid-template-columns: 1fr;
   	grid-template-rows:0.3fr  4fr ;
   	gap: 0px 0px;
@@ -23,7 +25,8 @@
 	width:1920px;
 	height:900px;
 	position: relative;
-	grid-area: checklist_nav; 
+	grid-area: checklist_nav;
+	left: -350px;
 	}
 .checklist_Section img{
 	width:1920px;
@@ -57,7 +60,7 @@
         height: 1100px;
         position: absolute;
         top:25%;
-        left: 35%;
+        left: 85%;
         margin: -250px 0 0 -250px;
         z-index: 101;
     }
@@ -96,10 +99,13 @@
 	cursor:pointer;
 	margin-top:50px;
 	margin-left:720px;
+	left: 900px;
+	position:relative;
 	}
 	.modalBtn3{
 	width:250px;
 	height:200px;
+	left: 950px;
 	font-size:50px;
 	cursor:pointer;
 	margin-top:140px;
@@ -186,6 +192,7 @@
 	}
 	.textBox{
 /* 	display:none; */
+	left: 900px;
 	position: absolute;
     margin-top: 70px;
     margin-left: 1000px;

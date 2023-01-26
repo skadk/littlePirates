@@ -20,7 +20,6 @@
 		<result property="chlNo8" column="chlNo8" />
 		<result property="chlNo9" column="chlNo9" />
 		
-	
 		<result property="chlNo1_Checked" column="chlNo1_Checked" />
 		<result property="chlNo2_Checked" column="chlNo2_Checked" />
 		<result property="chlNo3_Checked" column="chlNo3_Checked" />
@@ -83,6 +82,13 @@
 		SELECT chlText FROM checklist
 		WHERE chlNo=#{chlNo}
 	</select>
+	
+	<insert id="checkList_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
+		INSERT INTO checklist_history
+		(memId,chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked)
+		VALUES
+		(#{memId},#{chlNo1_Checked},#{chlNo2_Checked},#{chlNo3_Checked},#{chlNo4_Checked},#{chlNo5_Checked},#{chlNo6_Checked},#{chlNo7_Checked},#{chlNo8_Checked},#{chlNo9_Checked})
+	</insert>
 	
   </mapper>
   
