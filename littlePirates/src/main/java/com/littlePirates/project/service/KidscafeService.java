@@ -38,7 +38,7 @@ public class KidscafeService implements IKidscafeService {
 
 	@Override
 	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido) {
-		// TODO Auto-generated method stub
+
 		return dao.kidscafeSearchsido(sido);
 	}
 

@@ -21,8 +21,10 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<section>
 			
 				<article>
@@ -40,6 +42,7 @@
 					</div>	
 				</article>
 				
+
 				<article id="showmap">
 					<input type="text" title="가게명 검색" name="keyword" id="keyword" placeholder="가게명 검색">
 					<input id="submit" type="button" value="검색">
@@ -50,7 +53,10 @@
 					</div>
 					
 					
-					<div id="searchresult"></div>
+					<!-- <div id="searchresult"></div> -->
+
+					<div id="searchresult" class="scroll_box"></div>
+
 				</article>
 
 			</section>
