@@ -50,7 +50,7 @@
 					</div>
 					
 					
-					<div id="searchresult" class="scroll_box"></div>
+					<div id="searchresult"></div>
 				</article>
 
 			</section>
