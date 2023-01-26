@@ -12,6 +12,8 @@
 	position: absolute;
 	right: 30px;
 	color: #e80911;
+	font-size: 35px;
+	font-family: 'Dongle', sans-serif;
 	font-weight: bold;
 }
 
@@ -24,13 +26,14 @@
 
 #select_map {
 	border: 1px solid black;
-	border-width: 0 0 1px 0;
+	border-width: 0 1px 1px 0;
+	padding-bottom:10px;	
 }
 
 #gather {
 	margin: 0 -6px;
 	border: 1px solid black;
-	border-width: 1px 1px 0 1px;
+	border-width: 1px 0 0 0;
 }
 
 #clickbox a {
@@ -93,4 +96,8 @@ a {
 	border-spacing: 30px;
 	font-weight: 300;
 	font-weight: bolder;
+}
+
+.table tr {
+  background-color: #F7EFE5;
 }

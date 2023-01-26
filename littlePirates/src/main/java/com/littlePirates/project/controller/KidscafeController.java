@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +26,7 @@ public class KidscafeController {
 		return "kidscafe/kidscafe_map";
 	}
 
-	// 키즈카페 지도(이름, 위도, 경도 )불러오기
+	// 키즈카페 지도(이름, 위도, 경도)불러오기
 	@ResponseBody
 	@RequestMapping("/kidscafe_map/loaddata")
 	public ArrayList<KidscafeVO> loaddata() {
@@ -43,20 +44,38 @@ public class KidscafeController {
 		return address;
 	}
 	
+	// 간편하게 보기 페이지 열기
 	@RequestMapping("/kidscafe_sec")
 	public String kidscafe_sec(Model model) {
 		ArrayList<KidscafeVO> voList = service.listKidscafeInfo();
-		ArrayList<KidscafeVO> voList2 = service.listKidscafeInfo2();
+
 		model.addAttribute("voList", voList);
-		model.addAttribute("voList2", voList2);
 		
 		return "kidscafe/kidscafe_sec";
 	}
-	
-	@RequestMapping("/kidscafe_third")
-	public String kidscafe_third() {
+
+	// 시/도 선택시 해당되는 시/도 출력
+	@RequestMapping("/kidscafe_sec/search")
+	public String kidscafe_sec_search(@RequestParam String sido, Model model) {
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchsido(sido);
 		
+		model.addAttribute("voList", voList);
 		
-		return "kidscafe/kidscafe_third";
+		return "kidscafe/kidscafe_sec_sido";
 	}
+	
+	//	키즈카페 키워드 검색 후 해당 관련 정보 나타내기
+	@RequestMapping("/kidscafe_map/kidscafeSearch")
+	public String kidscafeSearch(@RequestParam String keyword, Model model){
+		
+		System.out.println(keyword);
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchkeyword(keyword);
+
+		model.addAttribute("voList", voList);
+		
+		return "kidscafe/kidscafeSearch";	
+	}
+	
+	
+	
 }
