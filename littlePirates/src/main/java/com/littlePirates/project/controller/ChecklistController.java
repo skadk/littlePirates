@@ -1,6 +1,8 @@
 package com.littlePirates.project.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.http.HttpSession;
 
@@ -30,30 +32,77 @@ public class ChecklistController {
 	}
 
 	//빙고 체크리스트
-	@RequestMapping("/checkList/checkList_Clean")
-	public String checkList_Clean(Model model) {
-		ArrayList<ChecklistVO> voList = service.checklistInfo2();
-		model.addAttribute("voList",voList);
-		return "/checkList/checkList_Clean";
-	}
+	
+	  @RequestMapping("/checkList/checkList_Clean") 
+	  public String checkList_Clean(HttpSession session, Model model) { 
+		// memId에 저장
+			// 로그인 성공 시 설정한 세션 sid 값 가져와서 사용
+			
+			String memId = (String)session.getAttribute("sid");
+			memId="abcdef";
+			ChecklistVO vo = new ChecklistVO();
+
+			
+			// (1) 체크리스트가 존재 하는지 확인 (생성 날짜가 없으면 없는 것)
+			int count = service.ischhChecked(memId);			
+			
+			if(count == 0 ) { // (2) 체크리스트 존재하지 않으면(count==0) 체크리스트 추가
+				vo.setMemId(memId);
+				ArrayList<String> rnd = service.checklistInfo2();
+				for(int i=0; i<rnd.size();i++)
+					vo.setChlNo(i,rnd.get(i));
+				Date now = new Date();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				String nowTime = sdf.format(now);
+				System.out.println(nowTime);
+				vo.setChhDate(nowTime);				
+				service.insertChecklist(vo);			
+			} else { 
+				
+				vo = service.selectChecklist(memId).get(0);
+			}
+						
+			for(int i=0; i<9; i++) {
+				String text=service.getChecklistText(vo.getChlNo(i));
+				vo.setChlText(i, text);
+			}
+					
+			model.addAttribute("vo", vo);
+			
+			return "/checkList/checkList_Clean";
+		}
+	
 	
 	// 체크리스트 추가
 	@RequestMapping("/checkList/insertChecklist")
-	public String insertChecklist(ChecklistVO vo, HttpSession session) {
+	public String insertChecklist(HttpSession session,Model model) {
 		// memId에 저장
 		// 로그인 성공 시 설정한 세션 sid 값 가져와서 사용
+		
 		String memId = (String)session.getAttribute("sid");
 		memId="abcdef";
-		vo.setMemId(memId); // vo의 memId 값 설정
+		ChecklistVO vo = new ChecklistVO();
 
+		
 		// (1) 체크리스트가 존재 하는지 확인 (생성 날짜가 없으면 없는 것)
-		int count = service.ischhChecked(vo.getChhDate(), memId);			
+		int count = service.ischhChecked(memId);			
 		
 		if(count == 0 ) { // (2) 체크리스트 존재하지 않으면(count==0) 체크리스트 추가
-			service.insertChecklist(vo);
+			vo.setMemId(memId);
+			ArrayList<String> rnd = service.checklistInfo2();
+			for(int i=0; i<rnd.size();i++)
+				vo.setChlNo(i,rnd.get(i));
+			Date now = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String nowTime = sdf.format(now);
+			System.out.println(nowTime);
+			vo.setChhDate(nowTime);				
+			service.insertChecklist(vo);			
 		} else { 
-			service.updateChecklist(vo);
+			
+			vo = service.selectChecklist(memId).get(0);
 		}
+		model.addAttribute("voList", vo);
 		
 		return "/checkList/checkList_Clean";
 	}
@@ -67,5 +116,6 @@ public class ChecklistController {
 
 		return "/checkList/checkList_Eat";
 	}
+	
 	
 }

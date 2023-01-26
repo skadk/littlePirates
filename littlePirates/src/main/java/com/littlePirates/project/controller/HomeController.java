@@ -40,22 +40,17 @@ public class HomeController {
 		return "/checkList/checkListView";
 	}
 
-	@RequestMapping("/board")
-	public String board() {
-
-		return "menu/board/board";
-	}
-
 	@RequestMapping("/kindergarten")
 	public String kindergarten() {
 
-		return "menu/childern/kindergarten";
+		return "menu/children/kindergarten";
+
 	}
 
 	@RequestMapping("/nursery")
-	public String nursery() {
-
-		return "menu/childern/nursery";
+	public String nursery() 
+		
+		return "menu/children/nursery";
 	}
 
 	@RequestMapping("/board/boardText")
@@ -69,6 +64,7 @@ public class HomeController {
 
 		return "menu/board/anonymusBoard";
 	}
+
 
 
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
@@ -97,11 +93,12 @@ public class HomeController {
 
 	}
 
+
 	@RequestMapping("/board/boardWrite")
 	public String boardWrite() {
 
 		return "menu/board/boardWrite";
 
 	}
-
+  
 }

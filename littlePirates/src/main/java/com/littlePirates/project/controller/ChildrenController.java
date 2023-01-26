@@ -7,21 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.littlePirates.project.model.NurseryVO;
+
+import com.littlePirates.project.model.ChildrenVO;
 import com.littlePirates.project.service.ChildrenService;
+
+import com.littlePirates.project.model.KindergartenVO;
 
 @Controller
 public class ChildrenController {
-	
 	@Autowired
 	private ChildrenService cdservice;
 
 	@RequestMapping("/children")
-	public String children(Model model) {
-		
-		ArrayList<NurseryVO> NList = cdservice.nurseryList();
+	public String NurseryList(Model model) {
+		ArrayList<ChildrenVO> NList = cdservice.NurseryList();
+		ArrayList<KindergartenVO> KList = cdservice.KindergartenList();
 		model.addAttribute("NList", NList);
-		
+		model.addAttribute("KList", KList);
 		return "menu/children/children";
 	}
+
 }

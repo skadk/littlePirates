@@ -22,15 +22,22 @@
 			<img class="checklist_Section_back" src="<c:url value='/image/checkList_LH_Back.png'/>">
 
 			<div class="father" id="father">
-				<c:forEach var="vo" items="${voList}" varStatus="status">
- 					<div class="child" id="bingoBtn${status.count}">
- 						<img id="bingoBtnImg${status.count}" src="<c:url value='/image/${vo.chlImageName}.png'/>">
-						<div class="textBox" id="textBox${status.count}">${vo.chlText}</div>
+			<c:forEach var="i" begin="0" end="8">
+				<%-- <h2>${vo.getChlNo(i)}</h2> --%>
+				<div class="child" id="bingoBtn${i}">
+ 						<img id="bingoBtnImg${i}" src="<c:url value='/image/${vo.getChlNo(i)}.png '/>">
+						<div class="textBox" id="textBox${i}">${vo.getChlText(i)}</div>
+				</div>		
+			</c:forEach>
+		<%-- 		<c:forEach var="i" begin="0" end="8">
+ 					<div class="child" id="bingoBtn${i}">
+ 						<img id="bingoBtnImg${i}" src="<c:url value='/image/${vo.chlNo}.png '/>">
+						<div class="textBox" id="textBox${i}">${vo.chlText}</div>
 					</div>							
 					<div class="childCheck">
 						<img class="childCheckImg" id="childCheckImg${status.count}" src="<c:url value='/image/Good3.JPG'/>">
 					</div>
-				</c:forEach>
+				</c:forEach> --%>
 			</div>
 			<div class="completeBox">
 				<img id="bingoComplete1" src="<c:url value='/image/Good2.JPG'/>">
