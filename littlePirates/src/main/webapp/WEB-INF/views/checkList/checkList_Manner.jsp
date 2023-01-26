@@ -19,7 +19,7 @@
 		<div class="createChecklist2">체크리스트 랜덤 재 생성</div>
 		</div>
 		<div class="checklist_Section2">
-			<img src="<c:url value='/image/checkList_Manner_Back.png'/>" class="checklist_Section_back2">
+			<img src="<c:url value='/images/checkList_Manner_Back.png'/>" class="checklist_Section_back2">
 				<div class="mannerList2">
 					<c:forEach var="vo" items="${voList}" varStatus="status">
 					   	<div class="black_bg2">

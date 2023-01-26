@@ -30,8 +30,7 @@ public class ChecklistService implements IChecklistService{
 	
 	@Override
 	public int ischhChecked(String memId) {
-		
-	
+			
 		return dao.ischhChecked(memId);
 	}
 	
@@ -47,17 +46,21 @@ public class ChecklistService implements IChecklistService{
 		return dao.checklistInfo3();
 	}
 	
+	// 체크리스트 최초생성
 	@Override
 	public ArrayList<ChecklistVO> selectChecklist(String memId) {
 		// TODO Auto-generated method stub
 		return dao.selectChecklist(memId);
 	}
 	
+	// 체크리스트 생성 된 내역 있을 시 불러오기
 	@Override
 	public String getChecklistText(String chlNo) {
 		// TODO Auto-generated method stub
 		return dao.getChecklistText(chlNo);
 	}
+	
+	
 	
 }
 
