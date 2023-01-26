@@ -28,7 +28,9 @@ public class KidscafeService implements IKidscafeService {
 		String searchAddress = dao.searchKidsCafe(keyword);
 
 		return searchAddress;
+
 	}
+	
 
 	@Override
 	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName) {

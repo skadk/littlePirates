@@ -31,7 +31,7 @@
 					    </div>					
 					<div class="mannerList2_image" id="modal_btn2${status.count}">
 						<img id="mannerListImg${status.count}" 
-						src="<c:url value='/image/${vo.chlImageName}.png'/>">					
+						src="<c:url value='/image/${vo.chlNo}.png'/>">					
 					</div>
 					</c:forEach>
 				</div>

@@ -29,15 +29,14 @@ public class ChecklistService implements IChecklistService{
 	}
 	
 	@Override
-	public int ischhChecked(Timestamp chhDate,String memId) {
-		HashMap<String,Object> map = new HashMap<String, Object>();
-		map.put("chhDate", chhDate);
-		map.put("memId", memId);
-		return dao.ischhChecked(map);
+	public int ischhChecked(String memId) {
+		
+	
+		return dao.ischhChecked(memId);
 	}
 	
 	@Override
-	public ArrayList<ChecklistVO> checklistInfo2() {
+	public ArrayList<String> checklistInfo2() {
 
 		return dao.checklistInfo2();
 	}
@@ -47,12 +46,18 @@ public class ChecklistService implements IChecklistService{
 		// TODO Auto-generated method stub
 		return dao.checklistInfo3();
 	}
-
-	public void updateChecklist(ChecklistVO vo) {
+	
+	@Override
+	public ArrayList<ChecklistVO> selectChecklist(String memId) {
 		// TODO Auto-generated method stub
-		dao.updateChecklist(vo);
+		return dao.selectChecklist(memId);
 	}
-
+	
+	@Override
+	public String getChecklistText(String chlNo) {
+		// TODO Auto-generated method stub
+		return dao.getChecklistText(chlNo);
+	}
 	
 }
 

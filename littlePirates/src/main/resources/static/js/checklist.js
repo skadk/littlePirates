@@ -16,7 +16,7 @@
     function onClick2() {
         document.querySelector('.modal_wrap2').style.display ='block';
         document.querySelector('.black_bg').style.display ='block';
- 
+//		document.body.style.overflow='hidden';
     }   
     function offClick2() {
         document.querySelector('.modal_wrap2').style.display ='none';
@@ -42,27 +42,27 @@
 
 	document.querySelector(".modalBtn").addEventListener("mouseover", function(){
 	document.querySelector(".textBox").style.display = 'block';
-	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;생활 습관 <br>&nbsp;&nbsp;체크 리스트📝";
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;📝생활 습관 <br>&emsp;&emsp;체크 리스트";
 	});
 	document.querySelector(".modalBtn").addEventListener("mouseout", function(){
 //	document.querySelector(".textBox").style.display = 'none';
-	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+	document.querySelector(".textBox").innerHTML ="&#128681;깃발&emsp;&emsp;을/를<br>&#128220;지도&emsp;&emsp;선택<br>&#11088;불가사리&emsp;하세요";
 
 	});
 	document.querySelector(".modalBtn3").addEventListener("mouseover", function(){
 	document.querySelector(".textBox").style.display = 'block';
-	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;활동🐘🚗 <br>&nbsp;&nbsp;체크 리스트🌱";
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;🐘🚗활동 <br>&nbsp;&nbsp;🌱체크 리스트";
 	});
 	document.querySelector(".modalBtn3").addEventListener("mouseout", function(){
 //	document.querySelector(".textBox").style.display = 'none';
-	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+	document.querySelector(".textBox").innerHTML ="&#128681;깃발&emsp;&emsp;을/를<br>&#128220;지도&emsp;&emsp;선택<br>&#11088;불가사리&emsp;하세요";
 	});
 	document.querySelector(".modalBtn2").addEventListener("mouseover", function(){
 	document.querySelector(".textBox").style.display = 'block';
-	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;체크 리스트 <br>&nbsp;&nbsp;달성률💯";
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;💯체크  <br>&nbsp;&nbsp;리스트 현황";
 	});
 	document.querySelector(".modalBtn2").addEventListener("mouseout", function(){
 //	document.querySelector(".textBox").style.display = 'none';
-	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+	document.querySelector(".textBox").innerHTML ="&#128681;깃발&emsp;&emsp;을/를<br>&#128220;지도&emsp;&emsp;선택<br>&#11088;불가사리&emsp;하세요";
 	});
 };
