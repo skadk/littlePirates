@@ -11,24 +11,36 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
-			<c:if test="${not empty sessionScope.sid }">
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<c:if test="${ empty sessionScope.sid }">
+			<!-- kidsNav -->
+			<c:import url="/WEB-INF/views/layout/kidsNav.jsp"/>
+				<section>
+				</section>
+			</c:if>
+			<c:if test="${ not empty sessionScope.sid }">
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 				<section>
 					<article id="article1">
 						<div id="slideShowBox">
 							<img src="<c:url value='/image/treasureMap.png'/>" class="slideImage">
 						</div>
-						꼬마 해적단 출항이다~<br>
-						닻을 내려라~~
 					</article>
 					<article id="article2">
-						메인 인덱스입니다.<br>
-						안녕하세요 test입니다<br>
-						화이팅
+						<div id="videoBox">
+							<div class="video" id="video1">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/dMM-m0jaFYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+							<div class="video" id="video2">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/uXGhDOLugvc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+							<div class="video" id="video3">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/pQPdmcLfoFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+						</div>
 					</article>
 				</section>
 			</c:if>

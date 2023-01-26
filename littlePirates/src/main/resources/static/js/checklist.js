@@ -39,4 +39,30 @@
     document.querySelector('.modal_close2').addEventListener('click', offClick2);
 	document.querySelector('.modalBtn3').addEventListener('click', onClick3);
 	document.querySelector('.modal_close3').addEventListener('click', offClick3);
+
+	document.querySelector(".modalBtn").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;생활 습관 <br>&nbsp;&nbsp;체크 리스트📝";
+	});
+	document.querySelector(".modalBtn").addEventListener("mouseout", function(){
+//	document.querySelector(".textBox").style.display = 'none';
+	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+
+	});
+	document.querySelector(".modalBtn3").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;활동🐘🚗 <br>&nbsp;&nbsp;체크 리스트🌱";
+	});
+	document.querySelector(".modalBtn3").addEventListener("mouseout", function(){
+//	document.querySelector(".textBox").style.display = 'none';
+	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+	});
+	document.querySelector(".modalBtn2").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "&nbsp;&nbsp;체크 리스트 <br>&nbsp;&nbsp;달성률💯";
+	});
+	document.querySelector(".modalBtn2").addEventListener("mouseout", function(){
+//	document.querySelector(".textBox").style.display = 'none';
+	document.querySelector(".textBox").innerHTML ="깃발&#128681;지도&#128220;불가사리&#11088;를 눌러보세요";
+	});
 };

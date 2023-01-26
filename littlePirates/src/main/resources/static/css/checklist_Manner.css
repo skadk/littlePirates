@@ -16,7 +16,8 @@
 .mannerHeader2{
 	width:1920px;
 	grid-area: mannerHeader; 
-	background:gray;
+	font-size:50px;
+	font-family: 'Dongle', sans-serif;
 }
 
 .checklist_Section2 {
@@ -46,29 +47,48 @@
 	left:50px;
 	top:200px;
 	position:absolute;
-	display:flex;
-	flex-wrap:wrap;
-	justify-content :space-around;
-	align-items : center;
 	width:90%;
 	height:400px;
+/*	display:flex;
+	flex-wrap:wrap;
+	justify-content :space-around;
+	align-items : center;	*/
 }
 
 .mannerList2_image{
 	width:150px;
 	height:150px;
-
 	cursor:pointer;
-	display:flex;
+}
+#modal_btn21{
+	position:absolute;
+	left:17%;
+	top: -5px;
 
+	border-radius:50%;
 }
-.mannerList2_image:nth-child(2){
-	align-self:flex-end;
-}
-.mannerList2_image:nth-child(4){
-	align-self:flex-end;
-}
+#modal_btn22{
+	position:absolute;
+    left: 83%;
+    top: 90px;
 
+	border-radius:50%;
+}
+#modal_btn23{
+	position:absolute;
+	left:16%;
+	top: 245px;
+
+	border-radius:50%;
+}
+#modal_btn24{
+	position:absolute;
+    left: 78%;
+    top: 353px;
+
+	border-radius:50%;
+}
+/*
 .mannerList2_image img{
 	width:150px;
 	height:150px;
@@ -76,74 +96,6 @@
 }
 .mannerList2_image span{
 	width:150px;
-	height:150px;
-	
+	height:150px;	
 }
-/* ************************** checklist_Section 끝 ****************************** */
-/* 	.modal_wrap2{
-        display: none;
-        width: 80vh;
-        height: 60vh;
-        position: absolute;
-        top:25%;
-        left: 35%;
-        margin: -250px 0 0 -250px;
-        background:#8bb4f7;
-        z-index: 2;
-    }
-    .black_bg2{
-        display: none;
-        position: absolute;
-        content: "";
-		width:1920px;
-		height:900px;
-        background-color:#e6e6e6;
-        top:-200px;
-        left:-50px;
-        z-index: 1;
-        opacity:0.8;
-    }
-    .modal_close2{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    .modal_close2> a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
-       
-    }
-	.modal_ContentBox2{
-	display:grid;
-	height:100%; 
-  	grid-template-columns: repeat(4,1fr);
-  	grid-template-rows: repeat(10,1fr); 
-  	gap:0px 0px;
-   
-	}
-	.mannerName2{
-	grid-area:mannername;
-	width:100%;
-	grid-column: 1 / 5;
-	grid-row : span 1;
-	background:green;
-	}
-	.mannerEx2{
-	grid-area:mannerEx;
-	width:100%;
-	grid-column: 1 / 5;
-	grid-row : span 8;
-	background:yellow;
-	}
-	.completion2{
-	grid-area:completion;
-	width:100%;
-	grid-column: 4 / 5;
-	grid-row : span 1;
-	background:red;
-	} */
-	/* ************************** Modal 끝****************************** */
+*/
