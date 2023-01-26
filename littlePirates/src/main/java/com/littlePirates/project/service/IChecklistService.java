@@ -7,8 +7,10 @@ import com.littlePirates.project.model.ChecklistVO;
 
 public interface IChecklistService {
 	public ArrayList<ChecklistVO> checklistInfo();
-	public ArrayList<ChecklistVO> checklistInfo2();
+	public ArrayList<String> checklistInfo2();
 	public ArrayList<ChecklistVO> checklistInfo3();
 	void insertChecklist(ChecklistVO vo);
-	int ischhChecked(Timestamp chhDate, String memId);
+	int ischhChecked(String memId);
+	public ArrayList<ChecklistVO> selectChecklist(String memId);
+	public String getChecklistText(String chlNo);
 }

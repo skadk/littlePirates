@@ -71,6 +71,7 @@ public class HomeController {
 	}
 
 
+
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
 	public String anounymusBoardText() {
 
@@ -96,6 +97,7 @@ public class HomeController {
 		return "menu/board/freePresentTest";
 
 	}
+
 
 	@RequestMapping("/board/boardWrite")
 	public String boardWrite() {

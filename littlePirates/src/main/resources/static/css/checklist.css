@@ -11,6 +11,7 @@
     "checklist_nav" ;
 }
 .checklistHeader{
+	position: relative;
 	width:1920px;
 	grid-area:checklistHeader;
 	font-family: 'Dongle', sans-serif;
@@ -71,18 +72,21 @@
         z-index: 100;        
     }
     .modal_close{
-        width: 26px;
-        height: 26px;
+        width: 150px;
+        height: 30px;
         position: absolute;
-        top: -30px;
+        top: -45px;
         right: 0;
+        margin-bottom:10px;
     }
     .modal_close> a{
         display: block;
         width: 100%;
         height: 100%;
-        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
-       
+		font-size:35px;
+		text-decoration:none;
+		color: white;
+		font-family: 'Dongle', sans-serif;  
     }
     
     .modalBtn{
@@ -123,18 +127,17 @@
     }
   
     .modal_close2{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
+        width: 150px;
+        height: 30px;
+        margin-right: 20px;
     }
     
     .modal_close2> a{
         display: block;
-        width: 100%;
-        height: 100%;
-        background:url(https://img.icons8.com/metro/26/000000/close-window.png);       
+		font-size:30px;
+		text-decoration:none;
+		color:white;
+		font-family: 'Dongle', sans-serif; 
     }
     
 
@@ -153,18 +156,23 @@
     }
   
     .modal_close3{
-        width: 26px;
-        height: 26px;
+        width: 150px;
+        height: 30px;
         position: absolute;
-        top: -30px;
+        top: -45px;
         right: 0;
+        margin-bottom:10px;
+
     }
     
     .modal_close3> a{
         display: block;
         width: 100%;
         height: 100%;
-        background:url(https://img.icons8.com/metro/26/000000/close-window.png);       
+		font-size:35px;
+		text-decoration:none;
+		color:white;
+		font-family: 'Dongle', sans-serif;        
     }
 
 	/******************** 활동 체크리스트 모달 ************************/
@@ -183,7 +191,7 @@
     margin-left: 1000px;
     width: 400px;
     height: 170px;
-    font-size: 65px;
+    font-size: 55px;
 	font-family: 'Dongle', sans-serif;
 	color: #ff9012;
 	text-shadow: 0 0 7px #2d63a7; /*0 0 10px #2d63a7, 0 0 21px #2d63a7;*/

@@ -6,7 +6,6 @@
   <mapper namespace="com.littlePirates.project.dao.IChecklistDAO">
 	  <resultMap id="checklistResult" type="com.littlePirates.project.model.ChecklistVO" >
 		<result property="chlNo" column="chlNo"	/>
-		<result property="chlText" column="chlText"	/>
 		<result property="chlImageName" column="chlImageName"	/>
 		<result property="chhNo" column="chhNo"	/>
 		<result property="memId" column="memId"	/>
@@ -20,6 +19,8 @@
 		<result property="chlNo7" column="chlNo7" />
 		<result property="chlNo8" column="chlNo8" />
 		<result property="chlNo9" column="chlNo9" />
+		
+	
 		<result property="chlNo1_Checked" column="chlNo1_Checked" />
 		<result property="chlNo2_Checked" column="chlNo2_Checked" />
 		<result property="chlNo3_Checked" column="chlNo3_Checked" />
@@ -37,8 +38,9 @@
 		WHERE chlImageName Like "AC%"
 		ORDER BY RAND() LIMIT 4;
 	</select>
-	<select id="checklistInfo2" resultMap="checklistResult">
-		SELECT * FROM checklist
+	
+	<select id="checklistInfo2" resultType="string">
+		SELECT chlNo FROM checklist
 		WHERE chlImageName Like "LH%"
 		ORDER BY RAND() LIMIT 9;		
 	</select>
@@ -64,7 +66,23 @@
 		INSERT INTO checklist_history
 		(memId,chhDate,chlNo1,chlNo2,chlNo3,chlNo4,chlNo5,chlNo6,chlNo7,chlNo8,chlNo9)
 		VALUES
-		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},{chlNo3},#{chlNo4},#{chlNo5},{chlNo6},#{chlNo7},#{chlNo8},{chlNo9});
+		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},#{chlNo3},#{chlNo4},#{chlNo5},#{chlNo6},#{chlNo7},#{chlNo8},#{chlNo9});
 	</insert>
+	
+	<select id="ischhChecked" parameterType="string" resultType="int">
+		SELECT count(*) FROM checklist_history
+		WHERE memId=#{memId}
+	</select>
+	
+	<select id="selectChecklist" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
+		SELECT * FROM checklist_history
+		WHERE memId=#{memId}
+	</select>
+	
+	<select id="getChecklistText" parameterType="string" resultType="string">
+		SELECT chlText FROM checklist
+		WHERE chlNo=#{chlNo}
+	</select>
+	
   </mapper>
   
