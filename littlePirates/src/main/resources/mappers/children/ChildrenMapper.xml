@@ -6,7 +6,7 @@
 
 <mapper namespace="com.littlePirates.project.dao.IChildrenDAO">
 
-	<resultMap id="NurResult" type="com.littlePirates.project.model.NurseryVO">
+	<resultMap id="NurResult" type="com.littlePirates.project.model.ChildrenVO">
 		<result property="nurRegion" column="nurRegion" />
 		<result property="nurName" column="nurName" />
 		<result property="nurType" column="nurType" />
@@ -19,7 +19,7 @@
 		<result property="nurNo" column="nurNo" />
 	</resultMap>
 	
-	<select id="nurseryList" resultMap="NurResult">
+	<select id="NurseryList" resultMap="NurResult">
 		SELECT * FROM nurseryInfo
 	</select>
 	

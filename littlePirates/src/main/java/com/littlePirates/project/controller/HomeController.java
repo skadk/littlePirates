@@ -49,14 +49,18 @@ public class HomeController {
 	@RequestMapping("/kindergarten")
 	public String kindergarten() {
 
-		return "menu/childern/kindergarten";
+
+		return "menu/children/kindergarten";
+
 	}
 
 	@RequestMapping("/nursery")
 	public String nursery() {
 
-		return "menu/childern/nursery";
+		
+		return "menu/children/nursery";
 	}
+
 
 	@RequestMapping("/board/boardText")
 	public String boardText() {
