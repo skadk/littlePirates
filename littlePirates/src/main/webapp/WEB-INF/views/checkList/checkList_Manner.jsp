@@ -8,7 +8,7 @@
 	<title>예절 체크리스트</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Manner.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-		<script src="<c:url value='/js/checklist_Manner.js'/>"></script> 	
+		<script src="<c:url value='/js/checklist/checklist_Manner.js'/>"></script> 	
 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 	</head>
 <body>

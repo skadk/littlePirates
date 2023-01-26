@@ -14,6 +14,10 @@
  */
 }
 
+.checked {
+	filter: brightness(0);
+}
+
 .checklistClean{
 	width: 900px;
     margin-left: 500px;
