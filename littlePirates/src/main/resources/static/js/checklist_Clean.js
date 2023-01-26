@@ -44,20 +44,18 @@ $(function () {
 		    if(confirm("체크리스트를 완료 하셨나요?") == true){			    
 				event.target.classList.add("checked");
 				alert("체크완료");												
-															}				    
+													   }				    
 			    checkForList();
 			    checkForBingo();
 		  });
 		}
 			
 //////////// (2) 빙고 체크 함수		
-	function checkForBingo() {
-	
+	function checkForBingo() {	
 	  let x=0;
 	  let y=0;
 	  let z=0;
 	  let bingoCnt = 0;
-  
 	  // 가로빙고	  
 	  for (let i = 1; i <= 7; i += 3) {
 	    if (

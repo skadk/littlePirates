@@ -26,7 +26,7 @@
 		  📔 우 리 들 의 체 크 리 스 트
 		  </div>			
 		  	<div class="checklist_Section">
-				<img class="menu_image"src="<c:url value='/image/checklistViewFinal.png'/>">
+				<img class="menu_image"src="<c:url value='/images/checklistViewFinal.png'/>">
 				<div class="menu">									
 				<%-- 생활 습관 체크리스트 --%>						
 					<div class="modal_wrap">
