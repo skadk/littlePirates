@@ -8,6 +8,7 @@
 		<meta charset="UTF-8">
 		<title>키즈카페</title>
 	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe.css'/>">
+	    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<!-- API 로드하기 -->
@@ -19,8 +20,6 @@
 		<script src="<c:url value='/js/MarkerClustering.js' />"></script>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
 			<!-- top -->
 			<c:import url="/WEB-INF/views/layout/top.jsp"/>
@@ -43,12 +42,15 @@
 				
 				<article id="showmap">
 					<input type="text" title="가게명 검색" name="keyword" id="keyword" placeholder="가게명 검색">
-					<input id="submit" type="button" value="가게명 검색">
+					<input id="submit" type="button" value="검색">
 					
 					<!-- 지도 -->
+					<div id="mapwrap">
 					<div id="map"></div>
+					</div>
 					
-					<div id="searchresult" style="overflow:auto";></div>
+					
+					<div id="searchresult" class="scroll_box"></div>
 				</article>
 
 			</section>

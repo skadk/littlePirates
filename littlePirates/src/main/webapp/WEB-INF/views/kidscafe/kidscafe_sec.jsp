@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<title>키즈카페 간단히</title>
  		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe_sec.css'/>">
+ 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<script src="<c:url value='/js/kidscafe_sec.js' />"></script>

@@ -2,6 +2,7 @@ package com.littlePirates.project.service;
 
 import java.util.ArrayList;
 
+import com.littlePirates.project.model.KidscafeReviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 
 public interface IKidscafeService {
@@ -9,5 +10,7 @@ public interface IKidscafeService {
 	public String searchKidsCafe(String keyword);
 	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName);
 	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido);
+
+	public ArrayList<KidscafeReviewVO> reviewList(int kcNo);
 
 }

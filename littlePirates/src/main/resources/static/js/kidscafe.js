@@ -59,13 +59,18 @@ function initMap() {
 
 	    var marker = new naver.maps.Marker({
 	        map: map,
-	        title: areaArr[i].location, // 지역구 이름 
-	        position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng) // 지역구의 위도 경도 넣기 
+	        title: areaArr[i].location, // 가게명 이름 
+	        position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng) // 가게명의 위도 경도 넣기 
 	    });
-	    
+	        
 	    /* 정보창 */
 		 var infoWindow = new naver.maps.InfoWindow({
-		     content: '<div style="width:200px;text-align:center;padding:10px;"><b>' + areaArr[i].location + '</b><br> - 네이버 지도 - </div>'
+		     content: '<div style="width:200px;text-align:center;padding:10px;border-radius:5px;"><b>' + areaArr[i].location + '</b></div>',
+		     borderColor: "#7286D3",
+		     borderWidth: 3,
+		     disableAnchor: false,
+		     backgroundColor: "#EAFDFC",
+		     anchorSize: new naver.maps.Size(0,0)
 		 }); // 클릭했을 때 띄워줄 정보 HTML 작성
 	    
 		 markers.push(marker); // 생성한 마커를 배열에 담는다.

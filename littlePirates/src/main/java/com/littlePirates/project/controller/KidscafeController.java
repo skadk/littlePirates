@@ -44,6 +44,7 @@ public class KidscafeController {
 		return address;
 	}
 	
+	// 간편하게 보기 페이지 열기
 	@RequestMapping("/kidscafe_sec")
 	public String kidscafe_sec(Model model) {
 		ArrayList<KidscafeVO> voList = service.listKidscafeInfo();
@@ -53,6 +54,7 @@ public class KidscafeController {
 		return "kidscafe/kidscafe_sec";
 	}
 
+	// 시/도 선택시 해당되는 시/도 출력
 	@RequestMapping("/kidscafe_sec/search")
 	public String kidscafe_sec_search(@RequestParam String sido, Model model) {
 		ArrayList<KidscafeVO> voList = service.kidscafeSearchsido(sido);
@@ -62,16 +64,16 @@ public class KidscafeController {
 		return "kidscafe/kidscafe_sec_sido";
 	}
 	
-	//	키즈카페 키워드 검색
-	@RequestMapping("/kidscafe_map/kidscafeSearch1")
-	public String kidscafeSearch1(@RequestParam String keyword, Model model){
+	//	키즈카페 키워드 검색 후 해당 관련 정보 나타내기
+	@RequestMapping("/kidscafe_map/kidscafeSearch")
+	public String kidscafeSearch(@RequestParam String keyword, Model model){
 		
 		System.out.println(keyword);
 		ArrayList<KidscafeVO> voList = service.kidscafeSearchkeyword(keyword);
 
 		model.addAttribute("voList", voList);
 		
-		return "kidscafe/kidscafeSearch1";	
+		return "kidscafe/kidscafeSearch";	
 	}
 	
 	
