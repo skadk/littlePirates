@@ -65,7 +65,7 @@ function initMap() {
 	        
 	    /* 정보창 */
 		 var infoWindow = new naver.maps.InfoWindow({
-		     content: '<div style="width:200px;text-align:center;padding:10px;border-radius:5px;"><b>' + areaArr[i].location + '</b></div>',
+		     content: '<div style="width:200px;text-align:center;padding:10px;"><b>' + areaArr[i].location + '</b></div>',
 		     borderColor: "#7286D3",
 		     borderWidth: 3,
 		     disableAnchor: false,
