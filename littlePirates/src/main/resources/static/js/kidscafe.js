@@ -47,15 +47,11 @@ function initMap() {
         center: new naver.maps.LatLng(37.5511694, 126.9882266), //지도 시작 지점
         zoom: 13,
         zoomControl: true,
-        zoomControlOptions: {
-            style: naver.maps.ZoomControlStyle.SMALL,
-            position: naver.maps.Position.TOP_RIGHT
-        }
-        /* zoomControlOptions랑 이거랑 둘 중 선택
+        
         scaleControl: false,
         logoControl: false,
         mapDataControl: false
-        */
+        
     });
 
 	for (var i = 0; i < areaArr.length; i++) {
@@ -63,13 +59,18 @@ function initMap() {
 
 	    var marker = new naver.maps.Marker({
 	        map: map,
-	        title: areaArr[i].location, // 지역구 이름 
-	        position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng) // 지역구의 위도 경도 넣기 
+	        title: areaArr[i].location, // 가게명 이름 
+	        position: new naver.maps.LatLng(areaArr[i].lat , areaArr[i].lng) // 가게명의 위도 경도 넣기 
 	    });
-	    
+	        
 	    /* 정보창 */
 		 var infoWindow = new naver.maps.InfoWindow({
-		     content: '<div style="width:200px;text-align:center;padding:10px;"><b>' + areaArr[i].location + '</b><br> - 네이버 지도 - </div>'
+		     content: '<div style="width:200px;text-align:center;padding:10px;"><b>' + areaArr[i].location + '</b></div>',
+		     borderColor: "#7286D3",
+		     borderWidth: 3,
+		     disableAnchor: false,
+		     backgroundColor: "#EAFDFC",
+		     anchorSize: new naver.maps.Size(0,0)
 		 }); // 클릭했을 때 띄워줄 정보 HTML 작성
 	    
 		 markers.push(marker); // 생성한 마커를 배열에 담는다.
@@ -145,7 +146,7 @@ function initMap() {
 
         infoWindow.setContent([
             '<div style="padding:10px;min-width:200px;line-height:150%;">',
-            '<h4 style="margin-top:5px;">검색 상호명 : '+ searchAddress +'</h4><br />',
+            '<h4 style="margin-top:5px;"> 상호명 : '+ searchAddress +'</h4><br />',
             htmlAddresses.join('<br />'),
             '</div>'
         ].join('\n'));
@@ -179,7 +180,6 @@ function initMap() {
 	 			dataType:"text",
 	 			success:function(result){
 	 				if (result != null){
-	 					alert("주소 받아오기 성공");
 				        searchAddressToCoordinate(result);
 					}
 	 			},
@@ -330,3 +330,4 @@ function initMap() {
     }
 
 }
+

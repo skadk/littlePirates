@@ -4,10 +4,67 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.littlePirates.project.dao.IChecklistDAO">
-	<update id="updateChecklist" parameterType="com.littlePirates.project.dao.IChecklistDAO">
-		UPDATE children
-		SET Checked=#{Checked}
-		WHERE chl_No=#{chl_No}	
-	</update>
+	  <resultMap id="checklistResult" type="com.littlePirates.project.model.ChecklistVO" >
+		<result property="chlNo" column="chlNo"	/>
+		<result property="chlText" column="chlText"	/>
+		<result property="chlImageName" column="chlImageName"	/>
+		<result property="chhNo" column="chhNo"	/>
+		<result property="memId" column="memId"	/>
+		<result property="chhDate" column="chhDate"	/>
+		<result property="chlNo1" column="chlNo1" />
+		<result property="chlNo2" column="chlNo2" />
+		<result property="chlNo3" column="chlNo3" />
+		<result property="chlNo4" column="chlNo4" />
+		<result property="chlNo5" column="chlNo5" />
+		<result property="chlNo6" column="chlNo6" />
+		<result property="chlNo7" column="chlNo7" />
+		<result property="chlNo8" column="chlNo8" />
+		<result property="chlNo9" column="chlNo9" />
+		<result property="chlNo1_Checked" column="chlNo1_Checked" />
+		<result property="chlNo2_Checked" column="chlNo2_Checked" />
+		<result property="chlNo3_Checked" column="chlNo3_Checked" />
+		<result property="chlNo4_Checked" column="chlNo4_Checked" />
+		<result property="chlNo5_Checked" column="chlNo5_Checked" />
+		<result property="chlNo6_Checked" column="chlNo6_Checked" />
+		<result property="chlNo7_Checked" column="chlNo7_Checked" />
+		<result property="chlNo8_Checked" column="chlNo8_Checked" />
+		<result property="chlNo9_Checked" column="chlNo9_Checked" />
+		<result property="chh_Checked" column="chh_Checked" />
+	  </resultMap>	
+	  
+	<select id ="checklistInfo" resultMap="checklistResult">
+		SELECT chlImageName FROM checklist
+		WHERE chlImageName Like "AC%"
+		ORDER BY RAND() LIMIT 4;
+	</select>
+	<select id="checklistInfo2" resultMap="checklistResult">
+		SELECT * FROM checklist
+		WHERE chlImageName Like "LH%"
+		ORDER BY RAND() LIMIT 9;		
+	</select>
+	
+	<select id="checklistInfo3" resultMap = "checklistResult">
+		SELECT 	chhNo,memId,chhDate,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo1) as chlNo1,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo2) as chlNo2,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo3) as chlNo3,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo4) as chlNo4,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo5) as chlNo5,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo6) as chlNo6,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo7) as chlNo7,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo8) as chlNo8,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo9) as chlNo9,
+				chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,
+				chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked,
+				chh_Checked
+		 FROM checklist_history;						
+	</select>
+	
+	<insert id="insertChecklist" parameterType="com.littlePirates.project.model.ChecklistVO" >
+		INSERT INTO checklist_history
+		(memId,chhDate,chlNo1,chlNo2,chlNo3,chlNo4,chlNo5,chlNo6,chlNo7,chlNo8,chlNo9)
+		VALUES
+		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},{chlNo3},#{chlNo4},#{chlNo5},{chlNo6},#{chlNo7},#{chlNo8},{chlNo9});
+	</insert>
   </mapper>
   

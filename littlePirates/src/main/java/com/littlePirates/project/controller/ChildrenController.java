@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.littlePirates.project.model.ChildrenVO;
 import com.littlePirates.project.service.ChildrenService;
 
@@ -25,5 +26,5 @@ public class ChildrenController {
 		model.addAttribute("KList", KList);
 		return "menu/children/children";
 	}
-	
+
 }

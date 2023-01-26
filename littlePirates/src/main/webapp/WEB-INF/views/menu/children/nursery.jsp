@@ -24,7 +24,6 @@
 	<c:import url="/WEB-INF/views/layout/top.jsp" />
 
 	<section>
-
 		<section class="notice">
 			<div class="page-title">
 				<div class="container">

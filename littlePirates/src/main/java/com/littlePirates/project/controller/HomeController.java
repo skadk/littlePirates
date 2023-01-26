@@ -1,67 +1,43 @@
 package com.littlePirates.project.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.littlePirates.project.model.ChecklistVO;
 import com.littlePirates.project.service.ChecklistService;
 
 @Controller
 public class HomeController {
 
+
 	@Autowired
 	ChecklistService service;
 
 	@RequestMapping("/")
-	public String index() {
+	public String mainIndex() {
 
 		return "mainIndex";
 	}
 
-	/*********************** 체크리스트 ***************************/
+	// 회원가입 페이지 열기
+	@RequestMapping("/member/signUp")
+	public String signUp() {
+
+		return "member/signUp";
+	}
+
+	// 로그인 페이지 열기
+	@RequestMapping("/member/login")
+	public String login() {
+
+		return "member/login";
+	}
+  
 	// 체크리스트 뷰 페이지 열기
 	@RequestMapping("/checklist")
 	public String checklist() {
 
 		return "/checkList/checkListView";
-	}
-
-	@RequestMapping("/checkList/checkList_Manner")
-	public String checkList_Manner() {
-
-		return "/checkList/checkList_Manner";
-	}
-
-	// 체크리스트 청결 페이지 열기
-	@RequestMapping("/checkList/checkList_Clean")
-	public String checkList_Clean() {
-
-		return "/checkList/checkList_Clean";
-	}
-
-	// 체크리스트 식습관 페이지 열기
-	@RequestMapping("/checkList/checkList_Eat")
-	public String checkList_Eat() {
-
-		return "/checkList/checkList_Eat";
-	}
-
-	// 체크리스트 질서 페이지 열기
-	@RequestMapping("/checkList/checkList_Order")
-	public String checkList_Order() {
-
-		return "/checkList/checkList_Order";
-	}
-
-	@RequestMapping("/checkList")
-	public String checkList() {
-
-		return "menu/checkList/treasureMap";
 	}
 
 	@RequestMapping("/board")
@@ -73,16 +49,19 @@ public class HomeController {
 	@RequestMapping("/kindergarten")
 	public String kindergarten() {
 
+
 		return "menu/children/kindergarten";
+
 	}
-	
+
 	@RequestMapping("/nursery")
 	public String nursery() {
+
 		
 		return "menu/children/nursery";
 	}
 
-	
+
 	@RequestMapping("/board/boardText")
 	public String boardText() {
 
@@ -94,6 +73,7 @@ public class HomeController {
 
 		return "menu/board/anonymusBoard";
 	}
+
 
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
 	public String anounymusBoardText() {
@@ -120,17 +100,12 @@ public class HomeController {
 		return "menu/board/freePresentTest";
 
 	}
-	
+
 	@RequestMapping("/board/boardWrite")
 	public String boardWrite() {
-		
+
 		return "menu/board/boardWrite";
 
 	}
 
-	@RequestMapping("/member/login")
-	public String login() {
-
-		return "member/login";
-	}
 }

@@ -2,10 +2,10 @@
  * 	checklist_Manner.js
  */
 $(document).ready(function(){
-	const numberOfImages = 5;
+	const numberOfImages = 10;
 	const images = [];
 	for (let i = 1; i <= numberOfImages; i++) {
-	    images.push(`P${i}.png`);
+	    images.push(`AC${i}.png`);
 	}
 	// 이미지 다섯개 배열에 추가
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	        usedImages.push(chosenImage);
 	        const image = document.createElement("img");
 	        image.src = `/image/${chosenImage}`;
-	        
+	        ////////////////////////////////////////////////////////////
 	        image.addEventListener("click", function(){			
 				if(confirm("체크리스트 달성 하셨나요?") == true){
 				    const marker = document.createElement("div"); 
@@ -37,7 +37,6 @@ $(document).ready(function(){
 				    image.removeEventListener("click", arguments.callee);
 				    //위 과정을 반복해서 삭제를 한번에
 					}
-
 	        else{
 	        	alert("달성 후에 다시 눌러주세요.");
 	        	}
@@ -47,9 +46,8 @@ $(document).ready(function(){
 	    }
 	    usedImages = [];
 	}
-
-	//최초 생성 호출
-	CreateImage();
+//최초 생성 호출
+//	CreateImage();
 	
 	function removeImages(){
 	  const mannerList = document.getElementsByClassName("mannerList2_image");

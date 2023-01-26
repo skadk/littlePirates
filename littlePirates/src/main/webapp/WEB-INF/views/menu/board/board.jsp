@@ -11,11 +11,11 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<section id="mainBox">
 				<div id="sideMenuBox">
 					<p><a href="<c:url value='/board'/>">자유게시판</a></p>
