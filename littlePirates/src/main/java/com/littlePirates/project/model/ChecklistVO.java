@@ -29,8 +29,6 @@ public class ChecklistVO {
 	private String chlText7;
 	private String chlText8;
 	private String chlText9;
-
-	
 	
 	private Timestamp chlNo1_Checked;
 	private Timestamp chlNo2_Checked;
