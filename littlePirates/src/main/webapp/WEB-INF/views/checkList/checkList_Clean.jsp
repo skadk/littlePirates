@@ -19,7 +19,7 @@
 				<div class="checklistClean">
 					체 크 리 스 트 B I N G O
 				</div>
-			<img class="checklist_Section_back" src="<c:url value='/image/checkList_LH_Back.png'/>">
+			<img class="checklist_Section_back" src="<c:url value='/images/checkList_LH_Back.png'/>">
 
 			<div class="father" id="father">
 			<c:forEach var="i" begin="0" end="8">
