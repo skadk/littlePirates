@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.littlePirates.project.dao.IKidscafeDAO;
+import com.littlePirates.project.model.KidscafeReviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 
 @Service
@@ -27,11 +28,25 @@ public class KidscafeService implements IKidscafeService {
 		String searchAddress = dao.searchKidsCafe(keyword);
 
 		return searchAddress;
-		
 	}
-    
-	public ArrayList<KidscafeVO> listKidscafeInfo2() {
+
+	@Override
+	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName) {
 		// TODO Auto-generated method stub
-		return dao.listKidscafeInfo2();
+		return dao.kidscafeSearchkeyword(kcName);
 	}
+
+	@Override
+	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido) {
+
+		return dao.kidscafeSearchsido(sido);
+	}
+
+	@Override
+	public ArrayList<KidscafeReviewVO> reviewList(int kcNo) {
+		// TODO Auto-generated method stub
+		return dao.reviewList(kcNo);
+	}
+	
+	
 }

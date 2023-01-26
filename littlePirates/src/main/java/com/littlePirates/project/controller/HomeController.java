@@ -9,6 +9,7 @@ import com.littlePirates.project.service.ChecklistService;
 @Controller
 public class HomeController {
 
+
 	@Autowired
 	ChecklistService service;
 
@@ -31,46 +32,12 @@ public class HomeController {
 
 		return "member/login";
 	}
-
-	/*********************** 체크리스트 ***************************/
+  
 	// 체크리스트 뷰 페이지 열기
 	@RequestMapping("/checklist")
 	public String checklist() {
 
 		return "/checkList/checkListView";
-	}
-
-	@RequestMapping("/checkList/checkList_Manner")
-	public String checkList_Manner() {
-
-		return "/checkList/checkList_Manner";
-	}
-
-	// 체크리스트 청결 페이지 열기
-	@RequestMapping("/checkList/checkList_Clean")
-	public String checkList_Clean() {
-
-		return "/checkList/checkList_Clean";
-	}
-
-	// 체크리스트 식습관 페이지 열기
-	@RequestMapping("/checkList/checkList_Eat")
-	public String checkList_Eat() {
-
-		return "/checkList/checkList_Eat";
-	}
-
-	// 체크리스트 질서 페이지 열기
-	@RequestMapping("/checkList/checkList_Order")
-	public String checkList_Order() {
-
-		return "/checkList/checkList_Order";
-	}
-
-	@RequestMapping("/checkList")
-	public String checkList() {
-
-		return "menu/checkList/treasureMap";
 	}
 
 	@RequestMapping("/board")
@@ -102,6 +69,14 @@ public class HomeController {
 
 		return "menu/board/anonymusBoard";
 	}
+
+	@RequestMapping("/login")
+	public String login() {
+		
+		return "menu/member/login";
+
+	}
+
 
 	@RequestMapping("/anonymusBoard/anonymusBoardText")
 	public String anounymusBoardText() {

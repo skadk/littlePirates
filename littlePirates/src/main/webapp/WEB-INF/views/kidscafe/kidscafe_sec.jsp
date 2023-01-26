@@ -7,10 +7,10 @@
 		<meta charset="UTF-8">
 		<title>키즈카페 간단히</title>
  		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe_sec.css'/>">
+ 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<script src="<c:url value='/js/kidscafe_sec.js' />"></script>
-		
 	</head>
 		<body>
 			<!-- background -->
@@ -38,6 +38,7 @@
 						<div class="dropdown">
 							도/특별시를 선택하세요.<br>
 								<select id="browsers" name="browsers">
+								    <option value="">선택해주세요</option>
 								    <option value="서울특별시">서울특별시</option>
 								    <option value="인천광역시">인천광역시</option>
 								    <option value="경기도">경기도</option>
@@ -57,30 +58,25 @@
 								</select>
 						</div>
 						<br>
-						<table border="1" class="table">
-								<c:forEach var="mapInfo" items="${voList }">
-									<tr>
-										<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />" width="180" height="120"></td>	
-										<td>${mapInfo.kcName }<br>
-											${mapInfo.kcAddress}<br>
-											운영시간<br>
-											전화번호<br>
-											평점</td>
-									</tr>
+						<div id="searchresult">
+						</div>
+						<div id="firstresult">
+							<table border="1" class="table" id="table">
+								<c:forEach var="mapInfo" items="${voList }" varStatus="status">
+									<c:if test="${(status.index mod 2) eq 0}">
+										<tr>
+									</c:if>
+									<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />"
+										width="180" height="120"></td>
+									<td>${mapInfo.kcName }<br> ${mapInfo.kcAddress}<br>
+										운영시간<br> 전화번호<br> 평점
+									</td>
+									<c:if test="${(status.index mod 2) ne 0}">
+										</tr>
+									</c:if>
 								</c:forEach>
 							</table>
-							<table border="1" class="table">	
-								<c:forEach var="mapInfo" items="${voList2 }">
-									<tr>
-										<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />" width="180" height="120"></td>	
-										<td>${mapInfo.kcName }<br>
-											${mapInfo.kcAddress}<br>
-											운영시간<br>
-											전화번호<br>
-											평점</td>
-									</tr>
-								</c:forEach>
-						</table>	
+						</div>
 					</article>
 		
 				</section>
