@@ -27,7 +27,7 @@
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<section>
 			
-				<article>
+				<article id ="box">
 					<div id="selectbox">
 						<div id="clickbox">
 							<ul>
@@ -51,9 +51,6 @@
 					<div id="mapwrap">
 					<div id="map"></div>
 					</div>
-					
-					
-					<!-- <div id="searchresult"></div> -->
 
 					<div id="searchresult" class="scroll_box"></div>
 
