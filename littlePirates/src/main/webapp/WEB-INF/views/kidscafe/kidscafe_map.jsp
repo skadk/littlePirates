@@ -18,11 +18,11 @@
 		<script src="<c:url value='/js/MarkerClustering.js' />"></script>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<section>
 			
 				<article>
@@ -40,14 +40,18 @@
 					</div>	
 				</article>
 				
-				<article>
-					<div class="search">
-						<input id="keyword" type="text" placeholder="검색할 가게명"> 
-						<input id="submit" type="button" value="주소검색">
-					</div>
+				<article id="mapArticle">
 					
 					<!-- 지도 -->
-					<div id="map" style="width:100%; height:850px;"></div>
+					<div id="map"></div>
+					<div id="searchBox">
+						<div class="search">
+							<input id="keyword" type="text" placeholder="검색할 가게명"> 
+							<input id="submit" type="button" value="주소검색">
+						</div>
+						<div id="mapScoreBox">
+						</div>
+					</div>
 				</article>
 
 			</section>

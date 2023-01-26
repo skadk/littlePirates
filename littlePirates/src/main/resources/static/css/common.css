@@ -6,10 +6,10 @@
 	margin: 0 auto;
 }
 
-/* 모든 콘텐츠 wrap box */
+/* 모든 콘텐츠 wrap */
 
 #wrap {
-	width: 1920px;
+	width: 100%;
 	text-align: center;
 	position: relative;
 }

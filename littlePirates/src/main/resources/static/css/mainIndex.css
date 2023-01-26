@@ -4,10 +4,10 @@
 
 /*------------- Section -------------*/
 section {
-	width: 1000px;
-	height: 1000px;
-	background-color: purple;
-	z-index: 200;
+	width: 80%;
+	height: 500px;
+	background: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(0px);
 }
 
 article {
@@ -23,20 +23,28 @@ article {
 
 #article2 {
 	color: white;
-	background-color: black;
 }
 
 /************** SlideShowBox **************/
 #slideShowBox {
 	width: 400px;
 	height: 400px;
-	background-color: black;
-/* 	overflow: hidden; 영역 벗어나면 숨김 */
+	/* 	overflow: hidden; 영역 벗어나면 숨김 */
 }
 
 #slideShowBox img {
 	width: 400px;
 	height: 400px;
+}
+
+#videoBox {
+	width: 1000px;
+	height: 500px;
+}
+
+.video {
+	position: relative;
+	display: inline-block;
 }
 
 /*------------- Section 끝 -------------*/

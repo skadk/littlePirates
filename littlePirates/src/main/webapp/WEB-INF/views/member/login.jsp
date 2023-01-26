@@ -6,18 +6,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>꼬마 해적단</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/login.css'/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/member/login.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-		<script src="<c:url value='/js/login.js'/>"></script>
-		<script src="<c:url value='/js/findIdForm.js'/>"></script>
+		<script src="<c:url value='/js/member/loginCheck.js'/>"></script>
+		<script src="<c:url value='/js/member/findIdForm.js'/>"></script>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<div id="loginBox">
 				<form id="loginForm" name="loginForm">
 					<h1>로그인</h1>
