@@ -39,4 +39,26 @@
     document.querySelector('.modal_close2').addEventListener('click', offClick2);
 	document.querySelector('.modalBtn3').addEventListener('click', onClick3);
 	document.querySelector('.modal_close3').addEventListener('click', offClick3);
+
+	document.querySelector(".modalBtn").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "생활 습관 <br> 체크 리스트";
+	});
+	document.querySelector(".modalBtn").addEventListener("mouseout", function(){
+	document.querySelector(".textBox").style.display = 'none';
+	});
+	document.querySelector(".modalBtn3").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "활동 <br> 체크 리스트";
+	});
+	document.querySelector(".modalBtn3").addEventListener("mouseout", function(){
+	document.querySelector(".textBox").style.display = 'none';
+	});
+	document.querySelector(".modalBtn2").addEventListener("mouseover", function(){
+	document.querySelector(".textBox").style.display = 'block';
+	document.querySelector(".textBox").innerHTML = "체크 리스트 <br> 달성률";
+	});
+	document.querySelector(".modalBtn2").addEventListener("mouseout", function(){
+	document.querySelector(".textBox").style.display = 'none';
+	});
 };

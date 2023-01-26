@@ -20,19 +20,19 @@ public class ChecklistService implements IChecklistService{
 	public ArrayList<ChecklistVO> checklistInfo(){
 		return dao.checklistInfo();
 	}
-
-	public void updateChecklist(ChecklistVO Checked) {
-		dao.updateCheckList(Checked);
-	} 
-
+	
 	@Override
-	public void updateCheckList(ChecklistVO Checked) {
+	public ArrayList<ChecklistVO> checklistInfo2() {
+
+		return dao.checklistInfo2();
+	}
+	
+	@Override
+	public ArrayList<ChecklistVO> checklistInfo3() {
 		// TODO Auto-generated method stub
-		
+		return dao.checklistInfo3();
 	}
 
 	
 }
-
-
 
