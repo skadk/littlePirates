@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 작성</title>
+<title>나눔장터 글작성</title>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/board.css'/>">
 <!-- head -->

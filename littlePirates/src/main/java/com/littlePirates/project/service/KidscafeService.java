@@ -27,6 +27,7 @@ public class KidscafeService implements IKidscafeService {
 		String searchAddress = dao.searchKidsCafe(keyword);
 
 		return searchAddress;
+	}
     
 	public ArrayList<KidscafeVO> listKidscafeInfo2() {
 		// TODO Auto-generated method stub
