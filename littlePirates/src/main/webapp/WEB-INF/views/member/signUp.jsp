@@ -14,11 +14,11 @@
 		<script src="<c:url value='/js/member/memIdCheck.js'/>"></script>
 	</head>
 	<body>
-		<!-- background -->
-		<c:import url="/WEB-INF/views/layout/background.jsp"/>
 		<div id="wrap">
-			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<div id="signUpBox">
 				<form name="signUpForm" id="signUpForm" method="post" action="<c:url value='/member/signUpForm'/>">
 					<h1>회원 가입</h1>
