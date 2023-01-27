@@ -9,7 +9,6 @@ import com.littlePirates.project.service.ChecklistService;
 @Controller
 public class HomeController {
 
-
 	@Autowired
 	ChecklistService service;
 
@@ -66,5 +65,5 @@ public class HomeController {
 	}
 
 	
-  
+
 }

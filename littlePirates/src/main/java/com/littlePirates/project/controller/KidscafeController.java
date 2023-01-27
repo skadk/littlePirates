@@ -76,6 +76,10 @@ public class KidscafeController {
 		return "kidscafe/kidscafeSearch";	
 	}
 	
-	
+	@RequestMapping("/kidscafe_third")
+	public String kidscafe_third() {
+		
+		return "kidscafe/kidscafe_third";
+	}
 	
 }
