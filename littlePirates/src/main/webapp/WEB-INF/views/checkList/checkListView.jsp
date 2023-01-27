@@ -8,7 +8,7 @@
 		<title>체크리스트</title>
 			<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist.css'/>">
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-			<script src="<c:url value='/js/checklist.js'/>"></script>
+			<script src="<c:url value='/js/checklist/checklist.js'/>"></script>
 			<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
@@ -26,7 +26,7 @@
 		  📔 우 리 들 의 체 크 리 스 트
 		  </div>			
 		  	<div class="checklist_Section">
-				<img class="menu_image"src="<c:url value='/image/checklistViewFinal.png'/>">
+				<img class="menu_image"src="<c:url value='/images/checklistViewFinal.png'/>">
 				<div class="menu">									
 				<%-- 생활 습관 체크리스트 --%>						
 					<div class="modal_wrap">

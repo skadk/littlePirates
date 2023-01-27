@@ -38,26 +38,45 @@ $(function () {
 /////////// (1) 끝
 
 /////////// 체크리스트 이벤트 발생
+	var checkedNo = 0;
+	
 	const cells = document.querySelectorAll(".father .child");	
 		for (let i = 0; i < cells.length; i++) {
 		  cells[i].addEventListener("click", event => {
-		    if(confirm("체크리스트를 완료 하셨나요?") == true){			    
-				event.target.classList.add("checked");
-				alert("체크완료");												
-															}				    
+		  	var index = i;
+		  	
+		  	checkedNo = index + 1;
+		  	
+		    if(confirm("체크리스트를 완료 하셨나요?") == true){			    	
+				$.ajax({
+					type:"post",
+					url:"/checklist/checked",
+					data:{"checkedNo":checkedNo},
+					success:function(result) {
+						if (result== "success") {
+							event.target.classList.add("checked");										
+							alert("체크완료");					
+						} else {
+							alert("체크실패");												
+						} 
+					},
+					error:function() {
+						alert("로그인 하고 해주세요");
+						location.href="/member/login";
+					}
+				}); // ajax 종료
+			}
 			    checkForList();
 			    checkForBingo();
 		  });
 		}
 			
 //////////// (2) 빙고 체크 함수		
-	function checkForBingo() {
-	
+	function checkForBingo() {	
 	  let x=0;
 	  let y=0;
 	  let z=0;
 	  let bingoCnt = 0;
-  
 	  // 가로빙고	  
 	  for (let i = 1; i <= 7; i += 3) {
 	    if (

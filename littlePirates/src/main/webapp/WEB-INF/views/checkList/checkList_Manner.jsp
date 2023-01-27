@@ -8,7 +8,7 @@
 	<title>예절 체크리스트</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Manner.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-		<script src="<c:url value='/js/checklist_Manner.js'/>"></script> 	
+		<script src="<c:url value='/js/checklist/checklist_Manner.js'/>"></script> 	
 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 	</head>
 <body>
@@ -19,7 +19,7 @@
 		<div class="createChecklist2">체크리스트 랜덤 재 생성</div>
 		</div>
 		<div class="checklist_Section2">
-			<img src="<c:url value='/image/checkList_Manner_Back.png'/>" class="checklist_Section_back2">
+			<img src="<c:url value='/images/checkList_Manner_Back.png'/>" class="checklist_Section_back2">
 				<div class="mannerList2">
 					<c:forEach var="vo" items="${voList}" varStatus="status">
 					   	<div class="black_bg2">

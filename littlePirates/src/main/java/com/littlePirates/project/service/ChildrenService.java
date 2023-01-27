@@ -21,9 +21,10 @@ public class ChildrenService implements IChildrenService {
 	public ArrayList<ChildrenVO> NurseryList() {
 		return dao.NurseryList();
 	}
+
 	@Override
 	public ArrayList<KindergartenVO> KindergartenList() {
 		return dao.KindergartenList();
 
-}
+	}
 }

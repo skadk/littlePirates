@@ -20,7 +20,6 @@
 		<result property="chlNo8" column="chlNo8" />
 		<result property="chlNo9" column="chlNo9" />
 		
-	
 		<result property="chlNo1_Checked" column="chlNo1_Checked" />
 		<result property="chlNo2_Checked" column="chlNo2_Checked" />
 		<result property="chlNo3_Checked" column="chlNo3_Checked" />
@@ -42,7 +41,7 @@
 	<select id="checklistInfo2" resultType="string">
 		SELECT chlNo FROM checklist
 		WHERE chlImageName Like "LH%"
-		ORDER BY RAND() LIMIT 9;		
+		ORDER BY RAND() LIMIT 9;
 	</select>
 	
 	<select id="checklistInfo3" resultMap = "checklistResult">
@@ -83,6 +82,128 @@
 		SELECT chlText FROM checklist
 		WHERE chlNo=#{chlNo}
 	</select>
+	
+	<insert id="checkList_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
+		INSERT INTO checklist_history
+		(memId,chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked)
+		VALUES
+		(#{memId},#{chlNo1_Checked},#{chlNo2_Checked},#{chlNo3_Checked},#{chlNo4_Checked},#{chlNo5_Checked},#{chlNo6_Checked},#{chlNo7_Checked},#{chlNo8_Checked},#{chlNo9_Checked})
+	</insert>
+	
+	<!-- 빙고회차 업데이트 하기 위해 아이디 세기 -->
+	<select id="searchMemId" parameterType="string" resultType="int">
+		SELECT COUNT(*)
+		FROM checklist_history
+		WHERE memId=#{memId}
+	</select>
+	
+	<!-- 빙고 회차 업데이트 -->
+	<update id="insertTimes" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chhTimes=#{countMemId}
+		WHERE memId=#{memId}
+	</update>
+	
+	<!-- 빙고 오늘 했는지 확인 -->
+	<select id="checkDate" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo1_checked=#{nowTime} OR chlNo2_checked=#{nowTime} OR chlNo3_checked=#{nowTime} OR chlNo4_checked=#{nowTime} OR chlNo5_checked=#{nowTime} OR chlNo6_checked=#{nowTime} OR chlNo7_checked=#{nowTime} OR chlNo8_checked=#{nowTime} OR chlNo9_checked=#{nowTime}
+	</select>
+	
+	<!-- 해당 번호의 빙고 했는지 확인 -->	
+	<select id="checkNo1" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo1_Checked IS NOT NULL
+	</select>
+	<select id="checkNo2" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo2_Checked IS NOT NULL
+	</select>
+	<select id="checkNo3" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo3_Checked IS NOT NULL
+	</select>
+	<select id="checkNo4" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo4_Checked IS NOT NULL
+	</select>
+	<select id="checkNo5" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo5_Checked IS NOT NULL
+	</select>
+	<select id="checkNo6" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo6_Checked IS NOT NULL
+	</select>
+	<select id="checkNo7" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo7_Checked IS NOT NULL
+	</select>
+	<select id="checkNo8" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo8_Checked IS NOT NULL
+	</select>
+	<select id="checkNo9" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo9_Checked IS NOT NULL
+	</select>
+	
+	<!-- 해당 번호의 빙고 값 넣기 -->
+	<update id="updateChecked1" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo1_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked2" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo2_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked3" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo3_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked4" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo4_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked5" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo5_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked6" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo6_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked7" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo7_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked8" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo8_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked9" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo9_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
 	
   </mapper>
   

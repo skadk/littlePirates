@@ -14,11 +14,11 @@
 		
 	</head>
 		<body>
-			<!-- background -->
-			<c:import url="/WEB-INF/views/layout/background.jsp" />
 			<div id="wrap">
-				<!-- top -->
-				<c:import url="/WEB-INF/views/layout/top.jsp" />
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 				<section>
 					<article>
 						<div id="selectbox">
@@ -35,8 +35,10 @@
 						</div>
 					</article>
 					
-					<article>
-						
+					<article id="ie">
+						<select name="addressRegion" id="addressRegion1"></select>
+    					<select name="addressDo" id="addressDo1"></select>
+    					<select name="addressSiGunGu" id="addressSiGunGu1"></select>
 					</article>
 		
 				</section>
@@ -44,5 +46,4 @@
 				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 			</div>
 		</body>
-	<script src="<c:url value='/js/background.js'/>"></script>
 </html>

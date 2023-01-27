@@ -29,18 +29,16 @@ public class ChecklistVO {
 	private String chlText7;
 	private String chlText8;
 	private String chlText9;
-
 	
-	
-	private Timestamp chlNo1_Checked;
-	private Timestamp chlNo2_Checked;
-	private Timestamp chlNo3_Checked;
-	private Timestamp chlNo4_Checked;
-	private Timestamp chlNo5_Checked;
-	private Timestamp chlNo6_Checked;
-	private Timestamp chlNo7_Checked;
-	private Timestamp chlNo8_Checked;
-	private Timestamp chlNo9_Checked;
+	private String chlNo1_Checked;
+	private String chlNo2_Checked;
+	private String chlNo3_Checked;
+	private String chlNo4_Checked;
+	private String chlNo5_Checked;
+	private String chlNo6_Checked;
+	private String chlNo7_Checked;
+	private String chlNo8_Checked;
+	private String chlNo9_Checked;
 	private boolean chh_Checked;
 	
 	
@@ -303,58 +301,58 @@ public class ChecklistVO {
 	
 	
 	
-	public Timestamp getChlNo1_Checked() {
+	public String getChlNo1_Checked() {
 		return chlNo1_Checked;
 	}
-	public void setChlNo1_Checked(Timestamp chlNo1_Checked) {
+	public void setChlNo1_Checked(String chlNo1_Checked) {
 		this.chlNo1_Checked = chlNo1_Checked;
 	}
-	public Timestamp getChlNo2_Checked() {
+	public String getChlNo2_Checked() {
 		return chlNo2_Checked;
 	}
-	public void setChlNo2_Checked(Timestamp chlNo2_Checked) {
+	public void setChlNo2_Checked(String chlNo2_Checked) {
 		this.chlNo2_Checked = chlNo2_Checked;
 	}
-	public Timestamp getChlNo3_Checked() {
+	public String getChlNo3_Checked() {
 		return chlNo3_Checked;
 	}
-	public void setChlNo3_Checked(Timestamp chlNo3_Checked) {
+	public void setChlNo3_Checked(String chlNo3_Checked) {
 		this.chlNo3_Checked = chlNo3_Checked;
 	}
-	public Timestamp getChlNo4_Checked() {
+	public String getChlNo4_Checked() {
 		return chlNo4_Checked;
 	}
-	public void setChlNo4_Checked(Timestamp chlNo4_Checked) {
+	public void setChlNo4_Checked(String chlNo4_Checked) {
 		this.chlNo4_Checked = chlNo4_Checked;
 	}
-	public Timestamp getChlNo5_Checked() {
+	public String getChlNo5_Checked() {
 		return chlNo5_Checked;
 	}
-	public void setChlNo5_Checked(Timestamp chlNo5_Checked) {
+	public void setChlNo5_Checked(String chlNo5_Checked) {
 		this.chlNo5_Checked = chlNo5_Checked;
 	}
-	public Timestamp getChlNo6_Checked() {
+	public String getChlNo6_Checked() {
 		return chlNo6_Checked;
 	}
-	public void setChlNo6_Checked(Timestamp chlNo6_Checked) {
+	public void setChlNo6_Checked(String chlNo6_Checked) {
 		this.chlNo6_Checked = chlNo6_Checked;
 	}
-	public Timestamp getChlNo7_Checked() {
+	public String getChlNo7_Checked() {
 		return chlNo7_Checked;
 	}
-	public void setChlNo7_Checked(Timestamp chlNo7_Checked) {
+	public void setChlNo7_Checked(String chlNo7_Checked) {
 		this.chlNo7_Checked = chlNo7_Checked;
 	}
-	public Timestamp getChlNo8_Checked() {
+	public String getChlNo8_Checked() {
 		return chlNo8_Checked;
 	}
-	public void setChlNo8_Checked(Timestamp chlNo8_Checked) {
+	public void setChlNo8_Checked(String chlNo8_Checked) {
 		this.chlNo8_Checked = chlNo8_Checked;
 	}
-	public Timestamp getChlNo9_Checked() {
+	public String getChlNo9_Checked() {
 		return chlNo9_Checked;
 	}
-	public void setChlNo9_Checked(Timestamp chlNo9_Checked) {
+	public void setChlNo9_Checked(String chlNo9_Checked) {
 		this.chlNo9_Checked = chlNo9_Checked;
 	}
 	
@@ -364,7 +362,5 @@ public class ChecklistVO {
 	public void setChh_Checked(boolean chh_Checked) {
 		this.chh_Checked = chh_Checked;
 	}
-	
-	
 	
 }
