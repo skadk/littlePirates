@@ -8,7 +8,7 @@ public class BoardVO {
 	private String brdTitle;
 	private String brdText;
 	private int brdViewCount;
-	private int brdResCount; 
+	private int brdResCount; /*댓글수*/
 	private int brdRecommendCount; /*추천수*/
 	private Date brdDate;
 	
