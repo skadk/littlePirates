@@ -23,12 +23,14 @@ a{
 	display: table;
     table-layout: fixed;
     width: 1100px;
-    margin: 0 auto;
+    margin: 0 320px;
     padding: 50px 0 100px;
 }
 /* 사이드 메뉴 박스*/
 
-#aside {	
+#aside {
+	padding-left: 0px;
+	position: relative;
 	display: table-cell;
     width: 215px;
 }
@@ -83,10 +85,14 @@ a:visited {
 
 /* 추천 베스트 게시판 리스트*/
 #contents {
+	position: relative;
     display: table-cell;
+    /* padding: 40px; */
     width: auto;
 }
 .h3group {
+	width: 900px;
+	position: relative;
     overflow: hidden;
     margin: -30px -30px 0;
     padding: 30px;
@@ -94,6 +100,7 @@ a:visited {
     background: #ffffff;
 }
 .h3group .tit {
+	position: relative;
     float: left;
     font-family: 'NanumSquare';
     font-weight: 700;
@@ -122,6 +129,7 @@ a:visited {
     color: #2d2d2d;
 }
 .h4group{
+	position: relative;
 	overflow: hidden;
     padding: 21px 30px 18px;
     display: block;
@@ -134,6 +142,7 @@ a:visited {
     
 }
 .h4group .period {
+	position: relative;
     float: right;
     position: relative;
     top: 15px;
@@ -143,6 +152,7 @@ a:visited {
 }
 
 .board_rank_wrap { /* 베스트글 박스, 인기글 박스 간격 */
+	position: relative;
     display: inline-block;
     width: 100%;
 }
@@ -151,6 +161,7 @@ a:visited {
     border-width: 0 1px 1px;
 }
 .board_rank_wrap .rbox {
+	position: relative;
     width: 402px;
     float: left;
     position: relative;
@@ -159,6 +170,7 @@ a:visited {
     text-align: left;
 }
 .board_rank_wrap dl dt {
+	position: relative;
     padding: 0 20px;
     border-bottom: 1px solid #e6e6e8;
     font-weight: 700;
@@ -176,6 +188,7 @@ a:visited {
     border-top: 1px solid #e6e6e8;
 }
 .board_rank_wrap dl dd ol li .rank {
+	position: relative;
     position: absolute;
     top: 7px;
     left:0;
@@ -219,7 +232,7 @@ ol {
     white-space: nowrap;
     text-overflow: ellipsis;
     word-break: break-all;
-
+}
 #boardWriteBox { /* 글쓰기박스*/
 	display: flex;
 	flex-direction: row;
@@ -239,6 +252,7 @@ ol {
 }
 
 .board_rank_wrap .cbox {
+	position: relative;
     width: 402px;
     float: right;
     position: relative;
@@ -263,6 +277,7 @@ form {
     margin-top: 0em;
 }
 .conwrap {
+	width: 900px;
 	display: block;
     margin: 0 0 -40px; 
     padding: 30px 30px 60px;
@@ -294,12 +309,12 @@ h4 {
     min-width: 1200px;
     padding: 90px 0 0;
 }
-/* .h4group {
+.h4group {
     overflow: hidden;
     margin: -30px -30px 0;
     padding: 21px 30px 18px;
     border-bottom: 1px solid #e6e6e8;
-} */
+}
 .rtn40.e2 {
     border: 1px solid #e7e7e9;
     background: none;
@@ -380,7 +395,7 @@ input[type=text]{
     right: 0;
     width: 80px;
     height: 56px;
-    background: #ffffff  c:url("/images/검색.png")  center center no-repeat;
+    background: #ffffff  url(/images/검색.png)  center center no-repeat;
     font-size: 14px;
     line-height: 36px;
     color: #777777;
@@ -640,7 +655,7 @@ element.style {
 .btn50 .write {
     display: inline-block;
     padding: 0 26px 0 0;
-    background:/*  url(../../images/common/btn_ico_write.png) */ right center no-repeat;
+    background: url(/images/연필1.png)  right center no-repeat;
 }
 .btn50 {
     display: inline-block;
@@ -685,12 +700,12 @@ element.style {
 	display: inline-block;
 	width: 180px;
 	height: 300px;
-	margin-right: 24px;
+	/* margin-right: 24px; */
 	margin-bottom: 20px;
-	border: 1px solid rgd(170, 170, 170);
+	border: 1px solid rgb(170, 170, 170);
 	border-radius: 12px;
 	overflow: hidden;
-	background-color: gray;
+	background-color: rgb(170, 170, 170);
 }
 
 .fleaMarketImg { /*나눔장터게시판 사진크기 */
@@ -699,11 +714,19 @@ element.style {
 }
 
 .boardTextBox { /*나눔장터 게시판 10개박스 제목 상세정보*/
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	padding: 8px;
+	padding: 8px; */
+	width: 100%;
+    display: inline-block;
 }
-
+/* 장터게시판 그림 아래 제목 등등 */
+.noto-sb {
+    font-family: 'Noto Sans KR' !important;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: -0.58px;
+}
 #fleaMarketMainBox { /*나눔정터 게시물 메인박스*/
 	flex-direction: row;
 	justify-content: flex-end;
@@ -760,3 +783,126 @@ element.style {
 	font-size: 20px;
 	margin-top: 10px;
 }
+/* 자유익명게시물 게시물 시작 */
+.viewbody {
+	position: relative;
+	width: auto;
+    padding: 53px 0 0;
+    display: block;
+    background-color: #ffffff;
+}
+
+#contents {
+    display: block;
+    width: 900px;
+}
+.conwrap {
+    margin: 10px 0 20px;
+    padding: 30px 30px 60px;
+    background: #ffffff;
+}
+
+.viewbody .hgroup {
+    margin: 0 0 52px;
+    text-align: center;
+}
+.viewbody .hgroup .tit {
+	display: block;
+    margin: 0 0 18px;
+    font-family: 'NanumGothic', 'dotum', 'Arial', 'sans-serif';
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 56px;
+    color: #2d2723;
+    word-break: break-all;
+}
+.viewbody .hgroup .util {
+    display: inline-block;
+}
+.viewbody .hgroup .util div {
+    float: left;
+    position: relative;
+    margin: 0 0 0 28px;
+    font-size: 16px;
+    color: #777777;
+}
+.viewbody .hgroup .util div:first-child {
+    margin: 0;
+}
+.viewbody .content {
+    font-size: 16px;
+    line-height: 26px;
+    color: #666666;
+    text-align: center;
+    background-color: #ffffff;
+}
+.viewbody .content .editor {
+    text-align: left;
+}
+.viewbody .bottom {
+    margin: 90px 0 0;
+}
+.viewbody .bottom .utils {
+    overflow: hidden;
+    margin: 0 0 30px;
+    padding: 20px 0;
+    border: solid #e6e6e8;
+    border-width: 1px 0;
+    text-align: center;
+}
+.viewbody .bottom .utils .function button {
+    float: left;
+    box-sizing: border-box;
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    border: 1px solid #e8e8ea;
+    border-radius: 20px;
+}
+button{
+    border: none;
+    background: none;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.viewbody .bottom .utils .function {
+    float: left;
+}
+.viewbody .bottom .utils .function button.scrap {
+    width: 160px;
+}
+.viewbody .bottom .utils .function button:first-child {
+    margin: 0;
+}
+
+
+
+
+
+.btn_wrap {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.fl_c {
+    display: inline-block;
+}
+element.style {
+    width: 240px;
+}
+.btn_wrap a:first-child {
+    margin: 0;
+}
+.btn50.c1 {
+    border: 1px solid #444445;
+    background: #444445;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
