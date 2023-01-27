@@ -13,13 +13,13 @@
 		<script src="<c:url value='/js/kidscafe_sec.js' />"></script>
 	</head>
 		<body>
-			<!-- background -->
-			<c:import url="/WEB-INF/views/layout/background.jsp" />
 			<div id="wrap">
-				<!-- top -->
-				<c:import url="/WEB-INF/views/layout/top.jsp" />
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 				<section>
-					<article>
+					<article id ="box">
 						<div id="selectbox">
 							<div id="clickbox">
 								<ul>
@@ -34,7 +34,7 @@
 						</div>
 					</article>
 					
-					<article>
+					<article id="ie">
 						<div class="dropdown">
 							도/특별시를 선택하세요.<br>
 								<select id="browsers" name="browsers">
@@ -60,13 +60,13 @@
 						<br>
 						<div id="searchresult">
 						</div>
-						<div id="firstresult">
+						<div id="firstresult" class="scroll_box">
 							<table border="1" class="table" id="table">
 								<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 									<c:if test="${(status.index mod 2) eq 0}">
 										<tr>
 									</c:if>
-									<td><img src="<c:url value='/image/${mapInfo.kcNo}.jpg' />"
+									<td><img src="<c:url value='/images/${mapInfo.kcNo}.jpg' />"
 										width="180" height="120"></td>
 									<td>${mapInfo.kcName }<br> ${mapInfo.kcAddress}<br>
 										운영시간<br> 전화번호<br> 평점
@@ -84,5 +84,4 @@
 				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 			</div>
 		</body>
-	<script src="<c:url value='/js/background.js'/>"></script>
 </html>

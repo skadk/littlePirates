@@ -8,7 +8,7 @@
 		<title>체크리스트</title>
 			<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist.css'/>">
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-			<script src="<c:url value='/js/checklist.js'/>"></script>
+			<script src="<c:url value='/js/checklist/checklist.js'/>"></script>
 			<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
