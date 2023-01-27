@@ -15,11 +15,11 @@
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 </head>
 <body>
-	<!-- background -->
-	<c:import url="/WEB-INF/views/layout/background.jsp" />
 	<div id="wrap">
-		<!-- top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp" />
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 		<section id="mainBox">
 			<!-- 사이드메뉴 -->
 			<aside id="aside">
@@ -45,7 +45,7 @@
 			<div id="contents">
 				<div id="mainBoardBox">
 					<div class="h3group mb30">
-						<h3 class="tit">자유게시판</h3>
+						<h3 class="tit">나눔장터 게시판</h3>
 						<div class="location">
 							<span class="depth">홈</span> 
 							<span class="depth">커뮤니티</span> 
@@ -87,11 +87,15 @@
 						</div>
 					<div id="boardBox">
 						<div class="boardPrdBox">
-							<a href="<c:url value='/fleaMarket/fleaMarketText'/>"> <img
-								src="<c:url value='/image/0112.jpg'/>" class="fleaMarketImg">
+							<a href="<c:url value='/fleaMarket/fleaMarketText'/>"> 
+							<img src="<c:url value='/image/0112.jpg'/>" class="fleaMarketImg">
 							</a>
 							<div class="boardTextBox">
-								<span>제목</span> <span>상세정보</span> <span>글쓴이</span>
+								<span class="noto-sb">나눔/장터</span>
+								<div>제목</div> 
+								<div>내용</div>
+								<div>찜 || 댓글 수</div>
+								<div>글쓴이 조회수</div>
 							</div>
 						</div>
 						<div class="boardPrdBox">asdfasdf</div>
