@@ -48,57 +48,23 @@ public class HomeController {
 	}
 
 	@RequestMapping("/nursery")
-	public String nursery() 
+	public String nursery() {
 		
 		return "menu/children/nursery";
 	}
-
-	@RequestMapping("/board/boardText")
-	public String boardText() {
-
-		return "menu/board/boardText";
+	
+	@RequestMapping("/nurseryBoard")
+	public String nurseryBoard() {
+		
+		return "menu/children/nurseryBoard";
+	}
+	
+	@RequestMapping("/kindergartenBoard")
+	public String kindergartenBoard() {
+		
+		return "menu/children/kindergartenBoard";
 	}
 
-	@RequestMapping("/anonymusBoard")
-	public String anonymusBoard() {
-
-		return "menu/board/anonymusBoard";
-	}
-
-
-
-	@RequestMapping("/anonymusBoard/anonymusBoardText")
-	public String anounymusBoardText() {
-
-		return "menu/board/anonymusBoardText";
-
-	}
-
-	@RequestMapping("/fleaMarket")
-	public String fleaMarket() {
-
-		return "menu/board/fleaMarket";
-	}
-
-	@RequestMapping("/fleaMarket/fleaMarketText")
-	public String fleaMarketText() {
-
-		return "menu/board/fleaMarketText";
-	}
-
-	@RequestMapping("/freePresentTest")
-	public String freePresentTest() {
-
-		return "menu/board/freePresentTest";
-
-	}
-
-
-	@RequestMapping("/board/boardWrite")
-	public String boardWrite() {
-
-		return "menu/board/boardWrite";
-
-	}
+	
   
 }

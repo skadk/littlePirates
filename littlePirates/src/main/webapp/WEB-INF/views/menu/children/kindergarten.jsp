@@ -19,11 +19,14 @@
 
 
 <body>
+	<div id="wrap">
 
-	<!-- top -->
-	<c:import url="/WEB-INF/views/layout/top.jsp" />
+		<!-- background & header -->
+		<c:import url="/WEB-INF/views/layout/header.jsp" />
+		<!-- parentsNav -->
+		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
+		<section>
 
-	<section>
 		<section class="notice">
 			<div class="page-title">
 				<div class="container">
@@ -35,6 +38,9 @@
 			<div id="board-search">
 				<div class="container">
 					<div class="search-window">
+					<a href="<c:url value='/kindergartenBoard'/>">
+								<button type="button" class="write">Write</button>
+							</a>
 						<form action="">
 							<div class="search-wrap">
 								<label for="search" class="blind">공지사항 내용 검색</label> <input
@@ -85,5 +91,7 @@
 
 		<!-- bottom -->
 		<c:import url="/WEB-INF/views/layout/bottom.jsp" />
+		</section>
+	</div>
 </body>
 </html>
