@@ -4,46 +4,149 @@
 
 /*------------- Section -------------*/
 section {
-	width: 80%;
-	height: 500px;
-	background: rgba(255, 255, 255, 0);
-	backdrop-filter: blur(0px);
-}
-
-article {
-	width: 500px;
-	height: 500px;
-	color: black;
+	width: 100%;
+	height: auto;
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
 }
 
 #article1 {
-	background-color: white;
-	z-index: 200;
+	padding-top: 2%;
+	width: 80%;
+	height: 20%;
 }
 
 #article2 {
-	color: white;
+	width: 100%;
+	height: 300px;
+	background: rgba(239, 244, 249, 1);
+	padding-bottom: 20px;
 }
 
-/************** SlideShowBox **************/
+#article3 {
+	width: 100%;
+	height: 10%;
+}
+
+/************** SlideShow 시작 **************/
 #slideShowBox {
-	width: 400px;
-	height: 400px;
-	/* 	overflow: hidden; 영역 벗어나면 숨김 */
+	position: relative;
+	width: 100%;
+	height: 90%;
 }
 
-#slideShowBox img {
-	width: 400px;
-	height: 400px;
+/* prevNextButtonBox */
+#prevNextButtonBox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+#prevButton {
+	position: absolute;
+	top: 45%;
+	opacity: 0.8;
+	cursor: pointer;	
+	left: 5%;
+}
+
+#nextButton {
+	position: absolute;
+	top: 45%;
+	opacity: 0.8;
+	cursor: pointer;	
+	right: 5%;
+}
+
+#prevButton:hover {
+	opacity: 1;
+}
+
+#nextButton:hover {
+	opacity: 1;
+}
+
+/* slideShowBox */
+#slideShow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* 영역 벗어나면 숨김 */
+}
+
+/* #slideShow #frame {
+	left: 0;
+	position: absolute;
+	width: 100%;
+} */
+	
+
+#slidePanel {
+	position: relative;
+	width: 400%;
+	height: 100%;
+}
+
+.slideImage {
+	display: inline-block;
+	float: left;
+	width: 25%;
+	max-height: 500px;
+}
+
+/* controlButtonBox */
+#controlButtonBox {
+	margin: 0 auto;
+	width: 160px;
+}
+
+#controlButtonBox img {
+	float: left;
+	margin: 14px;
+}
+
+.controlButton:hover {
+	cursor:pointer;
+}
+/************** SlideShow 끝 **************/
+
+#article2 p {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 #videoBox {
-	width: 1000px;
-	height: 500px;
+	width: 80%;
+	height: 100%;
 }
 
 .video {
 	position: relative;
+	width: 30%;
+	height: 100%;
+	display: inline-block;
+}
+
+iframe {
+	 width: 100%;
+	 height: 70%;
+	 display: inline-block;
+}
+
+#article3 p {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.painting {
+	position: relative;
+	width: 30%;
+	height: 100%;
 	display: inline-block;
 }
 
