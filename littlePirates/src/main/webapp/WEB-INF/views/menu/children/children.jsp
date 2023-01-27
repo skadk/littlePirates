@@ -15,7 +15,6 @@
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 <script src="<c:url value='/js/children.js' />"></script>
 <script src="<c:url value='/js/childrenScroll.js' />"></script>
-<script src="<c:url value='/js/childrenPaging.js' />"></script>
 </head>
 
 
@@ -87,44 +86,40 @@
 
 						</div>
 					</div>
+
 				</div>
 
 				<!-- INFORMATION 1 -->
-
-				<a href="<c:url value='/kindergarten'/>">
-
-					<table border="1" class="table">
-						<c:forEach var="kd" items="${KList }">
-							<tr>
-								<td><img src="<c:url value='/image/${kd.kdName}.png' />"
-									width="180" height="120"></td>
-								<td>${kd.kdName }<br> ${kd.kdAddress}<br>
-									${kd.kdType}<br> ${kd.kdTel}
-								</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</a>
+				<div class="kin">
+					<a href="<c:url value='/kindergarten'/>"><h2>유치원</h2> </a>
+				</div>
+				<table border="1" class="table">
+					<c:forEach var="kd" items="${KList }">
+						<tr>
+							<td><img src="<c:url value='/image/${kd.kdName}.png' />"
+								width="180" height="120"></td>
+							<td>${kd.kdName }<br> ${kd.kdAddress}<br>
+								${kd.kdType}<br> ${kd.kdTel}
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
 				<!-- INFORMATION 2 -->
-				<a href="<c:url value='/nursery'/>">
-					<table border="1" class="table2">
-						<c:forEach var="nur" items="${NList }">
-							<tr>
-								<td><img src="<c:url value='/image/${nur.nurName}.jpg' />"
-									width="180" height="120"></td>
-								<td>${nur.nurName }<br> ${nur.nurAddress}<br>
-									${nur.nurType}<br> ${nur.nurTel}
-								</td>
-							</tr>
-						</c:forEach>
-
-
-					</table>
-				</a>
-
+				<div class="nur">
+					<a href="<c:url value='/nursery'/>"><h2>어린이집</h2></a>
+				</div>
+				<table border="1" class="table2">
+					<c:forEach var="nur" items="${NList }">
+						<tr>
+							<td><img src="<c:url value='/image/${nur.nurName}.jpg' />"
+								width="180" height="120"></td>
+							<td>${nur.nurName }<br> ${nur.nurAddress}<br>
+								${nur.nurType}<br> ${nur.nurTel}
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
 			</div>
-
-
 		</section>
 
 		<!-- bottom -->
