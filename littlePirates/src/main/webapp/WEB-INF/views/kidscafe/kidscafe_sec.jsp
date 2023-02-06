@@ -19,49 +19,37 @@
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 				<section>
-					<article id ="box">
-						<div id="selectbox">
-							<div id="clickbox">
-								<ul>
-									<li id="select_map">
-									<a href="<c:url value='/kidscafe_map'/>">지도로 보기</a>
-									</li>
-									<li id="gather">
-									<a href="<c:url value='/kidscafe_sec'/>">간편하게 보기</a>
-									</li>
-								</ul>
-							</div>
+					<div id ="box">
+						<div class="as_inner">
+						<div class="as_hgroup">
+							<h2 class="tit">키즈카페</h2>
 						</div>
-					</article>
+						<nav id="lnb" class="lnb">
+							<div id="sideSubBox">
+								<div class="on">
+									<a href="/kidscafe_map">지도로 보기</a>
+								</div>
+								<div class="on">
+									<a href="/kidscafe_sec">간편하게 보기</a>
+								</div>
+							</div>
+						</nav>						
+					</div>
 					
-					<article id="ie">
+					<div id="ie">
 						<div class="dropdown">
-							도/특별시를 선택하세요.<br>
-								<select id="browsers" name="browsers">
-								    <option value="">선택해주세요</option>
-								    <option value="서울특별시">서울특별시</option>
-								    <option value="인천광역시">인천광역시</option>
-								    <option value="경기도">경기도</option>
-								    <option value="강원도">강원도</option>
-								    <option value="경상남도">경상남도</option>
-								    <option value="경상북도">경상북도</option>
-								    <option value="전라남도">전라남도</option>
-								    <option value="전라북도">전라북도</option>
-								    <option value="충청남도">충청남도</option>
-								    <option value="충청북도">충청북도</option>
-								    <option value="광주광역시">광주광역시</option>
-								    <option value="대구광역시">대구광역시</option>
-								    <option value="대전광역시">대전광역시</option>
-								    <option value="부산광역시">부산광역시</option>
-								    <option value="울산광역시">울산광역시</option>
-								    <option value="제주특별자치도">제주특별자치도</option>
-								</select>
+								<select name="browsers" id="browsers"></select>
+								<select name="gugun" id="gugun"></select>
 						</div>
 						<br>
 						<div id="searchresult">
 						</div>
 						<div id="firstresult" class="scroll_box">
 							<table border="1" class="table" id="table">
+								<tr>
+									<th>내부 사진</th>
+									<th>상세정보</th>
+								</tr>	
 								<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 									<c:if test="${(status.index mod 2) eq 0}">
 										<tr>
@@ -77,8 +65,9 @@
 								</c:forEach>
 							</table>
 						</div>
-					</article>
-		
+					</div>
+					
+				</div>
 				</section>
 				<!-- bottom -->
 				<c:import url="/WEB-INF/views/layout/bottom.jsp" />

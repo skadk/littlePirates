@@ -2,14 +2,16 @@ package com.littlePirates.project.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.littlePirates.project.model.KidscafeReviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 import com.littlePirates.project.service.KidscafeService;
 
@@ -68,12 +70,23 @@ public class KidscafeController {
 	@RequestMapping("/kidscafe_map/kidscafeSearch")
 	public String kidscafeSearch(@RequestParam String keyword, Model model){
 		
-		System.out.println(keyword);
 		ArrayList<KidscafeVO> voList = service.kidscafeSearchkeyword(keyword);
 
 		model.addAttribute("voList", voList);
 		
 		return "kidscafe/kidscafeSearch";	
+	}
+
+	//	키즈카페 해당 되는 후기 나타내기
+	@RequestMapping("/kidscafe_map/kidscafeReview")
+	public String kidscafeReview(Model model, HttpSession session){
+		
+		int kcNo = (int) session.getAttribute("sid");
+		
+		ArrayList<KidscafeReviewVO> reviewList = service.reviewList(kcNo);
+		model.addAttribute("reviewList", reviewList);
+		
+		return "kidscafe/kidscafeReview";	
 	}
 	
 	@RequestMapping("/kidscafe_third")

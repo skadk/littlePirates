@@ -6,6 +6,10 @@
 
 <body>
 	<table border="1" class="table" id="table">
+		<tr>
+			<th>내부 사진</th>
+			<th>상세정보</th>
+		</tr>
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<c:if test="${(status.index mod 2) eq 0}">
 			<tr>

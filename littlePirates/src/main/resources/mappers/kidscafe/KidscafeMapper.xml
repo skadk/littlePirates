@@ -11,6 +11,13 @@
 		<result property="kcLng" column="kcLng" />
 		<result property="kcAddress" column="kcAddress" />
 	</resultMap>
+ 	<resultMap id="reviewResult" type="com.littlePirates.project.model.KidscafeReviewVO">
+		<result property="kcrNo" column="kcrNo" />
+		<result property="kcrText" column="kcrText" />
+		<result property="kcrDate" column="kcrDate" />
+		<result property="memId" column="memId" />
+		<result property="kcNo" column="kcNo" />
+	</resultMap>
 	
  	<select id="listKidscafeInfo" resultMap="mapResult">
  		select *
@@ -31,12 +38,18 @@
 		WHERE kcName Like CONCAT ('%',#{kcName},'%')  						 				
   </select>
 
+	<!-- 도/시 키워드 검색 -->
   <select id="kidscafeSearchsido" parameterType="string"  resultMap="mapResult">
 		SELECT * 	
 		FROM kidscafe 
 		where browsers=#{sido}; 						 				
   </select>
   
+  <select id="reviewList" parameterType="string" resultMap="reviewResult">
+  		SELECT * 
+  		FROM kidscafereview
+  		WHERE kcNo=#{kcNo}
+  </select>
   
   </mapper>
   

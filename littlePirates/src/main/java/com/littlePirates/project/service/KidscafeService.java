@@ -24,14 +24,11 @@ public class KidscafeService implements IKidscafeService {
 
 	@Override
 	public String searchKidsCafe(String keyword) {
-		
 		String searchAddress = dao.searchKidsCafe(keyword);
 
 		return searchAddress;
-
 	}
 	
-
 	@Override
 	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName) {
 		// TODO Auto-generated method stub

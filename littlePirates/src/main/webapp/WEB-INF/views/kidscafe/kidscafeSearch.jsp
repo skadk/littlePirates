@@ -7,6 +7,10 @@
 <script src="<c:url value='/js/kidscafeSearch.js' />"></script>
 	<body>
 		<table border="1" class="table" id="table">
+			<tr>
+				<th>가게명</th>
+				<th>상세정보</th>
+			</tr>	
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<tr>
 				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" width="180" height="110"></td>
