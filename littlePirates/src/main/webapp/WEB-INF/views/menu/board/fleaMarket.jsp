@@ -88,7 +88,7 @@
 					<div id="boardBox">
 						<div class="boardPrdBox">
 							<a href="<c:url value='/fleaMarket/fleaMarketText'/>"> 
-							<img src="<c:url value='/image/0112.jpg'/>" class="fleaMarketImg">
+							<img src="<c:url value='/images/0112.jpg'/>" class="fleaMarketImg">
 							</a>
 							<div class="boardTextBox">
 								<span class="noto-sb">나눔/장터</span>

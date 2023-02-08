@@ -10,6 +10,7 @@
 		<result property="chhNo" column="chhNo"	/>
 		<result property="memId" column="memId"	/>
 		<result property="chhDate" column="chhDate"	/>
+		<result property="chhTimes" column="chhTimes"	/>		
 		<result property="chlNo1" column="chlNo1" />
 		<result property="chlNo2" column="chlNo2" />
 		<result property="chlNo3" column="chlNo3" />
@@ -31,21 +32,22 @@
 		<result property="chlNo9_Checked" column="chlNo9_Checked" />
 		<result property="chh_Checked" column="chh_Checked" />
 	  </resultMap>	
-	  
+<!-- 활동 체크리스트 랜덤으로 빙고 4개 정보 띄우기 -->	  
 	<select id ="checklistInfo" resultMap="checklistResult">
 		SELECT chlImageName FROM checklist
 		WHERE chlImageName Like "AC%"
 		ORDER BY RAND() LIMIT 4;
 	</select>
-	
+<!-- 활동 체크리스트 랜덤으로 빙고 9개 정보 띄우기 -->	
 	<select id="checklistInfo2" resultType="string">
 		SELECT chlNo FROM checklist
 		WHERE chlImageName Like "LH%"
 		ORDER BY RAND() LIMIT 9;
 	</select>
-	
-	<select id="checklistInfo3" resultMap = "checklistResult">
-		SELECT 	chhNo,memId,chhDate,
+<!-- 체크리스트 달성률 보기 -->	
+	<select id="checklistInfo3" parameterType="string" 
+			resultType = "com.littlePirates.project.model.ChecklistVO">
+		SELECT 	chhNo,memId,chhTimes,
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo1) as chlNo1,
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo2) as chlNo2,
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo3) as chlNo3,
@@ -55,27 +57,42 @@
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo7) as chlNo7,
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo8) as chlNo8,
 				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo9) as chlNo9,
+				
 				chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,
 				chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked,
 				chh_Checked
-		 FROM checklist_history;						
+		 FROM checklist_history	
+		 WHERE memId=#{memId};			
 	</select>
 	
 	<insert id="insertChecklist" parameterType="com.littlePirates.project.model.ChecklistVO" >
 		INSERT INTO checklist_history
-		(memId,chhDate,chlNo1,chlNo2,chlNo3,chlNo4,chlNo5,chlNo6,chlNo7,chlNo8,chlNo9)
+		(memId,chhDate,chlNo1,chlNo2,chlNo3,chlNo4,chlNo5,chlNo6,chlNo7,chlNo8,chlNo9,chh_Checked)
 		VALUES
-		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},#{chlNo3},#{chlNo4},#{chlNo5},#{chlNo6},#{chlNo7},#{chlNo8},#{chlNo9});
+		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},#{chlNo3},#{chlNo4},#{chlNo5},#{chlNo6},#{chlNo7},#{chlNo8},#{chlNo9},0);
 	</insert>
-	
+<!--  최초 생성 할 때 체크리스트 보유 여부 확인 -->
 	<select id="ischhChecked" parameterType="string" resultType="int">
 		SELECT count(*) FROM checklist_history
-		WHERE memId=#{memId}
+		WHERE memId=#{memId}   
 	</select>
+	
+	<!-- <update id="updateChh_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
+		UPDATE checklist_history
+		SET chh_Chekced=1
+		WHERE memId=#{memId} AND chlNo1_Checked!=NULL AND chlNo2_Checked!=NULL AND chlNo3_Checked!=NULL AND
+								 chlNo4_Checked!=NULL AND chlNo5_Checked!=NULL AND chlNo6_Checked!=NULL AND
+								 chlNo7_Checked!=NULL AND chlNo8_Checked!=NULL AND chlNo9_Checked!=NULL
+	</update>
+	
+	<select id="select_Chl_Checked" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
+		SELECT chh_Checked FROM checklist_history
+		WHERE memId=#{memId} AND chhTimes=(SELECT MAX(chhTimes) from checklist_history);
+	</select> -->
 	
 	<select id="selectChecklist" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
 		SELECT * FROM checklist_history
-		WHERE memId=#{memId}
+		WHERE memId=#{memId} AND chh_Checked = 0
 	</select>
 	
 	<select id="getChecklistText" parameterType="string" resultType="string">

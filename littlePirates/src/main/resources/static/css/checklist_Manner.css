@@ -10,13 +10,14 @@
   	"mannerHeader"
     "checklist_nav"
     "layout_bottom";
-    
+    hegiht:1200px;
 }
 
 .mannerHeader2{
+	color:white;
 	width:1920px;
 	grid-area: mannerHeader; 
-	font-size:50px;
+	font-size:55px;
 	font-family: 'Dongle', sans-serif;
 }
 
@@ -25,34 +26,25 @@
 	height:900px;
 	position: relative;
 	grid-area: checklist_nav; 
+	background-color:blanchedalmond;
 	}
 	
-.checklist_Section_back2{
+/* .checklist_Section_back2{
 	width:1920px;
 	height:900px;
 	position:absolute;
 	z-index:0;
-}
+} */
 
 /* *********************** grid area 설정 끝******************* */	
 
-.createChecklist2{
-	background:white;
-	float:right;
-	cursor:pointer;
-}
 
 /* *********************** grid area 설정 끝******************* */	
+
 .mannerList2{
-	left:50px;
-	top:200px;
 	position:absolute;
-	width:90%;
-	height:400px;
-/*	display:flex;
-	flex-wrap:wrap;
-	justify-content :space-around;
-	align-items : center;	*/
+	width:100%;
+	height:1000px;
 }
 
 .mannerList2_image{
@@ -88,6 +80,53 @@
 
 	border-radius:50%;
 }
+/* *************************************** */
+
+.selfChecklistHeader{
+	width:100%;
+    height: 65px;
+    font-size: 40px;
+	font-family: 'Dongle', sans-serif;
+}
+.selfChecklistHeader li{
+	list-style:none;
+	display:inline-block;
+	float:right;
+	margin-right:30px;
+}
+
+.selfChecklistContent{
+	width:100%;
+	height:70%;
+	background-color:white;
+}
+.selfChecklistContent h1{
+	text-align:center;	
+}
+.slideBtn{
+	top: 125px;
+    position: absolute;
+}
+#prevBtn{
+	left: 740px;
+	position: absolute;
+}
+#nextBtn{
+	left: 1080px;
+	position: absolute;
+}
+#prevBtnImg{
+	height:50px;
+	width:100px;
+}
+#nextBtnImg{
+	height:50px;
+	width:100px;
+}
+.listBox li{
+	list-style:none;
+}
+/* *************************************** */
 /*
 .mannerList2_image img{
 	width:150px;

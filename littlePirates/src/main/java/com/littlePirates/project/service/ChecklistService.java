@@ -33,7 +33,12 @@ public class ChecklistService implements IChecklistService{
 			
 		return dao.ischhChecked(memId);
 	}
-	
+/*	
+	@Override
+	public int currentChecklist(int chhTimes) {
+		return dao.currentChecklist(chhTimes);
+	}
+*/	
 	@Override
 	public ArrayList<String> checklistInfo2() {
 
@@ -41,9 +46,9 @@ public class ChecklistService implements IChecklistService{
 	}
 	
 	@Override
-	public ArrayList<ChecklistVO> checklistInfo3() {
+	public ArrayList<ChecklistVO> checklistInfo3(String memId) {
 
-		return dao.checklistInfo3();
+		return dao.checklistInfo3(memId);
 	}
 	
 	// 체크리스트 최초생성
@@ -154,5 +159,12 @@ public class ChecklistService implements IChecklistService{
 			dao.updateChecked9(map);
 		}
 	}
+
+	public ArrayList<String> select_Chl_Checked(String memId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
 

@@ -2,6 +2,7 @@
  *  checklist_Clean.js
  */
 
+
 $(function () {
 	//	== $(document).ready(function(){});
 	
@@ -57,7 +58,7 @@ $(function () {
 							event.target.classList.add("checked");										
 							alert("체크완료");					
 						} else {
-							alert("체크실패");												
+							alert("이미 체크 되었거나 오늘 체크는 완료 하셨습니다.");												
 						} 
 					},
 					error:function() {
@@ -84,7 +85,6 @@ $(function () {
 	      document.getElementById("bingoBtnImg" + (i + 1)).classList.contains("checked") &&
 	      document.getElementById("bingoBtnImg" + (i + 2)).classList.contains("checked")
 	    ) {
-
 		  x++;
 	    }	    
 	  }
@@ -96,7 +96,6 @@ $(function () {
 	      document.getElementById("bingoBtnImg" + (i + 3)).classList.contains("checked") &&
 	      document.getElementById("bingoBtnImg" + (i + 6)).classList.contains("checked")
 	    ) {
-
 	      y++;
 	    }
 	  }
@@ -107,7 +106,6 @@ $(function () {
 	    document.getElementById("bingoBtnImg5").classList.contains("checked") &&
 	    document.getElementById("bingoBtnImg9").classList.contains("checked")
 	  ) {
-
 	    z++;
 	  }	
 	  if (
@@ -115,7 +113,6 @@ $(function () {
 	    document.getElementById("bingoBtnImg5").classList.contains("checked") &&
 	    document.getElementById("bingoBtnImg7").classList.contains("checked")
 	  ) {
-
 	    z++;
 	}
 	  bingoCnt=x+y+z;
@@ -152,8 +149,5 @@ $(function () {
 	 }
 	 
 ///////////// (3) 리스트 체크 함수 끝	  
-	 
-	//	최초 생성 호출
-	///	CreateImage();
-	
+
 });	

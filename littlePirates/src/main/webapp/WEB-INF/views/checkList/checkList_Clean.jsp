@@ -5,7 +5,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>청결 체크리스트</title>
+	<title>체크리스트 BINGO</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Clean.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 		<script src="<c:url value='/js/checklist/checklist_Clean.js'/>"></script>
@@ -27,6 +27,9 @@
 				<div class="child" id="bingoBtn${i}">
  						<img id="bingoBtnImg${i}" src="<c:url value='/images/${vo.getChlNo(i)}.png '/>">
 						<div class="textBox" id="textBox${i}">${vo.getChlText(i)}</div>
+				</div>
+				<div class="childCheck">
+					<img class="childCheckImg" id="childCheckImg${i+1}" src="<c:url value='/image/Good3.JPG'/>">
 				</div>		
 			</c:forEach>
 		<%-- 		<c:forEach var="i" begin="0" end="8">
@@ -34,9 +37,7 @@
  						<img id="bingoBtnImg${i}" src="<c:url value='/image/${vo.chlNo}.png '/>">
 						<div class="textBox" id="textBox${i}">${vo.chlText}</div>
 					</div>							
-					<div class="childCheck">
-						<img class="childCheckImg" id="childCheckImg${status.count}" src="<c:url value='/image/Good3.JPG'/>">
-					</div>
+
 				</c:forEach> --%>
 			</div>
 			<div class="completeBox">
