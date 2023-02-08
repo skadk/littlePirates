@@ -66,8 +66,12 @@ public class BoardController {
 
 		return "menu/board/fleaMarketText";
 	}
+	
+	@RequestMapping("/fleaMarket/fleaMarketWrite")
+	public String fleaMarketWrite() {
 
-
+		return "menu/board/fleaMarketWrite";
+	}
 
 	private BoardService bservice;
 	/* private SummernoteService sservice; */

@@ -7,19 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <title>나눔장터페이지</title>
+
+<!-- CSS  -->
 <link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/board.css'/>">
+	href="<c:url value='/css/board/button.css'/>">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/button.css'/>">
+	href="<c:url value='/css/board/board.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/board/fleaMarket.css'/>">
+
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 </head>
 <body>
 	<div id="wrap">
-			<!-- background & header -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
-			<!-- parentsNav -->
-			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
+		<!-- background & header -->
+		<c:import url="/WEB-INF/views/layout/header.jsp" />
+		<!-- parentsNav -->
+		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
 		<section id="mainBox">
 			<!-- 사이드메뉴 -->
 			<aside id="aside">
@@ -53,88 +58,103 @@
 						</div>
 					</div>
 					<div class="conwrapFleaMarket">
-					<!-- 전체글보기 박스, 전체게시물 보기 버튼 -->
+						<!-- 전체글보기 박스, 전체게시물 보기 버튼 -->
 						<div class="h4group">
 							<h4 class="tit">전체글 보기</h4>
 							<a href="javascript:;" class="rtn40 e2 fl_r allyn">전체게시물 보기</a>
 						</div>
-					<!-- 위 버튼 -->
-					<div align="left">
-						<button class="custom-btn btn-3">
-							<span>나눔&장터</span>
-						</button>
-						<button class="custom-btn btn-3">
-							<span>나눔</span>
-						</button>
-						<button class="custom-btn btn-3">
-							<span>장터</span>
-						</button>
-					</div>
-					<!-- 검색영역 -->
+						<!-- 위 버튼 -->
+						<div class= "buttonA">
+							<button class="custom-btn btn-3">
+								<span>나눔&장터</span>
+							</button>
+							<button class="custom-btn btn-3">
+								<span>나눔</span>
+							</button>
+							<button class="custom-btn btn-3">
+								<span>장터</span>
+							</button>
+						</div>
+						<!-- 검색영역 -->
 						<div class="data_srch_wrap bdt_n ">
 							<div class="slt_box">
 								<select name="srchKey" style="width: 189px;">
-									<option value="" selected="">전체</option>
+									<option value=" selected=">전체</option>
 									<option value="cont_nm">제목</option>
 									<option value="cont_contents">내용</option>
 									<option value="mem_nm">작성자</option>
 								</select>
 							</div>
 							<div class="ipt_box">
-								<input type="text" id="srchWord" name="srchWord" class="ipt" value="" placeholder="검색어를 입력해 주세요."> 
-								<input type="button" id="srchBtn" class="btn" value="검색">
+								<input type="text" id="srchWord" name="srchWord" class="ipt"
+									value="" placeholder="검색어를 입력해 주세요."> <input
+									type="button" id="srchBtn" class="btn" value="검색">
 							</div>
 						</div>
-					<div id="boardBox">
-						<div class="boardPrdBox">
-							<a href="<c:url value='/fleaMarket/fleaMarketText'/>"> 
-							<img src="<c:url value='/image/0112.jpg'/>" class="fleaMarketImg">
+						<div id="boardBox">
+							<a href="<c:url value='/fleaMarket/fleaMarketText'/>">
+								<div class="card">									
+									<!-- 카드 헤더 -->
+									<div class="card-header">
+										<div class="card-header-is_closed">
+											<div class="card-header-text">나눔</div>
+										</div>
+									</div>
+									<!--  카드 바디 -->
+									<div class="card-body">
+										<!--  카드 바디 헤더 -->
+										<div class="card-body-header">
+											<h1 id="cardTitle">나눔합니다!</h1>
+											<p class="card-body-nickname">작성자: hong</p>
+											<p class="card-body-description">
+											안녕하세요!
+											유모차 나눔합니다
+											</p>
+										</div>
+										
+										<!--  카드 바디 본문 -->
+									</div>
+										<!--  카드 바디 푸터 -->
+										<div class="card-body-footer">
+											<hr style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
+											<i class="icon icon-view_count"></i>조회 38회 
+											<i class="icon icon-comments_count"></i>댓글 4개 
+											<i class="reg_date"> 2023/02/01 </i>
+										</div>
+								</div>
 							</a>
-							<div class="boardTextBox">
-								<span class="noto-sb">나눔/장터</span>
-								<div>제목</div> 
-								<div>내용</div>
-								<div>찜 || 댓글 수</div>
-								<div>글쓴이 조회수</div>
-							</div>
+							<div class="card">asdfasdf</div>
+							<div class="card">asdfasdf</div>
+							<div class="card">adsfasdf</div>
+							<div class="card">asdfasdf</div>
+							<div class="card">asdfasdf</div>
+							<div class="card">asdfasdf</div>
+							<div class="card">adsfasfasdf</div>
+							<div class="card">adsfasfasdf</div>
+							<div class="card">adsfasfasdf</div>
+							<div class="card">adsfasfasdf</div>
+							<div class="card">adsfasfasdf</div> -->
 						</div>
-						<div class="boardPrdBox">asdfasdf</div>
-						<div class="boardPrdBox">asdfasdf</div>
-						<div class="boardPrdBox">adsfasdf</div>
-						<div class="boardPrdBox">asdfasdf</div>
-						<div class="boardPrdBox">asdfasdf</div>
-						<div class="boardPrdBox">asdfasdf</div>
-						<div class="boardPrdBox">adsfasfasdf</div>
-						<div class="boardPrdBox">adsfasfasdf</div>
-						<div class="boardPrdBox">adsfasfasdf</div>
-						<div class="boardPrdBox">adsfasfasdf</div>
-						<div class="boardPrdBox">adsfasfasdf</div>
-					</div>
-					<!-- 페이징 -->
+						<!-- 페이징 -->
 						<div class="pagination">
 							<div class="paging">
 								<a href="javascript:NDev.Site.Page(1);" class="page_first">
 									<span class="hide">처음</span>
-								</a> 
-								<a href="javascript:NDev.Site.Page(1);"	class="page_prev">
+								</a> <a href="javascript:NDev.Site.Page(1);" class="page_prev">
 									<span class="hide">이전</span>
-								</a> 
-								<span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
-									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> 
-									<a href="javascript:NDev.Site.Page(3);"><span>3</span></a> 
-									<a href="javascript:NDev.Site.Page(4);"><span>4</span></a> 
-									<a href="javascript:NDev.Site.Page(5);"><span>5</span></a> 
-									<a href="javascript:NDev.Site.Page(6);"><span>6</span></a> 
-									<a href="javascript:NDev.Site.Page(7);"><span>7</span></a> 
-									<a href="javascript:NDev.Site.Page(8);"><span>8</span></a> 
-									<a href="javascript:NDev.Site.Page(9);"><span>9</span></a> 
-									<a href="javascript:NDev.Site.Page(10);"><span>10</span>
-								</a>
-								</span> 
-								<a href="javascript:NDev.Site.Page(2);" class="page_next">
+								</a> <span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
+									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> <a
+									href="javascript:NDev.Site.Page(3);"><span>3</span></a> <a
+									href="javascript:NDev.Site.Page(4);"><span>4</span></a> <a
+									href="javascript:NDev.Site.Page(5);"><span>5</span></a> <a
+									href="javascript:NDev.Site.Page(6);"><span>6</span></a> <a
+									href="javascript:NDev.Site.Page(7);"><span>7</span></a> <a
+									href="javascript:NDev.Site.Page(8);"><span>8</span></a> <a
+									href="javascript:NDev.Site.Page(9);"><span>9</span></a> <a
+									href="javascript:NDev.Site.Page(10);"><span>10</span> </a>
+								</span> <a href="javascript:NDev.Site.Page(2);" class="page_next">
 									<span class="hide">다음</span>
-								</a>
-								<a href="javascript:NDev.Site.Page(8017);" class="page_last">
+								</a> <a href="javascript:NDev.Site.Page(8017);" class="page_last">
 									<span class="hide">끝</span>
 								</a>
 							</div>
@@ -142,9 +162,9 @@
 						<!-- 글작성 버튼 -->
 						<div class="btn_wrap mt30">
 							<div class="fl_c">
-								<a href="javascript:;" class="btn50 c3 reg"
-									style="width: 240px;" tmp="contents/bod" mn="18" cn="0"><span
-									class="write">글작성</span></a>
+								<a href="/fleaMarket/fleaMarketWrite" class="btn50 c3 reg"
+									style="width: 240px;" tmp="contents/bod" mn="18" cn="0">
+									<span class="write">글작성</span></a>
 							</div>
 						</div>
 
