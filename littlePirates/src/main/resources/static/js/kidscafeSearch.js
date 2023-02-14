@@ -23,10 +23,25 @@
  		}); // ajax 종료 	
  	});// submit 종료
  	
- 	$('#table').on('click', 'img', function(){ 
- 		//alert("성공");
+ /*	$('#table').on('click', 'img', function(){ 
+ 		alert("이미지");
  		$('#map').hide();
- 	});
+ 		
+ 		// 서버에 전송하고 결과 받아서 처리
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/kidscafe_map/kidscafeReview",
+ 			
+ 			success:function(result){
+ 					
+ 			$('#reviewresult').html(result);
+			
+		},
+ 			error:function(){
+ 				alert("실패");
+ 			}
+ 		}); // ajax 종료 	
+ 	});*/
  	
 });
 

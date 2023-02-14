@@ -27,34 +27,44 @@
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<section>
 			
-				<article id ="box">
-					<div id="selectbox">
-						<div id="clickbox">
-							<ul>
-								<li id="select_map">
-								<a href="<c:url value='/kidscafe_map'/>">지도로 보기</a>
-								</li>
-								<li id="gather">
-								<a href="<c:url value='/kidscafe_sec'/>">간편하게 보기</a>
-								</li>
-							</ul>
+				<div id ="box">					
+					<div class="as_inner">
+						<div class="as_hgroup">
+							<h2 class="tit">키즈카페</h2>
 						</div>
-					</div>	
-				</article>
-				
-
-				<article id="showmap">
-					<input type="text" title="가게명 검색" name="keyword" id="keyword" placeholder="가게명 검색">
-					<input id="submit" type="button" value="검색">
-					
-					<!-- 지도 -->
-					<div id="mapwrap">
-					<div id="map"></div>
+						<nav id="lnb" class="lnb">
+							<div id="sideSubBox">
+								<div class="on">
+									<img src="<c:url value='/images/지도.png' />" width="35" height="25">
+									<a href="/kidscafe_map">지도로 보기</a>
+								</div>
+								<div class="on">
+									<a href="/kidscafe_sec">간편하게 보기</a>
+									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
+								</div>
+							</div>
+						</nav>						
 					</div>
+					
+					<div id ="kid">
+						<h1>키즈카페 지도</h1>
+						<hr style="border: solid 2px"><br>
+						<div id="showmap">
+							<input type="text" title="가게명 검색" name="keyword" id="keyword" placeholder="가게명 검색">
+							<input id="submit" type="button" value="검색">
+					
+							<!-- 지도 -->
+							<div id="mapwrap">
+								<div id="map"></div>
+								<div id="reviewresult"></div>
+							</div>
 
-					<div id="searchresult" class="scroll_box"></div>
+							<div id="searchresult" class="scroll_box"></div>
 
-				</article>
+						</div>
+					</div>
+					
+				</div>
 
 			</section>
 			<!-- bottom -->
