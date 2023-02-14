@@ -2,9 +2,10 @@ package com.littlePirates.project.service;
 
 import java.util.ArrayList;
 
-import com.littlePirates.project.model.BoardVO;
 import org.json.JSONObject;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.littlePirates.project.model.BoardVO;
 
 
 public interface IBoardService {

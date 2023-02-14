@@ -1,8 +1,9 @@
 package com.littlePirates.project.dao;
 
 import java.util.ArrayList;
-import com.littlePirates.project.model.BoardVO;
 import java.util.HashMap;
+
+import com.littlePirates.project.model.BoardVO;
 
 public interface IBoardDAO {
 

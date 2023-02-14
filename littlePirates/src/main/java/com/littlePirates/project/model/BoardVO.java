@@ -13,7 +13,6 @@ public class BoardVO {
 	private Date brdDate;
 	
 	
-	
 	public int getBrdNo() {
 		return brdNo;
 	}

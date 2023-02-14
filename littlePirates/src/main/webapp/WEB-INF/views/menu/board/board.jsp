@@ -1,23 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>자유 게시판</title>
- 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
-		<!-- head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-	</head>
-	<body>
-		<div id="wrap">
-			<!-- background & header -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
-			<!-- parentsNav -->
-			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
-			<section id="mainBox">
+<head>
+<meta charset="UTF-8">
+<title>자유 게시판</title>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/board/button.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/board/fleaMarket.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/board/board.css'/>">
+<!-- head -->
+<c:import url="/WEB-INF/views/layout/head.jsp" />
+</head>
+<body>
+	<div id="wrap">
+		<!-- background & header -->
+		<c:import url="/WEB-INF/views/layout/header.jsp" />
+		<!-- parentsNav -->
+		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
+		<section id="mainBox">
 			<!-- 사이드메뉴 -->
 			<aside id="aside">
 				<div class="as_inner">
@@ -44,13 +49,12 @@
 					<div class="h3group mb30">
 						<h3 class="tit">자유게시판</h3>
 						<div class="location">
-							<span class="depth">홈</span> 
-							<span class="depth">커뮤니티</span> 
-							<strong class="this">자유게시판</strong>
+							<span class="depth">홈</span> <span class="depth">커뮤니티</span> <strong
+								class="this">자유게시판</strong>
 						</div>
 					</div>
 
-					<div class="h4group">
+					<div class="h4group_bdb_n">
 						<h4>이번 주의 자유게시판 인기 글!</h4>
 						<div class="period">2023.01.16 ~ 2023.01.22</div>
 					</div>
@@ -120,8 +124,8 @@
 					</div>
 				</div>
 				<form name="nForm" id="nForm" method="post">
-					<input type="hidden" name="page" id="page" value="1">
-					<input type="hidden" name="srchMst_no" id="srchMst_no" value="18">
+					<input type="hidden" name="page" id="page" value="1"> <input
+						type="hidden" name="srchMst_no" id="srchMst_no" value="18">
 					<input type="hidden" name="srchCont_no" id="srchCont_no" value="0">
 					<input type="hidden" name="srchTab_no" id="srchTab_no" value="">
 					<input type="hidden" name="srchSmt_key" id="srchSmt_key" value="">
@@ -152,8 +156,9 @@
 								</select>
 							</div>
 							<div class="ipt_box">
-								<input type="text" id="srchWord" name="srchWord" class="ipt" value="" placeholder="검색어를 입력해 주세요."> 
-								<input type="button" id="srchBtn" class="btn" value="검색">
+								<input type="text" id="srchWord" name="srchWord" class="ipt"
+									value="" placeholder="검색어를 입력해 주세요."> <input
+									type="button" id="srchBtn" class="btn" value="검색">
 							</div>
 						</div>
 						<div class="tbl_list">
@@ -170,13 +175,10 @@
 											<td class="obj">
 												<div class="tbox">
 													<div class="tit">
-														<a href="/board/boardText" class="view" tmp="contents/bod" mn="18" cn="186313">
-														 ${ brd.brdTitle }
-														 </a>
+														<a href="/board/boardText" class="view" tmp="contents/bod"
+															mn="18" cn="186313"> ${ brd.brdTitle } </a>
 													</div>
-													<div class="comt">
-														(${ brd.brdResCount })
-													</div>
+													<div class="comt">(${ brd.brdResCount })</div>
 													<div class="info"></div>
 												</div>
 												<div class="util">
@@ -190,7 +192,10 @@
 											</td>
 											<td class="etc">
 												<div class="nick">${ brd.memId }</div>
-												<div class="date"><fmt:formatDate value="${ brd.brdDate }" pattern="yyyy-MM-dd"/></div>
+												<div class="date">
+													<fmt:formatDate value="${ brd.brdDate }"
+														pattern="yyyy-MM-dd" />
+												</div>
 											</td>
 										</tr>
 									</c:forEach>
@@ -203,26 +208,21 @@
 							<div class="paging">
 								<a href="javascript:NDev.Site.Page(1);" class="page_first">
 									<span class="hide">처음</span>
-								</a> 
-								<a href="javascript:NDev.Site.Page(1);"	class="page_prev">
+								</a> <a href="javascript:NDev.Site.Page(1);" class="page_prev">
 									<span class="hide">이전</span>
-								</a> 
-								<span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
-									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> 
-									<a href="javascript:NDev.Site.Page(3);"><span>3</span></a> 
-									<a href="javascript:NDev.Site.Page(4);"><span>4</span></a> 
-									<a href="javascript:NDev.Site.Page(5);"><span>5</span></a> 
-									<a href="javascript:NDev.Site.Page(6);"><span>6</span></a> 
-									<a href="javascript:NDev.Site.Page(7);"><span>7</span></a> 
-									<a href="javascript:NDev.Site.Page(8);"><span>8</span></a> 
-									<a href="javascript:NDev.Site.Page(9);"><span>9</span></a> 
-									<a href="javascript:NDev.Site.Page(10);"><span>10</span>
-								</a>
-								</span> 
-								<a href="javascript:NDev.Site.Page(2);" class="page_next">
+								</a> <span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
+									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> <a
+									href="javascript:NDev.Site.Page(3);"><span>3</span></a> <a
+									href="javascript:NDev.Site.Page(4);"><span>4</span></a> <a
+									href="javascript:NDev.Site.Page(5);"><span>5</span></a> <a
+									href="javascript:NDev.Site.Page(6);"><span>6</span></a> <a
+									href="javascript:NDev.Site.Page(7);"><span>7</span></a> <a
+									href="javascript:NDev.Site.Page(8);"><span>8</span></a> <a
+									href="javascript:NDev.Site.Page(9);"><span>9</span></a> <a
+									href="javascript:NDev.Site.Page(10);"><span>10</span> </a>
+								</span> <a href="javascript:NDev.Site.Page(2);" class="page_next">
 									<span class="hide">다음</span>
-								</a>
-								<a href="javascript:NDev.Site.Page(8017);" class="page_last">
+								</a> <a href="javascript:NDev.Site.Page(8017);" class="page_last">
 									<span class="hide">끝</span>
 								</a>
 							</div>
@@ -244,9 +244,9 @@
 					NDev.Bod.Init();
 				</script>
 			</div>
-			</section>
-			<!-- bottom -->
-			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
-		</div>
-	</body>
+		</section>
+		<!-- bottom -->
+		<c:import url="/WEB-INF/views/layout/bottom.jsp" />
+	</div>
+</body>
 </html>
