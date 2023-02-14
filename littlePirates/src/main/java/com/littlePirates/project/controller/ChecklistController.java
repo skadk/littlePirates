@@ -72,14 +72,6 @@ public class ChecklistController {
 		return "/checkList/checkList_Clean";
 	}
 
-	/*
-	 * @RequestMapping("/checkList/checkList_Clean") public String
-	 * checkList_Checked(HttpSession session,Model model) { String memId
-	 * =(String)session.getAttribute("sid"); ChecklistVO vo = new ChecklistVO();
-	 * 
-	 * return "/checkList/checkList_Clean"; }
-	 */
-
 	// 체크리스트 통계
 	@RequestMapping("/checkList/checkList_Eat")
 	public String checkList_Eat(Model model) {
@@ -129,6 +121,15 @@ public class ChecklistController {
 }
 
 /*
+ * @RequestMapping("/checkList/checkList_Clean") public String
+ * checkList_Checked(HttpSession session,Model model) { String memId
+ * =(String)session.getAttribute("sid"); ChecklistVO vo = new ChecklistVO();
+ * 
+ * return "/checkList/checkList_Clean"; }
+ */
+
+
+/*
  * // 체크리스트 추가
  * 
  * @RequestMapping("/checkList/insertChecklist") public String
@@ -154,3 +155,4 @@ public class ChecklistController {
  * 
  * return "/checkList/checkList_Clean"; }
  */
+

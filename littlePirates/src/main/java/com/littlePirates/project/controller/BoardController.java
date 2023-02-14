@@ -42,7 +42,6 @@ public class BoardController {
 
 	@RequestMapping("/anonymusBoard")
 	public String anonymusBoard(Model model) {
-		// ProductService의 listAllProduct() 호출 (ProductService의 객체 필요 : DI 설정필요)
 		ArrayList<BoardVO> boardList = bservice.listAllBoard();
 		model.addAttribute("boardList", boardList);
 		
@@ -68,20 +67,13 @@ public class BoardController {
 		return "menu/board/fleaMarketText";
 	}
 
-	@RequestMapping("/freePresentTest")
-	public String freePresentTest() {
 
-		return "menu/board/freePresentTest";
-
-	}
 
 	private BoardService bservice;
 	/* private SummernoteService sservice; */
 	
 	@Autowired
-	public BoardController(BoardService bservice/*
-												 * , SummernoteService sservice
-												 */) {
+	public BoardController(BoardService bservice) {
 		this.bservice = bservice;
 		/* this.sservice = sservice; */
 	}
@@ -92,11 +84,7 @@ public class BoardController {
 							 @RequestParam String brdText, 
 							 Model model, HttpSession session) {
 		
-/*		String memId = (String) session.getAttribute("sid");
-		
-		if (memId != null) {*/
-		
-		String memId = "abc";
+			String memId = "abc";
 			
 			bservice.insertBoardText(memId, brdTitle, brdText);
 			
@@ -104,21 +92,8 @@ public class BoardController {
 			model.addAttribute("brdList", brdList);
 			
 			return "menu/board/boardText";
-			/*
-			 * } else { return "redirect:/member/login"; }
-			 */
-		
 	}
 	
-	/*
-	 * @RequestMapping(value="/SummerNoteImageFile" , method = RequestMethod.POST)
-	 * public @ResponseBody JSONObject SummerNoteImageFile(@RequestParam("file")
-	 * MultipartFile file) { JSONObject jsonObject =
-	 * sservice.SummerNoteImageFile(file); System.out.println(jsonObject);
-	 * System.out.println("2");
-	 * 
-	 * return jsonObject; }
-	 */
 	
 	@PostMapping(value="/uploadSummernoteImageFile", produces = "application/json")
 	@ResponseBody
