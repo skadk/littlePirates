@@ -42,7 +42,9 @@
 						</tbody>
 					</form>
 				</table>
-				
+				<!-- 				 <div class="col-md-10" style="margin-left:80px;">
+				 	<textarea id="summernote" rows="5" name="explanation" style="width:100%; height:250px;"></textarea>
+				 </div> -->
 			</div>
 		</div>
 		<!-- bottom -->
