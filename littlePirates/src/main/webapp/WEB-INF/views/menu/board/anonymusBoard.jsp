@@ -1,27 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>익명 게시판</title>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/board/board.css'/>">
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/board/button.css'/>">
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/board/fleaMarket.css'/>">
-<!-- head -->
-<c:import url="/WEB-INF/views/layout/head.jsp" />
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>익명 게시판</title>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/board.css'/>">
+		<!-- head -->
+		<c:import url="/WEB-INF/views/layout/head.jsp" />
+	</head>
 <body>
 	<div id="wrap">
-		<!-- background & header -->
-		<c:import url="/WEB-INF/views/layout/header.jsp" />
-		<!-- parentsNav -->
-		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 		<section id="mainBox">
 			<!-- 사이드메뉴 -->
 			<aside id="aside">
@@ -49,12 +44,13 @@
 					<div class="h3group mb30">
 						<h3 class="tit">익명게시판</h3>
 						<div class="location">
-							<span class="depth">홈</span> <span class="depth">커뮤니티</span> <strong
-								class="this">익명게시판</strong>
+							<span class="depth">홈</span> 
+							<span class="depth">커뮤니티</span> 
+							<strong class="this">익명게시판</strong>
 						</div>
 					</div>
 
-					<div class="h4group_bdb_n">
+					<div class="h4group">
 						<h4>이번 주의 자유게시판 인기 글!</h4>
 						<div class="period">2023.01.16 ~ 2023.01.22</div>
 					</div>
@@ -176,11 +172,13 @@
 											<td class="obj">
 												<div class="tbox">
 													<div class="tit">
-														<a href="/anonymusBoard/anonymusBoardText" class="view"
-															tmp="contents/bod" mn="18" cn="186313"> ${ brd.brdTitle }
-														</a>
+														<a href="/anonymusBoard/anonymusBoardText" class="view" tmp="contents/bod" mn="18" cn="186313">
+														 ${ brd.brdTitle }
+														 </a>
 													</div>
-													<div class="comt">(${ brd.brdResCount })</div>
+													<div class="comt">
+														(${ brd.brdResCount })
+													</div>
 													<div class="info"></div>
 												</div>
 												<div class="util">
@@ -194,10 +192,7 @@
 											</td>
 											<td class="etc">
 												<div class="nick">익명</div>
-												<div class="date">
-													<fmt:formatDate value="${ brd.brdDate }"
-														pattern="yyyy-MM-dd" />
-												</div>
+												<div class="date"><fmt:formatDate value="${ brd.brdDate }" pattern="yyyy-MM-dd"/></div>
 											</td>
 										</tr>
 									</c:forEach>
@@ -210,21 +205,26 @@
 							<div class="paging">
 								<a href="javascript:NDev.Site.Page(1);" class="page_first">
 									<span class="hide">처음</span>
-								</a> <a href="javascript:NDev.Site.Page(1);" class="page_prev">
+								</a> 
+								<a href="javascript:NDev.Site.Page(1);"	class="page_prev">
 									<span class="hide">이전</span>
-								</a> <span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
-									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> <a
-									href="javascript:NDev.Site.Page(3);"><span>3</span></a> <a
-									href="javascript:NDev.Site.Page(4);"><span>4</span></a> <a
-									href="javascript:NDev.Site.Page(5);"><span>5</span></a> <a
-									href="javascript:NDev.Site.Page(6);"><span>6</span></a> <a
-									href="javascript:NDev.Site.Page(7);"><span>7</span></a> <a
-									href="javascript:NDev.Site.Page(8);"><span>8</span></a> <a
-									href="javascript:NDev.Site.Page(9);"><span>9</span></a> <a
-									href="javascript:NDev.Site.Page(10);"><span>10</span> </a>
-								</span> <a href="javascript:NDev.Site.Page(2);" class="page_next">
+								</a> 
+								<span class="page"> <a href="javascript:;" class="on"><span>1</span></a>
+									<a href="javascript:NDev.Site.Page(2);"><span>2</span></a> 
+									<a href="javascript:NDev.Site.Page(3);"><span>3</span></a> 
+									<a href="javascript:NDev.Site.Page(4);"><span>4</span></a> 
+									<a href="javascript:NDev.Site.Page(5);"><span>5</span></a> 
+									<a href="javascript:NDev.Site.Page(6);"><span>6</span></a> 
+									<a href="javascript:NDev.Site.Page(7);"><span>7</span></a> 
+									<a href="javascript:NDev.Site.Page(8);"><span>8</span></a> 
+									<a href="javascript:NDev.Site.Page(9);"><span>9</span></a> 
+									<a href="javascript:NDev.Site.Page(10);"><span>10</span>
+								</a>
+								</span> 
+								<a href="javascript:NDev.Site.Page(2);" class="page_next">
 									<span class="hide">다음</span>
-								</a> <a href="javascript:NDev.Site.Page(8017);" class="page_last">
+								</a>
+								<a href="javascript:NDev.Site.Page(8017);" class="page_last">
 									<span class="hide">끝</span>
 								</a>
 							</div>
