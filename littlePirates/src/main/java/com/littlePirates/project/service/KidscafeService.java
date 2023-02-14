@@ -1,6 +1,7 @@
 package com.littlePirates.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,6 +40,16 @@ public class KidscafeService implements IKidscafeService {
 	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido) {
 
 		return dao.kidscafeSearchsido(sido);
+	}
+
+	@Override
+	public ArrayList<KidscafeVO> kidscafeSearchgu(String sido, String gu) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("sido", sido);
+		map.put("gu", gu);
+		
+		return dao.kidscafeSearchgu(map);
 	}
 
 	@Override

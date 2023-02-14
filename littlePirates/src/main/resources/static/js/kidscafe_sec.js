@@ -3,6 +3,7 @@
  */
  
 $(document).ready(function(){
+
 	$("#browsers").on("change", function() {
 	
 		$.ajax({
@@ -11,6 +12,30 @@ $(document).ready(function(){
  			data:{"sido": $(this).val()},
  			success:function(result){
  				$("#searchresult").html(result);
+ 				
+ 				$("#firstresult").hide();
+				
+ 			},
+ 			error:function(){
+ 				alert("실패");
+ 			},
+ 			complete:function(){
+ 				//alert("작업 완료");
+ 			}
+ 		}); // ajax 종료 	
+
+	});
+
+	$("#gugun").on("change", function() {
+	
+		$.ajax({
+ 			type:"post",
+ 			url:"/kidscafe_sec/search_gu",
+ 			data:{"sido": $("#browsers").val(),
+ 				  "gu": $("#gugun").val()},
+ 			success:function(result){
+ 				$("#searchresult").html(result);
+ 				
  				$("#firstresult").hide();
 				
  			},
@@ -42,7 +67,6 @@ $(document).ready(function(){
    var area15 = ["거제시","김해시","마산시","밀양시","사천시","양산시","진주시","진해시","창원시","통영시","거창군","고성군","남해군","산청군","의령군","창녕군","하동군","함안군","함양군","합천군"];
    var area16 = ["서귀포시","제주시","남제주군","북제주군"];
 
- 
 
  // 시/도 선택 박스 초기화
  $("select[name^=browsers]").each(function() {
@@ -53,7 +77,6 @@ $(document).ready(function(){
   $selsido.next().append("<option value=''>구/군 선택</option>");
  });
 
- 
 
  // 시/도 선택시 구/군 설정
  $("select[name^=browsers]").change(function() {

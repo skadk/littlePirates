@@ -27,9 +27,11 @@
 						<nav id="lnb" class="lnb">
 							<div id="sideSubBox">
 								<div class="on">
+									<img src="<c:url value='/images/지도.png' />" width="35" height="25">
 									<a href="/kidscafe_map">지도로 보기</a>
 								</div>
 								<div class="on">
+									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
 									<a href="/kidscafe_sec">간편하게 보기</a>
 								</div>
 							</div>
@@ -49,17 +51,20 @@
 								<tr>
 									<th>내부 사진</th>
 									<th>상세정보</th>
+									<th>내부 사진</th>
+									<th>상세정보</th>
 								</tr>	
 								<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 									<c:if test="${(status.index mod 2) eq 0}">
 										<tr>
-									</c:if>
-									<td><img src="<c:url value='/images/${mapInfo.kcNo}.jpg' />"
-										width="180" height="120"></td>
-									<td>${mapInfo.kcName }<br> ${mapInfo.kcAddress}<br>
-										운영시간<br> 전화번호<br> 평점
-									</td>
-									<c:if test="${(status.index mod 2) ne 0}">
+										</c:if>
+											<td><img src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" onerror="this.src='<c:url value='/images/logo.png'/>'" width="180" height="120"></td>
+											<td>가게명: ${mapInfo.kcName }<br> 
+												주소: ${mapInfo.kcAddress}<br>
+												운영시간: <br> 
+												전화번호: ${mapInfo.kcphone }
+											</td>
+										<c:if test="${(status.index mod 2) ne 0}">	
 										</tr>
 									</c:if>
 								</c:forEach>

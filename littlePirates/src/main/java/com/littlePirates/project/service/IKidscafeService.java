@@ -10,6 +10,7 @@ public interface IKidscafeService {
 	public String searchKidsCafe(String keyword);
 	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName);
 	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido);
+	public ArrayList<KidscafeVO> kidscafeSearchgu(String sido, String gu);
 
 	public ArrayList<KidscafeReviewVO> reviewList(int kcNo);
 

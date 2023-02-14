@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-			<div id="backgroundBox">
+			<!--  <div id="backgroundBox">
 			    <div class="blur">
 			    </div>
 			    <div class="particles" id="particles">
 			    </div>
-			</div>
+			</div>-->
 			<header>
 				<div id="headerBox">
 					<a href="<c:url value='/'/>" id="headerLogo">

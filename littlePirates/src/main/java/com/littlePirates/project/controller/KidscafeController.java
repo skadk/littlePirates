@@ -65,6 +65,18 @@ public class KidscafeController {
 		
 		return "kidscafe/kidscafe_sec_sido";
 	}
+
+	// 구/군 선택시 해당되는 구/군 출력
+	@RequestMapping("/kidscafe_sec/search_gu")
+	public String kidscafe_sec_search_gu(@RequestParam String sido, 
+										 @RequestParam String gu, 
+										 Model model) {
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchgu(sido, gu);
+		
+		model.addAttribute("voList", voList);
+		
+		return "kidscafe/kidscafe_sec_gu";
+	}
 	
 	//	키즈카페 키워드 검색 후 해당 관련 정보 나타내기
 	@RequestMapping("/kidscafe_map/kidscafeSearch")

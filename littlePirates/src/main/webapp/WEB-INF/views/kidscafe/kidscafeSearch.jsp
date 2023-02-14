@@ -13,10 +13,12 @@
 			</tr>	
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<tr>
-				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" width="180" height="110"></td>
-				<td>${mapInfo.kcName }<br> ${mapInfo.kcAddress}<br>
-					운영시간<br> 전화번호<br> 평점
-				</td>
+				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" onerror="this.src='<c:url value='/images/logo.png'/>'"width="180" height="110"></td>
+				<td><a href="<c:url value='/kidscafe_third'/>">가게명: ${mapInfo.kcName }<br> 
+					주소: ${mapInfo.kcAddress}<br>
+					운영시간: <br> 
+					전화번호: ${mapInfo.kcphone }
+				</a></td>
 			</tr>
 		</c:forEach>
 	</table>
