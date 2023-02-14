@@ -12,11 +12,11 @@
 		<c:import url="/WEB-INF/views/layout/head.jsp" />
 	</head>
 <body>
-	<!-- background -->
-	<c:import url="/WEB-INF/views/layout/background.jsp"/>
 	<div id="wrap">
-		<!-- top -->
-		<c:import url="/WEB-INF/views/layout/top.jsp" />
+			<!-- background & header -->
+			<c:import url="/WEB-INF/views/layout/header.jsp"/>
+			<!-- parentsNav -->
+			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 		<section id="mainBox">
 			<!-- 사이드메뉴 -->
 			<aside id="aside">
@@ -42,11 +42,11 @@
 			<div id="contents">
 				<div class="conwrap pb30">
 					<div class="h3group mb30">
-						<h3 class="tit">자유게시판</h3>
+						<h3 class="tit">익명게시판</h3>
 						<div class="location">
 							<span class="depth">홈</span> 
 							<span class="depth">커뮤니티</span> 
-							<strong class="this">자유게시판</strong>
+							<strong class="this">익명게시판</strong>
 						</div>
 					</div>
 
@@ -172,7 +172,7 @@
 											<td class="obj">
 												<div class="tbox">
 													<div class="tit">
-														<a href="javascript:;" class="view" tmp="contents/bod" mn="18" cn="186313">
+														<a href="/anonymusBoard/anonymusBoardText" class="view" tmp="contents/bod" mn="18" cn="186313">
 														 ${ brd.brdTitle }
 														 </a>
 													</div>
