@@ -1,6 +1,9 @@
 /**
  * 	checklist_Manner.js
  */
+
+ 
+ /*
 $(document).ready(function(){
 	const numberOfImages = 10;
 	const images = [];
@@ -75,4 +78,4 @@ $(document).ready(function(){
 	document.querySelector('.createChecklist2').addEventListener('click',reCreate);
 });
 
-
+*/

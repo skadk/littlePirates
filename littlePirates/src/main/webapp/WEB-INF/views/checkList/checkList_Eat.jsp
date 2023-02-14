@@ -16,7 +16,7 @@
 	
  	<div class="container">
   		<div class="eatHeader">
-  			 <c:forEach var="vo" items="${voList}" end="0">
+  			 <c:forEach var="vo" items="${checkList}" end="0">
 		    ${vo.memId}님의 체크리스트 현황
 		    </c:forEach>
   		</div>
@@ -35,11 +35,11 @@
  				<div class="searchResult">
 
  			<table id="dataTable">
+			 <tr><th>회차</th><th>체크리스트 명</th><th>체크리스트 달성 날짜</th></tr>
+			  <c:forEach var="vo" items="${checkList}" varStatus="status">
 
-			  <c:forEach var="vo" items="${voList}" varStatus="status">
-			    <tr><th>회차</th><th>체크리스트 명</th><th>체크리스트 달성 날짜</th></tr>
 			    <tr>			    
-			      <td rowspan="9">${vo.chhNo}</td>
+			      <td rowspan="9">${vo.chhTimes}</td>
 			      <td>${vo.chlNo1}</td>
 			      <td>${vo.chlNo1_Checked}</td>
 			    </tr>
@@ -82,7 +82,7 @@
  				<div></div>
  
    			</div>
-	</div> 
-
+	</div>
+	 
 </body>
 </html>

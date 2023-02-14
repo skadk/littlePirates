@@ -9,6 +9,7 @@ public class ChecklistVO {
 	private int chhNo;
 	private String memId;
 	private String chhDate;
+	private int chhTimes;
 	
 	private String chlNo1;
 	private String chlNo2;
@@ -39,7 +40,7 @@ public class ChecklistVO {
 	private String chlNo7_Checked;
 	private String chlNo8_Checked;
 	private String chlNo9_Checked;
-	private boolean chh_Checked;
+	private int chh_Checked;
 	
 	
 	public int getChlNo() {
@@ -73,7 +74,13 @@ public class ChecklistVO {
 	public void setChhDate(String chhDate) {
 		this.chhDate = chhDate;
 	}
-
+	public int getChhTimes() {
+		return chhTimes;
+	}
+	public void setChhTimes(int chhTimes) {
+		this.chhTimes = chhTimes;
+	}
+	
 	
 	public String getChlText1() {
 		return chlText1;
@@ -299,7 +306,63 @@ public class ChecklistVO {
 		this.chlNo9 = chlNo9;
 	}
 	
+	/*
+	public void setChl_Checked(int index,String chlNo_Check) {
+		switch(index) {
+		case 0:
+			this.chlNo1_Checked = chlNo_Check;
+			break;
+		case 1:
+			this.chlNo2_Checked = chlNo_Check;
+			break;
+		case 2:
+			this.chlNo3_Checked = chlNo_Check;
+			break;
+		case 3:
+			this.chlNo4_Checked = chlNo_Check;
+			break;
+		case 4:
+			this.chlNo5_Checked = chlNo_Check;
+			break;
+		case 5:
+			this.chlNo6_Checked = chlNo_Check;
+			break;
+		case 6:
+			this.chlNo7_Checked = chlNo_Check;
+			break;
+		case 7:
+			this.chlNo8_Checked = chlNo_Check;
+			break;
+		case 8:
+			this.chlNo9_Checked = chlNo_Check;
+			break;	
+		}	
+	}
 	
+	public String getChl_Checked(int index) {
+		switch(index) {
+		case 0:
+			return this.chlNo1_Checked;
+		case 1:
+			return this.chlNo2_Checked;
+		case 2:
+			return this.chlNo3_Checked;
+		case 3:
+			return this.chlNo4_Checked;
+		case 4:
+			return this.chlNo5_Checked;
+		case 5:
+			return this.chlNo6_Checked;
+		case 6:
+			return this.chlNo7_Checked;
+		case 7:
+			return this.chlNo8_Checked;
+		case 8:
+			return this.chlNo9_Checked;	
+		}
+			return null;
+	}
+	*/
 	
 	public String getChlNo1_Checked() {
 		return chlNo1_Checked;
@@ -356,10 +419,12 @@ public class ChecklistVO {
 		this.chlNo9_Checked = chlNo9_Checked;
 	}
 	
-	public boolean isChh_Checked() {
+	
+	
+	public int isChh_Checked() {
 		return chh_Checked;
 	}
-	public void setChh_Checked(boolean chh_Checked) {
+	public void setChh_Checked(int chh_Checked) {
 		this.chh_Checked = chh_Checked;
 	}
 	

@@ -96,7 +96,7 @@
 				<table border="1" class="table">
 					<c:forEach var="kd" items="${KList }">
 						<tr>
-							<td><img src="<c:url value='/image/${kd.kdName}.png' />"
+							<td><img src="<c:url value='/images/${kd.kdName}.png' />"
 								width="180" height="120"></td>
 							<td>${kd.kdName }<br> ${kd.kdAddress}<br>
 								${kd.kdType}<br> ${kd.kdTel}
@@ -111,7 +111,7 @@
 				<table border="1" class="table2">
 					<c:forEach var="nur" items="${NList }">
 						<tr>
-							<td><img src="<c:url value='/image/${nur.nurName}.jpg' />"
+							<td><img src="<c:url value='/images/${nur.nurName}.jpg' />"
 								width="180" height="120"></td>
 							<td>${nur.nurName }<br> ${nur.nurAddress}<br>
 								${nur.nurType}<br> ${nur.nurTel}

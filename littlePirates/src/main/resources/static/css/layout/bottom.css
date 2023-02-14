@@ -104,5 +104,12 @@ hr {
 #infoBox p:hover {
 	color: black;
 }
-
+/*-------------footer 태그-------------*/
+.btmTag{
+	text-decoration:none;
+	color: #6e6e6e;
+}
+.btmTag:hover {
+	color: black;
+}
 /*------------- Footer 끝 -------------*/

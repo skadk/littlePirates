@@ -59,7 +59,7 @@
 .child{
   flex-basis: 350px;
   height : 200px;
-
+  margin-left: 20px;
 }
 .child img{
 	position :absolute;
