@@ -35,10 +35,12 @@
 						<nav id="lnb" class="lnb">
 							<div id="sideSubBox">
 								<div class="on">
+									<img src="<c:url value='/images/지도.png' />" width="35" height="25">
 									<a href="/kidscafe_map">지도로 보기</a>
 								</div>
 								<div class="on">
 									<a href="/kidscafe_sec">간편하게 보기</a>
+									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
 								</div>
 							</div>
 						</nav>						

@@ -3,7 +3,6 @@ package com.littlePirates.project.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.littlePirates.project.model.KidscafeReviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 
 public interface IKidscafeDAO {
@@ -12,6 +11,4 @@ public interface IKidscafeDAO {
 	public ArrayList<KidscafeVO> kidscafeSearchkeyword(String kcName);
 	public ArrayList<KidscafeVO> kidscafeSearchsido(String sido);
 	public ArrayList<KidscafeVO> kidscafeSearchgu(HashMap<String, Object> map);
-
-	public ArrayList<KidscafeReviewVO> reviewList(int kcNo);
 }

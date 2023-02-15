@@ -14,8 +14,9 @@
 		<result property="kcphone" column="kcphone" />
 	</resultMap>
 	<resultMap id="reviewResult"
-		type="com.littlePirates.project.model.KidscafeReviewVO">
+		type="com.littlePirates.project.model.KcreviewVO">
 		<result property="kcrNo" column="kcrNo" />
+		<result property="kcrTitle" column="kcrTitle" />
 		<result property="kcrText" column="kcrText" />
 		<result property="kcrDate" column="kcrDate" />
 		<result property="memId" column="memId" />
@@ -59,12 +60,14 @@
 		where browsers=#{sido} AND kcAddress Like CONCAT ('%',#{gu},'%')
 	</select>
 
-	<select id="reviewList" parameterType="string"
-		resultMap="reviewResult">
-		SELECT *
+	<!-- 게시판 전체 보기 -->
+	<select id="listAll" resultMap="reviewResult">
+		SELECT * 
 		FROM kidscafereview
-		WHERE kcNo=#{kcNo}
 	</select>
+
+
+
 
 </mapper>
   
