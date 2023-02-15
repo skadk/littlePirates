@@ -15,6 +15,12 @@
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 <script src="<c:url value='/js/children.js' />"></script>
 <script src="<c:url value='/js/childrenScroll.js' />"></script>
+<script>
+	function selChange() {
+		var sel = document.getElementById('cntPerPage').value;
+		location.href = "children?nowPage=${paging.nowPage}&cntPerPage=" + sel;
+	}
+</script>
 </head>
 
 
@@ -26,14 +32,12 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp" />
 		<!-- parentsNav -->
 		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
+		
+		
 		<section>
-
-			<!-- MIDDLE -->
-
-			<div class="middle">
-
-				<!-- SCROLL1 -->
-				<div class="scroll">
+			
+			<!-- SCROLL1 -->
+			<!--			 <div class="scroll">
 					<div class="dropdown-label">
 						도/시를 선택하세요
 
@@ -60,7 +64,7 @@
 						</div>
 					</div>
 
-					<!-- SCROLL2 -->
+					
 					<div class="dropdown-label-1">
 						시/구/군를 선택하세요
 
@@ -88,15 +92,34 @@
 					</div>
 
 				</div>
+-->
+			<!-- MIDDLE -->
+
+			<div class="middle">
+
+				<!-- BoardSelect -->
+				<div class="boardSelect"></div>
+				<div class="kBoard">
+					<a href="<c:url value='/kindergartenBoard'/>"><h2>유치원 게시판</h2>
+					</a>
+				</div>
+				<div class="nBoard">
+					<a href="<c:url value='/nurseryBoard'/>"><h2>어린이집 게시판</h2> </a>
+				</div>
+
+
+
+
+
 
 				<!-- INFORMATION 1 -->
 				<div class="kin">
-					<a href="<c:url value='/kindergarten'/>"><h2>유치원</h2> </a>
+					<a href="<c:url value='/kindergartenBoard'/>"><h2>유치원</h2> </a>
 				</div>
 				<table border="1" class="table">
 					<c:forEach var="kd" items="${KList }">
 						<tr>
-							<td><img src="<c:url value='/images/${kd.kdName}.png' />"
+							<td><img src="<c:url value='/image/${kd.kdName}.png' />"
 								width="180" height="120"></td>
 							<td>${kd.kdName }<br> ${kd.kdAddress}<br>
 								${kd.kdType}<br> ${kd.kdTel}
@@ -106,12 +129,30 @@
 				</table>
 				<!-- INFORMATION 2 -->
 				<div class="nur">
-					<a href="<c:url value='/nursery'/>"><h2>어린이집</h2></a>
+					<a href="<c:url value='/nurseryBoard'/>"><h2>어린이집</h2></a>
 				</div>
+				<div id="list" style="float: right;">
+					<select id="cntPerPage" name="sel" onchange="selChange()">
+						<option value="5"
+							<c:if test="${paging.cntPerPage == 5}">selected</c:if>>5줄
+							보기</option>
+						<option value="10"
+							<c:if test="${paging.cntPerPage == 10}">selected</c:if>>10줄
+							보기</option>
+						<option value="15"
+							<c:if test="${paging.cntPerPage == 15}">selected</c:if>>15줄
+							보기</option>
+						<option value="20"
+							<c:if test="${paging.cntPerPage == 20}">selected</c:if>>20줄
+							보기</option>
+					</select>
+				</div>
+				<!-- 옵션선택 끝 -->
+
 				<table border="1" class="table2">
 					<c:forEach var="nur" items="${NList }">
 						<tr>
-							<td><img src="<c:url value='/images/${nur.nurName}.jpg' />"
+							<td><img src="<c:url value='/image/${nur.nurName}.jpg' />"
 								width="180" height="120"></td>
 							<td>${nur.nurName }<br> ${nur.nurAddress}<br>
 								${nur.nurType}<br> ${nur.nurTel}
@@ -119,11 +160,42 @@
 						</tr>
 					</c:forEach>
 				</table>
+				
+				
 			</div>
+				<div>
+		<div style="display: block; text-align: center;">
+					<c:if test="${paging.startPage != 1 }">
+						<a
+							href="/children?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+					</c:if>
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
+						var="p">
+						<c:choose>
+							<c:when test="${p == paging.nowPage }">
+								<b>${p }</b>
+							</c:when>
+							<c:when test="${p != paging.nowPage }">
+								<a
+									href="/children?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+							</c:when>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${paging.endPage != paging.lastPage}">
+						<a
+							href="/children?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+					</c:if>
+
+					<br />
+
+				</div>
+		</div>
 		</section>
 
+		
+
 		<!-- bottom -->
-		<c:import url="/WEB-INF/views/layout/bottom.jsp" />
+<%-- 		<c:import url="/WEB-INF/views/layout/bottom.jsp" /> --%>
 
 	</div>
 </body>

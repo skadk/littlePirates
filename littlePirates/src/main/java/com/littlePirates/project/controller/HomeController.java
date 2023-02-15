@@ -58,17 +58,15 @@ public class HomeController {
 		return "menu/children/nursery";
 	}
 	
-	@RequestMapping("/nurseryBoard")
-	public String nurseryBoard() {
-		
-		return "menu/children/nurseryBoard";
-	}
-	
-	@RequestMapping("/kindergartenBoard")
-	public String kindergartenBoard() {
-		
-		return "menu/children/kindergartenBoard";
-	}
+	/*
+	 * @RequestMapping("/nurseryBoard") public String nurseryBoard() {
+	 * 
+	 * return "menu/children/nurseryBoard"; }
+	 * 
+	 * @RequestMapping("/kindergartenBoard") public String kindergartenBoard() {
+	 * 
+	 * return "menu/children/kindergartenBoard"; }
+	 */
 	
 	@RequestMapping("/paintDiary")
 	public String paintDiary() {

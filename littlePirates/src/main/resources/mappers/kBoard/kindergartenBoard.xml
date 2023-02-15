@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.littlePirates.project.dao.IKBoardDAO">
+	<resultMap id="BoaResult"
+		type="com.littlePirates.project.model.KBoardVO">
+		<result property="kBrdNo" column="kBrdNo" />
+		<result property="memId" column="memId" />
+		<result property="kBrdTitle" column="kBrdTitle" />
+		<result property="kBrdText" column="kBrdText" />
+		<result property="kBrdDate" column="kBrdDate" />
+	</resultMap>
+
+	<!-- 게시판 전체 보기 -->
+	<select id="listAllBoard" resultMap="BoaResult">
+		SELECT * FROM kindergartenBoard
+	</select>
+
+	<insert id="writeKBoard"
+		parameterType="com.littlePirates.project.model.KBoardVO">
+		INSERT INTO kindergartenBoard
+		(memId,kBrdTitle,kBrdText,kBrdDate)
+		VALUES
+		( #{memId}, #{kBrdTitle}, #{kBrdText}, #{kBrdDate})
+	</insert>
+	<select id="kBoardRead" parameterType="string"
+		resultType="com.littlePirates.project.model.KBoardVO">
+		SELECT * FROM kindergartenBoard WHERE kBrdNo = #{kBrdNo}
+	</select>
+	<delete id="deleteKBoard" parameterType="string">
+		DELETE FROM
+		kindergartenBoard WHERE kBrdNo=#{kBrdNo}
+	</delete>
+	<update id="updateKBoard"
+		parameterType="com.littlePirates.project.model.KBoardVO">
+		UPDATE kindergartenBoard
+		SET kBrdTitle=#{kBrdTitle},
+		kBrdText=#{kBrdText}
+		WHERE kBrdNo=#{kBrdNo}
+	</update>
+
+	<!-- 후기 검색 -->
+	<select id="kBoardSearch" parameterType="string"
+		resultType="com.littlePirates.project.model.KBoardVO">
+		SELECT * FROM kindergartenBoard WHERE kBrdTitle Like
+		CONCAT('%', #{keyword},'%')
+	</select>
+</mapper>
