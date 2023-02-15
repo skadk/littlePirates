@@ -39,6 +39,13 @@ public class BoardController {
 
 		return "menu/board/boardText";
 	}
+	
+	@RequestMapping("/board/boardWrite")
+	public String boardWrite() {
+
+		return "menu/board/boardWrite";
+
+	}
 
 	@RequestMapping("/anonymusBoard")
 	public String anonymusBoard(Model model) {

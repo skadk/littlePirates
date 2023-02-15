@@ -1,6 +1,8 @@
 package com.littlePirates.project.controller;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,38 +14,157 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.littlePirates.project.model.MemberVO;
+import com.littlePirates.project.service.EmailService;
 import com.littlePirates.project.service.MemberService;
 
 @Controller
 public class MemberController {
-	
+
+	private MemberService mservice;
+	private EmailService eservice;
+
 	@Autowired
-	MemberService mservice;
-	
-	// 회원가입 폼 연결
-	@RequestMapping("/member/signUpForm")
-	public String signUpForm(MemberVO vo) {
-		
-		mservice.signUpMember(vo);
-		
-		return "member/login"; // 회원가입 후 로그인 폼으로 이동
+	public MemberController(MemberService mservice, EmailService eservice) {
+		this.mservice = mservice;
+		this.eservice = eservice;
 	}
-	
-	// 아이디 중복 체크
+
+	// 회원가입1 폼 연결 -> 회원가입1
+	@RequestMapping("/member/signUpForm1")
+	public String signUpForm1(MemberVO vo) {
+		
+		System.out.println("회원가입1 된거임?");
+		mservice.signUpMember(vo);
+
+		return "member/signUp2"; // 회원가입 후 로그인 폼으로 이동
+	}
+
+	// 아이디 중복 확인 버튼 -> 중복 확인
 	@ResponseBody
 	@RequestMapping("/member/memIdCheck")
-	public String memIdCheck(@RequestParam("memId") String memId) {
+	public String memIdCheck(@RequestParam("memId") String memId, 
+							 @RequestParam("checkedId") String checkedId) {
+		
 		// 서비스 호출하고 DB에 memId 존재하면 memId받고, 존재하지 않으면 null받음
 		String memId_result = mservice.memIdCheck(memId);
 
 		String result = "notUsed";
-		
-		if (memId_result != null) { // 존재 한다면
-			result = "used";
-		}
 
+		if (memId_result != null) { // 중복
+			result = "used";
+		} else { // 중복 아님
+			result = "notUsed";
+			
+			String email_result = eservice.emailMemIdCheck(memId);
+			
+			if (email_result == null) {
+				eservice.emailAuthCreate(memId);
+			}
+			// 이미 같은 아이디로 중복 확인함	
+		}
+		
 		return result;
 	}
+
+	// 인증 이메일 보내기 버튼 -> 인증 이메일 전송, 인증키 DB에 저장
+	@ResponseBody
+	@RequestMapping("/member/authEmailSend")
+	public String authEmailSend(@RequestParam("memId") String memId, 
+								@RequestParam("memEmail") String memEmail) {
+		
+		Random random = new Random();
+		StringBuffer key = new StringBuffer();
+		
+		for (int i = 0; i < 6; i++) {
+			int index = random.nextInt(3);
+			
+			switch (index) {
+			case 0:
+				key.append((char) ((int) random.nextInt(26) + 97));
+				break;
+			case 1:
+				key.append((char) ((int) random.nextInt(26) + 65));
+				break;
+			case 2:
+				key.append(random.nextInt(10));
+				break;
+			}
+		}
+		
+		String authKey = key.toString();
+		
+		eservice.updateEmailAuthKey(memId, authKey);
+		
+		String body = "<table width='706px' height='476px' bgcolor='#FFF4E9' align='center' style='border-top:3px; border-bottom:3px; border-left:3px; border-right:3px; border-style:dashed; border-color:#70cacd; border-spacing:0;'>" +
+					  "<tbody><tr><td width='360px'><img src=\"https://lh3.google.com/u/0/d/1DvOn9xUK4-JNLiSTfNQOqbYxCZVKPiyN=w1314-h937-iv2\"></td>" + 
+					  "<td width='340px'><table border='0' width='340px' height='470px' align='center' style='border-spacing:0;'>" + 
+					  "<tbody><tr height='40px'><td style='font-size:30px; font-weight:bold;'><br></td></tr>" + 
+					  "<tr height='40px'><td style='font-size:30px; font-weight:bold; color:#42394a;'>환영한다</td></tr>" + 
+					  "<tr height='40px'><td style='font-size:30px; font-weight:bold; color:#007F86;'>" + memId + "<b style=' color:#42394a;'>!</b></td></tr>" + 
+					  "<tr height='35px'><td style='font-size:20px;'>아래의 인증 번호를 입력해</td></tr>" + 
+					  "<tr height='35px'><td style='font-size:20px;'>본인 인증을 완료하길 바란다!</td></tr>" + 
+					  "<tr height='40px'><td style='font-size:20px;'>인증키는 <b style='font-size:30px; font-weight:bold; color:#F05757;'>" + authKey + "</b> 이다!</td></tr>" + 
+					  "<tr height='35px'><td style='font-size:20px;'>꼬마 해적단 입단을 환영한다~!</td></tr>" + 
+					  "<tr height='40px'><td style='font-size:30px; font-weight:bold; color:#42394a;'>크하하하핫!</td></tr>" +
+					  "<tr><td><img src=\"https://lh3.google.com/u/0/d/1bpEni0sFB2bZoJN7kyxiTVQ6AV5qekcf=w958-h907-iv4\" width='340px' height='165px'></td></tr>" +
+					  "</tbody></table></td>" + 
+					  "</tr></tbody></table>";
+		
+		String sendResult = eservice.sendAuthEamil(memEmail, body);
+		
+		return sendResult;
+	}
+	
+	// 인증키 확인 버튼 -> 입력된 인증키 확인
+	@ResponseBody
+	@RequestMapping("/member/authKeyCheck")
+	public String authKeyCheck(@RequestParam("memId") String memId, 
+							   @RequestParam("authKeyCheck") String authKeyCheck) {
+		
+		HashMap<String, Object> map = eservice.getKeyAndTime(memId);
+		
+		String result = "인증 이메일을 보낸 후 진행해 주세요.";
+		
+		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:03:00')") != null) {
+			String authTimeS = map.get("ADDTIME(authTime, '0:03:00')").toString();			
+			
+			LocalDateTime authTimePlus = LocalDateTime.parse(authTimeS);
+			LocalDateTime now = LocalDateTime.now();
+			
+			if (now.isBefore(authTimePlus) == true) {
+				if (!authKeyCheck.equals("")) {
+					if (map.get("authKey").equals(authKeyCheck)) {
+						result = "확인되었습니다. 회원가입을 진행해 주세요.";
+						eservice.updateEmailAuth1(memId, authKeyCheck);
+					} else {
+						result = "잘못된 인증키입니다. 인증 이메일에 쓰여진 인증키를 입력해 주세요.";
+					}
+				} else {
+					result = "checkYourEmail";
+				}
+			} else {
+				result = "timeOut";				
+				eservice.updateEmailAuth0(memId);
+			}
+		}
+		return result;
+	}
+	
+	// 회원가입 창 나가면 인증 DB 삭제
+	@ResponseBody
+	@RequestMapping("/member/authDelete")
+	public void authDelete() {
+		
+		eservice.emailAuthDelete();
+	}
+//	
+//	 // 다음으로! 버튼 -> 다음 페이지로 넘어가도 되는지 확인
+//	@ResponseBody
+//	@RequestMapping("/member/signUpForm1Check")
+//	public void authDelete() {
+//		
+//	}
+//				result = eservice.checkEmailAuth(memId);
 	
 	// 비밀번호 암호화 한 경우의 로그인 처리 방식
 	@ResponseBody
@@ -59,56 +180,54 @@ public class MemberController {
 		}
 		return result;
 	}
-	
+
 	// 로그아웃
 	@RequestMapping("/member/logout")
 	public String logout(HttpSession session) {
 		// 세션 무효화
 		session.invalidate();
-		
+
 		return "redirect:/"; // index로 포워딩 -> HomeController에 있는 @RequestMapping("/")
 	}
-	
+
 	// 아이디 찾기 폼 이동
 	@RequestMapping("/member/findIdForm")
 	public String findIdForm() {
-		
+
 		return "member/findIdForm";
 	}
-	
+
 	// 아이디 찾기위해 이름 이메일 입력 확인
 	@ResponseBody
 	@RequestMapping("/member/findId")
-	public String findId(@RequestParam("findIdName") String memName,
-						 @RequestParam("findIdEmail") String memEmail,
-						 Model model) {
-		
+	public String findId(@RequestParam("findIdName") String memName, @RequestParam("findIdEmail") String memEmail,
+			Model model) {
+
 		String result = mservice.findId(memName, memEmail);
 		model.addAttribute("id", result);
-		
+
 		if (result != null) {
 			return result;
 		} else {
 			result = "fail";
-			return result;		
+			return result;
 		}
 	}
 
 	// 비밀번호 찾기 폼 이동
 	@RequestMapping("/member/findPwdForm")
 	public String findPwdForm() {
-		
+
 		return "member/findPwdForm";
 	}
-	
+
 	// 비밀번호 찾기 위해 이름이랑 이메일 입력 확인
 	@RequestMapping("/member/findPwd")
-	public String findPwd(@RequestParam("findPwdName") String memName,
-						  @RequestParam("findPwdEmail") String memEmail,
-						  Model model) {
-		
+	public String findPwd(@RequestParam("findPwdName") String memName, @RequestParam("findPwdEmail") String memEmail,
+			Model model) {
+
 		String result = mservice.findPwd(memName, memEmail);
-		
+
 		if (result != null) {
 			if (result.equals(memName)) {
 				return "member/findPwdComplete";
@@ -119,14 +238,14 @@ public class MemberController {
 			return "redirect:/member/findPwdForm";
 		}
 	}
-	
+
 	// 비밀번호 변경 (업데이트)
 	@RequestMapping("/member/changePwd")
 	public String changePwd(MemberVO vo) {
-		
+
 		mservice.changePwd(vo);
-		
+
 		return "member/login"; // 로그인 폼으로 이동
 	}
-	
+
 }

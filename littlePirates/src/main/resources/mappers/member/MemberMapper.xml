@@ -5,10 +5,10 @@
   
   <mapper namespace="com.littlePirates.project.dao.IMemberDAO">
   
-  	<!-- 회원 정보 등록 -->
+  	<!-- 회원가입 -->
   	<insert id="signUpMember" parameterType="com.littlePirates.project.model.MemberVO">
-  		INSERT INTO member(memId, memPwd, memName, memEmail, memHP, memZipcode, memAddress1, memAddress2, memParentNo)
-  		VALUES (#{memId}, #{memPwd}, #{memName}, #{memEmail}, #{memHP},#{memZipcode}, #{memAddress1}, #{memAddress2}, #{memParentNo})
+  		INSERT INTO member(memId, memPwd, memName, memEmail, memMobile, memZipcode, memAddress1, memAddress2)
+  		VALUES (#{memId}, #{memPwd}, #{memName}, #{memEmail}, #{memMobile},#{memZipcode}, #{memAddress1}, #{memAddress2})
   	</insert>
   	
   	<!-- 아이디 중복 확인 -->
