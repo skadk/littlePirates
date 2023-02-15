@@ -41,7 +41,7 @@ $(document).ready(function(){
 		    var pageNumber = this.value;
 		    var startRow = (pageNumber - 1) * rowsPerPage;
 		    var endRow = startRow + rowsPerPage;
- 				  	  // Loop through all the rows and hide the ones that should not be displayed on the current page
+ 			// Loop through all the rows and hide the ones that should not be displayed on the current page
 			 for (var i = 0; i < totalRows; i++) {
 			    if (i < startRow || i >= endRow) {
 			      table.rows[i].style.display = "none";

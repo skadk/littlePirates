@@ -11,13 +11,14 @@ public interface IChecklistDAO {
 	
 	public ArrayList<String> checklistInfo2();
 	
-	public ArrayList<ChecklistVO> checklistInfo3();
+	public ArrayList<ChecklistVO> checklistInfo3(String memId);
 
 	public void insertChecklist(ChecklistVO vo);
 
 	public void updateChecklist(ChecklistVO vo);
 
 	public int ischhChecked(String memId);
+//	public int currentChecklist(String memId);
 	
 	public ArrayList<ChecklistVO> selectChecklist(String memId);
 	
@@ -48,5 +49,9 @@ public interface IChecklistDAO {
 	public void updateChecked7(HashMap<String, Object> map);
 	public void updateChecked8(HashMap<String, Object> map);
 	public void updateChecked9(HashMap<String, Object> map);
+
+	/*
+	 * public ChecklistVO updateChh_Checked(String memId);
+	 */
 
 }

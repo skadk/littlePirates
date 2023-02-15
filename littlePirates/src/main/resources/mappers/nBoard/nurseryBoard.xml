@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.littlePirates.project.dao.INBoardDAO">
+	<resultMap id="BoaResult"
+		type="com.littlePirates.project.model.NBoardVO">
+		<result property="nBrdNo" column="nBrdNo" />
+		<result property="memId" column="memId" />
+		<result property="nBrdTitle" column="nBrdTitle" />
+		<result property="nBrdText" column="nBrdText" />
+		<result property="nBrdDate" column="nBrdDate" />
+	</resultMap>
+
+	<!-- 게시판 전체 보기 -->
+	<select id="listAllBoard" resultMap="BoaResult">
+		SELECT * FROM nurseryBoard
+	</select>
+
+	<insert id="writeNBoard"
+		parameterType="com.littlePirates.project.model.NBoardVO">
+		INSERT INTO nurseryBoard
+		(memId,nBrdTitle,nBrdText,nBrdDate)
+		VALUES
+		( #{memId}, #{nBrdTitle}, #{nBrdText}, #{nBrdDate})
+	</insert>
+	<select id="nBoardRead" parameterType="string"
+		resultType="com.littlePirates.project.model.NBoardVO">
+		SELECT * FROM nurseryBoard WHERE nBrdNo = #{nBrdNo}
+	</select>
+	<delete id="deleteNBoard" parameterType="string">
+		DELETE FROM
+		nurseryBoard WHERE nBrdNo=#{nBrdNo}
+	</delete>
+	<update id="updateNBoard"
+		parameterType="com.littlePirates.project.model.NBoardVO">
+		UPDATE nurseryBoard
+		SET nBrdTitle=#{nBrdTitle},
+		nBrdText=#{nBrdText}
+		WHERE nBrdNo=#{nBrdNo}
+	</update>
+
+	<!-- 후기 검색 -->
+	<select id="nBoardSearch" parameterType="string"
+		resultType="com.littlePirates.project.model.NBoardVO">
+		SELECT * FROM nurseryBoard WHERE nBrdTitle Like
+		CONCAT('%', #{keyword},'%')
+	</select>
+</mapper>

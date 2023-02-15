@@ -10,6 +10,7 @@ import com.littlePirates.project.dao.IChildrenDAO;
 
 import com.littlePirates.project.model.ChildrenVO;
 import com.littlePirates.project.model.KindergartenVO;
+import com.littlePirates.project.model.PagingVO;
 
 @Service
 public class ChildrenService implements IChildrenService {
@@ -18,8 +19,8 @@ public class ChildrenService implements IChildrenService {
 	private IChildrenDAO dao;
 
 	@Override
-	public ArrayList<ChildrenVO> NurseryList() {
-		return dao.NurseryList();
+	public ArrayList<ChildrenVO> NurseryList(PagingVO vo) {
+		return dao.NurseryList(vo);
 	}
 
 	@Override
@@ -27,4 +28,12 @@ public class ChildrenService implements IChildrenService {
 		return dao.KindergartenList();
 
 	}
+
+	@Override
+	public int countBoard() {
+		// TODO Auto-generated method stub
+		return dao.countBoard();
+	}
+
+	
 }

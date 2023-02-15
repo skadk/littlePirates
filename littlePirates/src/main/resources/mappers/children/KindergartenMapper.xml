@@ -24,4 +24,8 @@
 		SELECT * FROM KindergartenInfo
 	</select>
 	
+<!-- 	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM KindergartenInfo
+	</select> -->
+	
 </mapper>

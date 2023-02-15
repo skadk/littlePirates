@@ -36,11 +36,13 @@ public class ChecklistController {
 		// memId에 저장
 		// 로그인 성공 시 설정한 세션 sid 값 가져와서 사용
 		String memId = (String) session.getAttribute("sid");
-
+		
 		ChecklistVO vo = new ChecklistVO();
 		// (1) 체크리스트가 존재 하는지 확인 (생성 날짜가 없으면 없는 것)
 		int count = service.ischhChecked(memId);
+		int chhTimes = vo.getChhTimes();
 
+		
 		if (count == 0) { // (2) 체크리스트 존재하지 않으면(count==0) 체크리스트 추가
 			vo.setMemId(memId);
 			ArrayList<String> rnd = service.checklistInfo2();
@@ -53,14 +55,19 @@ public class ChecklistController {
 			System.out.println(nowTime);
 			vo.setChhDate(nowTime);
 			service.insertChecklist(vo);
-
 			int countMemId = service.searchMemId(memId);
 
 			service.insertTimes(memId, countMemId);
 
-		} else {
-
-			vo = service.selectChecklist(memId).get(0);
+		} 
+		/*
+		 * else if(count>0 ){ vo.setMemId(memId); ArrayList<String>
+		 * Chl_Checked=service.select_Chl_Checked(memId);
+		 * 
+		 * }
+		 */
+		else {
+				vo = service.selectChecklist(memId).get(chhTimes);
 		}
 
 		for (int i = 0; i < 9; i++) {
@@ -71,16 +78,20 @@ public class ChecklistController {
 		model.addAttribute("vo", vo);
 		return "/checkList/checkList_Clean";
 	}
+	// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
+
 
 	// 체크리스트 통계
 	@RequestMapping("/checkList/checkList_Eat")
-	public String checkList_Eat(Model model) {
-		ArrayList<ChecklistVO> voList = service.checklistInfo3();
-		model.addAttribute("voList", voList);
-
+	public String checkList_Eat(HttpSession session, Model model) {
+		String memId = (String) session.getAttribute("sid");
+		ArrayList<ChecklistVO> checkList = service.checklistInfo3(memId);
+		model.addAttribute("checkList", checkList);
+		System.out.println(memId);
 		return "/checkList/checkList_Eat";
 	}
 
+	
 	@ResponseBody
 	@RequestMapping("/checklist/checked")
 	public String insert(@RequestParam("checkedNo") int checkedNo, HttpSession session) {
