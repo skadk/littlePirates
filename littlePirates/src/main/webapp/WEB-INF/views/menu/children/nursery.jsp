@@ -5,18 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>children</title>
-<head>
+<title>Nursery</title>
+<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+<script src="<c:url value='/js/nBoardSearch.js'/>"></script>
+
 <!-- css -->
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/nursery.css'/>">
 
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
-
-</head>
-
-
 
 <body>
 	<div id="wrap">
@@ -26,6 +24,7 @@
 		<!-- parentsNav -->
 		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
 		<section>
+		
 			<section class="notice">
 				<div class="page-title">
 					<div class="container">
@@ -37,15 +36,15 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<a href="<c:url value='/nurseryBoard'/>">
+							<a href="<c:url value='/nurseryBoardWrite'/>">
 								<button type="button" class="write">Write</button>
 							</a>
 							<form action="">
 								<div class="search-wrap">
 									<label for="search" class="blind">공지사항 내용 검색</label> <input
-										id="search" type="search" name="" placeholder="검색어를 입력해주세요."
+										id="keyword" name="keyword" placeholder="검색어를 입력해주세요."
 										value="">
-									<button type="submit" class="btn btn-dark">Search</button>
+									<button id="searchBtn" type="submit" class="btn btn-dark" >Search</button>
 								</div>
 							</form>
 						</div>
@@ -64,23 +63,16 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>3</td>
-									<th><a href="#">A 어린이집 후기글</a></th>
-									<td>2023.01.17</td>
-								</tr>
-
-								<tr>
-									<td>2</td>
-									<th><a href="#">B 어린이집 후기글</a></th>
-									<td>2023.01.17</td>
-								</tr>
-
-								<tr>
-									<td>1</td>
-									<th><a href="#">C 어린이집 후기글 </a></th>
-									<td>2023.01.18</td>
-								</tr>
+								<c:forEach var="board" items="${boaList }">
+					            <tr>
+					               <td><a id="click" name="click"
+						href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdNo }</a></td>
+					               <td><a id="click" name="click"
+						href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdTitle }</a></td>
+					               
+					               <td>${board.nBrdDate }</td>               
+					            </tr>
+					         </c:forEach>
 							</tbody>
 						</table>
 					</div>
