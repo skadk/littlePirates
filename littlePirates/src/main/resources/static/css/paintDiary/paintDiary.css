@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* paintDiary.css */
+
+form {
+	background-color: #fff4e9;
+	font-family: Arial, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+	background-color: #fff;
+	border: 2px solid #007f86;
+	border-radius: 20px;
+	text-align: center;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type=file] {
+	display: block;
+	margin: 20px auto;
+}
+
+input[type=submit] {
+	background-color: #70cacd;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+textarea {
+	display: block;
+	margin: 20px auto;
+	width: 80%;
+	height: 100px;
+	padding: 10px;
+	border: 2px solid #f05757;
+	border-radius: 20px;
+	resize: none;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+p {
+	color: #627db2;
+	font-size: 18px;
+}

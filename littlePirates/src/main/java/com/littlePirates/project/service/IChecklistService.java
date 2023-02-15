@@ -1,7 +1,6 @@
 package com.littlePirates.project.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import com.littlePirates.project.model.ChecklistVO;
 

@@ -2,41 +2,69 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="com.littlePirates.project.dao.IKidscafeDAO">
- 	<resultMap id="mapResult" type="com.littlePirates.project.model.KidscafeVO">
+
+<mapper namespace="com.littlePirates.project.dao.IKidscafeDAO">
+	<resultMap id="mapResult"
+		type="com.littlePirates.project.model.KidscafeVO">
 		<result property="kcNo" column="kcNo" />
 		<result property="kcName" column="kcName" />
 		<result property="kclat" column="kclat" />
 		<result property="kcLng" column="kcLng" />
 		<result property="kcAddress" column="kcAddress" />
+		<result property="kcphone" column="kcphone" />
 	</resultMap>
-	
- 	<select id="listKidscafeInfo" resultMap="mapResult">
- 		select *
- 		FROM kidscafe
- 	</select>
- 	
- 	<!-- 키워드로 주소 찾기 -->
- 	<select id="searchKidsCafe" parameterType="string" resultType="string">
- 		SELECT kcAddress
- 		FROM kidscafe
- 		WHERE kcName=#{keyword}
- 	</select>
- 	
- 	<!-- 키즈카페 키워드 검색 -->
-  <select id="kidscafeSearchkeyword" parameterType="string"  resultMap="mapResult">
-		SELECT * 
-		FROM kidscafe 			
-		WHERE kcName Like CONCAT ('%',#{kcName},'%')  						 				
-  </select>
+	<resultMap id="reviewResult"
+		type="com.littlePirates.project.model.KidscafeReviewVO">
+		<result property="kcrNo" column="kcrNo" />
+		<result property="kcrText" column="kcrText" />
+		<result property="kcrDate" column="kcrDate" />
+		<result property="memId" column="memId" />
+		<result property="kcNo" column="kcNo" />
+	</resultMap>
 
-  <select id="kidscafeSearchsido" parameterType="string"  resultMap="mapResult">
-		SELECT * 	
-		FROM kidscafe 
-		where browsers=#{sido}; 						 				
-  </select>
-  
-  
-  </mapper>
+	<select id="listKidscafeInfo" resultMap="mapResult">
+		select *
+		FROM kidscafe
+	</select>
+
+	<!-- 키워드로 주소 찾기 -->
+	<select id="searchKidsCafe" parameterType="string"
+		resultType="string">
+		SELECT kcAddress
+		FROM kidscafe
+		WHERE kcName=#{keyword}
+	</select>
+
+	<!-- 키즈카페 키워드 검색 -->
+	<select id="kidscafeSearchkeyword" parameterType="string"
+		resultMap="mapResult">
+		SELECT *
+		FROM kidscafe
+		WHERE kcName Like CONCAT ('%',#{kcName},'%')
+	</select>
+
+	<!-- 도/시 키워드 검색 -->
+	<select id="kidscafeSearchsido" parameterType="string"
+		resultMap="mapResult">
+		SELECT *
+		FROM kidscafe
+		where browsers=#{sido};
+	</select>
+
+	<!-- 구/군 키워드 검색 -->
+	<select id="kidscafeSearchgu" parameterType="hashmap"
+		resultMap="mapResult">
+		SELECT *
+		FROM kidscafe
+		where browsers=#{sido} AND kcAddress Like CONCAT ('%',#{gu},'%')
+	</select>
+
+	<select id="reviewList" parameterType="string"
+		resultMap="reviewResult">
+		SELECT *
+		FROM kidscafereview
+		WHERE kcNo=#{kcNo}
+	</select>
+
+</mapper>
   

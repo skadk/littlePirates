@@ -18,11 +18,18 @@ public class HomeController {
 		return "mainIndex";
 	}
 
-	// 회원가입 페이지 열기
-	@RequestMapping("/member/signUp")
-	public String signUp() {
+	// 회원가입1 페이지 열기
+	@RequestMapping("/member/signUp1")
+	public String signUp1() {
 
-		return "member/signUp";
+		return "member/signUp1";
+	}
+	
+	// 회원가입2 페이지 열기
+	@RequestMapping("/member/signUp2")
+	public String signUp2() {
+		
+		return "member/signUp2";
 	}
 
 	// 로그인 페이지 열기
@@ -43,7 +50,6 @@ public class HomeController {
 	public String kindergarten() {
 
 		return "menu/children/kindergarten";
-
 	}
 
 	@RequestMapping("/nursery")
@@ -63,7 +69,11 @@ public class HomeController {
 		
 		return "menu/children/kindergartenBoard";
 	}
-
 	
+	@RequestMapping("/paintDiary")
+	public String paintDiary() {
+		
+		return "menu/paintDiary/paintDiary";
+	}
 
 }

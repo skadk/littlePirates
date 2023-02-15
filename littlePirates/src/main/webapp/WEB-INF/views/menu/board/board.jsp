@@ -231,7 +231,7 @@
 						<!-- 글작성 버튼 -->
 						<div class="btn_wrap mt30">
 							<div class="fl_c">
-								<a href="/board/brdWrite" class="btn50 c3 reg"
+								<a href="/board/boardWrite" class="btn50 c3 reg"
 									style="width: 240px;" tmp="contents/bod" mn="18" cn="0"><span
 									class="write">글작성</span></a>
 							</div>

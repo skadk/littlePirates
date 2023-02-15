@@ -5,7 +5,7 @@ public class MemberVO {
 	private String memPwd;
 	private String memName;
 	private String memEmail;
-	private String memHP;
+	private String memMobile;
 	private String memZipcode;
 	private String memAddress1;
 	private String memAddress2;
@@ -43,12 +43,12 @@ public class MemberVO {
 		this.memEmail = memEmail;
 	}
 
-	public String getMemHP() {
-		return memHP;
+	public String getMemMobile() {
+		return memMobile;
 	}
 
-	public void setMemHP(String memHP) {
-		this.memHP = memHP;
+	public void setMemMobile(String memMobile) {
+		this.memMobile = memMobile;
 	}
 
 	public String getMemZipcode() {
@@ -82,4 +82,5 @@ public class MemberVO {
 	public void setMemParentNo(String memParentNo) {
 		this.memParentNo = memParentNo;
 	}
+
 }

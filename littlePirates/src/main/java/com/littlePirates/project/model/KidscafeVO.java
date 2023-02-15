@@ -5,7 +5,8 @@ public class KidscafeVO {
 	private String kcName;
 	private float kclat;
 	private float kcLng;
-	private String kcAddress ;
+	private String kcAddress;
+	private String kcphone;
 	
 	public String getKcNo() {
 		return kcNo;
@@ -36,5 +37,11 @@ public class KidscafeVO {
 	}
 	public void setKcAddress(String kcAddress) {
 		this.kcAddress = kcAddress;
+	}
+	public String getKcphone() {
+		return kcphone;
+	}
+	public void setKcphone(String kcphone) {
+		this.kcphone = kcphone;
 	}
 }

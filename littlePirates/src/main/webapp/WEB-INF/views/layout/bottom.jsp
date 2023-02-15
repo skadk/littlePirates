@@ -11,7 +11,7 @@
 						<p>오늘의 빙고</p>					
 						<p>유치원 어린이집</p>
 					</nav>
-					<a href="<c:url value='/'/>" id="footerLogo">
+					<a href="<c:url value='/'/>" id="footerLogo" tabindex="-1">
 						<img src="<c:url value='/images/logo.png'/>">
 					</a>
 					<hr>
@@ -24,4 +24,4 @@
 					</div>
 				</div>
 			</footer>
- 		<script src="<c:url value='/js/layout/background.js'/>"></script>
+ 		<%-- <script src="<c:url value='/js/layout/background.js'/>"></script> --%>

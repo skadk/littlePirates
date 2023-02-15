@@ -7,11 +7,17 @@
 <script src="<c:url value='/js/kidscafeSearch.js' />"></script>
 	<body>
 		<table border="1" class="table" id="table">
+			<tr>
+				<th>가게명</th>
+				<th>상세정보</th>
+			</tr>	
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<tr>
-				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" width="180" height="110"></td>
-				<td>${mapInfo.kcName }<br> ${mapInfo.kcAddress}<br>
-					운영시간<br> 전화번호<br> 평점
+				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" onerror="this.src='<c:url value='/images/logo.png'/>'"width="180" height="110"></td>
+				<td>가게명: ${mapInfo.kcName }<br> 
+					주소: ${mapInfo.kcAddress}<br>
+					운영시간: <br> 
+					전화번호: ${mapInfo.kcphone }
 				</td>
 			</tr>
 		</c:forEach>

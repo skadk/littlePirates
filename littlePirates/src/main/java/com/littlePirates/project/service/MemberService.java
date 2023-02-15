@@ -20,14 +20,17 @@ public class MemberService implements IMemberService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	@Override
+	@Override // 회원가입
 	public void signUpMember(MemberVO vo) {
-
 		// 입력한 비밀번호를 암호화해서 저장
 		// vo에서 비밀번호 가져와서 암호화한 후
+		System.out.println(vo.getMemId());
+		System.out.println(vo.getMemPwd());
+		
 		String encodedPassword = passwordEncoder.encode(vo.getMemPwd());
 		// 암호화된 비밀번호로 저장한 후 db에 저장
-		vo.setMemPwd(encodedPassword); // vo에 암호화된 비밀번호 저장
+		// vo에 암호화된 비밀번호 저장
+		vo.setMemPwd(encodedPassword);
 
 		dao.signUpMember(vo);
 	}

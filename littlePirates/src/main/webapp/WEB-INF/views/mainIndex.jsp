@@ -32,7 +32,6 @@
 								<img id="nextButton" src="<c:url value='/images/nextButton.png'/>">
 							</div>
 							<div id="slideShow">
-<%-- 								<img src="<c:url value='/images/테두리2.png'/>" id="frame"> --%>
 								<div id="slidePanel">
 									<img src="<c:url value='/images/키즈카페 안전수칙.jpg'/>" class="slideImage">
 									<img src="<c:url value='/images/어린이날.png'/>" class="slideImage">
@@ -45,6 +44,20 @@
 									<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
 									<img src="<c:url value='/images/controlButton1.png'/>" class="controlButton">
 								</div>
+							</div>
+						</div>
+					</article>
+					<article id="article3">
+						<p>우리집 피카소</p>
+						<div id="paintingBox">
+							<div class="painting" id="painting1">
+								<img src="<c:url value='/images/아이그림1.jpg'/>">
+							</div>
+							<div class="painting" id="painting2">
+								<img src="<c:url value='/images/아이그림5.jpg'/>">
+							</div>
+							<div class="painting" id="painting3">
+								<img src="<c:url value='/images/아이그림9.jpg'/>">
 							</div>
 						</div>
 					</article>
@@ -62,20 +75,6 @@
 							<div class="video" id="video3">
 								<iframe src="https://www.youtube.com/embed/pQPdmcLfoFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 								</iframe>
-							</div>
-						</div>
-					</article>
-					<article id="article3">
-						<p>우리집 피카소</p>
-						<div id="paintingBox">
-							<div class="painting" id="painting1">
-								<img src="<c:url value='/images/아이그림1.jpg'/>">
-							</div>
-							<div class="painting" id="painting2">
-								<img src="<c:url value='/images/아이그림5.jpg'/>">
-							</div>
-							<div class="painting" id="painting3">
-								<img src="<c:url value='/images/아이그림9.jpg'/>">
 							</div>
 						</div>
 					</article>

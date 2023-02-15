@@ -83,13 +83,22 @@
         	<artifactId>gson</artifactId>
         </dependency>
         <dependency>
-        	<groupId>javax.mail</groupId>
-        	<artifactId>javax.mail-api</artifactId>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <dependency>
-        	<groupId>org.springframework</groupId>
-        	<artifactId>spring-context-support</artifactId>
-        </dependency>
+		<!-- Maven Plugins 의존성 -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.1.0</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.1.0</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -97,6 +106,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.1.0</version>
 			</plugin>
 		</plugins>
 	</build>
