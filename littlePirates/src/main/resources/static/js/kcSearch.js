@@ -7,8 +7,8 @@
  		// 서버에 전송하고 결과 받아서 처리
  		$.ajax({
  			type:"post",
- 			url:"/kcSearch",
- 			data: {"kckeyword":$("#kckeyword").val()},
+ 			url:"/kBoardSearch",
+ 			data: {"keyword":$("#keyword").val()},
  			success:function(result){ 
  				$('#board-list .container').html(result);
 		},
