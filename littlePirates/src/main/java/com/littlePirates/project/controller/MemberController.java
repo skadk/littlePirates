@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,14 +34,29 @@ public class MemberController {
 	@RequestMapping("/member/signUpForm1")
 	public String signUpForm1(MemberVO vo) {
 		
-		mservice.signUpMember(vo);
+		mservice.signUpMember1(vo);
+		String memId = vo.getMemId();
 
+		return "redirect:/member/signUp2/" + memId;
+	}
+	
+	
+	// 회원가입2 페이지 열기
+	@RequestMapping("/member/signUp2/{memId}")
+	public String signUp2(@PathVariable("memId") String memId) {
+		
 		return "member/signUp2";
 	}
 	
 	// 회원가입1 폼 연결 -> 회원가입1
 	@RequestMapping("/member/signUpForm2")
-	public String signUpForm2() {
+	public String signUpForm2(MemberVO vo) {
+		
+		String memId = vo.getMemId();
+		String memParentNo = vo.getMemParentNo();
+		System.out.println(memId);
+		
+		mservice.signUpMember2(memId, memParentNo);
 		
 		return "member/login";
 	}	
@@ -143,7 +159,7 @@ public class MemberController {
 						result = "확인되었습니다. 회원가입을 진행해 주세요.";
 						eservice.updateEmailAuth1(memId, authKeyCheck);
 					} else {
-						result = "잘못된 인증키입니다. 인증 이메일에 쓰여진 인증키를 입력해 주세요.";
+						result = "wrong";
 					}
 				} else {
 					result = "checkYourEmail";
@@ -156,12 +172,11 @@ public class MemberController {
 		return result;
 	}
 	
-	
-	
 	// 회원가입1 창 나가면 인증 DB 삭제
 	@ResponseBody
 	@RequestMapping("/member/authDelete")
 	public void authDelete(@RequestParam("memId") String memId) {
+		
 		eservice.emailAuthDelete(memId);
 	}
 	

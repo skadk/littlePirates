@@ -34,6 +34,5 @@ public class ChildrenController {
 		model.addAttribute("KList", cdservice.KindergartenList());
 		return "menu/children/children";
 	}
-	
 
 }
