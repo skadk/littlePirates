@@ -5,8 +5,8 @@
   
   <mapper namespace="com.littlePirates.project.dao.IMemberDAO">
   
-  	<!-- 회원가입 -->
-  	<insert id="signUpMember" parameterType="com.littlePirates.project.model.MemberVO">
+  	<!-- 회원가입1 -->
+  	<insert id="signUpMember1" parameterType="com.littlePirates.project.model.MemberVO">
   		INSERT INTO member(memId, memPwd, memName, memEmail, memMobile, memZipcode, memAddress1, memAddress2)
   		VALUES (#{memId}, #{memPwd}, #{memName}, #{memEmail}, #{memMobile},#{memZipcode}, #{memAddress1}, #{memAddress2})
   	</insert>
@@ -17,6 +17,13 @@
   		FROM member
   		WHERE memId=#{memId}
   	</select>
+  	
+  	<!-- 회원가입2 -->
+  	<update id="signUpMember2" parameterType="hashmap">
+  		UPDATE member
+  		SET memParentNo=#{memParentNo}, signUpCheck=1
+  		WHERE memId=#{memId}
+  	</update>
   	
   	<!-- 회원가입2 창 나가면 DB 삭제 -->
    	<delete id="memberDelete" parameterType="string">

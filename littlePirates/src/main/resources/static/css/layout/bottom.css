@@ -33,7 +33,6 @@ hr {
 	text-align: left;
 	font-weight: bold;
 	float: left;
-	color: #fff4e9;
 }
 
 #footerNav p {
@@ -54,7 +53,19 @@ hr {
 	padding-bottom: 10px;
 }
 
-#footerNav p:hover {
+#footerNav a {
+	text-decoration-line : none;
+}
+
+#footerNav a:link {
+	color: #fff4e9;
+}
+
+#footerNav a:visited {
+	color: #fff4e9;
+}
+
+#footerNav a:hover {
 	color: #70cacd;
 }
 

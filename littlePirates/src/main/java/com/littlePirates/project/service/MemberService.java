@@ -20,8 +20,8 @@ public class MemberService implements IMemberService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	@Override // 회원가입
-	public void signUpMember(MemberVO vo) {
+	@Override // 회원가입1
+	public void signUpMember1(MemberVO vo) {
 		// 입력한 비밀번호를 암호화해서 저장
 		// vo에서 비밀번호 가져와서 암호화한 후
 		String encodedPassword = passwordEncoder.encode(vo.getMemPwd());
@@ -29,7 +29,7 @@ public class MemberService implements IMemberService {
 		// vo에 암호화된 비밀번호 저장
 		vo.setMemPwd(encodedPassword);
 
-		dao.signUpMember(vo);
+		dao.signUpMember1(vo);
 	}
 
 	@Override // 아이디 중복 확인
@@ -40,6 +40,15 @@ public class MemberService implements IMemberService {
 		return result;
 	}
 	
+	@Override // 회원가입2
+	public void signUpMember2(String memId, String memParentNo) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("memId", memId);
+		map.put("memParentNo", memParentNo);
+
+		dao.signUpMember2(map);
+	}
+	
 	@Override // 회원가입2 창 나가면 DB 삭제
 	public void memberDelete() {
 		dao.memberDelete();
@@ -48,7 +57,7 @@ public class MemberService implements IMemberService {
 	@Override
 	public String loginCheck(HashMap<String, Object> map) {
 
-		// 전달된 아이디로 암호회된 비밀번호 알아오기
+		// 전달된 아이디로 암호화된 비밀번호 알아오기
 		String encodedPw = dao.loginCheck((String) map.get("id"));
 
 		String result = "fail";
