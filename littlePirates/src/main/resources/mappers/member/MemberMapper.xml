@@ -18,6 +18,13 @@
   		WHERE memId=#{memId}
   	</select>
   	
+  	<!-- 회원가입2 창 나가면 DB 삭제 -->
+   	<delete id="memberDelete" parameterType="string">
+  		DELETE
+  		FROM member
+  		WHERE signUpCheck=0
+  	</delete>
+  	
   	<!-- 로그인 확인 -->
   	<select id="loginCheck" parameterType="string" resultType="string">
   		SELECT memPwd

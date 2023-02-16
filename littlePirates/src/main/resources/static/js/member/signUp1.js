@@ -1,5 +1,5 @@
 /**
- * signUp.js
+ * signUp1.js
  */
  
  function daumPostcode() {
@@ -51,137 +51,130 @@
  		}
  	}).open();
  }
+ 
  $(document).ready(function() {
  	$("#nextBtn").on("click", function(){
-	 	/*
-	 function signUpCheck() {
-	 */
-	 	if ($("#memName").val() == "") {
-			alert("이름을 입력해 주세요.")
-			$("#memName").focus();
-			
-			return false;
-		};
-		
-		if ($("#memId").val() == "") {
-			alert("아이디를 입력해 주세요.")
-			$("#memId").focus();
-			
-			return false;
-		};
-		
-		if ($("#checkedId").val() == "") {
-	        alert('중복된 아이디인지 확인해 주세요.');
-	        $("#memId").focus();
-	        
-	        return false;
-	    };
-	    
-		if ($("#memPwd").val() == "") {
-			alert("비밀번호를 입력해 주세요.")
-			$("#memPwd").focus();
-			
-			return false;
-		};
-	
-		var id = $("#memId").val();
-		var pwd = $("#memPwd").val();
-		var pwdCheck = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[?~!@#$%^&*]).{8,10}$/;
-		var koreanCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-	
-		if (pwdCheck.test(pwd) == false) {
-			alert("비밀번호는 8 ~ 10자 이어야 하며 숫자/영문자/특수문자를 모두 포함해야 합니다.");
-			$("#memPwd2").val("");
-			$("#memPwd").focus();
-			
-			return false;
-			
-		} else if (pwd.search(id) > -1) {	
-			alert("비밀번호에 아이디가 포함되었습니다.");
-			$("#memPwd2").val("");
-			$("#memPwd").focus();
-			
-			return false;
-			
-		} else if (pwd.search(/\s/) != -1) {
-			alert("비밀번호는 공백 없이 입력해 주세요.");
-			$("#memPwd2").val("");
-			$("#memPwd").focus();
-			
-			return false;
-			
-		} else if (koreanCheck.test(pwd)) {
-			alert("비밀번호에 한글 없이 입력해 주세요.");
-			$("#memPwd2").val("");
-			$("#memPwd").focus();
-			
-			return false;
-		};
-	
-		if ($("#memPwd2").val() !== $("#memPwd").val()) {
-			alert("비밀번호가 일치하는지 확인해 주세요.")
-			$("#memPwd2").val("");
-			$("#memPwd2").focus();
-			
-			return false;
-		};
-	
-		var mobile = $("#memMobile").val();
-		var num = /\d{11}/;
-	
-		if (mobile != "") {
-			if (num.test(mobile) == false) {
-				alert("전화번호를 형식에 맞게 입력해 주세요.")
-				$("#memMobile").focus();
-				
-				return false;
-			};
-		};
-	
-		if ($("#memEmail").val() == "") {
-			alert("이메일을 입력해 주세요.")
-			$("#memEmail").focus();
-			
-			return false;
-		};
-		
-		var email = $("#memEmail").val();
-		var emailCheck = /[\w\.\-]+@[\w\.\-]+/;
-	
-		if (emailCheck.test(email) == false) {
-			alert("이메일 주소를 형식에 맞게 입력해 주세요.");
-			$("#memEmail").focus();
-			
-			return false;
-		};
-		
-		if ($("#authKeyCheck").val() == "") {
-			alert("인증 이메일 확인 후 인증키를 입력해 주세요.")
-			$("#authKeyCheck").focus();
-			
-			return false;
-		};
-		
-		if ($("#memZipcode").val() == "") {
-			alert("주소를 입력해 주세요.")
-			$("#memZipcode").focus();
-			
-			return false;
-		};
-	
-		if ($("#checkedAuth").val() == "") {
-			alert("이메일 인증을 하지 않았습니다.");
-		
-			return false;
-		};
-		
-		document.signUpForm1.submit();
-		/*
-		location.href="/member/signUp2";
-	 };
-		*/
-		
-	});
+ 	
+ 		if ($("#memName").val() == "") {
+ 			alert("이름을 입력해 주세요.");
+ 			$("#memName").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#memId").val() == "") {
+ 			alert("아이디를 입력해 주세요.");
+ 			$("#memId").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#checkedId").val() == "") {
+ 			alert('중복된 아이디인지 확인해 주세요.');
+ 			$("#memId").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#memPwd").val() == "") {
+ 			alert("비밀번호를 입력해 주세요.");
+ 			$("#memPwd").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		var id = $("#memId").val();
+ 		var pwd = $("#memPwd").val();
+ 		var pwdCheck = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[?~!@#$%^&*]).{8,10}$/;
+ 		var koreanCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+ 		
+ 		if (pwdCheck.test(pwd) == false) {
+ 			alert("비밀번호는 8 ~ 10자 이어야 하며 숫자/영문자/특수문자를 모두 포함해야 합니다.");
+ 			$("#memPwd2").val("");
+ 			$("#memPwd").focus();
+ 			
+ 			return false;
+ 		
+ 		} else if (pwd.search(id) > -1) {
+ 			alert("비밀번호에 아이디가 포함되었습니다.");
+ 			$("#memPwd2").val("");
+ 			$("#memPwd").focus();
+ 			
+ 			return false;
+ 			
+ 		} else if (pwd.search(/\s/) != -1) {
+ 			alert("비밀번호는 공백 없이 입력해 주세요.");
+ 			$("#memPwd2").val("");
+ 			$("#memPwd").focus();
+ 			
+ 			return false;
+ 			
+ 		} else if (koreanCheck.test(pwd)) {
+ 			alert("비밀번호에 한글 없이 입력해 주세요.");
+ 			$("#memPwd2").val("");
+ 			$("#memPwd").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#memPwd2").val() !== $("#memPwd").val()) {
+ 			alert("비밀번호가 일치하는지 확인해 주세요.");
+ 			$("#memPwd2").val("");
+ 			$("#memPwd2").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		var mobile = $("#memMobile").val();
+ 		var num = /\d{11}/;
+ 		
+ 		if (mobile != "") {
+ 			if (num.test(mobile) == false) {
+ 				alert("전화번호를 형식에 맞게 입력해 주세요.");
+ 				$("#memMobile").focus();
+ 				
+ 				return false;
+ 			};
+ 		};
+ 		
+ 		if ($("#memEmail").val() == "") {
+ 			alert("이메일을 입력해 주세요.");
+ 			$("#memEmail").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		var email = $("#memEmail").val();
+ 		var emailCheck = /[\w\.\-]+@[\w\.\-]+/;
+ 		
+ 		if (emailCheck.test(email) == false) {
+ 			alert("이메일 주소를 형식에 맞게 입력해 주세요.");
+ 			$("#memEmail").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#authKeyCheck").val() == "") {
+ 			alert("인증 이메일 확인 후 인증키를 입력해 주세요.");
+ 			$("#authKeyCheck").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#memZipcode").val() == "") {
+ 			alert("주소를 입력해 주세요.");
+ 			$("#memZipcode").focus();
+ 			
+ 			return false;
+ 		};
+ 		
+ 		if ($("#checkedAuth").val() == "") {
+ 			alert("이메일 인증을 하지 않았습니다.");
+ 			
+ 			return false;	
+ 		};
+ 		document.signUpForm1.submit();
+ 	});
  });
  
  $(document).ready(function() {
@@ -190,7 +183,7 @@
  	$("#memIdCheck").on("click", function(){
  	
 		if ($("#memId").val() == "") {
-			alert("아이디를 입력해 주세요.")
+			alert("아이디를 입력해 주세요.");
 			$("#memId").focus();
 			
  		// 서버에 전송 결과 받아서 처리
@@ -267,7 +260,7 @@
  	$("#mailAuthBtn").on("click", function() {
  	
 		if ($("#memEmail").val() == "") {
-			alert("이메일을 입력해 주세요.")
+			alert("이메일을 입력해 주세요.");
 			$("#memEmail").focus();
 			
 		} else if ($("#checkedId").val() == "") {
@@ -295,7 +288,7 @@
  	$("#authKeyBtn").on("click", function() {
  	
 		if ($("#memEmail").val() == "") {
-			alert("이메일을 입력해 주세요.")
+			alert("이메일을 입력해 주세요.");
 			$("#memEmail").focus();
 			
 		} else if ($("#checkedId").val() == "") {
@@ -336,6 +329,7 @@
  	$.ajax({
  		type:"post",
  		url:"/member/authDelete",
+	 	data:{"memId":$('#memId').val()},
  		success:function() {
  		},
  		error:function() {

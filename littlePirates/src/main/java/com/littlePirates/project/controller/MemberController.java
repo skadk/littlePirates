@@ -33,11 +33,17 @@ public class MemberController {
 	@RequestMapping("/member/signUpForm1")
 	public String signUpForm1(MemberVO vo) {
 		
-		System.out.println("회원가입1 된거임?");
 		mservice.signUpMember(vo);
 
-		return "member/signUp2"; // 회원가입 후 로그인 폼으로 이동
+		return "member/signUp2";
 	}
+	
+	// 회원가입1 폼 연결 -> 회원가입1
+	@RequestMapping("/member/signUpForm2")
+	public String signUpForm2() {
+		
+		return "member/login";
+	}	
 
 	// 아이디 중복 확인 버튼 -> 중복 확인
 	@ResponseBody
@@ -150,21 +156,22 @@ public class MemberController {
 		return result;
 	}
 	
-	// 회원가입 창 나가면 인증 DB 삭제
+	
+	
+	// 회원가입1 창 나가면 인증 DB 삭제
 	@ResponseBody
 	@RequestMapping("/member/authDelete")
-	public void authDelete() {
-		
-		eservice.emailAuthDelete();
+	public void authDelete(@RequestParam("memId") String memId) {
+		eservice.emailAuthDelete(memId);
 	}
-//	
-//	 // 다음으로! 버튼 -> 다음 페이지로 넘어가도 되는지 확인
-//	@ResponseBody
-//	@RequestMapping("/member/signUpForm1Check")
-//	public void authDelete() {
-//		
-//	}
-//				result = eservice.checkEmailAuth(memId);
+	
+	// 회원가입2 창 나가면 인증 DB 삭제
+	@ResponseBody
+	@RequestMapping("/member/memberDelete")
+	public void memberDelete() {
+		
+		mservice.memberDelete();
+	}
 	
 	// 비밀번호 암호화 한 경우의 로그인 처리 방식
 	@ResponseBody

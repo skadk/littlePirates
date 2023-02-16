@@ -24,9 +24,6 @@ public class MemberService implements IMemberService {
 	public void signUpMember(MemberVO vo) {
 		// 입력한 비밀번호를 암호화해서 저장
 		// vo에서 비밀번호 가져와서 암호화한 후
-		System.out.println(vo.getMemId());
-		System.out.println(vo.getMemPwd());
-		
 		String encodedPassword = passwordEncoder.encode(vo.getMemPwd());
 		// 암호화된 비밀번호로 저장한 후 db에 저장
 		// vo에 암호화된 비밀번호 저장
@@ -35,12 +32,17 @@ public class MemberService implements IMemberService {
 		dao.signUpMember(vo);
 	}
 
-	@Override
+	@Override // 아이디 중복 확인
 	public String memIdCheck(String memId) {
 
 		String result = dao.memIdCheck(memId);
 
 		return result;
+	}
+	
+	@Override // 회원가입2 창 나가면 DB 삭제
+	public void memberDelete() {
+		dao.memberDelete();
 	}
 
 	@Override

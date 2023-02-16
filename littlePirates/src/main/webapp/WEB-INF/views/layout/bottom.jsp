@@ -24,4 +24,4 @@
 					</div>
 				</div>
 			</footer>
- 		<%-- <script src="<c:url value='/js/layout/background.js'/>"></script> --%>
+ 			<%-- <script src="<c:url value='/js/layout/background.js'/>"></script> --%>
