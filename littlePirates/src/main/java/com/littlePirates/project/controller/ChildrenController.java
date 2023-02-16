@@ -18,7 +18,6 @@ public class ChildrenController {
 	public String NurseryList(PagingVO vo, Model model,
 			@RequestParam(value = "nowPage", required = false) String nowPage,
 			@RequestParam(value = "cntPerPage", required = false) String cntPerPage) {
-		/*
 		int total = cdservice.countBoard();
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
@@ -32,6 +31,7 @@ public class ChildrenController {
 		
 		model.addAttribute("paging", vo);
 		model.addAttribute("NList", cdservice.NurseryList(vo));
+		/*
 		model.addAttribute("KList", cdservice.KindergartenList());
 		*/
 		return "menu/children/children";
