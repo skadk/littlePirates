@@ -164,6 +164,7 @@
 				
 			</div>
 				<div>
+					/*
 		<div style="display: block; text-align: center;">
 					<c:if test="${paging.startPage != 1 }">
 						<a
@@ -188,7 +189,7 @@
 
 					<br />
 
-				</div>
+				</div>*/
 		</div>
 		</section>
 
