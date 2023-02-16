@@ -27,11 +27,11 @@ public class ChildrenController {
 		} else if (cntPerPage == null) {
 			cntPerPage = "5";
 		}
+		/*
 		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		
 		model.addAttribute("paging", vo);
 		model.addAttribute("NList", cdservice.NurseryList(vo));
-		/*
 		model.addAttribute("KList", cdservice.KindergartenList());
 		*/
 		return "menu/children/children";
