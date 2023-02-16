@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 /* children.css*/
 section {
-	overflow: hidden;
+	
 	height: auto;
 	width: 1920px;
 	background: rgba(250, 250, 250, 0.5);
@@ -18,31 +18,38 @@ section {
 .middle {
 	margin-top: 20px;
 	width: 100%;
-	height: 1065px;
+	height: 700px;
 	position: relative;
 	text-align: center;
 }
+.boardSelect{
+	height: 40px;
+	width: 260px;
+	margin-left: 200px;
+	margin-top: 120px;
+	
+	
+}
+.kBoard {
+	height: 40px;
+	width: 260px;
+	margin-left: 200px;
+	margin-top: 120px;
+	border: 2px solid rgb(94, 94, 94);
+	border-radius: 40px;
+}
+
+.nBoard {
+	height: 40px;
+	width: 260px;
+	margin-left: 200px;
+	margin-top: 50px;
+	border: 2px solid rgb(94, 94, 94);
+	border-radius: 40px;
+}
 
 td {
-	border-radius:15px;
-}
-
-.kin {
-	position: absolute;
-	top: 0px;
-	left: 1150px;
-	width: 600px;
-	height: 50px;
-	opacity: 0.9;
-}
-
-.nur {
-	position: absolute;
-	top: 0px;
-	left: 500px;
-	width: 600px;
-	height: 50px;
-	opacity: 0.9;
+	border-radius: 15px;
 }
 
 .table {
@@ -65,6 +72,24 @@ td {
 	height: 470px;
 	opacity: 0.9;
 	border: hidden;
+}
+
+.kin {
+	position: absolute;
+	top: 0px;
+	left: 1150px;
+	width: 600px;
+	height: 50px;
+	opacity: 0.9;
+}
+
+.nur {
+	position: absolute;
+	top: 0px;
+	left: 500px;
+	width: 600px;
+	height: 50px;
+	opacity: 0.9;
 }
 
 .scroll {
@@ -378,7 +403,6 @@ section.notice {
 	text-decoration: none;
 	padding: 0;
 	margin: 0;
-
 }
 
 .clearfix:after {
@@ -400,6 +424,3 @@ section.notice {
 	width: 1px;
 	height: 1px;
 }
-
-
-

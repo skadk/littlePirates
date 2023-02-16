@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* signUp.css */
- 
+
 /************** signUpBox **************/
 #signUpBox {
 	width: 100%;
@@ -60,7 +60,6 @@
 }
 
 /************** signUpForm1 **************/
-
 #signUpForm1 {
 	position: relative;
 	padding-top: 45px;
@@ -72,7 +71,6 @@
 }
 
 /************** signUpForm2 **************/
-
 #signUpForm2 {
 	position: relative;
 	padding-top: 45px;
@@ -110,7 +108,7 @@
 	animation-fill-mode: forwards;
 	background-color: white;
 	border-color: #627db2;
-	outline:none;
+	outline: none;
 }
 
 .input:not(:focus) {
@@ -121,15 +119,16 @@
 
 @keyframes border-focus {
 	from {
-		border-radius: 15px;
-	} to {
+		border-radius:15px;
+	}
+	to {
 		border-radius: 30px;
 	}
 }
 
 @keyframes border-notFocus {
 	from {
-		border-radius: 30px;
+		border-radius:30px;
 	} to {
 		border-radius: 15px;
 	}
@@ -168,6 +167,7 @@
 
 .show {
 	position: relative;
+	background: rgb(248, 249, 250);
 }
 
 .btn {
@@ -182,7 +182,7 @@
 	font-family: Noto Sans KR;
 	color: white;
 	cursor: pointer;
-	transition: all 0.2s ;
+	transition: all 0.05s;
 }
 
 #memIdCheck {
@@ -207,7 +207,7 @@
 
 #authKeyBtn {
 	width: 35%;
-	margin: 3.5px 0 15px 0;	
+	margin: 3.5px 0 15px 0;
 }
 
 #nextBtnArea {
@@ -241,7 +241,7 @@
 	height: 50px;
 	background: #70cacd;
 	left: 0px;
-	transition: 0.5s;
+	transition: 0.8s;
 }
 
 .btnTwo {
@@ -287,6 +287,8 @@
 	height: 96px;
 }
 
+/************** radioBox **************/
+
 #boyBtnBox, #girlBtnBox {
 	width: 49%;
 	display: inline-block;
@@ -304,7 +306,7 @@
 	box-sizing: border-box;
 	display: inline-block;
 	height: 43px;
-    width: 100%;
+	width: 100%;
 	border: 3px solid #007f86;
 	border-radius: 15px;
 	box-shadow: 0px 5px 0px 0px #007f86;
@@ -315,15 +317,92 @@
 	font-weight: bold;
 	font-family: Noto Sans KR;
 	cursor: pointer;
-	transition: all 0.2s ;
+	transition: all 0.1s;
 }
 
 .inputArea input[type=radio]+label {
-    background-color: #70cacd;
+	background-color: #70cacd;
 	color: white;
 }
 
 #boyBtn:checked+label, #girlBtn:checked+label {
 	margin: 15px 0 15px 0;
 	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+/************** selectBox **************/
+
+.info#childBirth {
+	display: flex;
+	margin: 10px 0 20px 0;
+	height: 48px;
+}
+
+.selectBox::-ms-expand {
+	display: none;
+}
+
+.selectBox {
+	width: 100%;
+	color: #757575;
+	font-size: 15px;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding: 5px 10px 5px 20px;
+	border: 3px solid #70cacd;
+	border-radius: 15px;
+	background:url("/images/selectNotFocus.png") no-repeat center;
+	-o-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.selectBox::-ms-expand {
+	display: none;
+}
+
+.selectBox:focus {
+	animation-name: border-focus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background:url("/images/selectFocus.png") no-repeat center;
+	border-color: #627db2;
+	outline: none;
+}
+
+.selectBox:not(:focus) {
+	animation-name: border-notFocus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+option {
+	color: #627db2;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.info#childBirth select {
+	margin-left: 20px;
+}
+
+.info#childBirth select:first-child {
+	margin-left: 0px;
+}
+
+.info#childBirth select::-webkit-scrollbar {
+	width: 10px;
+}
+
+.info#childBirth select::-webkit-scrollbar-thumb {
+	background-color: #627db2;
+}
+
+.info#childBirth select::-webkit-scrollbar-track {
+	background-color: #70cacd;
+}
+
+.selectBox option[disabled] {
+	display: none;
 }

@@ -18,7 +18,5 @@ public interface IEmailService {
 	
 	public void updateEmailAuth0(String memId); // 인증 상태 변경0
 	
-	public String checkEmailAuth(String memId); // 인증 확인
-	
-	public void emailAuthDelete(); // 회원가입 창 나가면 인증 DB 삭제
+	public void emailAuthDelete(String memId); // 회원가입1 창 나가면 인증 DB 삭제
 }

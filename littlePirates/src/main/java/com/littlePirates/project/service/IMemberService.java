@@ -9,6 +9,8 @@ public interface IMemberService {
 	public void signUpMember(MemberVO vo); // 회원가입
 
 	public String memIdCheck(String memId); // 아이디 중복 확인
+	
+	public void memberDelete(); // 회원가입2 창 나가면 DB 삭제
 
 	public String loginCheck(HashMap<String, Object> map); // 로그인 확인
 

@@ -10,6 +10,8 @@ public interface IMemberDAO {
 	
 	public String memIdCheck(String memId); // 아이디 중복 확인
 	
+	public void memberDelete(); // 회원가입2 창 나가면 DB 삭제
+	
 	public String loginCheck(String id); // 로그인 확인
 	
 	public String findId(HashMap<String, Object> map);
