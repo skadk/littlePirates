@@ -7,11 +7,10 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta charset="UTF-8">
 		<title>키즈카페</title>
-	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe_thrid.css'/>">
-	    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-		<!-- head -->
+	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
+	<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-		<script src="<c:url value='/js/kidscafe_third.js' />"></script>
+
 	</head>
 	<body>
 		<div id="wrap">
@@ -19,10 +18,10 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
-			<section>
+			<section class="notice">
 				<div class="page-title">
 					<div class="container">
-						<h3>유치원 후기</h3>
+						<h3>키즈카페 후기</h3>
 					</div>
 				</div>
 
@@ -30,16 +29,15 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<a href="<c:url value='kindergartenBoardWrite'/>">
-								<button type="button" class="write">Write</button>
-							</a>
 							<form action="">
 								<div class="search-wrap">
-									<label for="search" class="blind">공지사항 내용 검색</label> <input
-										id="keyword" name="keyword" placeholder="검색어를 입력해주세요."
-										value="">
+									<label for="search" class="blind">공지사항 내용 검색</label> 
+									<input id="keyword" name="keyword" placeholder="검색어를 입력해주세요." value="">
 									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
 								</div>
+								<a href="<c:url value='kidscafeReviewWrite'/>">
+									<button type="button" class="hSMJOX">글 작성</button>
+								</a>
 							</form>
 						</div>
 					</div>
@@ -57,21 +55,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="board" items="${boaList }">
+								<c:forEach var="reviewinfo" items="${reviewList }">
 									<tr>
 										<td><a id="click" name="click"
-											href="<c:url value='/kindergartenBoard/kindergartenBoardRead/${board.kBrdNo }'/>">${board.kBrdNo }</a></td>
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrNo }</a></td>
 										<td><a id="click" name="click"
-											href="<c:url value='/kindergartenBoard/kindergartenBoardRead/${board.kBrdNo }'/>">${board.kBrdTitle }</a></td>
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrTitle }</a></td>
 
-										<td>${board.kBrdDate }</td>
+										<td>${reviewinfo.kcrDate }</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 					</div>
 				</div>
-				
 
 			</section>
 			<!-- bottom -->

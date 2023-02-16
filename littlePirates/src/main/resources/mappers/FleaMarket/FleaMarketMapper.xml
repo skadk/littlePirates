@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.littlePirates.project.dao.IFleaMarketDAO">
+  	<resultMap id="flResult" type="com.littlePirates.project.model.FleaMarketVO" >
+  		<result property="flNo"  column="flNo"  />
+  		<result property="memId"  column="memId"  />
+  		<result property="flTitle"  column="flTitle"  />
+  		<result property="flName"  column="flName"  />
+  		<result property="flPrice"  column="flPrice"  />
+  		<result property="flHeart"  column="flHeart"  />
+  		<result property="flViewCount"  column="flViewCount"  />
+  		<result property="flResCount"  column="flResCount"  />
+  		<result property="flText"  column="flText"  />
+  		<result property="flImageName"  column="flImageName"  />
+  		<result property="flCategory"  column="flCategory"  />
+  		<result property="flDate"  column="flDate"  />
+  	</resultMap>
+  	
+  	<!-- 전체 상품 조회 -->
+  <select id="listAllBoard" resultMap="flResult">
+  		SELECT * FROM fleamarket ORDER BY flNo
+  </select>
+  	
+  <!--  상품 등록 -->
+  <insert id="insertFleaMarket" parameterType="com.littlePirates.project.model.FleaMarketVO">
+  		INSERT INTO fleamarket (memId, flTitle, flName, flPrice, flHeart,  flText, flImageName, flCategory)
+  		VALUES (#{memId}, #{flTitle}, #{flName}, #{flPrice}, 0,  #{flText}, #{flImageName}, #{flCategory})
+  </insert>
+  
+  <!-- 상품 상세 조회 : 상품 번호(prdNo) 전달 받아서 상품 정보(ProductVO) 반환-->
+  <select id="detailViewProduct" parameterType="string" 
+  		resultType="com.littlePirates.project.model.FleaMarketVO">
+  		SELECT * FROM fleamarket WHERE flNo = #{flNo}
+  </select>
+  
+  <!-- 상품 정보 수정 : 기본키인 상품번호는 수정하지 않음 -->
+  <update id="updateProduct"  parameterType="com.littlePirates.project.model.FleaMarketVO">
+  		UPDATE fleamarket
+  		SET flName=#{flName}, flPrice=#{flPrice}, <!-- prdCompany=#{prdCompany},
+  			   prdStock=#{prdStock}, --> flDate=#{flDate}
+  	    WHERE flNo=#{flNo}
+  </update>
+  
+  <!--  상품 정보 삭제 : 삭제할 상품번호 전달 받음-->
+  <delete id="deleteProduct"  parameterType="string" >
+  		DELETE FROM fleamarket WHERE flNo=#{flNo}
+  </delete>
+  
+  
+</mapper>
+
+
+
+
+
+
+
+  
+  
+  
+  

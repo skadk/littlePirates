@@ -11,7 +11,6 @@
 		<result property="kcrText" column="kcrText" />
 		<result property="kcrDate" column="kcrDate" />
 		<result property="memId" column="memId" />
-		<result property="kcNo" column="kcNo" />
 	</resultMap>
 
 	<!-- 게시판 전체 보기 -->
@@ -26,6 +25,32 @@
 		VALUES ( #{memId}, #{kcrTitle}, #{kcrText}, #{kcrDate})
 	</insert>
 
-
+	<!--  -->
+	<select id="read" parameterType="string" resultType="com.littlePirates.project.model.KcreviewVO">
+		SELECT * 
+		FROM kidscafereview 
+		WHERE kcrNo = #{kcrNo}
+	</select>
+	
+	<!-- 글 삭제 -->
+	<delete id="delete" parameterType="string">
+		DELETE 
+		FROM kidscafereview 
+		WHERE kcrNo=#{kcrNo}
+	</delete>
+	
+	<!-- 글 수정 -->
+	<update id="update" parameterType="com.littlePirates.project.model.KcreviewVO">
+		UPDATE kidscafereview
+		SET kcrTitle=#{kcrTitle}, kcrText=#{kcrText}
+		WHERE kcrNo=#{kcrNo}
+	</update>
+	
+	<!-- 후기 검색 -->
+	<select id="kcSearch" parameterType="string" resultType="com.littlePirates.project.model.KcreviewVO">
+		SELECT * 
+		FROM kidscafereview 
+		WHERE kcrTitle Like CONCAT('%', #{kckeyword},'%')
+	</select>
 </mapper>
   
