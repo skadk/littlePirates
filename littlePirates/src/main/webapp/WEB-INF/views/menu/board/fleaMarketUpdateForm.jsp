@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>나눔장터게시물</title>
+<title>나눔장터게시물 수정</title>
 
 <!-- CSS  -->
 <link rel="stylesheet" type="text/css"
@@ -20,6 +20,22 @@
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 <script src="<c:url value='/js/summernote/summernote-lite.js'/>"></script>
 <script src="<c:url value='/js/summernote/lang/summernote-ko-KR.js'/>"></script>
+<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+<script src="<c:url value='/js/fleaMarket.js'/>"></script>
+<script>
+	$(document).ready(function(){		
+			var flCategory=  document.getElementById('free');	
+			
+			if(flCategory.dataset.ctg == "나눔"){
+				$('#free').prop('checked', true);
+			} else {
+				$('#flea').prop('checked', true);
+			}
+			
+	});
+</script>
+
+
 </head>
 <body>
 	<div id="wrap">
@@ -58,8 +74,8 @@
 								class="this">나눔장터 게시판</strong>
 						</div>
 					</div>
-					<form id="fileUploadForm" method="post"
-						action="<c:url value='/fleaMarket/fleaMarkWrite'/>"
+					<form id="updateForm" name="writeForm" method="post"
+						action="<c:url value='/fleaMarket/fleaMarketUpdate'/>"
 						enctype="multipart/form-data">
 						<div class="conwrapFleaMarket">
 							<div class="board_write_wrap">
@@ -68,9 +84,10 @@
 										<p class="tit">제목</p>
 									</div>
 									<div class="boxed">
+										<input type="hidden" name="flNo" value="${frd.flNo} ">
 										<input type="text" name="flTitle"
 											id="flTitle" title="제목" maxlength="50"
-											placeholder="제목을 입력해 주세요."><!-- cont_nm -->
+											value="${frd.flTitle}"><!-- cont_nm -->
 									</div>
 								</div>
 								<div class="section">
@@ -79,7 +96,9 @@
 									</div>
 									<div>
 										<div id="mainTwoBox">
-											<div id="fleaMarketImgUpload"></div>
+											<div id="fleaMarketImgUpload">
+												<img class="TextImg" src="<c:url value='/image/${frd.flImageName}' />">
+											</div>
 
 											<div id="fleaMarketTextTableBox">
 												<table border="1" width="340px" height="402px">
@@ -87,18 +106,18 @@
 														<td width="100px" height="30px">상품 이름</td>
 														<td><input type="text" name="flName"
 															id="flName" title="제목" maxlength="50"
-															placeholder="상품명을 입력해주세요."></td><!-- cont_mm -->
+															value="${frd.flName}"></td><!-- cont_mm -->
 													</tr>
 													<tr align="center">
 														<td width="100px" height="30px">분류</td>
-														<td><input type="radio" name="flCategory" value="free">나눔 제품 
-															<input type="radio" name="flCategory" value="flea">판매 제품
+														<td><input type="radio" id="free"  name="flCategory" value="나눔" data-ctg="${frd.flCategory}">나눔 제품 
+															<input type="radio" id="flea"  name="flCategory" value="판매">판매 제품
 														</td>
 													</tr>
 													<tr align="center">
 														<td width="100px" height="30px">가격</td>
-														<td><input type="text" id="flPrice" name="flPrice" value="0"
-															class="form-control" placeholder="판매 제품만 입력해주세요.">
+														<td><input type="text" id="flPrice" name="flPrice"
+															class="form-control" value="${frd.flPrice}">
 														</td>
 													</tr>
 													<tr align="center">
@@ -107,7 +126,7 @@
 													<tr align="center">
 														<td colspan='2'><textarea id="flText"
 																name="flText" cols="50" rows="2"
-																class="form-control" placeholder="상세내용을 입력해 주세요."></textarea>
+																class="form-control">${frd.flText}</textarea>
 																<!-- form-control -->
 														</td>
 													</tr>
@@ -125,10 +144,7 @@
 							<!-- 글등록 버튼 -->
 							<div class="btn_wrap mt30">
 								<div class="fl_c">
-									<!-- <a href="/fleaMarket" class="btn50 c3 reg" style="width: 240px;"
-									tmp="contents/bod" mn="18" cn="0"><span class="write">글등록</span></a> -->
-									<input type="submit" class="btn50 c3 reg" style="width: 240px;"
-										value="글등록">
+									<input type="submit" class="btn50 c3 reg" style="width: 240px;"value="수정">
 								</div>
 							</div>
 

@@ -23,20 +23,33 @@ public class FleaMarketService implements IFleaMarketService {
 	}
 
 	@Override
-	public void insertFleaMarket(FleaMarketVO brd) {
-		dao.insertFleaMarket(brd);
+	public void insertFleaMarket(FleaMarketVO frd) {
+		dao.insertFleaMarket(frd);
 	}
 
 	@Override
-	public void updateProduct(FleaMarketVO prd) {
+	public void updateFleaMarket(FleaMarketVO frd) {
 		// TODO Auto-generated method stub
-		
+		dao.updateFleaMarket(frd);
 	}
 
 	@Override
-	public void deleteProduct(String flNo) {
+	public void deleteFleaMarket(int flNo) {
 		// TODO Auto-generated method stub
-		
+		dao.deleteFleaMarket(flNo);
 	}
+	
+	@Override
+	public FleaMarketVO fleaMarketText(int flNo) {
+		// TODO Auto-generated method stub
+		return dao.fleaMarketText(flNo);
+	}
+
+
+	
+
+	
+
+	
 
 }

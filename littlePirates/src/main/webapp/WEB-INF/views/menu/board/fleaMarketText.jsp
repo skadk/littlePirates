@@ -15,6 +15,33 @@
 	href="<c:url value='/css/board/board.css'/>">
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
+<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+<script>
+	$(document).ready(function() {
+
+		var memId = $('#memId').val(); // 글 작성자
+		var sid = $('#sid').val(); //로그인한 회원
+		if (memId != sid) { // 작성자가 현재 로그인 한 회원이 아니라면
+			//alert("작성자만 수정 가능합니다");
+			//return false;
+			$('#updateBtn').css('visibility', 'hidden');
+		}
+
+	});
+</script>
+<script>
+	$(document).ready(function() {
+
+		var memId = $('#memId').val(); // 글 작성자
+		var sid = $('#sid').val(); //로그인한 회원
+		if (memId != sid) { // 작성자가 현재 로그인 한 회원이 아니라면
+			//alert("작성자만 수정 가능합니다");
+			//return false;
+			$('#deleteBtn').css('visibility', 'hidden');
+		}
+	});
+</script>
+
 </head>
 <body>
 	<div id="wrap">
@@ -53,76 +80,87 @@
 								class="this">나눔장터 게시판</strong>
 						</div>
 					</div>
+					<input type="hidden" id="memId" value="${frd.memId}">
+					<!-- 작성자 -->
+					<input type="hidden" id="sid" value="${sid}">
+					<!-- 로그인한회원 -->
 					<div class="viewbody">
 						<div class="hgroup">
-							<div class="tit">테스트1</div>
+							<div class="tit">${frd.flTitle}</div>
 							<div class="util">
-								<div class="name">hong</div>
-								<div class="date">2023.01.25</div>
-								<div class="hit">조회수 : 0</div>
+								<div class="name">${frd.memId}</div>
+								<div class="date">
+									<fmt:formatDate value="${frd.flDate}" pattern="yyyy-MM-dd" />
+								</div>
+								<div class="hit">조회수 : ${frd.flViewCount}</div>
 							</div>
 						</div>
 
 						<div id="mainTwoBox">
 							<div id="fleaMarketTextImgBox">
+								<img  src="<c:url value='/image/${frd.flImageName}' />" width="350" height="350">
 							</div>
 
 							<div id="fleaMarketTextTableBox">
-											<table border="1" width="340px" height="402px">
-												<tr align="center">
-													<td width= "100px" height= "30px">상품 이름</td>
-													<td>
-													000유모차
-													</td>
-												</tr>
-												<tr align="center">
-													<td width= "100px" height= "30px">분류</td>
-													<td>판매 제품</td>
-												</tr>
-												<tr align="center">
-													<td width= "100px" height= "30px">가격</td>
-													<td>
-														20만원
-													</td>
-												</tr>
-												<tr align="center">
-													<td colspan='2' width= "100%" height= "20px">상세내용</td>
-												</tr>
-												<tr align="center">
-													<td colspan='2'>
-														아기가 너무 커서 판매합니다 사용 얼마 안했습니다 ~~~~
-													</td>
-												</tr>
-											</table>
-										</div>
+								<table border="1" width="340px" height="402px">
+									<tr align="center">
+										<td width="100px" height="30px">상품 이름</td>
+										<td>${frd.flName}</td>
+									</tr>
+									<tr align="center">
+										<td width="100px" height="30px">분류</td>
+										<td>${frd.flCategory}</td>
+									</tr>
+									<tr align="center">
+										<td width="100px" height="30px">가격</td>
+										<td>${frd.flPrice}</td>
+									</tr>
+									<tr align="center">
+										<td colspan='2' width="100%" height="20px">상세내용</td>
+									</tr>
+									<tr align="center">
+										<td colspan='2'>${frd.flText}</td>
+									</tr>
+								</table>
+
+							</div>
 						</div>
 						<!-- 파일첨부 -->
 
 						<div class="bottom">
 							<div class="utils">
 								<div class="function">
-									<button type="button" class="scrap actionBtn "
-										onclick="$(this).toggleClass('on');" data-seq="188677"
-										data-tt_tb="MNT.BOD.TA" data-tt_key="cont_no"
-										data-tt_dir="contents/bod" data-mst_no="18" data-tmp="scrap"
-										data-cntid="scrapCnt">
+									<button type="button" class="scrap actionBtn ">
 										<span class="ico">추천</span><span class="val" id="scrapCnt">0</span>
 									</button>
 									<!-- 활성화 addClass : on -->
-									<button type="button" class="recom actionBtn "
-										onclick="$(this).toggleClass('on');" data-seq="188677"
-										data-tt_tb="MNT.BOD.TA" data-tt_key="cont_no"
-										data-tt_dir="contents/bod" data-mst_no="18"
-										data-tmp="recommend" data-cntid="rdnCnt">
+									<button type="button" class="recom actionBtn ">
 										<span class="ico">찜하기</span><span class="val" id="rdnCnt">0</span>
 									</button>
+									<button id="updateBtn" class="write"  width = "240">
+										<a href="<c:url value='/fleaMarket/fleaMarketUpdateForm/${frd.flNo}' />"> 수정</a>
+									</button>
+									<button id="deleteBtn" class="write" width = "240">
+										<a href="javascript:deleteCheck()"> 삭제</a>
+									</button>
+									<br>
+									<!--  삭제 확인 메시지 출력 -->
+									<script>
+										function deleteCheck() {
+											var answer = confirm("삭제하시겠습니까?");
+											if (answer) {
+												location.href = "/fleaMarket/deletefleaMarket/${frd.flNo}";
+											}
+										}
+									</script>
+
 								</div>
 
 							</div>
 							<div class="btn_wrap">
 								<div class="fl_c">
-									<a href="/board" class="btn50 c1 slist" style="width: 240px;"
-										tmp="contents/bod" mo="18">목록</a>
+									<a href="/fleaMarket" class="btn50 c1 slist"
+										style="width: 240px;" tmp="contents/bod" mo="18">목록</a>
 								</div>
 							</div>
 						</div>
