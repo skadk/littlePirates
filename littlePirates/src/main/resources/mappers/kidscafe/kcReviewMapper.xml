@@ -11,6 +11,7 @@
 		<result property="kcrText" column="kcrText" />
 		<result property="kcrDate" column="kcrDate" />
 		<result property="memId" column="memId" />
+		<result property="kcNo" column="kcNo" />
 	</resultMap>
 
 	<!-- 게시판 전체 보기 -->

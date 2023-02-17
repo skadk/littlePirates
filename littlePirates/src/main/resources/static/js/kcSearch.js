@@ -1,14 +1,15 @@
 /**
  * 
  */
-   $(document).ready(function(){
+
+$(document).ready(function(){
  	$('#searchBtn').on('click', function(){ 
  		event.preventDefault(); 
  		// 서버에 전송하고 결과 받아서 처리
  		$.ajax({
  			type:"post",
- 			url:"/kBoardSearch",
- 			data: {"keyword":$("#keyword").val()},
+ 			url:"/kcSearch",
+ 			data: {"kckeyword":$("#kckeyword").val()},
  			success:function(result){ 
  				$('#board-list .container').html(result);
 		},

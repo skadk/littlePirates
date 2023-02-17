@@ -150,6 +150,7 @@ public class KidscafeController {
 		
 		return "menu/kidscafe/kidscafeReviewUpdate";
 	}
+	
 	// 글 수정
 	@RequestMapping("/kidscafeReview/kidscafeReviewUpdate")
 	public String update(KcreviewVO kcr) {
@@ -163,10 +164,6 @@ public class KidscafeController {
 	public String kcSearch(@RequestParam String kckeyword, Model model) {
 		ArrayList<KcreviewVO> reviewList = kcservice.kcSearch(kckeyword);
 		model.addAttribute("reviewList", reviewList);
-		
-		for(int i=0; i<reviewList.size(); i++) {
-			System.out.println(reviewList.get(i).getKcrNo());
-		}
 		
 		return "menu/kidscafe/kidscafeReviewSearchResultView";
 	}
