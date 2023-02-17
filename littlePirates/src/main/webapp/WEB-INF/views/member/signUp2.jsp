@@ -35,7 +35,7 @@
 						<div id="signUpInfo">
 							<h1>자녀 등록</h1>
 							<br>
-							<p>자녀 정보를 입력해 주세요.</p>
+							<p>자녀 정보를 입력해 주세요. 자녀가 2명 이상인 경우 가입 후 마이페이지에서 추가해주세요.</p>
 						</div>
 						<div class="inputArea" id="childInfo">
 							<p>이름 / 애칭 / 별명</p>

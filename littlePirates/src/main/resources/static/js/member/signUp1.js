@@ -255,18 +255,33 @@
 	 				  "authKeyCheck":$('#authKeyCheck').val()},
 	 			dataType:"text",
 	 			success:function(result) {
-	 				if (result == "checkYourEmail") {
+	 				if (result == "wrong") {
+				 		$("#checkedAuth").val('');
+	 					//console.log($("#checkedAuth").val());
+	 					alert("잘못된 인증키입니다. 인증 이메일에 쓰여진 인증키를 입력해 주세요.");
+	 					$("#authKeyCheck").focus();
+	 				} else if (result == "alreadyChecked") {
+				 		$("#checkedAuth").val('y');
+	 					//console.log($("#checkedAuth").val());
+	 					alert("이미 인증된 이메일 입니다. 회원가입을 진행해 주세요");
+	 					$("#authKeyCheck").focus();
+	 				} else if (result == "checkYourEmail") {
+				 		$("#checkedAuth").val('');
+	 					//console.log($("#checkedAuth").val());
 	 					alert("인증 이메일 확인 후 인증키를 입력해 주세요.");
 	 					$("#authKeyCheck").focus();
 	 				} else if (result == "timeOut") {
 				 		$("#checkedAuth").val('');
+	 					//console.log($("#checkedAuth").val());
 	 					alert("3분이 지나 만료된 인증키입니다. 인증 이메일 보내기부터 다시 진행해 주세요.");
-	 				} else if (result == "wrong") {	
-				 		$("#checkedAuth").val('');	 					
-	 					alert("잘못된 인증키입니다. 인증 이메일에 쓰여진 인증키를 입력해 주세요.");
-	 				} else {
+	 				} else if (result == "sendPlease") {
+				 		$("#checkedAuth").val('');
+	 					//console.log($("#checkedAuth").val());
+	 					alert("인증 이메일을 보낸 후 진행해 주세요.");
+	 				} else if (result == "finalCheck") {
 				 		$("#checkedAuth").val('y');
-	 					alert(result);
+	 					//console.log($("#checkedAuth").val());
+	 					alert("확인되었습니다. 회원가입을 진행해 주세요.");
 	 				}
 	 			},
 	 			error:function() {
