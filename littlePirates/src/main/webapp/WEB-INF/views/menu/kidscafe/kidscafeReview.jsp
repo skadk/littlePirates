@@ -6,12 +6,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>키즈카페 후기</title>
+		<title>키즈카페 후기 게시판</title>
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 		<script src="<c:url value='/js/kcSearch.js'/>"></script>
-		
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
-	<!-- head -->
+	<!-- 	head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
 	<body>
@@ -21,12 +20,11 @@
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 		<section>
-			
-		
+
 			<section class="notice">
 				<div class="page-title">
 					<div class="container">
-						<h3>키즈카페 후기</h3>
+						<h2>키즈카페 후기 게시판</h2>
 					</div>
 				</div>
 
@@ -36,8 +34,7 @@
 						<div class="search-window">
 							<form action="">
 								<div class="search-wrap">
-									<label for="search" class="blind">공지사항 내용 검색</label> 
-									<input id="keyword" name="keyword" placeholder="검색어를 입력해주세요." value="">
+									<input id="kckeyword" name="kckeyword" placeholder="검색어를 입력해주세요." value="">
 									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
 								</div>
 								<a href="<c:url value='kidscafeReviewWrite'/>">
