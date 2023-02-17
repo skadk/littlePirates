@@ -31,21 +31,20 @@
   </insert>
   
   <!-- 상품 상세 조회 : 상품 번호(prdNo) 전달 받아서 상품 정보(ProductVO) 반환-->
-  <select id="detailViewProduct" parameterType="string" 
+	<select id="fleaMarketText" parameterType="int" 
   		resultType="com.littlePirates.project.model.FleaMarketVO">
   		SELECT * FROM fleamarket WHERE flNo = #{flNo}
   </select>
   
-  <!-- 상품 정보 수정 : 기본키인 상품번호는 수정하지 않음 -->
-  <update id="updateProduct"  parameterType="com.littlePirates.project.model.FleaMarketVO">
+  <update id="updateFleaMarket"  parameterType="com.littlePirates.project.model.FleaMarketVO">
   		UPDATE fleamarket
-  		SET flName=#{flName}, flPrice=#{flPrice}, <!-- prdCompany=#{prdCompany},
-  			   prdStock=#{prdStock}, --> flDate=#{flDate}
+  		SET memId=#{memId}, flTitle=#{flTitle}, flName=#{flName}, flPrice=#{flPrice},
+  				flText=#{flText},  flImageName=#{flImageName}, flCategory=#{flCategory}
   	    WHERE flNo=#{flNo}
   </update>
   
   <!--  상품 정보 삭제 : 삭제할 상품번호 전달 받음-->
-  <delete id="deleteProduct"  parameterType="string" >
+  <delete id="deleteFleaMarket"  parameterType="int" >
   		DELETE FROM fleamarket WHERE flNo=#{flNo}
   </delete>
   

@@ -96,14 +96,14 @@
 
 						<div id="boardBox">
 							<c:forEach var="fl" items="${flList }">
-								<a href="<c:url value='/fleaMarket/fleaMarketText'/>">
+								<a href="<c:url value='/fleaMarket/fleaMarketText/${fl.flNo}'/>">
 									<div class="card">
 										<!-- 카드 헤더 -->
 										<div class="card-header">
-											<img src="<c:url value='/image/${fl.flImageName}' />" width= "100%" height= "245px">
 											<div class="card-header-is_closed">
 												<div class="card-header-text">${fl.flCategory}</div>
 											</div>
+											<img src="<c:url value='/image/${fl.flImageName}' />" width= "100%" height= "245px">
 										</div>
 										<!--  카드 바디 -->
 										<div class="card-body">
@@ -117,11 +117,10 @@
 										</div>
 										<!--  카드 바디 푸터 -->
 										<div class="card-body-footer">
-											<hr
-												style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
-											<i class="icon icon-view_count"></i>${fl.flViewCount} 
-											<i class="icon icon-comments_count"></i>${fl.flResCount} 
-											<i class="reg_date"> ${fl.flDate} </i>
+											<hr style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
+											<i class="icon icon-view_count"></i>조회수 : ${fl.flViewCount} 
+											<i class="icon icon-comments_count"></i>댓글수 : ${fl.flResCount}											 
+											<i class="reg_date"> <fmt:formatDate value="${frd.flDate}"  pattern="yyyy-MM-dd" /> ${frd.flDate} </i>
 										</div>
 									</div>
 								</a>
@@ -154,7 +153,7 @@
 						<!-- 글작성 버튼 -->
 						<div class="btn_wrap mt30">
 							<div class="fl_c">
-								<a href="<c:url value='/fleaMarket/fleaMarketWrite' />"
+								<a href="<c:url value='/fleaMarket/fleaMarketWriteForm' />"
 									class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod"
 									mn="18" cn="0"> <span class="write">글작성</span></a>
 							</div>

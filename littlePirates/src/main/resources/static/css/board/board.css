@@ -698,12 +698,16 @@ element.style {
 }
 
 #fleaMarketTextImgBox { /*나눔장터 게시물 이미지 박스*/
-
-	background: url("/images/0112.jpg") center no-repeat;
 	display: inline-block;
 	width: 400px;
 	height: 400px;
 	margin-top: 40px;
+}
+
+.TextImg{
+	border: none;
+	width: 400px;
+	height: 400px;
 }
 
 #fleaMarketTextTableBox { /*나눔장터 게시물 상세정보 박스*/
