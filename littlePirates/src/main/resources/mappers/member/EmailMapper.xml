@@ -46,17 +46,11 @@
   		WHERE memId=#{memId}
   	</update>
   	
-  	<!-- 인증 확인 -->
-  	<select id="checkEmailAuth" parameterType="string" resultType="int">
-  		SELECT emailAuth
-  		FROM email
-  		WHERE memId=#{memId}
-  	</select>
-  	
-  	<!-- 회원가입 창 나가면 인증 DB 삭제 -->
+  	<!-- 회원가입1 창 나가면 인증 DB 삭제 -->
    	<delete id="emailAuthDelete" parameterType="string">
   		DELETE
   		FROM email
+  		WHERE memId=#{memId}
   	</delete>
   	
   </mapper>

@@ -85,24 +85,10 @@ public class EmailService implements IEmailService {
 	public void updateEmailAuth0(String memId) {
 		dao.updateEmailAuth0(memId);
 	}
-
-	@Override // 인증 확인
-	public String checkEmailAuth(String memId) {
-
-		int authResult = dao.checkEmailAuth(memId);
-
-		String result = "잘못된 인증키입니다. 인증 이메일에 쓰여진 인증키를 입력해 주세요.";
-
-		if (authResult == 1) {
-			result = "확인되었습니다. 회원가입을 진행해 주세요.";
-		}
-
-		return result;
-	}
 	
-	@Override // 회원가입 창 나가면 인증 DB 삭제
-	public void emailAuthDelete() {
-		dao.emailAuthDelete();
+	@Override // 회원가입1 창 나가면 인증 DB 삭제
+	public void emailAuthDelete(String memId) {
+		dao.emailAuthDelete(memId);
 	}
 	
 }
