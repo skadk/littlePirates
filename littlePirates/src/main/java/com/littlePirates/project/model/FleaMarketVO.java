@@ -2,6 +2,8 @@ package com.littlePirates.project.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class FleaMarketVO {
 	private int flNo;	/*게시판 번호*/
 	private String memId; /*회원아이디*/
@@ -14,25 +16,13 @@ public class FleaMarketVO {
 	private String flText;	/*내용*/
 	private String flImageName; /*이미지이름*/
 	private String flCategory; /*카테고리*/
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date flDate; /*날짜*/
-	
-	
-	public int getFlViewCount() {
-		return flViewCount;
-	}
-	public void setFlViewCount(int flViewCount) {
-		this.flViewCount = flViewCount;
-	}
-	public int getFlResCount() {
-		return flResCount;
-	}
-	public void setFlResCount(int flResCount) {
-		this.flResCount = flResCount;
-	}
-	public int getFlNO() {
+	public int getFlNo() {
 		return flNo;
 	}
-	public void setFlNO(int flNo) {
+	
+	public void setFlNo(int flNo) {
 		this.flNo = flNo;
 	}
 	public String getMemId() {
@@ -65,11 +55,17 @@ public class FleaMarketVO {
 	public void setFlHeart(int flHeart) {
 		this.flHeart = flHeart;
 	}
-	public int getBrdViewCount() {
+	public int getFlViewCount() {
 		return flViewCount;
 	}
-	public void setBrdViewCount(int flViewCount) {
+	public void setFlViewCount(int flViewCount) {
 		this.flViewCount = flViewCount;
+	}
+	public int getFlResCount() {
+		return flResCount;
+	}
+	public void setFlResCount(int flResCount) {
+		this.flResCount = flResCount;
 	}
 	public String getFlText() {
 		return flText;
@@ -95,4 +91,7 @@ public class FleaMarketVO {
 	public void setFlDate(Date flDate) {
 		this.flDate = flDate;
 	}
+	
+	
+	
 }
