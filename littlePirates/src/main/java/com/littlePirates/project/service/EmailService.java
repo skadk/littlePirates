@@ -70,6 +70,11 @@ public class EmailService implements IEmailService {
 		
 		return map;
 	}
+	
+	@Override // 인증 상태 변경0
+	public void updateEmailAuth0(String memId) {
+		dao.updateEmailAuth0(memId);
+	}
 
 	@Override // 인증 상태 변경1
 	public void updateEmailAuth1(String memId, String authKeyCheck) {
@@ -81,14 +86,14 @@ public class EmailService implements IEmailService {
 		dao.updateEmailAuth1(map);
 	}
 	
-	@Override // 인증 상태 변경0
-	public void updateEmailAuth0(String memId) {
-		dao.updateEmailAuth0(memId);
+	@Override
+	public void updateEmailAuth2(String memId) {
+		dao.updateEmailAuth2(memId);
 	}
 	
 	@Override // 회원가입1 창 나가면 인증 DB 삭제
 	public void emailAuthDelete(String memId) {
 		dao.emailAuthDelete(memId);
 	}
-	
+
 }

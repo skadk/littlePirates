@@ -69,11 +69,18 @@ hr {
 	color: #70cacd;
 }
 
-/************** footerLogo **************/
-#footerLogo {
+/************** footerLogoBox **************/
+#footerLogoBox {
 	display: inline-block;
 	width: 50%;
-	height: 232px;	
+	height: 232px;
+}
+
+#footerLogo {
+	display: inline-block;
+	width: 52%;
+	margin-left: 48%;
+	height: 232px;
 }
 
 #footerLogo img {

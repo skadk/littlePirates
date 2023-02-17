@@ -21,7 +21,7 @@
   	<!-- 이메일 인증 키 DB 저장 -->
   	<update id="updateEmailAuthKey" parameterType="hashmap">
   		UPDATE email
-  		SET authKey=#{authKey}
+  		SET emailAuth=0, authKey=#{authKey}
   		WHERE memId=#{memId}
   	</update>
   	
@@ -32,6 +32,13 @@
   		WHERE memId=#{memId}
   	</select>
   	
+  	<!-- 인증 상태 변경0 -->
+  	<update id="updateEmailAuth0" parameterType="string">
+  		UPDATE email 
+  		SET emailAuth=0, authKey=null
+  		WHERE memId=#{memId}
+  	</update>
+  	
   	<!-- 인증 상태 변경1 -->
   	<update id="updateEmailAuth1" parameterType="hashmap">
   		UPDATE email 
@@ -39,10 +46,10 @@
   		WHERE memId=#{memId} AND authKey=#{authKeyCheck}
   	</update>
   	
-  	<!-- 인증 상태 변경0 -->
-  	<update id="updateEmailAuth0" parameterType="string">
+  	<!-- 인증 상태 변경2 -->
+  	<update id="updateEmailAuth2" parameterType="hashmap">
   		UPDATE email 
-  		SET emailAuth=0, authKey=null
+  		SET emailAuth=0
   		WHERE memId=#{memId}
   	</update>
   	

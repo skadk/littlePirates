@@ -54,7 +54,6 @@ public class MemberController {
 		
 		String memId = vo.getMemId();
 		String memParentNo = vo.getMemParentNo();
-		System.out.println(memId);
 		
 		mservice.signUpMember2(memId, memParentNo);
 		
@@ -145,10 +144,11 @@ public class MemberController {
 		
 		HashMap<String, Object> map = eservice.getKeyAndTime(memId);
 		
-		String result = "인증 이메일을 보낸 후 진행해 주세요.";
+		String result = "sendPlease";
 		
 		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:03:00')") != null) {
 			String authTimeS = map.get("ADDTIME(authTime, '0:03:00')").toString();			
+			String emailAuth = map.get("emailAuth").toString();
 			
 			LocalDateTime authTimePlus = LocalDateTime.parse(authTimeS);
 			LocalDateTime now = LocalDateTime.now();
@@ -156,13 +156,18 @@ public class MemberController {
 			if (now.isBefore(authTimePlus) == true) {
 				if (!authKeyCheck.equals("")) {
 					if (map.get("authKey").equals(authKeyCheck)) {
-						result = "확인되었습니다. 회원가입을 진행해 주세요.";
+						result = "finalCheck";
 						eservice.updateEmailAuth1(memId, authKeyCheck);
 					} else {
-						result = "wrong";
+						if (emailAuth.equals("0")) {
+							result = "wrong";
+						} else {
+							result = "alreadyChecked";
+						}
 					}
 				} else {
 					result = "checkYourEmail";
+					eservice.updateEmailAuth2(memId);
 				}
 			} else {
 				result = "timeOut";				
