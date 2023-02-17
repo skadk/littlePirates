@@ -21,7 +21,7 @@
   	<!-- 이메일 인증 키 DB 저장 -->
   	<update id="updateEmailAuthKey" parameterType="hashmap">
   		UPDATE email
-  		SET authKey=#{authKey}
+  		SET emailAuth=0, authKey=#{authKey}
   		WHERE memId=#{memId}
   	</update>
   	
@@ -32,13 +32,6 @@
   		WHERE memId=#{memId}
   	</select>
   	
-  	<!-- 인증 상태 변경1 -->
-  	<update id="updateEmailAuth1" parameterType="hashmap">
-  		UPDATE email 
-  		SET emailAuth=1
-  		WHERE memId=#{memId} AND authKey=#{authKeyCheck}
-  	</update>
-  	
   	<!-- 인증 상태 변경0 -->
   	<update id="updateEmailAuth0" parameterType="string">
   		UPDATE email 
@@ -46,17 +39,25 @@
   		WHERE memId=#{memId}
   	</update>
   	
-  	<!-- 인증 확인 -->
-  	<select id="checkEmailAuth" parameterType="string" resultType="int">
-  		SELECT emailAuth
-  		FROM email
-  		WHERE memId=#{memId}
-  	</select>
+  	<!-- 인증 상태 변경1 -->
+  	<update id="updateEmailAuth1" parameterType="hashmap">
+  		UPDATE email 
+  		SET emailAuth=1
+  		WHERE memId=#{memId} AND authKey=#{authKeyCheck}
+  	</update>
   	
-  	<!-- 회원가입 창 나가면 인증 DB 삭제 -->
+  	<!-- 인증 상태 변경2 -->
+  	<update id="updateEmailAuth2" parameterType="hashmap">
+  		UPDATE email 
+  		SET emailAuth=0
+  		WHERE memId=#{memId}
+  	</update>
+  	
+  	<!-- 회원가입1 창 나가면 인증 DB 삭제 -->
    	<delete id="emailAuthDelete" parameterType="string">
   		DELETE
   		FROM email
+  		WHERE memId=#{memId}
   	</delete>
   	
   </mapper>

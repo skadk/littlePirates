@@ -7,17 +7,10 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta charset="UTF-8">
 		<title>키즈카페</title>
-	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe.css'/>">
-	    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-		<!-- head -->
+	    <link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
+	<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-		<!-- API 로드하기 -->
-	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk"></script>
-		<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk&submodules=geocoder"></script>	
-		<script src="<c:url value='/js/kidscafe.js' />"></script>
-		<script src="<c:url value='/js/kidscafe_geocoder.js' />"></script>
-		<script src="<c:url value='/js/kidscafeSearch.js' />"></script>
-		<script src="<c:url value='/js/MarkerClustering.js' />"></script>
+
 	</head>
 	<body>
 		<div id="wrap">
@@ -25,45 +18,56 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
-			<section>
-			
-				<div id ="box">					
-					<div class="as_inner">
-						<div class="as_hgroup">
-							<h2 class="tit">키즈카페</h2>
-						</div>
-						<nav id="lnb" class="lnb">
-							<div id="sideSubBox">
-								<div class="on">
-									<img src="<c:url value='/images/지도.png' />" width="35" height="25">
-									<a href="/kidscafe_map">지도로 보기</a>
-								</div>
-								<div class="on">
-									<a href="/kidscafe_sec">간편하게 보기</a>
-									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
-								</div>
-							</div>
-						</nav>						
+			<section class="notice">
+				<div class="page-title">
+					<div class="container">
+						<h3>키즈카페 후기</h3>
 					</div>
-					
-					<div id ="kid">
-						<h1>키즈카페 지도</h1>
-						<hr style="border: solid 2px"><br>
-						<div id="showmap">
-							<input type="text" title="가게명 검색" name="keyword" id="keyword" placeholder="가게명 검색">
-							<input id="submit" type="button" value="검색">
-					
-							<!-- 지도 -->
-							<div id="mapwrap">
-								<div id="map"></div>
-								<div id="reviewresult"></div>
-							</div>
+				</div>
 
-							<div id="searchresult" class="scroll_box"></div>
-
+				<!-- board seach area -->
+				<div id="board-search">
+					<div class="container">
+						<div class="search-window">
+							<form action="">
+								<div class="search-wrap">
+									<label for="search" class="blind">공지사항 내용 검색</label> 
+									<input id="keyword" name="keyword" placeholder="검색어를 입력해주세요." value="">
+									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
+								</div>
+								<a href="<c:url value='kidscafeReviewWrite'/>">
+									<button type="button" class="hSMJOX">글 작성</button>
+								</a>
+							</form>
 						</div>
 					</div>
-					
+				</div>
+
+				<!-- board list area -->
+				<div id="board-list">
+					<div class="container">
+						<table class="board-table">
+							<thead>
+								<tr>
+									<th scope="col" class="th-num">번호</th>
+									<th scope="col" class="th-title">제목</th>
+									<th scope="col" class="th-date">등록일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="reviewinfo" items="${reviewList }">
+									<tr>
+										<td><a id="click" name="click"
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrNo }</a></td>
+										<td><a id="click" name="click"
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrTitle }</a></td>
+
+										<td>${reviewinfo.kcrDate }</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
 				</div>
 
 			</section>

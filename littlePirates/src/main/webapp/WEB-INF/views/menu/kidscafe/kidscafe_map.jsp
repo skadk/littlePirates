@@ -12,8 +12,8 @@
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<!-- API 로드하기 -->
-	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk"></script>
-		<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk&submodules=geocoder"></script>	
+	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId="></script>
+		<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=&submodules=geocoder"></script>	
 		<script src="<c:url value='/js/kidscafe.js' />"></script>
 		<script src="<c:url value='/js/kidscafe_geocoder.js' />"></script>
 		<script src="<c:url value='/js/kidscafeSearch.js' />"></script>
@@ -35,10 +35,12 @@
 						<nav id="lnb" class="lnb">
 							<div id="sideSubBox">
 								<div class="on">
+									<img src="<c:url value='/images/지도.png' />" width="35" height="25">
 									<a href="/kidscafe_map">지도로 보기</a>
 								</div>
 								<div class="on">
 									<a href="/kidscafe_sec">간편하게 보기</a>
+									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
 								</div>
 							</div>
 						</nav>						

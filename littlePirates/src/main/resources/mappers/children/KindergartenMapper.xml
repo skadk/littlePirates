@@ -21,7 +21,11 @@
 	</resultMap>
 	
 	<select id="KindergartenList" resultMap="KdResult">
-		SELECT * FROM KindergartenInfo
+		SELECT * FROM kindergarteninfo
 	</select>
+	
+<!-- 	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM KindergartenInfo
+	</select> -->
 	
 </mapper>

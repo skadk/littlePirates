@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.littlePirates.project.dao.IKidscafeDAO;
-import com.littlePirates.project.model.KidscafeReviewVO;
+import com.littlePirates.project.model.KcreviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 
 @Service
@@ -52,11 +52,6 @@ public class KidscafeService implements IKidscafeService {
 		return dao.kidscafeSearchgu(map);
 	}
 
-	@Override
-	public ArrayList<KidscafeReviewVO> reviewList(int kcNo) {
-		// TODO Auto-generated method stub
-		return dao.reviewList(kcNo);
-	}
 	
 	
 }

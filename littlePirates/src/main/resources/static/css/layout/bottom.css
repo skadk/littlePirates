@@ -33,7 +33,6 @@ hr {
 	text-align: left;
 	font-weight: bold;
 	float: left;
-	color: #fff4e9;
 }
 
 #footerNav p {
@@ -54,15 +53,34 @@ hr {
 	padding-bottom: 10px;
 }
 
-#footerNav p:hover {
+#footerNav a {
+	text-decoration-line : none;
+}
+
+#footerNav a:link {
+	color: #fff4e9;
+}
+
+#footerNav a:visited {
+	color: #fff4e9;
+}
+
+#footerNav a:hover {
 	color: #70cacd;
 }
 
-/************** footerLogo **************/
-#footerLogo {
+/************** footerLogoBox **************/
+#footerLogoBox {
 	display: inline-block;
 	width: 50%;
-	height: 232px;	
+	height: 232px;
+}
+
+#footerLogo {
+	display: inline-block;
+	width: 52%;
+	margin-left: 48%;
+	height: 232px;
 }
 
 #footerLogo img {
@@ -104,11 +122,5 @@ hr {
 	color: #70cacd;
 }
 /*-------------footer 태그-------------*/
-.btmTag{
-	text-decoration:none;
-	color: #6e6e6e;
-}
-.btmTag:hover {
-	color: black;
-}
+
 /*------------- Footer 끝 -------------*/

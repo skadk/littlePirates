@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>어린이집 후기 작성</title>
+<title>어린이집 후기 게시판</title>
 <head>
 <!-- css -->
 <link rel="stylesheet" type="text/css"
@@ -25,29 +27,27 @@
 		<c:import url="/WEB-INF/views/layout/header.jsp" />
 		<!-- parentsNav -->
 		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
+
 		<section>
-			<div class="container">
-				<h2>게시판 글쓰기</h2>
-				<tbody>
-					<tr>
-						<td><input type="text" class="form-control"
-							placeholder="글 제목" name="contentTitle" maxlength="40"></td>
-					</tr>
-					<tr>
-						<td><textarea type="text" class="form-control"
-								placeholder="글 내용을 작성하세요" name="contentDetail" maxlength="1024"
-								style="height: 400px;"></textarea></td>
-					</tr>
-				</tbody>
+			<h3>게시판</h3>
+			<c:forEach var="NBoard" items="${boaList}">
+				<tr>
+					<td><a id="click" name="click"
+						href="<c:url value='/nurseryBoardRead/${boa.nBrdNo}'/>">${boa.nBrdNo}</a></td>
+					<td>${board.nBrdNo }</td>
+					<td>${board.nBrdTitle }</td>
+					<td>${board.nBrdDate }</td>
+				</tr>
+			</c:forEach>
 
-				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</table>
+			<br> <br> <a
+				href="<c:url value='/nurseryBoardWrite'/>">글쓰기</a>
 
-			</div>
 		</section>
 
 		<!-- bottom -->
 		<c:import url="/WEB-INF/views/layout/bottom.jsp" />
-
 	</div>
 </body>
 </html>
