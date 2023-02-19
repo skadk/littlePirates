@@ -21,11 +21,11 @@
 	</resultMap>
 
 	<select id="NurseryList" resultMap="NurResult">
-		SELECT * FROM nurseryInfo
+		SELECT * FROM nurseryinfo
 		LIMIT #{start},#{end}
 	</select>
 	<select id="countBoard" resultType="int">
-		SELECT COUNT(*) FROM nurseryInfo
+		SELECT COUNT(*) FROM nurseryinfo
 	</select>
 
 </mapper>

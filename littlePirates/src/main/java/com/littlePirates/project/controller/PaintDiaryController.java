@@ -17,6 +17,7 @@ public class PaintDiaryController {
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
 		// 마지막에 / 있어야 함
 		String uploadPath = "C:/springWorkspace/littlePiratesUpload/";
+		//String uploadPath = "/usr/littlePiratesUpload/";
 		// 2. 원본 파일 이름 저장
 		String originalFileName = file.getOriginalFilename();
 		// 3. 파일 (객체) 생성

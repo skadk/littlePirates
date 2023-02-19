@@ -12,11 +12,11 @@ public interface IEmailDAO {
 	
 	public HashMap<String, Object> getKeyAndTime(String memId); // 인증키와 시간 DB에서 가져오기
 	
-	public void updateEmailAuth1(HashMap<String, Object> map); // 인증 상태 변경1
-	
 	public void updateEmailAuth0(String memId); // 인증 상태 변경0
 	
-	public int checkEmailAuth(String memId); // 인증 확인
+	public void updateEmailAuth1(HashMap<String, Object> map); // 인증 상태 변경1
 	
-	public void emailAuthDelete(); // 회원가입 창 나가면 인증 DB 삭제
+	public void updateEmailAuth2(String memId); // 인증 상태 변경2
+	
+	public void emailAuthDelete(String memId); // 회원가입1 창 나가면 인증 DB 삭제
 }
