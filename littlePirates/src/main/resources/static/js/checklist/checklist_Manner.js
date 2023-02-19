@@ -1,7 +1,45 @@
 /**
  * 	checklist_Manner.js
  */
+function loadFile(input) {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+   	$('#photoContent').empty();
+    $('#photoContent')
+      .attr('src', e.target.result)
+      .width(800)
+      .height(550);
+  };
+  reader.readAsDataURL(input.files[0]);
+}
 
+function editChecklist(element) {
+    element.style.display = 'none';
+    element.nextElementSibling.style.display = 'block';
+    element.nextElementSibling.focus();
+}
+
+function saveChecklist(element) {
+    element.style.display = 'none';
+    element.previousElementSibling.style.display = 'block';
+    let voIndex = element.parentElement.parentElement.getAttribute('data-vo-index');
+    let field = element.parentElement.getAttribute('data-field');
+    let value = element.value;
+    updateChecklist(voIndex, field, value);
+}
+
+function updateChecklist(index, field, value) {
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log('Checklist updated!');
+        }
+    };
+    xhr.open('POST', '/checklist/update', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.send(JSON.stringify({index: index, field: field, value: value}));
+}
+/*
  $(document).ready(function(){
  	$('#fileUploadForm').on('submit', function(){
  	//폼이 submit 되지 않도록 기본 기능 중단
@@ -40,10 +78,7 @@
  		}); // ajax 종료 	
  	});// submit 종료
 });
- 
- 
- 
-
+*/
  
  /*
 $(document).ready(function(){
