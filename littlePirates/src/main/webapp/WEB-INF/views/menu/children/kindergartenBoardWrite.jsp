@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>유치원 후기 게시판 작성</title>
+
 <head>
 
 <!-- css -->
@@ -18,6 +20,17 @@
 <style>
 td {
 	text-align: left !important;
+}
+
+.btn1 {
+	margin-top: 15px;
+	width: 120px;
+	height: 35px;
+	font-size: 17px;
+}
+
+.title{
+	margin-top: 20px;
 }
 
 
@@ -39,7 +52,9 @@ td {
 			<div class="layout">
 				<form action="/kindergartenBoard/Write" method="post">
 					<table>
-						<h2>유치원 후기 게시글 작성</h2>
+					<div class="title">
+						<h1>유치원 후기 게시글 작성</h1>
+					</div>
 						<tr>
 							<th>작성 일자 *</th>
 							<td><input type="text" name="kBrdDate" value="${time1}"

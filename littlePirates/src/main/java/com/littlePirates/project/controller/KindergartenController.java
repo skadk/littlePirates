@@ -6,25 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.littlePirates.project.model.ChildrenVO;
+import com.littlePirates.project.model.KidscafeVO;
 import com.littlePirates.project.model.KindergartenVO;
 import com.littlePirates.project.service.ChildrenService;
 import com.littlePirates.project.service.KindergartenService;
 
 @Controller
-public class ChildrenController {
+public class KindergartenController {
 	@Autowired
-	private ChildrenService cdservice;
+	private KindergartenService kdservice;
 
-	@RequestMapping("/children")
-	public String NurseryList(Model model) {
-		ArrayList<ChildrenVO> NList = cdservice.NurseryList();
-		model.addAttribute("NList", NList);
-		return "menu/children/children";
+	@RequestMapping("/kindergartenInfo")
+	public String KindergartenList(Model model) {
+		ArrayList<KindergartenVO> KList = kdservice.KindergartenList();
+		model.addAttribute("KList", KList);
+		return "menu/children/kindergartenInfo";
 	}
 
-	
 	
 
 }

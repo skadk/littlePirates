@@ -6,8 +6,7 @@
 
 <mapper namespace="com.littlePirates.project.dao.IChildrenDAO">
 
-	<resultMap id="NurResult"
-		type="com.littlePirates.project.model.ChildrenVO">
+	<resultMap id="NurResult" type="com.littlePirates.project.model.ChildrenVO">
 		<result property="nurRegion" column="nurRegion" />
 		<result property="nurName" column="nurName" />
 		<result property="nurType" column="nurType" />
@@ -19,13 +18,9 @@
 		<result property="nurClass" column="nurClass" />
 		<result property="nurNo" column="nurNo" />
 	</resultMap>
-
+	
 	<select id="NurseryList" resultMap="NurResult">
 		SELECT * FROM nurseryInfo
-		LIMIT #{start},#{end}
 	</select>
-	<select id="countBoard" resultType="int">
-		SELECT COUNT(*) FROM nurseryInfo
-	</select>
-
+	
 </mapper>

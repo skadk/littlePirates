@@ -35,7 +35,6 @@ td{
 background-color: rgb(255,244,233);
 }
 </style>
-
 <body>
 	<div id="wrap">
 
@@ -55,7 +54,8 @@ background-color: rgb(255,244,233);
 						<div id="sideSubBox">
 							<div class="on">
 								<img src="<c:url value='/images/images/babyPirates.png' />"
-									width="55" height="55"> <a href="/children">어린이집 정보</a>
+									width="55" height="55"> <a href="/children">어린이집
+									정보</a>
 							</div>
 							<div class="on">
 								<img src="<c:url value='/images/images/childPirates.png' />"
@@ -93,15 +93,15 @@ background-color: rgb(255,244,233);
 								<th>PHOTO</th>
 								<th>INFORMATION</th>
 							</tr>
-							<c:forEach var="nur" items="${NList }" varStatus="status">
+							<c:forEach var="kd" items="${KList }" varStatus="status">
 								<c:if test="${(status.index mod 2) eq 0}">
 									<tr>
 								</c:if>
-								<td><img src="<c:url value='/image/${nur.nurName}.png' />"
+								<td><img src="<c:url value='/image/${kd.kdName}.png' />"
 									onerror="this.src='<c:url value='/images/images/babyPirates.png'/>'"
 									width="180" height="120"></td>
-								<td>${nur.nurName }<br> 주소: ${nur.nurAddress}<br>
-									유형: ${nur.nurType}<br> 전화번호: ${nur.nurTel}
+								<td> ${kd.kdName }<br> 주소: ${kd.kdAddress}<br>
+									유형: ${kd.kdType}<br> 전화번호: ${kd.kdTel}
 								</td>
 								<c:if test="${(status.index mod 2) ne 0}">
 									</tr>

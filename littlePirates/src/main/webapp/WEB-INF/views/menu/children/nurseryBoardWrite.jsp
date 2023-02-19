@@ -20,7 +20,20 @@ td {
 	text-align: left !important;
 }
 
+.btn1 {
+	margin-top: 15px;
+	width: 120px;
+	height: 35px;
+	font-size: 17px;
+}
 
+.m1{
+	margin-top: 50px;
+}
+
+tr{
+	padding-top: 20px;
+}
 </style>
 
 </head>
@@ -40,21 +53,24 @@ td {
 				<form action="/nurseryBoard/Write" method="post">
 					<table>
 						<h2>어린이집 후기 게시글 작성</h2>
+
+						<div class="m1">
 						<tr>
 							<th>작성 일자 *</th>
 							<td><input type="text" name="nBrdDate" value="${time1}"
 								readonly></td>
 						</tr>
-
+						</div>
+						
 						<tr>
 							<th>제목 *</th>
 							<td><input type="text" name="nBrdTitle"></td>
 						</tr>
-
+						
 
 						<tr>
 							<th>내용</th>
-							<td><textarea cols="100" rows="30" name="nBrdText" ></textarea></td>
+							<td><textarea cols="100" rows="30" name="nBrdText"></textarea></td>
 						</tr>
 					</table>
 
