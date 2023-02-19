@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReviewR.css'/>">
 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 </head>
@@ -36,16 +37,18 @@
 			
 			<table>
 				<tr>
-					<td scope="row">제목</td>
-					<td width="500px">${kcr.kcrTitle }</td>
+					<td width="50px">제목</td>
+					<td width="400px" colspan="3">${kcr.kcrTitle }</td>
+					<td />
 				</tr>
 				<tr>
-					<td scope="row">작성자</td>
-					<td width="50px">${kcr.memId }</td>
+					<td colspan="4"></td>
+					<td>작성자 &nbsp; ${kcr.memId }</td>
 				</tr>
 				<tr>
-					<td scope="row">내용</td>
-					<td height="500px">${kcr.kcrText }</td>
+					<td>내용</td>
+					<td height="300px" colspan="3">${kcr.kcrText }</td>
+					<td />
 				</tr>
 			</table><br><br><br>
 			

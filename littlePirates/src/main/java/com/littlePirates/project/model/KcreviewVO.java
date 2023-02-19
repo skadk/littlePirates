@@ -6,7 +6,6 @@ public class KcreviewVO {
 	private String kcrText;
 	private String kcrDate;
 	private String memId;
-	private int kcNo;
 		
 	public int getKcrNo() {
 		return kcrNo;
@@ -38,11 +37,6 @@ public class KcreviewVO {
 	public void setMemId(String memId) {
 		this.memId = memId;
 	}
-	public int getKcNo() {
-		return kcNo;
-	}
-	public void setKcNo(int kcNo) {
-		this.kcNo = kcNo;
-	}
+
 
 }

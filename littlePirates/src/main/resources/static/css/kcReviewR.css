@@ -7,11 +7,15 @@ a{
 }
 
 td {
-	border: 1px solid black;
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
 }
 
 table {
-	border: 1px solid black;
+	margin-left: 550px;
 }
 
 #wrap {
@@ -25,7 +29,7 @@ table {
 
 h2 {
 	font-family: 'Dongle', sans-serif;
-	font-size: 80px;
+	font-size: 90px;
 }
 
 .btn{
