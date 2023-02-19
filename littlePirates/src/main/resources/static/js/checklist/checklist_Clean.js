@@ -3,8 +3,27 @@
  */
 
 
-$(function () {
+
 	//	== $(document).ready(function(){});
+$(function () {
+
+  // clickBingo() 함수 추가
+  function clickBingo(num) {
+    var textBox = document.getElementById("textBox" + num);
+    var audio = document.getElementById("bingoAudio" + num);
+
+    // TTSService 클래스의 객체 생성
+    var ttsService = new TTSService();
+
+    // TTS API 호출
+    ttsService.playTTS(textBox.innerHTML);
+
+    // HTML5 Audio 태그를 생성하여 음성 파일 재생
+    // API 호출 결과로 반환된 음성 파일 URL을 지정
+    audio.src = "https://naveropenapi.apigw.ntruss.com/voice/v1/tts?speaker=mijin&speed=0&text=" + encodeURIComponent(textBox.innerHTML);
+    audio.play();
+  }
+	
 	
 	//랜덤이미지 9개 넣을 공간 생성
 	const numberOfImages = 26;

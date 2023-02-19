@@ -3,13 +3,14 @@ package com.littlePirates.project.controller;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,11 +25,14 @@ public class ChecklistController {
 	ChecklistService service;
 
 	@RequestMapping("/checkList/checkList_Manner")
-	public String checkList_Manner(Model model) {
-		ArrayList<ChecklistVO> voList = service.checklistInfo();
+	public String checkList_Manner(Model model,HttpSession session) {
+		String memId = (String) session.getAttribute("sid");		
+		ArrayList<ChecklistVO> voList = service.checklistInfo(memId);
 		model.addAttribute("voList", voList);
+		System.out.println(memId);
 		return "/checkList/checkList_Manner";
 	}
+	
 
 	// 빙고 체크리스트 최초생성
 	@RequestMapping("/checkList/checkList_Clean")
@@ -128,8 +132,12 @@ public class ChecklistController {
 
 		return result;
 	}
-
+	
+   
 }
+
+
+
 
 /*
  * @RequestMapping("/checkList/checkList_Clean") public String

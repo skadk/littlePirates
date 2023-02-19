@@ -2,12 +2,13 @@ package com.littlePirates.project.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.littlePirates.project.model.ChecklistVO;
 
 public interface IChecklistDAO {
 
-	public ArrayList<ChecklistVO> checklistInfo();
+	public ArrayList<ChecklistVO> checklistInfo(String memId);
 	
 	public ArrayList<String> checklistInfo2();
 	
@@ -49,9 +50,5 @@ public interface IChecklistDAO {
 	public void updateChecked7(HashMap<String, Object> map);
 	public void updateChecked8(HashMap<String, Object> map);
 	public void updateChecked9(HashMap<String, Object> map);
-
-	/*
-	 * public ChecklistVO updateChh_Checked(String memId);
-	 */
 
 }
