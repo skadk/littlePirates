@@ -39,13 +39,6 @@ public class BoardController {
 
 		return "menu/board/boardText";
 	}
-	
-	@RequestMapping("/board/boardWrite")
-	public String boardWrite() {
-
-		return "menu/board/boardWrite";
-
-	}
 
 	@RequestMapping("/anonymusBoard")
 	public String anonymusBoard(Model model) {
@@ -60,18 +53,6 @@ public class BoardController {
 
 		return "menu/board/anonymusBoardText";
 
-	}
-
-	@RequestMapping("/fleaMarket")
-	public String fleaMarket() {
-
-		return "menu/board/fleaMarket";
-	}
-
-	@RequestMapping("/fleaMarket/fleaMarketText")
-	public String fleaMarketText() {
-
-		return "menu/board/fleaMarketText";
 	}
 
 
