@@ -92,7 +92,8 @@
 								<td>${kd.kdName }<br>
 									${kd.kdAddress}<br>
 									${kd.kdType}<br>
-									${kd.kdTel}</td>
+									${kd.kdTel}
+								</td>
 							</tr>
 						</c:forEach>
 					</table>
