@@ -130,7 +130,6 @@ public class MemberController {
 					  "<tr><td><img src=\"https://lh3.google.com/u/0/d/1bpEni0sFB2bZoJN7kyxiTVQ6AV5qekcf=w958-h907-iv4\" width='340px' height='165px'></td></tr>" +
 					  "</tbody></table></td>" + 
 					  "</tr></tbody></table>";
-		
 		String sendResult = eservice.sendAuthEamil(memEmail, body);
 		
 		return sendResult;
