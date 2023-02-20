@@ -13,6 +13,8 @@
 }
 
 .eatHeader{
+	left: 200px;
+	position: absolute;
 	width:1080px;
 	height:100px;
 	grid-area: eatHeader; 
@@ -58,7 +60,6 @@ table {
   position: relative;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-
   * {
     position: relative;
   }
@@ -166,11 +167,18 @@ table.fade-in {
 }
 
 body {
-  background: #9BC86A;
+/*   background:#70c9cd; */
   font: 400 14px "Calibri", "Arial";
   padding: 20px;
 }
 
+.checklist_Section_back2{
+    left: 0px;
+    top: 0px;
+    height: 1185px;
+    width: 1950px;
+    position: absolute;
+}
 blockquote {
   color: white;
   text-align: center;
@@ -184,7 +192,7 @@ blockquote {
 }
 .selectBtn{
 	top: 120px;
-    left: 120px;
+    left: 190px;
     height: 50px;
     width: 150px;
     position: absolute;

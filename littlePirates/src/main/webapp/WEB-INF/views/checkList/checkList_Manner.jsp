@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예절 체크리스트</title>
+<title>내가 만드는 체크리스트</title>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/checklist_Manner.css'/>">
 <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
@@ -22,7 +22,7 @@
 			<!-- 		<div class="createChecklist2">체크리스트 랜덤 재 생성</div> -->
 		</div>
 		<div class="checklist_Section2">
-			<%-- 	<img src="<c:url value='/images/checkList_Manner_Back.png'/>" class="checklist_Section_back2"> --%>
+
 			<div class="mannerList2">
 				<div class="slideBtn">
 					<div id="prevBtn">
@@ -36,8 +36,7 @@
 					<h1 class="Date">${vo.pgNo}</h1>
 				</c:forEach>
 				<div class="selfChecklistContent">
-					<div class="selfChecklistHeader"></div>
-
+						<div class="selfChecklistHeader"></div>
 					<div class="listBox">
 						<div class="listBoxHeader">
 							<span id="spanTag1">리스트 목록</span> <span id="spanTag2">확인</span> <span

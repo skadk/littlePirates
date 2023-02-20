@@ -325,7 +325,7 @@ public class ChecklistVO {
 		this.chlNo9 = chlNo9;
 	}
 	
-	/*
+
 	public void setChl_Checked(int index,String chlNo_Check) {
 		switch(index) {
 		case 0:
@@ -381,7 +381,7 @@ public class ChecklistVO {
 		}
 			return null;
 	}
-	*/
+
 	
 	public String getChlNo1_Checked() {
 		return chlNo1_Checked;
@@ -546,6 +546,10 @@ public class ChecklistVO {
 	}
 	public void setScl_Text(String scl_Text) {
 		this.scl_Text = scl_Text;
+	}
+	public Object getChlTitle() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
