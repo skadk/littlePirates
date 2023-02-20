@@ -36,4 +36,26 @@
  			}
  		}); // ajax 종료 	
  	});// submit 종료
+ 	
+ 	/*
+ 	for (i = 1; i < 6; i++) {
+ 	
+ 	
+	// (새기기) 버튼 클릭 시 태극기 이미지의 랜덤한 영역에 랜덤한 색으로 randombox클래스의 div로 sentence의 내용 추가
+	//$('.btnWrite').on('click', function() {
+		$('#paintingSpace').append("<div id='randomBox" + i + "'><img src=\"<c:url value='/images/" + i + ".jpg'/>\"></div>");
+		
+		// 객체의 css에 랜덤한 좌표값과 랜덤한 색 지정
+		$('#randomBox' + i + '').each(function() {
+			$(this).css({
+				left:Math.random()*($('#paintingSpace').width()-$(this).width()),
+				top:Math.random()*($('#paintingSpace').height()-$(this).height()),
+				//color:"#"+Math.round(Math.random()*0xffffff).toString(16)
+			});
+		});
+		//console.log("#"+Math.round(Math.random()*0xffffff).toString(16));
+	//});
+		
+	}
+	*/
  });

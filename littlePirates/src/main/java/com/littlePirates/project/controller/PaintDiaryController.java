@@ -41,4 +41,5 @@ public class PaintDiaryController {
 		
 		return "menu/paintDiary/ex1";
 	}
+	
 }

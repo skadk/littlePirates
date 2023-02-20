@@ -117,7 +117,7 @@ public class MemberController {
 		eservice.updateEmailAuthKey(memId, authKey);
 		
 		String body = "<table width='706px' height='476px' bgcolor='#FFF4E9' align='center' style='border-top:3px; border-bottom:3px; border-left:3px; border-right:3px; border-style:dashed; border-color:#70cacd; border-spacing:0;'>" +
-					  "<tbody><tr><td width='360px'><img src=\"https://lh3.google.com/u/0/d/1DvOn9xUK4-JNLiSTfNQOqbYxCZVKPiyN=w1314-h937-iv2\"></td>" + 
+					  "<tbody><tr><td width='360px'><img src=\"http://118.67.132.144:8080/image/authCaptain.png\"></td>" + 
 					  "<td width='340px'><table border='0' width='340px' height='470px' align='center' style='border-spacing:0;'>" + 
 					  "<tbody><tr height='40px'><td style='font-size:30px; font-weight:bold;'><br></td></tr>" + 
 					  "<tr height='40px'><td style='font-size:30px; font-weight:bold; color:#42394a;'>환영한다</td></tr>" + 
@@ -127,7 +127,7 @@ public class MemberController {
 					  "<tr height='40px'><td style='font-size:20px;'>인증키는 <b style='font-size:30px; font-weight:bold; color:#F05757;'>" + authKey + "</b> 이다!</td></tr>" + 
 					  "<tr height='35px'><td style='font-size:20px;'>꼬마 해적단 입단을 환영한다~!</td></tr>" + 
 					  "<tr height='40px'><td style='font-size:30px; font-weight:bold; color:#42394a;'>크하하하핫!</td></tr>" +
-					  "<tr><td><img src=\"https://lh3.google.com/u/0/d/1bpEni0sFB2bZoJN7kyxiTVQ6AV5qekcf=w958-h907-iv4\" width='340px' height='165px'></td></tr>" +
+					  "<tr><td><img src=\"http://118.67.132.144:8080/image/authLogo.png\" width='340px' height='165px'></td></tr>" +
 					  "</tbody></table></td>" + 
 					  "</tr></tbody></table>";
 		String sendResult = eservice.sendAuthEamil(memEmail, body);

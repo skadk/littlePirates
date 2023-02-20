@@ -79,7 +79,7 @@ header {
 #kidsNav {
 	width: 100%;
 	height: 600px;
-	background: rgba(218, 250, 218, 0.3);
+	background: #70cacd;
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(20px);
 	border-bottom: 3px dashed black;
@@ -192,7 +192,7 @@ header {
 #parentsNav {
 	width: 100%;
 	height: 70px;
-	background: rgba(0, 100, 0, 0.3);
+	background: #70cacd;
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(20px);
 	border-bottom: 3px dashed black;

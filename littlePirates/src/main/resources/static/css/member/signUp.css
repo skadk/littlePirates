@@ -25,12 +25,6 @@
 	border: 5px dashed #70cacd;
 }
 
-#signUpForm1Box {
-	width: 480px;
-	padding: 0 20px 0 20px;
-	text-align: left;
-}
-
 #signUpLogo {
 	position: relative;
 	display: inline-block;
@@ -60,6 +54,12 @@
 }
 
 /************** signUpForm1 **************/
+
+#signUpForm1Box {
+	width: 480px;
+	padding: 0 20px 0 20px;
+	text-align: left;
+}
 #signUpForm1 {
 	position: relative;
 	padding-top: 45px;
