@@ -84,5 +84,4 @@
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
 	</body>
-<%--  		<script src="<c:url value='/js/background.js'/>"></script> --%>
 </html>
