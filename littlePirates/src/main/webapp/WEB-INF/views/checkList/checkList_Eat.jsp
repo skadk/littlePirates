@@ -5,16 +5,16 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>식습관 체크리스트</title>
+	<title>체크리스트 현황</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/checklist_Eat.css'/>">
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 		<script src="<c:url value='/js/checklist/checklist_Eat.js'/>"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 	
 	</head>
-<body>
-	
+<body>	
  	<div class="container">
+ 		<img src="<c:url value='/images/캡처3.JPG'/>" class="checklist_Section_back2">
   		<div class="eatHeader">
   			 <c:forEach var="vo" items="${checkList}" end="0">
 		    ${vo.memId}님의 체크리스트 현황
@@ -25,13 +25,6 @@
 				    <!-- The trigger element -->
 				    <div class="dropdown_trigger">회차 선택</div>				
 				    <!-- The content -->
-<!-- 				    <div class="dropdown_content" id="check1">체크리스트 명</div>
-				    <div class="dropdown_content" id="check2">회차</div>	 -->			   	
-				</div>
-<!-- 				<div class="search"><input type="text"
-				 id="SearchChecklist" placeholder="검색" >
-				 <button class="searchBtn">검색</button>
-				</div> -->
  				<div class="searchResult">
 
  			<table id="dataTable">
@@ -83,6 +76,7 @@
  
    			</div>
 	</div>
+</div>
 	 
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.littlePirates.project.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.littlePirates.project.model.ChecklistVO;
 
@@ -33,6 +34,9 @@ public interface IChecklistService {
 	void updateChecked(String memId, int checkedNo, String nowTime);
 
 	ArrayList<ChecklistVO> checklistInfo(String memId);
+
+	  // memId와 chh_Checked 값을 기준으로 chlNo1_Checked~chlNo9_Checked 값을 조회하는 메소드
+	public List<String> getCheckedValues(String memId);
 
 	
 }

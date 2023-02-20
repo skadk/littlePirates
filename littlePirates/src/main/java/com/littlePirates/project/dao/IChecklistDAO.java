@@ -3,6 +3,7 @@ package com.littlePirates.project.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.littlePirates.project.model.ChecklistVO;
 
@@ -50,5 +51,12 @@ public interface IChecklistDAO {
 	public void updateChecked7(HashMap<String, Object> map);
 	public void updateChecked8(HashMap<String, Object> map);
 	public void updateChecked9(HashMap<String, Object> map);
+
+	public Map<String, Object> getChl_Checked(HashMap<String, Object> map);
+
+	public List<ChecklistVO> getUncheckedHistories(String memId);
+
+	 // memId와 chh_Checked 값을 기준으로 chlNo1_Checked~chlNo9_Checked 값을 조회하는 메소드
+	public List<String> getCheckedValues(String memId);
 
 }
