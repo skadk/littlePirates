@@ -19,7 +19,8 @@ public class FleaMarketVO {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date flDate; /*날짜*/
 	public int getFlNo() {
-		return flNo;
+	
+	return flNo;
 	}
 	
 	public void setFlNo(int flNo) {

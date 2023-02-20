@@ -21,7 +21,8 @@
   	
   	<!-- 전체 상품 조회 -->
   <select id="listAllBoard" resultMap="flResult">
-  		SELECT * FROM fleamarket ORDER BY flNo
+  		SELECT * FROM fleamarket 
+  		ORDER BY flNo
   </select>
   	
   <!--  상품 등록 -->
@@ -48,6 +49,16 @@
   		DELETE FROM fleamarket WHERE flNo=#{flNo}
   </delete>
   
+  <!--  댓글 등록 -->
+  <insert id="insertFleaMarketComment" parameterType="com.littlePirates.project.model.FleaMarketCommentVO">
+  		INSERT INTO fleamarket_comment ( memId, flcText, flNo)
+  		VALUES ( #{memId}, #{flcText}, #{flNo})
+  </insert>
+  <select id="listAllFlCmt" parameterType="int" resultType="com.littlePirates.project.model.FleaMarketCommentVO">
+  		SELECT * FROM fleamarket_comment
+  		WHERE flNo = #{flNo} 
+  		ORDER BY flcNo DESC
+  </select>
   
 </mapper>
 

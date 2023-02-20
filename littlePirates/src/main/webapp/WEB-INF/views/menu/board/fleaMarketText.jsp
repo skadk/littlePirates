@@ -102,23 +102,17 @@
 							</div>
 
 							<div id="fleaMarketTextTableBox">
-								<table border="1" width="340px" height="402px">
-									<tr align="center">
-										<td width="100px" height="30px">상품 이름</td>
-										<td>${frd.flName}</td>
+								<table borden="1" width="340px" height="402px">
+									<tr align= "left">
+										<td width="200px" height="30px">상품 이름 : ${frd.flName}</td>
 									</tr>
-									<tr align="center">
-										<td width="100px" height="30px">분류</td>
-										<td>${frd.flCategory}</td>
+									<tr align= "left">
+										<td width="200px" height="30px">${frd.flCategory}</td>
 									</tr>
-									<tr align="center">
-										<td width="100px" height="30px">가격</td>
-										<td>${frd.flPrice}</td>
+									<tr align= "left">
+										<td width="200px" height="30px">가격 : ${frd.flPrice}</td>
 									</tr>
-									<tr align="center">
-										<td colspan='2' width="100%" height="20px">상세내용</td>
-									</tr>
-									<tr align="center">
+									<tr align= "left">
 										<td colspan='2'>${frd.flText}</td>
 									</tr>
 								</table>
@@ -174,38 +168,40 @@
 
 							<div class="cmt_write_wrap">
 								<div class="cmt_write_inner">
-									<form name="cmtForm" id="cmtForm" method="post" data-reply="N">
-										<textarea name="cmt_contents" class="cmt_contents"
+									<form name="cmtForm" id="cmtForm" method="post" data-reply="N"
+										action="<c:url value='/fleaMarket/fleaMarketComment'/>">
+										<input type="hidden" name= "flNo" id="flNo" value="${frd.flNo}">
+										<input type="hidden" name= "memId" id="memId" value="${frd.memId}">
+										<textarea name="flcText" class="cmt_contents"
 											placeholder="댓글을 입력해 주세요. 500자 이내로 작성 가능합니다." maxlength="500">
-								</textarea>
-										<div class="attach">
-											<button type="button" class="btn">사진첨부</button>
-										</div>
-										<input type="button" class="submit" value="등록">
+										</textarea>
+										<input type="submit" class="submit" value="등록">
 									</form>
 								</div>
 							</div>
-							<div id="cmt_range_wrap" class="cmt_range_wrap">
+							<!-- <div id="cmt_range_wrap" class="cmt_range_wrap">
 								<a class="btnSort">추천순</a> <a class="btnSort oon">작성일순</a>
-							</div>
+							</div> -->
+							<c:forEach var="flc" items="${flcList }">
 							<div id="cmt_list_wrap" class="cmt_list_wrap">
 								<div class="cmt_sect">
 									<div class="circle c1">
-										<div class="cell">닉네임</div>
+										<div class="cell">${flc.memId}</div>
 									</div>
 									<div class="cmt_area">
 										<div class="cmt_util">
 											<div class="utils">
-												<div class="writer">가을사랑</div>
-												<div class="date">2023.01.30 14:45:00</div>
+												<div class="writer">${flc.memId}</div>
+												<div class="date">${flc.flcDate}</div>
 											</div>
 										</div>
 										<div class="cmt_text">
-											<p class="txt">힘내세요</p>
+											<p class="txt">${flc.flcText}</p>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> <!-- 댓글  박스 -->
+						</c:forEach>
 						</div>
 					</div>
 				</div>
