@@ -4,12 +4,19 @@
 			<footer>
 				<div id="footerBox">
 					<nav id="footerNav">
-						<p><a href="<c:url value='/'/>" tabindex="-1">꼬마 해적단</a></p>
-						<p><a href="<c:url value='/board'/>" tabindex="-1">비밀 기지</a></p>			
-						<p><a href="<c:url value='/paintDiary'/>" tabindex="-1">항해 일지</a></p>					
-						<p><a href="<c:url value='/checklist'/>" tabindex="-1">오늘의 빙고</a></p>					
-						<p><a href="<c:url value='/kidscafe_map'/>" tabindex="-1">키즈카페 탐방</a></p>
-						<p><a href="<c:url value='/children'/>" tabindex="-1">교육시설 알아보기</a></p>
+						<c:if test="${ empty sessionScope.parentSid }">
+							<p><a href="<c:url value='/'/>" tabindex="-1">꼬마 해적단</a></p>
+							<p><a href="<c:url value='/paintDiary'/>" tabindex="-1">항해 일지</a></p>					
+							<p><a href="<c:url value='/checklist'/>" tabindex="-1">오늘의 빙고</a></p>					
+						</c:if>
+						<c:if test="${ not empty sessionScope.parentSid }">
+							<p><a href="<c:url value='/'/>" tabindex="-1">꼬마 해적단</a></p>
+							<p><a href="<c:url value='/board'/>" tabindex="-1">비밀 기지</a></p>			
+							<p><a href="<c:url value='/paintDiary'/>" tabindex="-1">항해 일지</a></p>					
+							<p><a href="<c:url value='/checklist'/>" tabindex="-1">오늘의 빙고</a></p>					
+							<p><a href="<c:url value='/kidscafe_map'/>" tabindex="-1">키즈카페 탐방</a></p>
+							<p><a href="<c:url value='/children'/>" tabindex="-1">교육시설 알아보기</a></p>
+						</c:if>
 					</nav>
 					<div id="footerLogoBox">
 						<a href="<c:url value='/'/>" id="footerLogo" tabindex="-1">

@@ -16,6 +16,8 @@ public interface IMemberDAO {
 	
 	public String loginCheck(String id); // 로그인 확인
 	
+	public String parentLoginCheck(HashMap<String, Object> map); // 부모 로그인 확인
+	
 	public String selectMemId(HashMap<String, Object> map); // 아이디 찾기위해 메일 인증
 	
 	public String findId(HashMap<String, Object> map); // 아이디 찾기

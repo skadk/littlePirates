@@ -28,7 +28,13 @@
 						</div>
 						<div class="inputArea">
 							<p>비밀번호</p>
-							<input type="password" maxlength="10" class="input" id="memPwd" name="memPwd" placeholder="비밀번호" onpaste="return false;" required>
+							<input type="password" maxlength="10" class="input show" id="memPwd" name="memPwd" placeholder="비밀번호" onpaste="return false;" required>
+							<input type="text" class="input hidden" id="memPwdShow1" readonly>
+							<button type="button" class="btn" id="pwdShowBtn" tabindex="-1">비밀번호 표시</button>
+						</div>
+						<div class="inputArea">
+							<p>부모 번호</p>
+							<input type="text" class="input" id="memParentNo" name="memParentNo" maxlength="4" placeholder="교육시설, 키즈카페 등의 메뉴 사용 가능 (필수 입력 아님)">
 						</div>
 						<div class="inputArea" id="loginLink">
 							<a href="<c:url value="/member/findIdPwd"/>"><p>아이디 / 비밀번호가 기억이 안나요</p></a>

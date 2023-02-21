@@ -206,15 +206,21 @@ public class MemberController {
 	// 비밀번호 암호화 한 경우의 로그인 처리 방식
 	@ResponseBody
 	@RequestMapping("/member/loginForm")
-	public String loginCheck(@RequestParam HashMap<String, Object> param, HttpSession session) {
+	public String loginForm(@RequestParam HashMap<String, Object> param, HttpSession session) {
 		// 로그인 체크 결과
 		String result = mservice.loginCheck(param);
+		
+		System.out.println(result);
 
 		// 아이디와 비밀번호 일치하면 (로그인 성공하면) 서비스에서 success 반환
 		if (result.equals("success")) {
 			// 로그인 성공하면 세션 변수 지정
 			session.setAttribute("sid", param.get("memId"));
+		} else if (result.equals("parentSuccess")) {
+			session.setAttribute("sid", param.get("memId"));
+			session.setAttribute("parentSid", "parentMode");
 		}
+		
 		return result;
 	}
 

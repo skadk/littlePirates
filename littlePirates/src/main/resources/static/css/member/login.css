@@ -115,8 +115,26 @@
 	}
 }
 
+#memPwd, #memPwdShow1 {
+	width: 63%;
+}
+
+#memPwd, #memPwdShow1 {
+	margin: 10px 0 3.5px 0;
+}
+
 .input:not(:placeholder-shown) {
 	border-color: #627db2;
+}
+
+.hidden {
+	position: relative;
+	display: none;
+}
+
+.show {
+	position: relative;
+	background: rgb(248, 249, 250);
 }
 
 .btn {
@@ -132,6 +150,18 @@
 	color: white;
 	cursor: pointer;
 	transition: all 0.05s;
+}
+
+
+#pwdShowBtn:active {
+	margin-top: 15px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+#pwdShowBtn {
+	float: right;
+	width: 35%;
+	margin: 10px 0 3.5px 0;
 }
 
 #loginBtnBox {
