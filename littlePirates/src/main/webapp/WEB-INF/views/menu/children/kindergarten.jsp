@@ -35,9 +35,19 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<a href="<c:url value='kindergartenBoardWrite'/>">
-								<button type="button" class="write">Write</button>
-							</a>
+							<c:choose>
+								<c:when test="${empty sessionScope.sid}">
+									<a
+										href="/member/login?returnUrl=<c:url value='/kindergartenBoardWrite'/>">
+										<button type="button" class="write">Write</button>
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="<c:url value='/kindergartenBoardWrite'/>">
+										<button type="button" class="write">Write</button>
+									</a>
+								</c:otherwise>
+							</c:choose>
 							<form action="">
 								<div class="search-wrap">
 									<label for="search" class="blind">공지사항 내용 검색</label> <input

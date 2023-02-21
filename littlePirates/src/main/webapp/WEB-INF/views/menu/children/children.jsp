@@ -39,9 +39,6 @@ li {
 	background-color: rgb(255, 244, 233);
 	margin-top: 50px;
 }
-#board-search{
-background-color: rgb(255, 244, 233);
-}
 
 </style>
 
