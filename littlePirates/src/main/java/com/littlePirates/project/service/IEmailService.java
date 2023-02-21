@@ -12,6 +12,10 @@ public interface IEmailService {
 	
 	public String sendAuthEamil(String memEmail, String body); // 인증 이메일 보내기
 	
+	public String findIdSendEamil(String memEmail, String body); // 아이디 찾기 인증 이메일 보내기
+	
+	public String findPwdSendEamil(String memEmail, String body); // 비밀번호 변경 인증 이메일 보내기
+	
 	public HashMap<String, Object> getKeyAndTime(String memId); // 인증키와 시간 DB에서 가져오기
 	
 	public void updateEmailAuth0(String memId); // 인증 상태 변경0
