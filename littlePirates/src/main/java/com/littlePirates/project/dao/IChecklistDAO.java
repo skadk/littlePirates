@@ -53,6 +53,6 @@ public interface IChecklistDAO {
 	public void updateChecked9(HashMap<String, Object> map);
 
     public ChecklistVO getChecked(String memId);
-
-
+    public void update_chhChecked(String memId);
+    public String getChh_Checked(String memId);
 }

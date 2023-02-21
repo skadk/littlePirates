@@ -37,4 +37,6 @@ public interface IChecklistService {
 
 
 	public ChecklistVO getChecked(String memId);
+	public void update_chhChecked(String memId);
+    public String getChh_Checked(String memId);
 }
