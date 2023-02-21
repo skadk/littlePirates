@@ -202,7 +202,7 @@ public class MemberController {
 		// 아이디와 비밀번호 일치하면 (로그인 성공하면) 서비스에서 success 반환
 		if (result.equals("success")) {
 			// 로그인 성공하면 세션 변수 지정
-			session.setAttribute("sid", param.get("id"));
+			session.setAttribute("sid", param.get("memId"));
 		}
 		return result;
 	}
