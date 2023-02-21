@@ -37,6 +37,12 @@
  		}); // ajax 종료 	
  	});// submit 종료
  	
+	
+    $('.thumb').hover(function(){
+          $('.main_image img').attr('src',$(this).children('img').attr('src'));
+    });
+	
+ });
  	/*
  	for (i = 1; i < 6; i++) {
  	
@@ -58,4 +64,3 @@
 		
 	}
 	*/
- });
