@@ -56,8 +56,8 @@ public class HomeController {
 	public String kindergarten() {
 
 		return "menu/children/kindergarten";
-	}
-
+	} 
+ 
 	@RequestMapping("/nursery")
 	public String nursery() {
 		
