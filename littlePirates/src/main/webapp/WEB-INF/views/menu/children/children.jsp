@@ -3,24 +3,46 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>children</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe_sec.css'/>">
-		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-		<!-- head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp" />
-		<script src="<c:url value='/js/children.js' />"></script>
-		<script src="<c:url value='/js/childrenScroll.js' />"></script>
-		<script src="<c:url value='/js/kidscafe_sec.js' />"></script>
-	</head>
+<head>
+<meta charset="UTF-8">
+<title>children</title>
+<head>
+<!-- css -->
+
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/kidscafe_sec.css'/>">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/nursery.css'/>">
+<!-- head -->
+<c:import url="/WEB-INF/views/layout/head.jsp" />
+<script src="<c:url value='/js/paging/childrenPage.js' />"></script>
+
+</head>
 <style>
 th {
-background-color: rgb(244,87,87);
+	background-color: rgb(244, 87, 87);
 }
-td{
-background-color: rgb(255,244,233);
+
+td {
+	background-color: rgb(255, 244, 233);
 }
+
+li {
+	display: inline-block;
+	margin: 10px;
+}
+
+#box {
+	background-color: rgb(255, 244, 233);
+	margin-top: 50px;
+}
+#board-search{
+background-color: rgb(255, 244, 233);
+}
+
 </style>
 
 <body>
@@ -41,23 +63,20 @@ background-color: rgb(255,244,233);
 					<nav id="lnb" class="lnb">
 						<div id="sideSubBox">
 							<div class="on">
-								<img src="<c:url value='/images/babyPirates.png' />"
-									width="55" height="55"> <a href="/children">어린이집 정보</a>
+								<img src="<c:url value='/images/babyPirates.png' />" width="55"
+									height="55"> <a href="/children">어린이집 정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/childPirates.png' />"
-									width="55" height="55"> <a href="/kindergartenInfo">유치원
-									정보</a>
+								<img src="<c:url value='/images/childPirates.png' />" width="55"
+									height="55"> <a href="/kindergartenInfo">유치원 정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/babyPirates.png' />"
-									width="55" height="55"> <a href="/nurseryBoard">어린이집
-									후기</a>
+								<img src="<c:url value='/images/babyPirates.png' />" width="55"
+									height="55"> <a href="/nurseryBoard">어린이집 후기</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/childPirates.png' />"
-									width="55" height="55"> <a href="/kindergartenBoard">유치원
-									후기</a>
+								<img src="<c:url value='/images/childPirates.png' />" width="55"
+									height="55"> <a href="/kindergartenBoard">유치원 후기</a>
 							</div>
 						</div>
 					</nav>
@@ -66,9 +85,19 @@ background-color: rgb(255,244,233);
 				<!-- MIDDLE -->
 
 				<div id="ie">
-					<div class="dropdown">
-						<select name="browsers" id="browsers"></select> <select
-							name="gugun" id="gugun"></select>
+					<div id="board-search">
+						<div class="container">
+							<div class="search-window">
+								<form action="">
+									<div class="search-wrap">
+										<label for="search" class="blind">어린이집 검색</label> <input
+											id="keyword" name="keyword" placeholder="검색어를 입력해주세요."
+											value="">
+										<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
 					</div>
 					<br>
 					<div id="searchresult"></div>
@@ -80,6 +109,10 @@ background-color: rgb(255,244,233);
 								<th>PHOTO</th>
 								<th>INFORMATION</th>
 							</tr>
+							<input type="hidden" id="cur_page" value="${cur_page}" />
+							<br>
+							<input type="hidden" id="total_count" value="${total_count }" />
+							<br>
 							<c:forEach var="nur" items="${NList }" varStatus="status">
 								<c:if test="${(status.index mod 2) eq 0}">
 									<tr>
@@ -95,6 +128,12 @@ background-color: rgb(255,244,233);
 								</c:if>
 							</c:forEach>
 						</table>
+					</div>
+					<div>
+						<nav>
+							<br>
+							<ul class="pagination" id="pagination"></ul>
+						</nav>
 					</div>
 				</div>
 			</div>

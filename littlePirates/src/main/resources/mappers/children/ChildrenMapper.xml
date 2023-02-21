@@ -23,4 +23,15 @@
 		SELECT * FROM nurseryInfo
 	</select>
 	
+	<select id="NurseryListPage" parameterType="int" resultMap="NurResult">
+		select *
+		FROM nurseryInfo
+		where nurNo > (#{pagenum}-1)*10 
+		Limit 10;
+	</select>
+	
+	<select id="total_nurseryInfo" resultType="int">
+		select count(*) 
+		FROM nurseryInfo
+	</select>
 </mapper>

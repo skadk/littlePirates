@@ -2,7 +2,7 @@
  * loginCheck.js
  */
  
- $(document).ready(function(){
+ $(document).ready(function() {
  	$('#loginForm').on('submit', function(){
  		//폼이 submit 되지 않도록 기본 기능 중단
  		event.preventDefault();
@@ -11,8 +11,8 @@
  		$.ajax({
  			type:"post",
  			url:"/member/loginForm",
- 			data: {"id":$('#id').val(),
- 			       "pwd":$('#pwd').val()},
+ 			data: {"memId":$('#memId').val(),
+ 			       "memPwd":$('#memPwd').val()},
  			dataType:'text',
  			success:function(result) {
  				if (result == "success") {

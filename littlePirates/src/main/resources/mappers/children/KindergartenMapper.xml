@@ -19,5 +19,15 @@
 		SELECT * FROM KindergartenInfo 
 	</select>
 
+	<select id="KindergartenListPage" parameterType="int" resultMap="KdResult">
+		select *
+		FROM KindergartenInfo
+		where kdNo > (#{pagenum}-1)*10 
+		Limit 10;
+	</select>
 	
+	<select id="total_kindergartenInfo" resultType="int">
+		select count(*) 
+		FROM KindergartenInfo
+	</select>
 </mapper>

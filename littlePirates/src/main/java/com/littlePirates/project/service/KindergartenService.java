@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.littlePirates.project.dao.IKindergartenDAO;
+import com.littlePirates.project.model.ChildrenVO;
 import com.littlePirates.project.model.KindergartenVO;
 
 @Service
@@ -21,4 +22,15 @@ public class KindergartenService implements IKindergartenService{
 		return dao.KindergartenList();
 	}
 
+	@Override
+	public ArrayList<KindergartenVO> KindergartenListPage(int pagenum) {
+		// TODO Auto-generated method stub
+		return dao.KindergartenListPage(pagenum);
+	}
+
+	@Override
+	public int total_kindergartenInfo() {
+		// TODO Auto-generated method stub
+		return dao.total_kindergartenInfo();
+	}
 }
