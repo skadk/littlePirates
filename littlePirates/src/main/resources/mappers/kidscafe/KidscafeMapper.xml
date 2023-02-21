@@ -28,6 +28,18 @@
 		FROM kidscafe
 	</select>
 
+	<select id="listKidscafeInfopage" parameterType="int" resultMap="mapResult">
+		select *
+		FROM kidscafe
+		where kcNo > (#{pagenum}-1)*10 
+		Limit 10;
+	</select>
+	
+	<select id="total_kidscafeinfo" resultType="int">
+		select count(*) 
+		FROM kidscafe
+	</select>
+
 	<!-- 키워드로 주소 찾기 -->
 	<select id="searchKidsCafe" parameterType="string"
 		resultType="string">
@@ -52,10 +64,39 @@
 		where browsers=#{sido};
 	</select>
 
+	<select id="kidscafeSearchsidopage" parameterType="hashmap"
+		resultMap="mapResult">
+		SELECT *
+		FROM kidscafe
+		where browsers=#{sido}
+		Limit #{start_num}, 10;
+	</select>
+
+	<select id="total_kidscafeSearchsido" parameterType="string" resultType="int">
+		SELECT count(*) 
+		FROM kidscafe
+		where browsers=#{sido};
+	</select>
+
 	<!-- 구/군 키워드 검색 -->
 	<select id="kidscafeSearchgu" parameterType="hashmap"
 		resultMap="mapResult">
 		SELECT *
+		FROM kidscafe
+		where browsers=#{sido} AND kcAddress Like CONCAT ('%',#{gu},'%')
+	</select>
+	
+		<select id="kidscafeSearchgupage" parameterType="hashmap"
+		resultMap="mapResult">
+		SELECT *
+		FROM kidscafe
+		where browsers=#{sido} 
+		AND kcAddress Like CONCAT ('%',#{gu},'%') 
+		Limit #{start_num}, 10;
+	</select>
+
+	<select id="total_kidscafeSearchgu" parameterType="hashmap" resultType="int">
+		SELECT count(*) 
 		FROM kidscafe
 		where browsers=#{sido} AND kcAddress Like CONCAT ('%',#{gu},'%')
 	</select>

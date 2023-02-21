@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* kidscafe_sido_gu.css */
+
+
+
+/* 테이블 css */
+li {
+	display: inline-block;
+	margin: 10px;
+}
+td {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}	
+table tr:first-child {
+  border-top: none;
+  background: #627db2;
+  color: #fff;
+}
+
+table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+table tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+ td > img {
+ 	width: 130px;
+ 	height: 80px;
+ }

@@ -55,10 +55,13 @@
 				</div>
 				<div class="viewbody">
 					<div class="hgroup">
-						<div class="tit">테스트1</div>
+						<div class="tit">${ brd.brdTitle }</div>
 						<div class="util">
-							<div class="name">hong</div>
-							<div class="date">2023.01.25</div>
+							<div class="name">${ brd.memId }</div>
+							<div class="date">
+								<fmt:formatDate value="${ brd.brdDate }"
+														pattern="yyyy-MM-dd" />
+							</div>
 							<div class="hit">조회수 : 0</div>
 						</div>
 					</div>
@@ -66,8 +69,7 @@
 					<div class="content">
 						<!-- 내용 -->
 						<div class="editor ck-content">
-							<p>안녕하세요.</p>
-							<p>테스트입니다.</p>
+							"${ brd.brdText }
 
 						</div>
 					</div>

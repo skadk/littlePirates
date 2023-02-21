@@ -6,35 +6,39 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>꼬마 해적단</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/member/login.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-		<script src="<c:url value='/js/member/loginCheck.js'/>"></script>
-		<script src="<c:url value='/js/member/findIdForm.js'/>"></script>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/member/login.css'/>">
+		<script src="<c:url value='/js/member/login.js'/>"></script>
 	</head>
 	<body>
 		<div id="wrap">
-			<!-- background & header -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
-			<!-- parentsNav -->
-			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			<div id="loginBox">
-				<form id="loginForm" name="loginForm">
-					<h1>로그인</h1>
-					<h4>아이디</h4>
-					<span class="inputArea"><input type="text" maxlength="13" id="id" name="id" value="${memId}"
-					placeholder="아이디를 입력해 주세요." required/></span>
-					
-					<h4>비밀번호</h4>
-					<span class="inputArea"><input type="password" maxlength="15" id="pwd" name="pwd" 
-					placeholder="비밀번호를 입력해 주세요." required></span>
-					<ul>
-						<li><a href="<c:url value="/member/findIdForm"/>">아이디 찾기</a></li>
-						<li><a href="<c:url value="/member/findPwdForm"/>">비밀번호 변경</a></li>
-						<li><a href="<c:url value="/member/signUp"/>">회원가입</a></li>
-					</ul>
-					<button type="submit">로그인</button>
-				</form>
+				<div id="loginFormBox">
+					<a href="<c:url value='/'/>" id="loginLogo" tabindex="-1">
+						<img src="<c:url value='/images/logo.png'/>">
+					</a>
+					<div id="loginInfo">
+						<h1>로그인</h1>
+					</div>
+					<form id="loginForm" name="loginForm">
+						<div class="inputArea">
+							<p>아이디</p>
+							<input type="text" maxlength="35" class="input" id="memId" name="memId" value="${memId}" placeholder="아이디" required>
+						</div>
+						<div class="inputArea">
+							<p>비밀번호</p>
+							<input type="password" maxlength="10" class="input" id="memPwd" name="memPwd" placeholder="비밀번호" onpaste="return false;" required>
+						</div>
+						<div class="inputArea" id="loginLink">
+							<a href="<c:url value="/member/findIdPwd"/>"><p>아이디 / 비밀번호가 기억이 안나요</p></a>
+							<a href="<c:url value="/member/signUp1"/>"><p>회원가입</p></a>
+						</div>
+						<div class="inputArea" id="loginBtnBox">
+							<button type="submit" class="btn" id="loginBtn" tabindex="-1">로그인</button>
+						</div>
+					</form>
+				</div>
 			</div>
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>

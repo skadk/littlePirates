@@ -25,7 +25,7 @@
 						method="post">
 						<table>
 							<div class="title">
-							<h2>키즈카페 후기 게시글 작성</h2>
+							<h2>키즈카페 후기 게시글 수정</h2>
 							</div>
 							<tr>
 								<th>작성 일자 *</th>

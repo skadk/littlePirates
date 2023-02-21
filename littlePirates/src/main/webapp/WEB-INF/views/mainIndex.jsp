@@ -6,14 +6,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>꼬마 해적단</title>
- 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/mainIndex.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+ 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/mainIndex.css'/>">
 		<script src="<c:url value='/js/slideShow.js'/>"></script>
 	</head>
 	<body>
 		<div id="wrap">
-			<!-- background & header -->
+			<!-- header -->
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			<c:if test="${ empty sessionScope.sid }">
 			<!-- kidsNav -->
@@ -84,5 +84,4 @@
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
 	</body>
-<%--  		<script src="<c:url value='/js/background.js'/>"></script> --%>
 </html>

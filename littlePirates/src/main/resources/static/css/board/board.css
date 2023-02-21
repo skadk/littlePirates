@@ -960,7 +960,7 @@ element.style {
     padding: 0 5px;
     font-weight: 700;
     font-size: 11px;
-    color: #ffffff;
+    /* color: #ffffff; */
     text-align: center;
     vertical-align: middle;
 }

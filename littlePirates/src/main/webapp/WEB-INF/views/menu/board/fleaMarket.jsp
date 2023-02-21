@@ -84,11 +84,13 @@
 									<option value="mem_nm">작성자</option>
 								</select>
 							</div>
+							<!-- <form id="flSearchFrm"> -->
 							<div class="ipt_box">
 								<input type="text" id="srchWord" name="srchWord" class="ipt"
-									value="" placeholder="검색어를 입력해 주세요."> <input
-									type="button" id="srchBtn" class="btn" value="검색">
+									value="" placeholder="검색어를 입력해 주세요."> 
+								<input type="submit" id="srchBtn" class="btn" value="검색">
 							</div>
+							
 						</div>
 
 						<%-- <c:set var="i" value="0" />
@@ -120,7 +122,8 @@
 											<hr style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
 											<i class="icon icon-view_count"></i>조회수 : ${fl.flViewCount} 
 											<i class="icon icon-comments_count"></i>댓글수 : ${fl.flResCount}											 
-											<i class="reg_date"> <fmt:formatDate value="${frd.flDate}"  pattern="yyyy-MM-dd" /> ${frd.flDate} </i>
+											<i class="reg_date"></i><fmt:formatDate value="${frd.flDate}"  pattern="yyyy-MM-dd" />${frd.flDate}
+											
 										</div>
 									</div>
 								</a>
