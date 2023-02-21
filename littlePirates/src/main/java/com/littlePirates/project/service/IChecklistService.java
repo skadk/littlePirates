@@ -33,10 +33,10 @@ public interface IChecklistService {
 
 	void updateChecked(String memId, int checkedNo, String nowTime);
 
-	ArrayList<ChecklistVO> checklistInfo(String memId);
+	public ArrayList<ChecklistVO> checklistInfo(String memId);
 
-	  // memId와 chh_Checked 값을 기준으로 chlNo1_Checked~chlNo9_Checked 값을 조회하는 메소드
-	public List<String> getCheckedValues(String memId);
 
-	
+	public ChecklistVO getChecked(String memId);
+	public void update_chhChecked(String memId);
+    public String getChh_Checked(String memId);
 }

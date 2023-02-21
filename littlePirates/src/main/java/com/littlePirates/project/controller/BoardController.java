@@ -56,7 +56,6 @@ public class BoardController {
 	}
 
 
-
 	private BoardService bservice;
 	/* private SummernoteService sservice; */
 	
@@ -66,20 +65,27 @@ public class BoardController {
 		/* this.sservice = sservice; */
 	}
 	
+	@RequestMapping("/board/brdWriteForm")
+	public String fleaMarketWriteForm() {
+		
+		return "menu/board/boardWrite";
+
+	}
+	
 	// 글쓰기
 	@RequestMapping("/board/brdWrite")
-	public String boardWrite(@RequestParam String brdTitle, 
-							 @RequestParam String brdText, 
+	public String boardWrite(BoardVO brdVO,
 							 Model model, HttpSession session) {
 		
-			String memId = "abc";
+			String memId = (String)session.getAttribute("sid");
+			brdVO.setMemId(memId);
 			
-			bservice.insertBoardText(memId, brdTitle, brdText);
+			bservice.insertBoardText(brdVO);
 			
 			ArrayList<BoardVO> brdList = bservice.boardView(memId);
 			model.addAttribute("brdList", brdList);
 			
-			return "menu/board/boardText";
+			return "redirect:/board";
 	}
 	
 	

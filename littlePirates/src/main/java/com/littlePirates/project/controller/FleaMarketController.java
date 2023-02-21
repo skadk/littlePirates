@@ -3,6 +3,7 @@ package com.littlePirates.project.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -163,11 +164,19 @@ public class FleaMarketController {
 
 	}
 
-	
-	
-	
-	
-	
+	/*
+	 * // 상품 검색 폼2 열기
+	 * 
+	 * @RequestMapping("/fleaMarket/flSearchFrm") public String flSearchFrm() {
+	 * return "menu/board/fleaMarket"; } // 상품 검색2 처리 // 편법 : Ajax에게 데이터가 아닌 뷰 페이지
+	 * 반환. Ajax에서 html() 사용해서 뷰 페이지 삽입
+	 * 
+	 * @RequestMapping("/fleaMarket/flSearch") public String
+	 * flSearchFrm(@RequestParam HashMap<String, Object> param, Model model){ //
+	 * 서비스로 전송해서 DB 검색 결과 받아옴 ArrayList<FleaMarketVO> flList =
+	 * service.flSearch(param); model.addAttribute("flList", flList); return
+	 * "menu/board/fleaMarketSearchResultView"; // productSearchResultView.jsp }
+	 */
 	
 	
 	

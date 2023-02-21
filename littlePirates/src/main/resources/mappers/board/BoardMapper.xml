@@ -19,10 +19,11 @@
 		SELECT * FROM board ORDER BY brdNo
 	</select>
 
-  	<insert id="insertBoardText" parameterType="hashmap">
-  		INSERT INTO board(memId, brdTitle, brdText, brdViewCnt)
-  		VALUES (#{memId}, #{brdTitle}, #{brdText}, 0)
+  	<insert id="insertBoardText" parameterType="com.littlePirates.project.model.BoardVO">
+  		INSERT INTO board(memId, brdTitle, brdText, brdViewCount, brdResCount, brdRecommendCount)
+  		VALUES (#{memId}, #{brdTitle}, #{brdText}, 0, 0 ,0)
   	</insert>
+  	
   	<select id="boardView" parameterType="string" resultMap="boardResult">
   		SELECT *
         FROM board
