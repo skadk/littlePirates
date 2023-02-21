@@ -1,6 +1,7 @@
 package com.littlePirates.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.littlePirates.project.model.FleaMarketCommentVO;
 import com.littlePirates.project.model.FleaMarketVO;
@@ -21,4 +22,7 @@ public interface IFleaMarketService {
 	
 	public ArrayList<FleaMarketCommentVO> listAllFlCmt(int flNo); // 댓글정보 불러오기
 	
+	/*
+	 * public ArrayList<FleaMarketVO> flSearch(HashMap<String, Object> map); // 검색
+	 */	
 }

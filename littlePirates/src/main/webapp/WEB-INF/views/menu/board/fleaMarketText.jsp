@@ -159,13 +159,14 @@
 							</div>
 						</div>
 						<div class="conwrap">
+						
 							<div class="h4group">
 								<h4 class="tit">한줄 의견을 나눠 보세요</h4>
 								<p class="length">
-									총 <span class="val" id="totalCount">0개</span> 의견이 있습니다.
+									총 <span class="val" id="totalCount">1개</span> 의견이 있습니다.
 								</p>
 							</div>
-
+						
 							<div class="cmt_write_wrap">
 								<div class="cmt_write_inner">
 									<form name="cmtForm" id="cmtForm" method="post" data-reply="N"
