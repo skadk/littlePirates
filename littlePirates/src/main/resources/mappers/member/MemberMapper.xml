@@ -39,6 +39,13 @@
   		WHERE memId=#{memId}
   	</select>
   	
+  	<!-- 부모 로그인 확인 -->
+  	<select id="parentLoginCheck" parameterType="hashmap" resultType="string">
+  		SELECT memParentNo
+  		FROM member
+  		WHERE memId=#{memId}
+  	</select>
+  	
   	<!-- 아이디 찾기위해 메일 인증 -->
   	<select id="selectMemId" parameterType="hashmap" resultType="string">
   		SELECT memId

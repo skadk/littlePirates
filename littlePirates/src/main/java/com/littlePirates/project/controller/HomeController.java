@@ -1,5 +1,7 @@
 package com.littlePirates.project.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +22,25 @@ public class HomeController {
 
 	// 회원가입1 페이지 열기
 	@RequestMapping("/member/signUp1")
-	public String signUp1() {
+	public String signUp1(HttpSession session) {
+		String memId = (String) session.getAttribute("sid");
+		
+		if (memId != null) {
+			return "redirect:/";
+		}
 
 		return "member/signUp1";
 	}
 
 	// 로그인 페이지 열기
 	@RequestMapping("/member/login")
-	public String login() {
+	public String login(HttpSession session) {
+		String memId = (String) session.getAttribute("sid");
+		
+		if (memId != null) {
+			return "redirect:/";
+		}
+		
 
 		return "member/login";
 	}
@@ -36,7 +49,7 @@ public class HomeController {
 	@RequestMapping("/checklist")
 	public String checklist() {
 
-		return "/menu/checkList/checkListView";
+		return "menu/checkList/checkListView";
 	}
 
 	@RequestMapping("/kindergarten")
@@ -50,16 +63,6 @@ public class HomeController {
 		
 		return "menu/children/nursery";
 	}
-	
-	/*
-	 * @RequestMapping("/nurseryBoard") public String nurseryBoard() {
-	 * 
-	 * return "menu/children/nurseryBoard"; }
-	 * 
-	 * @RequestMapping("/kindergartenBoard") public String kindergartenBoard() {
-	 * 
-	 * return "menu/children/kindergartenBoard"; }
-	 */
 	
 	@RequestMapping("/paintDiary")
 	public String paintDiary() {

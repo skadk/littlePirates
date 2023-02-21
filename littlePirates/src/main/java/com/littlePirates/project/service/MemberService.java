@@ -63,8 +63,19 @@ public class MemberService implements IMemberService {
 		String result = "fail";
 		// 암호화된 비밀번호와 입력해서 전달된 비밀번호와 일치하는지 확인
 		if (encodedPw != null && passwordEncoder.matches((String) map.get("memPwd"), encodedPw)) {
-
 			result = "success";
+			
+			System.out.println(map.get("memParentNo"));
+			if (!map.get("memParentNo").equals("")) {
+				String parentLogin = dao.parentLoginCheck(map);
+				
+				System.out.println(parentLogin);
+				if (parentLogin.equals((String) map.get("memParentNo"))) {
+					result = "parentSuccess";
+				} else {
+					result = "parentFail";
+				}
+			}
 		}
 
 		return result;

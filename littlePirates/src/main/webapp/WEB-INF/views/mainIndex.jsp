@@ -15,13 +15,13 @@
 		<div id="wrap">
 			<!-- header -->
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
-			<c:if test="${ empty sessionScope.sid }">
+			<c:if test="${ empty sessionScope.parentSid }">
 			<!-- kidsNav -->
 			<c:import url="/WEB-INF/views/layout/kidsNav.jsp"/>
 				<section>
 				</section>
 			</c:if>
-			<c:if test="${ not empty sessionScope.sid }">
+			<c:if test="${ not empty sessionScope.parentSid }">
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 				<section>
