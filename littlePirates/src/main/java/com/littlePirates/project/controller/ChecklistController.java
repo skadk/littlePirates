@@ -30,7 +30,7 @@ public class ChecklistController {
 		ArrayList<ChecklistVO> voList = service.checklistInfo(memId);
 		model.addAttribute("voList", voList);
 		System.out.println(memId);
-		return "/checkList/checkList_Manner";
+		return "/menu/checkList/checkList_Manner";
 	}
 
 	// 빙고 체크리스트 최초생성
@@ -82,7 +82,7 @@ public class ChecklistController {
 		}
 
 		model.addAttribute("vo", vo);
-		return "/checkList/checkList_Clean";
+		return "/menu/checkList/checkList_Clean";
 	}
 	// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
 
@@ -94,7 +94,7 @@ public class ChecklistController {
 		ArrayList<ChecklistVO> checkList = service.checklistInfo3(memId);
 		model.addAttribute("checkList", checkList);
 		System.out.println(memId);
-		return "/checkList/checkList_Eat";
+		return "/menu/checkList/checkList_Eat";
 	}
 
 	

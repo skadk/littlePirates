@@ -36,7 +36,7 @@ public class HomeController {
 	@RequestMapping("/checklist")
 	public String checklist() {
 
-		return "/checkList/checkListView";
+		return "/menu/checkList/checkListView";
 	}
 
 	@RequestMapping("/kindergarten")
