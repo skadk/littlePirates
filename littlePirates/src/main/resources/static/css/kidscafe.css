@@ -54,7 +54,7 @@ h1 {
 }
 
 #mapwrap {
-	width:1250px; 
+	width:1200px; 
 	height:620px;
 	padding-top:20px;
 }
@@ -85,7 +85,8 @@ h1 {
   font-family: 'Dongle', sans-serif;
   border-radius: 7px;
   margin-left: 5px;
-  background-color:pink;
+  background-color:#627db2;
+  color: #fff4e9;
 }
 
 #submit:hover{
@@ -145,6 +146,7 @@ h1 {
 .table th,
 .table td {
   text-align: left;
+  border-radius: 10px;
 }
 
 .table {
@@ -233,17 +235,19 @@ h1 {
 	width: 160px;
     background: #ffffff;
     vertical-align: top;
+    margin-right: 30px;
+    margin-top: 20px;
 }
 .as_hgroup{
 	width: 185px;
     height: 85px;
-    background: pink;
+    background: #627db2;
 }
 .tit{
     font-weight: 700;
     font-size: 50px;
     line-height: 95px;
-    color: darkslategray;
+    color: #fff4e9;
     text-align: center;
     font-family: 'Dongle', sans-serif;
 }
@@ -260,7 +264,7 @@ h1 {
 }
 #sideSubBox{
 	width: 179px;
-    height: 160px;
+    height: 242px;
     border-right: solid 3px #e6e6e8;
     border-left: solid 3px #e6e6e8;
 }
