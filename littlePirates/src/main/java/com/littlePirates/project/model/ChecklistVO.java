@@ -43,6 +43,25 @@ public class ChecklistVO {
 	private int chh_Checked;
 	
 	
+	private int selfNo; 
+	private int pgNo;
+	private String sclNo1;
+	private String sclNo2; 
+	private String sclNo3; 
+	private String sclNo4;
+	private String sclNo5;
+	private String sclNo1_Checked;
+	private String sclNo2_Checked;
+	private String sclNo3_Checked;
+	private String sclNo4_Checked;
+	private String sclNo5_Checked;
+	private String sclDate;
+	private String scl_photoName;
+	private String scl_photoPath;
+	private String scl_Text;
+	
+	
+	
 	public int getChlNo() {
 		return chlNo;
 	}
@@ -306,7 +325,7 @@ public class ChecklistVO {
 		this.chlNo9 = chlNo9;
 	}
 	
-	/*
+
 	public void setChl_Checked(int index,String chlNo_Check) {
 		switch(index) {
 		case 0:
@@ -362,7 +381,7 @@ public class ChecklistVO {
 		}
 			return null;
 	}
-	*/
+
 	
 	public String getChlNo1_Checked() {
 		return chlNo1_Checked;
@@ -427,5 +446,113 @@ public class ChecklistVO {
 	public void setChh_Checked(int chh_Checked) {
 		this.chh_Checked = chh_Checked;
 	}
+	
+	public int getChh_Checked() {
+		return chh_Checked;
+	}
+	
+	public int getSelfNo() {
+		return selfNo;
+	}
+	public void setSelfNo(int selfNo) {
+		this.selfNo = selfNo;
+	}
+	public int getPgNo() {
+		return pgNo;
+	}
+	public void setPgNo(int pgNo) {
+		this.pgNo = pgNo;
+	}
+	public String getSclNo1() {
+		return sclNo1;
+	}
+	public void setSclNo1(String sclNo1) {
+		this.sclNo1 = sclNo1;
+	}
+	public String getSclNo2() {
+		return sclNo2;
+	}
+	public void setSclNo2(String sclNo2) {
+		this.sclNo2 = sclNo2;
+	}
+	public String getSclNo3() {
+		return sclNo3;
+	}
+	public void setSclNo3(String sclNo3) {
+		this.sclNo3 = sclNo3;
+	}
+	public String getSclNo4() {
+		return sclNo4;
+	}
+	public void setSclNo4(String sclNo4) {
+		this.sclNo4 = sclNo4;
+	}
+	public String getSclNo5() {
+		return sclNo5;
+	}
+	public void setSclNo5(String sclNo5) {
+		this.sclNo5 = sclNo5;
+	}
+	public String getSclNo1_Checked() {
+		return sclNo1_Checked;
+	}
+	public void setSclNo1_Checked(String sclNo1_Checked) {
+		this.sclNo1_Checked = sclNo1_Checked;
+	}
+	public String getSclNo2_Checked() {
+		return sclNo2_Checked;
+	}
+	public void setSclNo2_Checked(String sclNo2_Checked) {
+		this.sclNo2_Checked = sclNo2_Checked;
+	}
+	public String getSclNo3_Checked() {
+		return sclNo3_Checked;
+	}
+	public void setSclNo3_Checked(String sclNo3_Checked) {
+		this.sclNo3_Checked = sclNo3_Checked;
+	}
+	public String getSclNo4_Checked() {
+		return sclNo4_Checked;
+	}
+	public void setSclNo4_Checked(String sclNo4_Checked) {
+		this.sclNo4_Checked = sclNo4_Checked;
+	}
+	public String getSclNo5_Checked() {
+		return sclNo5_Checked;
+	}
+	public void setSclNo5_Checked(String sclNo5_Checked) {
+		this.sclNo5_Checked = sclNo5_Checked;
+	}
+	public String getSclDate() {
+		return sclDate;
+	}
+	public void setSclDate(String sclDate) {
+		this.sclDate = sclDate;
+	}
+	public String getScl_photoName() {
+		return scl_photoName;
+	}
+	public void setScl_photoName(String scl_photoName) {
+		this.scl_photoName = scl_photoName;
+	}
+	public String getScl_photoPath() {
+		return scl_photoPath;
+	}
+	public void setScl_photoPath(String scl_photoPath) {
+		this.scl_photoPath = scl_photoPath;
+	}
+	public String getScl_Text() {
+		return scl_Text;
+	}
+	public void setScl_Text(String scl_Text) {
+		this.scl_Text = scl_Text;
+	}
+	public Object getChlTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
 	
 }

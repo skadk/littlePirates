@@ -1,17 +1,7 @@
 @charset "UTF-8";
 
 .container {  
-	/*
-	display: grid;
- 	grid-template-columns: 1fr;
-  	grid-template-rows:  4fr ;
-  	gap: 0px 0px;
-  	grid-auto-flow: row;
-  	grid-template-areas:
 
-    "checklist_nav"
- ;
- */
 }
 
 .checked {
@@ -37,35 +27,33 @@
 	}
 	
 .checklist_Section_back{
-	width:1920px;
-	height:1100px;
-	position:absolute;
-	z-index:0;
+    width: 1920px;
+    height: 1100px;
+    position: absolute;
+    z-index: 0;
 }
 
 /* *********************** grid area 설정 ******************* */	
 
 .father{
-  position : absolute;
-  display:flex;
-  flex-wrap:wrap;
-  margin-left: 21%;
-  width:1200px;
-  height: 750px;
-  margin-top:300px;
-  
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 17%;
+    width: 1300px;
+    height: 770px;
+    margin-top: 290px;
 }
 
 .child{
-  flex-basis: 350px;
-  height : 200px;
-  margin-left: 20px;
+    flex-basis: 380px;
+    height: 200px;
+    margin-left: 40px;
 }
 .child img{
-	position :absolute;
-  	width: 380px;
-  	height : 200px;
-	
+	position: absolute;
+    width: 380px;
+    height: 190px;
 }
 
 .textBox{
@@ -75,50 +63,57 @@
 	font-size:40px;
 	font-family: 'Dongle', sans-serif;
 }
+.childCheck{
 
+}
 .childCheckImg{
 	width: 240px;
     height: 185px;
 	border-radius: 50%;
-	display:none;
 	position:absolute;
+	display:none;
 }
 #childCheckImg1{
-	top:15px;
-    left: 65px;
-	
+	left: 100px;
+
 }
 #childCheckImg2{
-	top:15px;
-	    left: 450px;
+	left: 525px;
+
 }
 #childCheckImg3{
-    top: 15px;
-    left: 835px;
+	left: 940px;
+
 }
 #childCheckImg4{
-	top:270px;
-	left:65px;
+    top: 260px;
+    left: 100px;
+
 }
 #childCheckImg5{
-	top:270px;
-	left:450px;
+    top: 260px;
+	left: 525px;
+
 }
 #childCheckImg6{
-	top:270px;
-	left:835px;
+    top: 260px;
+	left: 940px;
+
 }
 #childCheckImg7{
-	top:520px;
-	left:65px;
+	top:510px;
+    left:100px;
+
 }
 #childCheckImg8{
-	top:520px;
-	left:450px;
+	top:510px;
+	left: 525px;
+
 }
 #childCheckImg9{
-	top:520px;
-	left:835px;
+	top:510px;
+	left: 940px;
+
 }
 /* ****************** 빙고 완료 갯수 박스******************** */
 .completeBox{
@@ -128,16 +123,13 @@
 	width:240px;
 	height:150px;
 }
-.completeBox img{
-	width:70px;
-	height:150px;
-	border-radius:50%;
-	position:absolute;
-	display:none;
+.countText{
+	text-align:center;
+	font-family: 'Dongle', sans-serif;
+	font-size: 60px;
 }
-#bingoComplete2{
-	margin-left:70px;
-}
-#bingoComplete3{
-	margin-left:140px;
+.bingoCount{
+	text-align:center;
+	font-family: 'Dongle', sans-serif;
+	font-size: 50px;
 }

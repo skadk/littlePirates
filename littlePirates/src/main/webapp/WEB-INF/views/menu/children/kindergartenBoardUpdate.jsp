@@ -9,32 +9,21 @@
 <head>
 
 <!-- css -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/kindergarten.css'/>">
 
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/ChildrenBoardUpdate.css'/>">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+	rel="stylesheet">
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 
-<style>
-td {
-	text-align: left !important;
-}
-
-.title {
-	margin-top: 50px;
-}
-.btn1{
-border-radius: 10px;
-}
-
-</style>
 
 </head>
 
 <body>
 
 	<div id="wrap">
-
 
 		<!-- background & header -->
 		<c:import url="/WEB-INF/views/layout/header.jsp" />
@@ -47,12 +36,13 @@ border-radius: 10px;
 					method="post">
 					<table>
 						<div class="title">
-						<h2>유치원 후기 게시글 작성</h2>
+							<h2>유치원 후기 게시글 작성</h2>
 						</div>
 						<tr>
 							<th>작성 일자 *</th>
 							<td><input type="text" name="kBrdDate"
-								value="${boa.kBrdDate}" readonly> <input type="hidden"
+								value="${boa.kBrdDate}" readonly> 
+								<input type="hidden"
 								name="kBrdNo" value="${boa.kBrdNo}"></td>
 						</tr>
 
@@ -65,20 +55,20 @@ border-radius: 10px;
 
 						<tr>
 							<th>내용</th>
-							<td><textarea cols="100" rows="30" name="kBrdText"
+							<td><textarea cols="100" rows="22" name="kBrdText"
 									value="${boa.kBrdText }">${boa.kBrdText }</textarea></td>
 						</tr>
-					</table>
+					</table><br><br><br>
 
-					<input class="btn1" type="submit" value="수정">
+					<input class="btn" type="submit" value="수정">
 
-				</form>
+				</form><br><br><br>
 
-				<!--  bottom -->
-				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 
 			</div>
 		</section>
+				<!--  bottom -->
+				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 	</div>
 </body>
 </html>

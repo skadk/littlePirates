@@ -53,22 +53,22 @@ background-color: rgb(255,244,233);
 					<nav id="lnb" class="lnb">
 						<div id="sideSubBox">
 							<div class="on">
-								<img src="<c:url value='/images/images/babyPirates.png' />"
+								<img src="<c:url value='/images/babyPirates.png' />"
 									width="55" height="55"> <a href="/children">어린이집
 									정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/childPirates.png' />"
+								<img src="<c:url value='/images/childPirates.png' />"
 									width="55" height="55"> <a href="/kindergartenInfo">유치원
 									정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/babyPirates.png' />"
+								<img src="<c:url value='/images/babyPirates.png' />"
 									width="55" height="55"> <a href="/nurseryBoard">어린이집
 									후기</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/childPirates.png' />"
+								<img src="<c:url value='/images/childPirates.png' />"
 									width="55" height="55"> <a href="/kindergartenBoard">유치원
 									후기</a>
 							</div>
@@ -98,7 +98,7 @@ background-color: rgb(255,244,233);
 									<tr>
 								</c:if>
 								<td><img src="<c:url value='/image/${kd.kdName}.png' />"
-									onerror="this.src='<c:url value='/images/images/babyPirates.png'/>'"
+									onerror="this.src='<c:url value='/images/childPirates.png'/>'"
 									width="180" height="120"></td>
 								<td> ${kd.kdName }<br> 주소: ${kd.kdAddress}<br>
 									유형: ${kd.kdType}<br> 전화번호: ${kd.kdTel}

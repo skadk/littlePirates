@@ -14,9 +14,9 @@
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<tr>
 				<td><img class="review" src="<c:url value='/images/${mapInfo.kcNo}.jpg' />" onerror="this.src='<c:url value='/images/logo.png'/>'"width="180" height="110"></td>
-				<td><a href="<c:url value='/kidscafe_third'/>">가게명: ${mapInfo.kcName }<br> 
+				<td><a href="<c:url value='/kidscafeReview'/>">가게명: ${mapInfo.kcName }<br> 
 					주소: ${mapInfo.kcAddress}<br>
-					운영시간: <br> 
+					운영시간: 10:00 ~ 21:00<br> 
 					전화번호: ${mapInfo.kcphone }
 				</a></td>
 			</tr>

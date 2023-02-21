@@ -11,9 +11,11 @@
  -->			
 			<header>
 				<div id="headerBox">
-					<a href="<c:url value='/'/>" id="headerLogo">
-						<img src="<c:url value='/images/logo.png'/>">
-					</a>
+					<div id="headerLogoBox">
+						<a href="<c:url value='/'/>" id="headerLogo">
+							<img src="<c:url value='/images/logo.png'/>">
+						</a>
+					</div>
 					<div id="topMenuBox">
 						<c:if test="${ empty sessionScope.sid }">
 							<a href="<c:url value='/member/login'/>">

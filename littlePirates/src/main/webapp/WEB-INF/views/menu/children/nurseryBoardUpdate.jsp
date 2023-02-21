@@ -9,19 +9,14 @@
 <head>
 
 <!-- css -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/kindergarten.css'/>">
 
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/ChildrenBoardUpdate.css'/>">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+	rel="stylesheet">
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
-
-<style>
-td {
-	text-align: left !important;
-}
-
-
-</style>
 
 </head>
 
@@ -39,7 +34,9 @@ td {
 			<div class="layout">
 				<form action="/nurseryBoard/nurseryBoardUpdate" method="post">
 					<table>
-						<h2>어린이집 후기 게시글 작성</h2>
+						<div class="title">
+							<h2>어린이집 후기 게시글 작성</h2>
+						</div>
 						<tr>
 							<th>작성 일자 *</th>
 							<td><input type="text" name="nBrdDate" value="${boa.nBrdDate}"
@@ -55,19 +52,19 @@ td {
 
 						<tr>
 							<th>내용</th>
-							<td><textarea cols="100" rows="30" name="nBrdText"  value="${boa.nBrdText }">${boa.nBrdText }</textarea></td>
+							<td><textarea cols="100" rows="22" name="nBrdText"  value="${boa.nBrdText }">${boa.nBrdText }</textarea></td>
 						</tr>
-					</table>
+					</table><br><br><br>
 
-					<input class="btn1" type="submit" value="수정">
+					<input class="btn" type="submit" value="수정">
 
-				</form>
+				</form><br><br><br>
 
-				<!--  bottom -->
-				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 
 			</div>
 		</section>
+				<!--  bottom -->
+				<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 	</div>
 </body>
 </html>

@@ -6,10 +6,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>키즈카페 후기</title>
+		<title>키즈카페 후기 게시판</title>
+		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+		<script src="<c:url value='/js/kcSearch.js'/>"></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- head -->
+	<!-- 	head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
 	<body>
@@ -19,12 +20,11 @@
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 		<section>
-			
-		
+
 			<section class="notice">
 				<div class="page-title">
 					<div class="container">
-						<h3>키즈카페 후기</h3>
+						<h2>키즈카페 후기 게시판</h2>
 					</div>
 				</div>
 
@@ -32,15 +32,14 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<a href="<c:url value='kindergartenBoardWrite'/>">
-								<button type="button" class="write">Write</button>
-							</a>
-							<form action="">
+							<form>
 								<div class="search-wrap">
-									<label for="search" class="blind">공지사항 내용 검색</label> 
-									<input id="keyword" name="keyword" placeholder="검색어를 입력해주세요." value="">
+									<input id="kckeyword" name="kckeyword" placeholder="검색어를 입력해주세요." value="">
 									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
 								</div>
+								<a href="<c:url value='kidscafeReviewWrite'/>">
+									<button type="button" class="hSMJOX">글 작성</button>
+								</a>
 							</form>
 						</div>
 					</div>
@@ -61,9 +60,9 @@
 								<c:forEach var="reviewinfo" items="${reviewList }">
 									<tr>
 										<td><a id="click" name="click"
-											href="#">${reviewinfo.kcrNo }</a></td>
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrNo }</a></td>
 										<td><a id="click" name="click"
-											href="#">${reviewinfo.kcrTitle }</a></td>
+											href="<c:url value='/kidscafeReview/kidscafeReviewRead/${reviewinfo.kcrNo }'/>">${reviewinfo.kcrTitle }</a></td>
 
 										<td>${reviewinfo.kcrDate }</td>
 									</tr>
@@ -76,9 +75,9 @@
 			</section>
 		
 
-		</section>
 			<!-- bottom -->
             <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+		</section>
 		</div>
 	</body>
 </html>

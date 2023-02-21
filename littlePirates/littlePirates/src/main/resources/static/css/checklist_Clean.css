@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+.container {  
+
+}
+
+.checked {
+	filter: brightness(0);
+}
+
+.checklistClean{
+	width: 900px;
+    margin-left: 500px;
+	font-family: 'Dongle', sans-serif;
+	font-size: 80px;
+    position: absolute;
+    z-index: 100;
+    top: 120px;
+    height: 100px;
+    text-align:center;
+}
+
+.checklist_Section {
+	width:1920px;
+	height:1150px;
+	position: relative;
+	}
+	
+.checklist_Section_back{
+    width: 1920px;
+    height: 1100px;
+    position: absolute;
+    z-index: 0;
+}
+
+/* *********************** grid area 설정 ******************* */	
+
+.father{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 17%;
+    width: 1300px;
+    height: 770px;
+    margin-top: 290px;
+}
+
+.child{
+    flex-basis: 380px;
+    height: 200px;
+    margin-left: 40px;
+}
+.child img{
+	position: absolute;
+    width: 380px;
+    height: 190px;
+}
+
+.textBox{
+	width:380px;
+	position:relative;
+	top:200px;
+	font-size:40px;
+	font-family: 'Dongle', sans-serif;
+}
+.childCheck{
+
+}
+.childCheckImg{
+	width: 240px;
+    height: 185px;
+	border-radius: 50%;
+	position:absolute;
+	display:none;
+}
+#childCheckImg1{
+	left: 100px;
+
+}
+#childCheckImg2{
+	left: 525px;
+
+}
+#childCheckImg3{
+	left: 940px;
+
+}
+#childCheckImg4{
+    top: 260px;
+    left: 100px;
+
+}
+#childCheckImg5{
+    top: 260px;
+	left: 525px;
+
+}
+#childCheckImg6{
+    top: 260px;
+	left: 940px;
+
+}
+#childCheckImg7{
+	top:510px;
+    left:100px;
+
+}
+#childCheckImg8{
+	top:510px;
+	left: 525px;
+
+}
+#childCheckImg9{
+	top:510px;
+	left: 940px;
+
+}
+/* ****************** 빙고 완료 갯수 박스******************** */
+.completeBox{
+	right:4%;
+	top:80px;
+	position:absolute;
+	width:240px;
+	height:150px;
+}
+.countText{
+	text-align:center;
+	font-family: 'Dongle', sans-serif;
+	font-size: 60px;
+}
+.bingoCount{
+	text-align:center;
+	font-family: 'Dongle', sans-serif;
+	font-size: 50px;
+}

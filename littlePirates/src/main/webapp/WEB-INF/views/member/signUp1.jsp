@@ -39,19 +39,19 @@
 						</div>
 						<div class="inputArea">
 							<p>비밀번호</p>
-							<input type="password" maxlength="10" class="input show" id="memPwd" name="memPwd" placeholder="숫자 / 영문자 / 특수문자 / 8 ~ 10자">
+							<input type="password" maxlength="10" class="input show" id="memPwd" name="memPwd" placeholder="숫자 / 영문자 / 특수문자 / 8 ~ 10자" onpaste="return false;">
 							<input type="text" class="input hidden" id="memPwdShow1" readonly>
 							<button type="button" class="btn" id="pwdShowBtn" tabindex="-1">비밀번호 표시</button>
-							<input type="password" maxlength="10" class="input show" id="memPwd2" placeholder="비밀번호 재입력">
+							<input type="password" maxlength="10" class="input show" id="memPwd2" placeholder="비밀번호 재입력" onpaste="return false;">
 							<input type="text" class="input hidden" id="memPwdShow2" readonly>
 						</div>
 						<div class="inputArea">
 							<p>휴대전화번호</p>
-							<input type="tel" maxlength="11" class="input" id="memMobile" placeholder="01012345678">
+							<input type="tel" maxlength="11" class="input" id="memMobile" name="memMobile" placeholder="01012345678">
 						</div>
 						<div class="inputArea">
 							<p>이메일</p>
-							<input type="email" class="input" id="memEmail" placeholder="abc1234@abc.com">
+							<input type="email" class="input" id="memEmail" name="memEmail" placeholder="abc1234@abc.com">
 							<button type="button" class="btn" id="mailAuthBtn" tabindex="-1">인증 이메일 보내기</button>
 							<input type="text" class="input" id="authKeyCheck" placeholder="인증키">
 							<input type="hidden" class="input" id="checkedAuth" value="">
@@ -59,14 +59,13 @@
 						</div>
 						<div class="inputArea">
 							<p>주소</p>
-							<input type="text" class="input" id="memAddress1" placeholder="도로명 / 지번" readonly>
+							<input type="text" class="input" id="memAddress1" name="memAddress1" placeholder="도로명 / 지번" readonly>
 							<button type="button" class="btn" id="searchAddrBtn" onclick="daumPostcode()" tabindex="-1">주소 검색</button>
-							<input type="text" class="input" id="memAddress2" placeholder="건물명, 호수">
-							<input type="text" class="input" id="memZipcode" placeholder="우편번호" readonly>
+							<input type="text" class="input" id="memAddress2" name="memAddress2" placeholder="건물명, 호수">
+							<input type="text" class="input" id="memZipcode" name="memZipcode" placeholder="우편번호" readonly>
 						</div>
 						<div id="nextBtnArea">
 							<div class="nextBtn" id="nextBtn">
-							<!-- onclick="signUpCheck();" -->
 								<div class="btnOne">
 									<p class="btnText">모두 입력하셨나요?</p>
 								</div>

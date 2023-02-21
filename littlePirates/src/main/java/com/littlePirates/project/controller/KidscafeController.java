@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,7 +51,7 @@ public class KidscafeController {
 		
 		return address;
 	}
-	
+	/*
 	// 간편하게 보기 페이지 열기
 	@RequestMapping("/kidscafe_sec")
 	public String kidscafe_sec(Model model) {
@@ -60,12 +61,43 @@ public class KidscafeController {
 		
 		return "menu/kidscafe/kidscafe_sec";
 	}
+*/
+	// 간편하게 보기 페이지 열기
+	@RequestMapping("/kidscafe_sec")
+	public String kidscafe_sec(Model model) {
+		int cur_page = 1;
+		int total_count = service.total_kidscafeinfo();
+		
+		ArrayList<KidscafeVO> voList = service.listKidscafeInfopage(cur_page);
+		
+		model.addAttribute("cur_page", cur_page);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("voList", voList);
+		
+		return "menu/kidscafe/kidscafe_sec";
+	}
+	
+	@RequestMapping("/kidscafe_sec_page")
+	public String kidscafe_sec_page(@RequestParam int pagenum, Model model) {
+		int total_count = service.total_kidscafeinfo();
+		
+		ArrayList<KidscafeVO> voList = service.listKidscafeInfopage(pagenum);
+		
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("voList", voList);
+		
+		return "menu/kidscafe/kidscafeSearch_page";
+	}
 
 	// 시/도 선택시 해당되는 시/도 출력
 	@RequestMapping("/kidscafe_sec/search")
-	public String kidscafe_sec_search(@RequestParam String sido, Model model) {
-		ArrayList<KidscafeVO> voList = service.kidscafeSearchsido(sido);
-		
+	public String kidscafe_sec_search(@RequestParam String sido, @RequestParam int pagenum, Model model) {
+		int total_count = service.total_kidscafeSearchsido(sido);
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchsidopage(sido, pagenum);
+
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
 		model.addAttribute("voList", voList);
 		
 		return "menu/kidscafe/kidscafe_sec_sido";
@@ -75,9 +107,13 @@ public class KidscafeController {
 	@RequestMapping("/kidscafe_sec/search_gu")
 	public String kidscafe_sec_search_gu(@RequestParam String sido, 
 										 @RequestParam String gu, 
+										 @RequestParam int pagenum,
 										 Model model) {
-		ArrayList<KidscafeVO> voList = service.kidscafeSearchgu(sido, gu);
+		int total_count = service.total_kidscafeSearchgu(sido, gu);
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchgupage(sido, gu, pagenum);
 		
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
 		model.addAttribute("voList", voList);
 		
 		return "menu/kidscafe/kidscafe_sec_gu";
@@ -103,18 +139,66 @@ public class KidscafeController {
 		return "menu/kidscafe/kidscafeReview";
 	}
 	
+	// 키즈카페 글 쓰기(시간관련)
 	@RequestMapping("/kidscafeReviewWrite")
 	public String kidscafeReviewWrite(Model model) {
 		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd");
         Date time = new Date();
         String time1 = format1.format(time);
         model.addAttribute("time1",time1);
+        
 		return "menu/kidscafe/kidscafeReviewWrite";
 	}
-
+	
+	// 키즈카페 글 쓰기
 	@RequestMapping("/kidscafeReview/Write")
 	public String WirteForm(KcreviewVO kcr, HttpSession session) {
+		kcr.setMemId((String) session.getAttribute("sid"));
+		kcservice.write(kcr);
 		
-		return "menu/redirect:/kidscafeReview";
+		return "redirect:/kidscafeReview";
+	}
+	
+	// 글 세부내용 보기
+	@RequestMapping("/kidscafeReview/kidscafeReviewRead/{kcrNo}")
+	public String kidscafeReviewRead(@PathVariable String kcrNo, Model model) {		
+		KcreviewVO kcr = kcservice.read(kcrNo);
+		model.addAttribute("kcr", kcr);
+		
+		return "menu/kidscafe/kidscafeReviewRead";
+	}
+	
+	// 글 삭제
+	@RequestMapping("/kidscafeReview/delete/{kcrNo}")
+	public String delete(@PathVariable String kcrNo) {
+		kcservice.delete(kcrNo);
+		
+		return "redirect:/kidscafeReview";
+	}
+	
+	// 글 수정
+	@RequestMapping("/kidscafeReview/kidscafeReviewUpdateForm/{kcrNo}")
+	public String kidscafeReviewUpdate(@PathVariable String kcrNo, Model model) {
+		KcreviewVO kcr = kcservice.read(kcrNo);
+		model.addAttribute("kcr", kcr);
+		
+		return "menu/kidscafe/kidscafeReviewUpdate";
+	}
+	
+	// 글 수정
+	@RequestMapping("/kidscafeReview/kidscafeReviewUpdate")
+	public String update(KcreviewVO kcr) {
+		kcservice.update(kcr);
+		
+		return "redirect:/kidscafeReview";
+	}
+	
+	// 후기 검색
+	@RequestMapping("/kcSearch")
+	public String kcSearch(@RequestParam String kckeyword, Model model) {
+		ArrayList<KcreviewVO> reviewList = kcservice.kcSearch(kckeyword);
+		model.addAttribute("reviewList", reviewList);
+		
+		return "menu/kidscafe/kidscafeReviewSearchResultView";
 	}
 }

@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* kidscafe_sec.css */
+
+#selectbox {
+	height: 90px;
+}
+
+#box {
+	position: relative;
+	padding-top:80px;
+}
+
+#box > div{
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+
+
+/* 사이드 메뉴 박스*/
+
+#aside {	
+	position: relative;
+	display: table-cell;
+    width: 180px;    
+}
+.as_inner{
+	width: 160px;
+    background: #ffffff;
+    vertical-align: top;
+    padding-right:20px;
+}
+.as_hgroup{
+	width: 185px;
+    height: 85px;
+    background: pink;
+}
+.tit{
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 95px;
+    color: darkslategray;
+    text-align: center;
+    font-family: 'Dongle', sans-serif;
+}
+.on{
+	width: 100%;
+	height: 78px;
+    background: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 75px;
+    color: #444444;
+    text-align: center;
+    border-bottom: 3px solid #e6e6e8;
+}
+#sideSubBox{
+	width: 179px;
+    height: 160px;
+    border-right: solid 3px #e6e6e8;
+    border-left: solid 3px #e6e6e8;
+}
+a:visited {
+    text-decoration: none;
+    
+}
+#aside .as_inner .lnb > ul > li > a {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 15px 15px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #444444;
+}
+/* 사이드박스 끝 */
+
+.dropdown {
+	height: 80px;
+	font-size: 20px;
+	margin: 10px;
+	font-weight: bold;
+	color: rgb(50, 50, 50);
+}
+
+#browsers{
+    background-color: white;
+    border: 1px solid purple;
+    border-radius: 10px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+	margin-top: 10px;
+	margin-right:15px;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+		
+	background-image:
+	linear-gradient(45deg, transparent 50%, gray 50%),
+	linear-gradient(135deg, gray 50%, transparent 50%),
+	radial-gradient(#ddd 70%, transparent 72%);
+	background-position:
+	calc(100% - 25px) calc(1em + 2px),
+	calc(100% - 18px) calc(1em + 2px),
+	calc(100% - .5em) .5em;
+	background-size:
+	7px 7px,
+	7px 7px,
+	1.5em 1.5em;
+	background-repeat: no-repeat;
+}
+
+#gugun{
+    background-color: white;
+    border: 1px solid purple;
+    border-radius: 10px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+	margin-top: 10px;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+		
+	background-image:
+	linear-gradient(45deg, transparent 50%, gray 50%),
+	linear-gradient(135deg, gray 50%, transparent 50%),
+	radial-gradient(#ddd 70%, transparent 72%);
+	background-position:
+	calc(100% - 25px) calc(1em + 2px),
+	calc(100% - 18px) calc(1em + 2px),
+	calc(100% - .5em) .5em;
+	background-size:
+	7px 7px,
+	7px 7px,
+	1.5em 1.5em;
+	background-repeat: no-repeat;
+}
+
+/* 테이블 css */
+li {
+	display: inline-block;
+	margin: 10px;
+}
+td {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}	
+table tr:first-child {
+  border-top: none;
+  background: #627db2;
+  color: #fff;
+}
+
+table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+table tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+ td > img {
+ 	width: 130px;
+ 	height: 80px;
+ }

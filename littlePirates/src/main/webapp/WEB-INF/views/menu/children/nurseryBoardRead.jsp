@@ -12,56 +12,29 @@
 <!-- css -->
 
 <link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/children.css'/>">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="<c:url value='/css/ChildrenBoardRead.css'/>">
+<link
+	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+	rel="stylesheet">
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
 
-<script src="<c:url value='/js/children.js' />"></script>
-<script src="<c:url value='/js/childrenScroll.js' />"></script>
-
-<style>
-td {
-	border: 1px solid black;
-	border-radius: 15px;
-}
-
-table {
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid black;
-	border-radius: 15px;
-}
-
-#wrap {
-	width: 100%;
-	height: 100%;
-	text-align: center;
-}
-
-button {
-	border: 1px solid black;
-	border-radius: 15px;
-	background-color: silver;
-	width: 100px;
-	height: 25px;
-	border: none;
-	color: black;
-	paddng: 15px 30px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-}
-
-.BoardRead {
-	margin-top: 40px;
-}
-</style>
 </head>
+<!--  삭제 확인 메시지 출력 -->
+<script>
+	function deleteCheck() {
+		var answer = confirm("삭제하시겠습니까?");
+		if (answer) {
+			location.href = "/nurseryBoard/deleteNBoard/${boa.nBrdNo}";
+		}
+	}
+</script>
 <body>
 	<div id="wrap">
 
@@ -73,42 +46,36 @@ button {
 			<div class="BoardRead">
 				<h3>어린이집 게시판</h3>
 			</div>
-			<br /> <br />
+			<br>
 			<table>
 				<tr>
-					<td scope="row">제목</td>
-					<td width="500px">${boa.nBrdTitle }</td>
+					<td width="50px">제목</td>
+					<td width="400px" colspan="3">${boa.nBrdTitle }</td>
+					<td />
 				</tr>
 				<tr>
-					<td scope="row">작성자</td>
-					<td width="50px">${boa.memId }</td>
+					<td colspan="4"></td>
+					<td>작성자 &nbsp; ${boa.memId }</td>
 				</tr>
 				<tr>
-					<td scope="row">내용</td>
-					<td height="500px">${boa.nBrdText }</td>
+					<td>내용</td>
+					<td height="300px" colspan="3">>${boa.nBrdText }</td>
 				</tr>
 			</table>
-			<br> <br> <a
+			<br> <br> <br> <a
 				href="<c:url value='/nurseryBoard/nurseryBoardUpdateForm/${boa.nBrdNo}'/>">
-				<button>수정</button>
+				<button class="btn">수정</button>
 			</a> <a href="<c:url value='/nurseryBoard'/>">
-				<button>뒤로</button>
+				<button class="btn">뒤로</button>
 			</a>
 
-			<button value="삭제" onclick="javascript:deleteCheck();">삭제</button>
+			<button class="btn" value="삭제" onclick="javascript:deleteCheck();">삭제</button>
 
-			<!--  삭제 확인 메시지 출력 -->
-			<script>
-				function deleteCheck() {
-					var answer = confirm("삭제하시겠습니까?");
-					if (answer) {
-						location.href = "/nurseryBoard/deleteNBoard/${boa.nBrdNo}";
-					}
-				}
-			</script>
-			<!--  bottom -->
-			<c:import url="/WEB-INF/views/layout/bottom.jsp" />
+			<br> <br> <br> <br>
+
 		</section>
+		<!--  bottom -->
+		<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 	</div>
 </body>
 </html>

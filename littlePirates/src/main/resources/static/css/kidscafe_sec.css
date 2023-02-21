@@ -39,7 +39,8 @@ a{
     background: #ffffff;
     vertical-align: top;
     padding-right:20px;
-    padding-top:30px;
+    margin-top:30px;
+    margin-right:10px;
 }
 .as_hgroup{
 	width: 185px;
@@ -164,7 +165,7 @@ a:visited {
 
 .table tr:first-child {
   border-top: none;
-  background: #428bca;
+  background: #627db2;
   color: #fff;
 }
 
@@ -250,31 +251,4 @@ a:visited {
   .table td {
     padding: 0.7em !important;
   }
-}
-
-.scroll_box {
-  width: 1350px;
-  height: 1200px;
-  margin-right:30px;
-  background-color: #ffffff99;
-  overflow-y: scroll;
-}
-
-.scroll_box::-webkit-scrollbar {
-  width: 6px;
-}
-
-.scroll_box::-webkit-scrollbar-track {
-  background-color: transparent;
-
-}
-
-.scroll_box::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: pink;
-}
-
-.scroll_box::-webkit-scrollbar-button {
-  width: 0;
-  height: 0;
 }

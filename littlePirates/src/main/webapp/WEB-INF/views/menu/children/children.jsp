@@ -3,30 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>children</title>
-<head>
-<!-- css -->
-<%-- <link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/children.css'/>"> --%>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/kidscafe_sec.css'/>">
-<link
-	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
-	rel="stylesheet">
-<!-- head -->
-<c:import url="/WEB-INF/views/layout/head.jsp" />
-<script src="<c:url value='/js/children.js' />"></script>
-<script src="<c:url value='/js/childrenScroll.js' />"></script>
-<script src="<c:url value='/js/kidscafe_sec.js' />"></script>
-<script>
-	function selChange() {
-		var sel = document.getElementById('cntPerPage').value;
-		location.href = "children?nowPage=${paging.nowPage}&cntPerPage=" + sel;
-	}
-</script>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>children</title>
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kidscafe_sec.css'/>">
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+		<!-- head -->
+		<c:import url="/WEB-INF/views/layout/head.jsp" />
+		<script src="<c:url value='/js/children.js' />"></script>
+		<script src="<c:url value='/js/childrenScroll.js' />"></script>
+		<script src="<c:url value='/js/kidscafe_sec.js' />"></script>
+	</head>
 <style>
 th {
 background-color: rgb(244,87,87);
@@ -54,21 +41,21 @@ background-color: rgb(255,244,233);
 					<nav id="lnb" class="lnb">
 						<div id="sideSubBox">
 							<div class="on">
-								<img src="<c:url value='/images/images/babyPirates.png' />"
+								<img src="<c:url value='/images/babyPirates.png' />"
 									width="55" height="55"> <a href="/children">어린이집 정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/childPirates.png' />"
+								<img src="<c:url value='/images/childPirates.png' />"
 									width="55" height="55"> <a href="/kindergartenInfo">유치원
 									정보</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/babyPirates.png' />"
+								<img src="<c:url value='/images/babyPirates.png' />"
 									width="55" height="55"> <a href="/nurseryBoard">어린이집
 									후기</a>
 							</div>
 							<div class="on">
-								<img src="<c:url value='/images/images/childPirates.png' />"
+								<img src="<c:url value='/images/childPirates.png' />"
 									width="55" height="55"> <a href="/kindergartenBoard">유치원
 									후기</a>
 							</div>
@@ -98,7 +85,7 @@ background-color: rgb(255,244,233);
 									<tr>
 								</c:if>
 								<td><img src="<c:url value='/image/${nur.nurName}.png' />"
-									onerror="this.src='<c:url value='/images/images/babyPirates.png'/>'"
+									onerror="this.src='<c:url value='/images/babyPirates.png'/>'"
 									width="180" height="120"></td>
 								<td>${nur.nurName }<br> 주소: ${nur.nurAddress}<br>
 									유형: ${nur.nurType}<br> 전화번호: ${nur.nurTel}

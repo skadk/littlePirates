@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.littlePirates.project.dao.IChecklistDAO">
+	  <resultMap id="checklistResult" type="com.littlePirates.project.model.ChecklistVO" >
+		<result property="chlNo" column="chlNo"	/>
+		<result property="chlImageName" column="chlImageName"	/>
+		<result property="chhNo" column="chhNo"	/>
+		<result property="memId" column="memId"	/>
+		<result property="chhDate" column="chhDate"	/>
+		<result property="chhTimes" column="chhTimes"	/>		
+		<result property="chlNo1" column="chlNo1" />
+		<result property="chlNo2" column="chlNo2" />
+		<result property="chlNo3" column="chlNo3" />
+		<result property="chlNo4" column="chlNo4" />
+		<result property="chlNo5" column="chlNo5" />
+		<result property="chlNo6" column="chlNo6" />
+		<result property="chlNo7" column="chlNo7" />
+		<result property="chlNo8" column="chlNo8" />
+		<result property="chlNo9" column="chlNo9" />
+		
+		<result property="chlNo1_Checked" column="chlNo1_Checked" />
+		<result property="chlNo2_Checked" column="chlNo2_Checked" />
+		<result property="chlNo3_Checked" column="chlNo3_Checked" />
+		<result property="chlNo4_Checked" column="chlNo4_Checked" />
+		<result property="chlNo5_Checked" column="chlNo5_Checked" />
+		<result property="chlNo6_Checked" column="chlNo6_Checked" />
+		<result property="chlNo7_Checked" column="chlNo7_Checked" />
+		<result property="chlNo8_Checked" column="chlNo8_Checked" />
+		<result property="chlNo9_Checked" column="chlNo9_Checked" />
+		<result property="chh_Checked" column="chh_Checked" />
+		
+		<result property="selfNo" column="selfNo"/>
+		<result property="pgNo" column="pgNo"/>
+		<result property="sclNo1" column="sclNo1"/>
+		<result property="sclNo2" column="sclNo2"/>
+		<result property="sclNo3" column="sclNo3"/>
+		<result property="sclNo4" column="sclNo4"/>
+		<result property="sclNo5" column="sclNo5"/>
+		<result property="sclNo1_Checked" column="sclNo1_Checked"/>
+		<result property="sclNo2_Checked" column="sclNo2_Checked"/>
+		<result property="sclNo3_Checked" column="sclNo3_Checked"/>
+		<result property="sclNo4_Checked" column="sclNo4_Checked"/>
+		<result property="sclNo5_Checked" column="sclNo5_Checked"/>
+		<result property="sclDate" column="sclDate"/>
+		<result property="scl_photoName" column="scl_photoName"/>
+		<result property="scl_photoPath" column="scl_photoPath"/>		
+		<result property="scl_Text" column="scl_Text"/>		
+		
+	  </resultMap>	
+
+	<select id ="checklistInfo" parameterType="string" resultMap="checklistResult">
+		SELECT pgNO,sclNo1,sclNo2,sclNo3,sclNo4,sclNo5,sclNo1_Checked,
+		sclNo2_Checked,sclNo3_Checked,sclNo4_Checked,sclNo5_Checked,
+		sclDate,scl_photoName,scl_Text,scl_photoPath
+		 FROM self_checklist
+		WHERE memId=#{memId};
+	</select>
+	
+<!-- 활동 체크리스트 랜덤으로 빙고 9개 정보 띄우기 -->	
+	<select id="checklistInfo2" resultType="string">
+		SELECT chlNo FROM checklist
+		WHERE chlImageName Like "LH%"
+		ORDER BY RAND() LIMIT 9;
+	</select>
+<!-- 체크리스트 달성률 보기 -->	
+	<select id="checklistInfo3" parameterType="string" 
+			resultType = "com.littlePirates.project.model.ChecklistVO">
+		SELECT 	chhNo,memId,chhTimes,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo1) as chlNo1,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo2) as chlNo2,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo3) as chlNo3,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo4) as chlNo4,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo5) as chlNo5,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo6) as chlNo6,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo7) as chlNo7,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo8) as chlNo8,
+				(SELECT chlText FROM checklist WHERE checklist.chlNo=checklist_history.chlNo9) as chlNo9,
+				
+				chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,
+				chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked,
+				chh_Checked
+		 FROM checklist_history	
+		 WHERE memId=#{memId};			
+	</select>
+	
+	<insert id="insertChecklist" parameterType="com.littlePirates.project.model.ChecklistVO" >
+		INSERT INTO checklist_history
+		(memId,chhDate,chlNo1,chlNo2,chlNo3,chlNo4,chlNo5,chlNo6,chlNo7,chlNo8,chlNo9,chh_Checked)
+		VALUES
+		(#{memId},#{chhDate},#{chlNo1},#{chlNo2},#{chlNo3},#{chlNo4},#{chlNo5},#{chlNo6},#{chlNo7},#{chlNo8},#{chlNo9},0);
+	</insert>
+<!--  최초 생성 할 때 체크리스트 보유 여부 확인 -->
+	<select id="ischhChecked" parameterType="string" resultType="int">
+		SELECT count(*) FROM checklist_history
+		WHERE memId=#{memId}   
+	</select>
+	
+	<!-- <update id="updateChh_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
+		UPDATE checklist_history
+		SET chh_Chekced=1
+		WHERE memId=#{memId} AND chlNo1_Checked!=NULL AND chlNo2_Checked!=NULL AND chlNo3_Checked!=NULL AND
+								 chlNo4_Checked!=NULL AND chlNo5_Checked!=NULL AND chlNo6_Checked!=NULL AND
+								 chlNo7_Checked!=NULL AND chlNo8_Checked!=NULL AND chlNo9_Checked!=NULL
+	</update>
+	
+	<select id="select_Chl_Checked" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
+		SELECT chh_Checked FROM checklist_history
+		WHERE memId=#{memId} AND chhTimes=(SELECT MAX(chhTimes) from checklist_history);
+	</select> -->
+	
+	<select id="selectChecklist" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
+		SELECT * FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked = 0
+	</select>
+	
+	<select id="getChecklistText" parameterType="string" resultType="string">
+		SELECT chlText FROM checklist
+		WHERE chlNo=#{chlNo}
+	</select>
+	
+	<insert id="checkList_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
+		INSERT INTO checklist_history
+		(memId,chlNo1_Checked,chlNo2_Checked,chlNo3_Checked,chlNo4_Checked,chlNo5_Checked,chlNo6_Checked,chlNo7_Checked,chlNo8_Checked,chlNo9_Checked)
+		VALUES
+		(#{memId},#{chlNo1_Checked},#{chlNo2_Checked},#{chlNo3_Checked},#{chlNo4_Checked},#{chlNo5_Checked},#{chlNo6_Checked},#{chlNo7_Checked},#{chlNo8_Checked},#{chlNo9_Checked})
+	</insert>
+	
+	<!-- 빙고회차 업데이트 하기 위해 아이디 세기 -->
+	<select id="searchMemId" parameterType="string" resultType="int">
+		SELECT COUNT(*)
+		FROM checklist_history
+		WHERE memId=#{memId}
+	</select>
+	
+	<!-- 빙고 회차 업데이트 -->
+	<update id="insertTimes" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chhTimes=#{countMemId}
+		WHERE memId=#{memId}
+	</update>
+	
+	<!-- 빙고 오늘 했는지 확인 -->
+	<select id="checkDate" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo1_checked=#{nowTime} OR chlNo2_checked=#{nowTime} OR chlNo3_checked=#{nowTime} OR chlNo4_checked=#{nowTime} OR chlNo5_checked=#{nowTime} OR chlNo6_checked=#{nowTime} OR chlNo7_checked=#{nowTime} OR chlNo8_checked=#{nowTime} OR chlNo9_checked=#{nowTime}
+	</select>
+	
+	<!-- 해당 번호의 빙고 했는지 확인 -->	
+	<select id="checkNo1" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo1_Checked IS NOT NULL
+	</select>
+	<select id="checkNo2" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo2_Checked IS NOT NULL
+	</select>
+	<select id="checkNo3" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo3_Checked IS NOT NULL
+	</select>
+	<select id="checkNo4" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo4_Checked IS NOT NULL
+	</select>
+	<select id="checkNo5" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo5_Checked IS NOT NULL
+	</select>
+	<select id="checkNo6" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo6_Checked IS NOT NULL
+	</select>
+	<select id="checkNo7" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo7_Checked IS NOT NULL
+	</select>
+	<select id="checkNo8" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo8_Checked IS NOT NULL
+	</select>
+	<select id="checkNo9" parameterType="hashmap" resultType="string">
+		SELECT memId
+		FROM checklist_history
+		WHERE memId=#{memId} AND chh_Checked=0 AND chlNo9_Checked IS NOT NULL
+	</select>
+	
+	<!-- 해당 번호의 빙고 값 넣기 -->
+	<update id="updateChecked1" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo1_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked2" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo2_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked3" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo3_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked4" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo4_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked5" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo5_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked6" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo6_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked7" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo7_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked8" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo8_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+	<update id="updateChecked9" parameterType="hashmap">
+		UPDATE checklist_history
+		SET chlNo9_Checked=#{nowTime}
+		WHERE memId=#{memId} AND chh_checked=0
+	</update>
+
+	    <select id="getChecklist" resultType="com.littlePirates.project.model.ChecklistVO">
+        SELECT * FROM self_checklist WHERE memId=#{memId}
+    </select>
+
+    <update id="updateChecklist2">
+        UPDATE self_checklist SET
+        sclNo1=#{sclNo1}, sclNo1_Checked=#{sclNo1Checked},
+        sclNo2=#{sclNo2}, sclNo2_Checked=#{sclNo2Checked},
+        sclNo3=#{sclNo3}, sclNo3_Checked=#{sclNo3Checked},
+        sclNo4=#{sclNo4}, sclNo4_Checked=#{sclNo4Checked},
+        sclNo5=#{sclNo5}, sclNo5_Checked=#{sclNo5Checked}
+        WHERE memId=#{memId}
+    </update>
+	
+  <!-- chlNo1_Checked~chlNo9_Checked 값을 가져오는 쿼리문 -->
+  <select id="getCheckedValues" parameterType="map" resultMap="checklistResult">
+    SELECT chlNo1_Checked, chlNo2_Checked, chlNo3_Checked, chlNo4_Checked, chlNo5_Checked,
+           chlNo6_Checked, chlNo7_Checked, chlNo8_Checked, chlNo9_Checked
+    FROM checklist_history
+    WHERE memId = #{memId} AND chhChecked=0
+  </select>
+	
+	
+	
+  </mapper>
+  

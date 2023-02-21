@@ -31,7 +31,7 @@
 					</div>
 				</div>
 
-				<!-- board seach area -->
+				<!-- board search area -->
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">

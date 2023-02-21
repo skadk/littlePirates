@@ -24,13 +24,6 @@ public class HomeController {
 
 		return "member/signUp1";
 	}
-	
-	// 회원가입2 페이지 열기
-	@RequestMapping("/member/signUp2")
-	public String signUp2() {
-		
-		return "member/signUp2";
-	}
 
 	// 로그인 페이지 열기
 	@RequestMapping("/member/login")
@@ -72,6 +65,12 @@ public class HomeController {
 	public String paintDiary() {
 		
 		return "menu/paintDiary/paintDiary";
+	}
+	
+	@RequestMapping("/paintDiaryWrite")
+	public String paintDiaryWrite() {
+		
+		return "menu/paintDiary/paintDiaryWrite";
 	}
 
 }

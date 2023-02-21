@@ -1,0 +1,343 @@
+@charset "UTF-8";
+
+.container {  
+	display: grid;
+ 	grid-template-columns: 1fr;
+  	grid-template-rows: 0.3fr  4fr ;
+  	gap: 0px 0px;
+  	grid-auto-flow: row;
+  	grid-template-areas:
+  	"eatHeader"
+    "checklist_Section"    
+    "layout_bottom";
+}
+
+.eatHeader{
+	left: 200px;
+	position: absolute;
+	width:1080px;
+	height:100px;
+	grid-area: eatHeader; 
+	font-family: 'Dongle', sans-serif;
+	font-size:70px;
+/* 	color: white;
+    text-shadow: 4px 4px #2d63a7; */
+}
+/*
+.checklist_Section {
+	width:1920px;
+	height:600px;
+	position: relative;
+	grid-area: checklist_Section;
+	display:flex;
+	}*/
+	
+	
+.checklist_Section {
+  display: grid; 
+  width:1920px;
+  height:600px;
+  grid-template-columns: 1fr 4fr ; 
+  grid-template-rows: 5fr 15fr ; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "dropdown search "
+    "searchResult searchResult "
+    ". . "; 
+  grid-area: checklist_Section; 
+}	
+
+/*********************** grid area 설정 *******************/	
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: blanchedalmond;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  * {
+    position: relative;
+  }
+
+  td,
+  th {
+    padding-left: 8px;
+  }
+
+  thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+  }
+
+  tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  td,
+  th {
+    text-align: left;
+    &.l {
+      text-align: right;
+    }
+    &.c {
+      text-align: center;
+    }
+    &.r {
+      text-align: center;
+    }
+  }
+}
+
+table.fade-in {
+  opacity: 1;
+}
+
+@media #{$gl-xs} {
+  table {
+    display: block;
+    > *,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+    tbody tr {
+      height: auto;
+      padding: 8px 0;
+      td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          position: absolute;
+          font-weight: 700;
+          width: 40%;
+          left: 10px;
+          top: 0;
+        }
+
+        &:nth-child(1):before {
+          content: "Code";
+        }
+        &:nth-child(2):before {
+          content: "Stock";
+        }
+        &:nth-child(3):before {
+          content: "Cap";
+        }
+        &:nth-child(4):before {
+          content: "Inch";
+        }
+        &:nth-child(5):before {
+          content: "Box Type";
+        }
+      }
+    }
+  }
+}
+
+/* 추가 애니메이션 효과 */
+.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+/*   background:#70c9cd; */
+  font: 400 14px "Calibri", "Arial";
+  padding: 20px;
+}
+
+.checklist_Section_back2{
+    left: 0px;
+    top: 0px;
+    height: 1185px;
+    width: 1950px;
+    position: absolute;
+}
+blockquote {
+  color: white;
+  text-align: center;
+ }
+/************************************************************/
+.dropdown {
+    width:500px;
+    font-family: 'Dongle', sans-serif;
+	font-size:35px;
+
+}
+.selectBtn{
+	top: 120px;
+    left: 190px;
+    height: 50px;
+    width: 150px;
+    position: absolute;
+    text-align:center;
+    margin-left:50px;
+    border-radius:15%;
+ 	background-color:blanchedalmond;
+	font-size:25px;
+
+}
+.search{
+	grid-area:search;
+	width:1200px;
+	height:30px;
+	display:flex;
+
+}
+.search input{
+	width:1000px;
+	height:40px;
+}
+.search button{
+	width:100px;
+	font-size:35px;
+	color: white;
+    text-shadow: 4px 4px #2d63a7;
+    height:50px;
+    background-color:gray;
+    margin-left:50px;
+    border-style:none;
+}
+.dropdown_trigger {
+    cursor: pointer;
+	height:70px;
+	width:100px;
+	margin-left:25px;
+	top:10px;
+}
+
+.dropdown_content {
+    display: none;
+    height:50px;
+}
+ .searchResult{
+	width:1800px;
+	grid-area:searchResult;
+	font-family: 'Dongle', sans-serif;
+    font-size: 35px;
+	text-align:center;
+} 
+/* .searchResult table{
+	width:1800px;
+	height:900px;
+}
+.searchResult th{
+	color:white;
+	border:1px solid;
+	height:60px;
+}
+.searchResult th:nth-child(1){
+	width:100px;
+}
+.searchResult th:nth-child(2){
+	width:900px;
+}
+.searchResult th:nth-child(3){
+	width:500px;
+}
+.searchResult tr{
+	height:60px;
+	color:white;
+	border:1px solid;
+}
+
+.searchResult td{
+	color:white;
+	border:1px solid;
+	text-align:center;
+	height:60px;
+}
+
+.searchResult td:nth-child(1){
+	width:100px;
+}
+.searchResult td:nth-child(2){
+	width:900px;
+}
+.searchResult td:nth-child(3){
+	width:500px;
+} */
+/*
+
+
+
+
+.checklist_Section_back{
+	width:1920px;
+	height:600px;
+	position:absolute;
+	z-index:0;
+}
+
+.map2{
+	display:flex;
+	flex-wrap:wrap;
+	width:1730px;
+	height:520px;
+	margin:40px 0px 130px 130px;
+}
+
+
+.eat_Image{
+	width:345px;
+	height:260px;
+
+	margin:0;
+}
+#MM1{
+	background:#fae17f;
+}
+#MM2{
+	background:#fae17f;
+}
+#MM3{
+	background:#fa7f7f;
+}
+#MM4{
+	background:#fae17f;
+}
+#MM5{
+	background:#fae17f;
+}
+#MM6{
+	background:#fa7f7f;
+}
+#MM7{
+	background:#fae17f;	
+}
+#MM8{
+	background:#fae17f;	
+}
+#MM9{
+	background:#fae17f;	
+}
+#MM10{
+	background:#fa7f7f;
+}
+*/
