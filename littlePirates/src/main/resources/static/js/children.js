@@ -1,47 +1,22 @@
-$(document).ready(function(){
-      document.querySelector('.dropbtn_click').onclick = ()=>{
-        dropdown();
-      }
-      document.getElementsByClassName('region').onclick = ()=>{
-        showMenu(value);
-      };
-      dropdown = () => {
+/**
+ * 
+ */
+   $(document).ready(function(){
+ 	$('#searchBtn').on('click', function(){ 
+ 		event.preventDefault(); 
+ 		// 서버에 전송하고 결과 받아서 처리
+ 		$.ajax({
+ 			type:"post",
+ 			url:"/NurseryListSearch",
+ 			data: {"keyword":$("#keyword").val()},
+ 			success:function(result){ 
+ 				$('#board-list .container').html(result);
+		},
+ 			error:function(){
+ 				alert("실패");
+ 			}
+ 		}); // ajax 종료 	
+ 	});// submit 종료
+});
 
-        var v = document.querySelector('.dropdown-content');
-        var dropbtn = document.querySelector('.dropbtn')
-        v.classList.toggle('show');
- 
-        dropbtn.style.borderColor = 'rgb(94, 94, 94)';
-      }
-
-      showMenu=(value)=>{
-        var dropbtn_icon = document.querySelector('.dropbtn_icon');
-        var dropbtn_content = document.querySelector('.dropbtn_content');
-        var dropbtn_click = document.querySelector('.dropbtn_click');
-        var dropbtn = document.querySelector('.dropbtn');
-
-        dropbtn_icon.innerText = '';
-        dropbtn_content.innerText = value;
-        dropbtn_content.style.color = '#252525';
-        dropbtn.style.borderColor = '#3992a8';
-      }
-    });
-    window.onclick= (e)=>{
-      if(!e.target.matches('.dropbtn_click')){
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-
-        var dropbtn_icon = document.querySelector('.dropbtn_icon');
-        var dropbtn_content = document.querySelector('.dropbtn_content');
-        var dropbtn_click = document.querySelector('.dropbtn_click');
-        var dropbtn = document.querySelector('.dropbtn');
-
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
   

@@ -1,0 +1,403 @@
+@charset "UTF-8";
+
+
+
+/*****************   ********************/
+.container {  
+	position: relative;
+    display: grid;
+    left: -600px;
+ 	grid-template-columns: 1fr;
+  	grid-template-rows:0.3fr  4fr ;
+  	gap: 0px 0px;
+  	grid-auto-flow: row;
+  	grid-template-areas:
+  	"checklistHeader"
+    "checklist_nav" ;
+}
+.checklistHeader{
+	position: relative;
+	width:1920px;
+	grid-area:checklistHeader;
+	font-family: 'Dongle', sans-serif;
+	font-size: 6em;
+    color: #ff9012;
+    text-shadow: 4px 4px #2d63a7;
+}
+.checklist_Section {
+	width:1920px;
+	height:900px;
+	position: relative;
+	grid-area: checklist_nav;
+	left: -350px;
+	}
+.menu_image{
+	width:1920px;
+	height:900px;
+	position:absolute;
+	z-index:0;
+}	
+/* *********************** grid area 설정 끝******************* */	
+
+.menu{
+	width:100%;
+	height:100px;
+    display:flex;
+    flex-wrap:wrap;
+	justify-content :center;
+	align-items : center;
+	position:absolute;
+}
+.menu_image{
+	width:100%;
+	height:900px;
+}
+.menu:nth-child(1){
+	top:100px;
+}
+/* *********************** 체크리스트 메뉴 박스 끝******************* */	
+
+	.modal_wrap{
+        display: none;
+        width: 80%;
+        height: 1100px;
+        position: absolute;
+        top:25%;
+        left: 85%;
+        margin: -250px 0 0 -250px;
+        z-index: 101;
+    }
+    .black_bg{
+        display: none;
+        position: absolute;
+        content: "";
+		width:100vw;
+		height:100vh;
+        box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+        top:-9000px;
+        z-index: 100;        
+    }
+    .modal_close{
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        top: -45px;
+        right: 0;
+        margin-bottom:10px;
+    }
+    .modal_close> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+		font-size:35px;
+		text-decoration:none;
+		color: white;
+		font-family: 'Dongle', sans-serif;  
+    }
+    
+    .modalBtn{
+    width:250px;
+    height:200px;
+	font-size:50px;
+	cursor:pointer;
+    margin-left: 150px;
+	left: 2120px;
+	position:relative;
+	animation: motion 0.3s linear 0s infinite alternate; margin-top: 0;
+	top:300px;
+	}
+	.modalBtn3{
+	width:250px;
+	height:200px;
+    left: 315px;
+	font-size:50px;
+	cursor:pointer;
+    top: -200px;
+	margin-left:1350px;
+    position: relative;
+	animation: motion 0.3s linear 0s infinite alternate; margin-top: 0;
+    
+	}
+	.modalBtn2{
+    width: 250px;
+    height: 200px;
+    font-size: 50px;
+    cursor: pointer;
+    left: 1000px;
+    top: 250px;
+    margin-left: 1450px;
+    position: relative;
+	animation: motion 0.3s linear 0s infinite alternate; margin-top: 0;
+	}
+	
+	@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
+	
+#bannerImg{
+    width: 300px;
+    height: 250px;
+}
+
+#bannerImg2{
+	width:400px;
+	height:300px;
+}
+
+#bannerImg3{
+	width:270px;
+	height:200px;
+}
+
+    /* ***************	생활 습관 모달	 끝	**************** */
+          
+    .modal_wrap2{
+        display: none;
+        width: 100%;
+    height: 1200px;
+        position: absolute;
+        top:25%;
+    left: 64%;
+        margin: -250px 0 0 -250px;
+        z-index: 101;
+    }
+  
+    .modal_close2{
+        width: 150px;
+		height: 45px;
+        margin-right: 20px;
+    }
+    
+    .modal_close2> a{
+        display: block;
+		font-size:30px;
+		text-decoration:none;
+		color:white;
+		font-family: 'Dongle', sans-serif; 
+    }
+    
+
+    
+    /* ***************		체크리스트 달성률 모달 끝		**************** */
+    .modal_wrap3{
+        display: none;
+        width: 80%;
+        height: 900px;
+        position: absolute;
+        top:25%;
+        left:  85%;
+        margin: -250px 0 0 -250px;
+        z-index: 101;
+
+    }
+  
+    .modal_close3{
+        width: 150px;
+        height: 30px;
+        position: absolute;
+        top: -45px;
+        right: 0;
+        margin-bottom:10px;
+
+    }
+    
+    .modal_close3> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+		font-size:35px;
+		text-decoration:none;
+		color:white;
+		font-family: 'Dongle', sans-serif;        
+    }
+
+	/******************** 활동 체크리스트 모달 ************************/
+	     
+	#chat_iframe{
+	width: 2000px;
+    height: 1200px;
+    position : absolute;
+    left:-430px;
+    border-style:none;
+	}
+	#chat_iframe3{
+	width:100%;
+	height:100%;
+	}
+	
+	.textBox{
+/* 	display:none; */
+	left: 900px;
+	position: absolute;
+    top: 120px;
+    left: 1900px;
+    width: 400px;
+    height: 170px;
+    font-size: 55px;
+	font-family: 'Dongle', sans-serif;
+	color: #ff9012;
+	text-shadow: 0 0 7px #2d63a7; /*0 0 10px #2d63a7, 0 0 21px #2d63a7;*/
+	/* Green glow 0 0 42px #8ed9f6, 0 0 82px #8ed9f6, 0 0 92px #8ed9f6, 0 0 102px #8ed9f6, 0 0 151px #8ed9f6;	
+	*/
+	}
+	
+	
+/***************** 텍스트 애니메이션 *********************/
+.guideText {
+height: 120px;
+}
+
+.guideText span {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  animation: bounce .3s ease 25 alternate;
+  font-family: 'Dongle', sans-serif;
+  font-size: 110px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CCC,
+               0 2px 0 #CCC,
+               0 3px 0 #CCC,
+               0 4px 0 #CCC,
+               0 5px 0 #CCC,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .4);
+}
+
+.guideText span:nth-child(2) { animation-delay: .1s; }
+.guideText span:nth-child(3) { animation-delay: .2s; }
+.guideText span:nth-child(4) { animation-delay: .3s; }
+.guideText span:nth-child(5) { animation-delay: .4s; }
+.guideText span:nth-child(6) { animation-delay: .5s; }
+.guideText span:nth-child(7) { animation-delay: .6s; }
+.guideText span:nth-child(8) { animation-delay: .7s; }
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}	
+
+/* ************** *********************/
+	
+.popup{
+    position: absolute;
+    width: 100%;
+    height: 1200px;
+    top: 120px;
+}
+.inner{
+	width:100%;
+	height:1200px;
+}
+.area{
+	width:100%;
+	background-color:#fce1b8;
+	height: 1080px;
+}
+.guideText{
+	text-align:center;
+	color:blanchedalmond;
+	font-size: 55px;
+	font-family: 'Dongle', sans-serif;
+}
+.guideBtn{
+	position:absolute;
+	top: 960px;
+	background-color: blanchedalmond;	
+}
+#guideBtn1{
+	left:45%;
+}
+#guideBtn2{
+	right: 46%;
+    height: 50px;
+    width: 150px;
+    font-size: 35px;
+	font-family: 'Dongle', sans-serif;
+}
+
+	.pageGuide{
+	width:500px;
+	height:700px;
+	display:inline-block;
+    top: 50px;
+    position: relative;
+    margin-left:70px;
+    margin-right:70px;
+  	animation: fadein 3s;
+  	font-size: 30px;
+	font-family: 'Dongle', sans-serif;
+  	-moz-animation: fadein 3s; /* Firefox */
+  	-webkit-animation: fadein 3s; /* Safari and Chrome */
+  	-o-animation: fadein 3s; /* Opera */
+	}
+	#pageGuide1{
+	
+	}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.pageNo h1{
+text-align:center;
+}
+	
+.pageNo img{
+	width:80px;
+	height:80px;
+	float:left;
+}
+.pageGuideImgBox{
+	width: 500px;
+    height: 650px;
+}
+.pageGuideImgBox img{
+    width: 600px;
+    height: 650px;
+}
+
+/* ****************************************** */
