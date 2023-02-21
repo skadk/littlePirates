@@ -12,8 +12,6 @@ header {
 	height: 120px;
 	background: white;
 	border-bottom: 3px dashed #627db2;
-/* 	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px; */
 }
 
 #headerBox {
@@ -77,6 +75,9 @@ header {
 	text-decoration-line: none;
 	padding-top: 10px;
 	padding-right: 5px;
+	font-family: 'Gamja Flower', cursive;
+	font-weight: 400;
+	font-size: 180%;
 }
 
 /*------------- Header 끝 -------------*/
