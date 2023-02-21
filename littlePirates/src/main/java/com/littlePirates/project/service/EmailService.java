@@ -94,7 +94,7 @@ public class EmailService implements IEmailService {
 			mail = new EmailHandler(mailSender);
 			mail.setFrom("dev.dkska0306@gmail.com", "Little Pirates");
 			mail.setTo(memEmail);
-			mail.setSubject("꼬마 해적단(Little Pirates) 비밀번호를 변결 하기 위해 인증해 주세요!");
+			mail.setSubject("꼬마 해적단(Little Pirates) 비밀번호를 변경 하기 위해 인증해 주세요!");
 			mail.setText(body);
 			mail.send();
 			
