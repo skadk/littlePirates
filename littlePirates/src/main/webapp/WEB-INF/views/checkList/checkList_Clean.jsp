@@ -10,6 +10,7 @@
 	href="<c:url value='/css/checklist_Clean.css'/>">
 <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 <script src="<c:url value='/js/checklist/checklist_Clean.js'/>"></script>
+<script src="<c:url value='/js/checklist/checked.js'/>"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
 	rel="stylesheet">
@@ -28,25 +29,19 @@
 						<img id="bingoBtnImg${i}"
 							src="<c:url value='/images/${vo.getChlNo(i)}.png '/>">
 						<div class="textBox" id="textBox${i}">${vo.getChlText(i)}</div>
-<%-- 						<audio id="bingoAudio${i}"></audio> --%>
+						<%-- 						<audio id="bingoAudio${i}"></audio> --%>
 					</div>
-			<div class="childCheck">
-			    <img class="childCheckImg" id="childCheckImg${i+1}" src="<c:url value='/images/Good3.JPG'/>">
-			</div>
+					<div class="childCheck">
+						<img class="childCheckImg" id="childCheckImg${i+1}"
+							src="<c:url value='/images/Good3.JPG'/>">
+					</div>
 				</c:forEach>
 			</div>
 			<div class="completeBox">
-				<div class="countText">
-				빙고 완료 횟수
-				</div>
-				<div class="bingoCount">
-				0  / 8
-				</div>
+				<div class="countText">빙고 완료 횟수</div>
+				<div class="bingoCount" id="bingoCount"></div>
 			</div>
 		</div>
-
 	</div>
-
 </body>
-
 </html>

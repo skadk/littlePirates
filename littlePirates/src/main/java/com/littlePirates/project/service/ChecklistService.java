@@ -2,9 +2,8 @@ package com.littlePirates.project.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -162,21 +161,16 @@ public class ChecklistService implements IChecklistService{
 		}
 	}
 
-	public ArrayList<String> select_Chl_Checked(String memId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public ArrayList<ChecklistVO> checklistInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	  @Override
-	  public List<String> getCheckedValues(String memId) {
-	    return dao.getCheckedValues(memId);
-	  }
-	
+
+    @Override
+    public ChecklistVO getChecked(String memId) {
+       return dao.getChecked(memId);
+    }
 }
 
