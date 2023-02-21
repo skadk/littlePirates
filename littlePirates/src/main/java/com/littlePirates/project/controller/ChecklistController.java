@@ -84,7 +84,6 @@ public class ChecklistController {
 		model.addAttribute("vo", vo);
 		return "/menu/checkList/checkList_Clean";
 	}
-	// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
 
 
 	// 체크리스트 통계
@@ -122,6 +121,7 @@ public class ChecklistController {
 			if (checkNo == null) {
 
 				service.updateChecked(memId, checkedNo, nowTime);
+				// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
 				service.update_chhChecked(memId);
 			} else {
 				result="fail";
