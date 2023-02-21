@@ -33,7 +33,7 @@
 								마이 페이지
 							</a>
 							<br>
-							<p>선원 ${sessionScope.sid} 님 출항!</p>
+							<p>해적 ${sessionScope.sid} 님 출항!</p>
 						</c:if>
 					</div>
 				</div>
