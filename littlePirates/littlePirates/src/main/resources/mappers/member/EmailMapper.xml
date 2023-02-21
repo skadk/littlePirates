@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.littlePirates.project.dao.IEmailDAO">
+  
+  	<!-- 아이디 중복 확인 시 이메일 인증 테이블 생성 -->
+  	<insert id="emailAuthCreate" parameterType="string">
+  		INSERT INTO email(memId)
+  		VALUES (#{memId})
+  	</insert>
+  	
+  	<!-- 이메일 테이블에 이미 아이디 있는지 확인 -->
+  	<select id="emailMemIdCheck" parameterType="string" resultType="string">
+  		SELECT memId
+  		FROM email
+  		WHERE memId=#{memId}	
+  	</select>
+  	
+  	<!-- 이메일 인증 키 DB 저장 -->
+  	<update id="updateEmailAuthKey" parameterType="hashmap">
+  		UPDATE email
+  		SET emailAuth=0, authKey=#{authKey}
+  		WHERE memId=#{memId}
+  	</update>
+  	
+  	<!-- 인증키와 시간 DB에서 가져오기 -->
+  	<select id="getKeyAndTime" parameterType="string" resultType="java.util.HashMap">
+  		SELECT emailAuth, authKey, ADDTIME(authTime, '0:03:00')
+  		FROM email
+  		WHERE memId=#{memId}
+  	</select>
+  	
+  	<!-- 인증 상태 변경0 -->
+  	<update id="updateEmailAuth0" parameterType="string">
+  		UPDATE email 
+  		SET emailAuth=0, authKey=null
+  		WHERE memId=#{memId}
+  	</update>
+  	
+  	<!-- 인증 상태 변경1 -->
+  	<update id="updateEmailAuth1" parameterType="hashmap">
+  		UPDATE email 
+  		SET emailAuth=1
+  		WHERE memId=#{memId} AND authKey=#{authKeyCheck}
+  	</update>
+  	
+  	<!-- 인증 상태 변경2 -->
+  	<update id="updateEmailAuth2" parameterType="hashmap">
+  		UPDATE email 
+  		SET emailAuth=0
+  		WHERE memId=#{memId}
+  	</update>
+  	
+  	<!-- 회원가입1 창 나가면 인증 DB 삭제 -->
+   	<delete id="emailAuthDelete" parameterType="string">
+  		DELETE
+  		FROM email
+  		WHERE memId=#{memId}
+  	</delete>
+  	
+  </mapper>

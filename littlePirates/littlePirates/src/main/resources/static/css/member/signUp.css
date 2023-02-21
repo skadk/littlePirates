@@ -1,0 +1,414 @@
+@charset "UTF-8";
+
+/* signUp.css */
+
+/************** signUpBox **************/
+
+#signUpBox {
+	width: 100%;
+}
+
+#processBar1 {
+	float: left;
+	width: 50%;
+	border: 5px dashed #70cacd;
+}
+
+#processBar2 {
+	width: 100%;
+	border: 5px solid #ffecd2;
+	z-index: -10;
+}
+
+#processBar3 {
+	float: left;
+	width: 100%;
+	border: 5px dashed #70cacd;
+}
+
+#signUpLogo {
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	margin: 0 165px;
+	height: 200px;
+}
+
+#signUpLogo img {
+	display: block;
+	height: 150px;
+	margin: 25px 0;
+}
+
+#signUpInfo {
+	width: 100%;
+}
+
+#signUpInfo h1 {
+	font-size: 24px;
+	padding: 0 0 0 5px;
+}
+
+#signUpInfo p {
+	font-size: 15px;
+	padding: 0 0 0 5px;
+}
+
+/************** signUpForm1 **************/
+
+#signUpForm1Box {
+	width: 480px;
+	padding: 50px;
+	text-align: left;
+	background: white;
+	border: 3px dashed #70cacd;
+	border-radius: 50px;
+	box-shadow: 10px 10px 15px #cccccc;
+	margin: 50px auto;
+}
+#signUpForm1 {
+	position: relative;
+	padding-top: 45px;
+}
+
+#signUpForm1 p {
+	font-size: 14px;
+	padding: 0 0 0 5px;
+}
+
+/************** signUpForm2 **************/
+#signUpForm2 {
+	position: relative;
+	padding-top: 45px;
+}
+
+#signUpForm2 p {
+	font-size: 14px;
+	padding: 0 0 0 5px;
+}
+
+.inputArea {
+	width: 100%;
+}
+
+.input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 48px;
+	margin: 10px 0 20px 0;
+	padding: 0 15px;
+	background-color: #f9fafb;
+	border: 3px solid #70cacd;
+	border-radius: 15px;
+	font-size: 15px;
+}
+
+.input:placeholder-shown {
+	background-color: #f9fafb;
+	border-color: #70cacd;
+}
+
+.input:focus {
+	animation-name: border-focus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: white;
+	border-color: #627db2;
+	outline: none;
+}
+
+.input:not(:focus) {
+	animation-name: border-notFocus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes border-focus {
+	from {
+		border-radius:15px;
+	}
+	to {
+		border-radius: 30px;
+	}
+}
+
+@keyframes border-notFocus {
+	from {
+		border-radius:30px;
+	} to {
+		border-radius: 15px;
+	}
+}
+
+.input:not(:placeholder-shown) {
+	border-color: #627db2;
+}
+
+#memId, #memPwd, #memPwd2, #memPwdShow1, #memPwdShow2, #memEmail, #authKeyCheck, #memAddress1 {
+	width: 63%;
+}
+
+#memAddress2, #memZipcode {
+	width: 49%;
+}
+
+#memZipcode {
+	float: right;
+}
+
+#memEmail, #memPwd, #memPwdShow1, #memAddress1 {
+	margin: 10px 0 3.5px 0;
+}
+
+#authKeyCheck, #memPwd2, #memPwdShow2, #memAddress2, #memZipcode {
+	margin: 3.5px 0 15px 0;
+}
+
+/************** button **************/
+
+.hidden {
+	position: relative;
+	display: none;
+}
+
+.show {
+	position: relative;
+	background: rgb(248, 249, 250);
+}
+
+.btn {
+	height: 43px;
+	background: #70cacd;
+	border: 3px solid #007f86;
+	border-radius: 15px;
+	box-shadow: 0px 5px 0px 0px #007f86;
+	float: right;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Noto Sans KR;
+	color: white;
+	cursor: pointer;
+	transition: all 0.05s;
+}
+
+#memIdCheck {
+	width: 35%;
+	margin: 10px 0 20px 0;
+}
+
+#memIdCheck:active, #pwdShowBtn:active, #mailAuthBtn:active, #searchAddrBtn:active {
+	margin-top: 15px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+#authKeyBtn:active {
+	margin-top: 8.5px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+#pwdShowBtn, #mailAuthBtn, #searchAddrBtn {
+	width: 35%;
+	margin: 10px 0 3.5px 0;
+}
+
+#authKeyBtn {
+	width: 35%;
+	margin: 3.5px 0 15px 0;
+}
+
+#nextBtnArea {
+	width: 80%;
+	height: 56px;
+	padding: 30px 0;
+}
+
+.nextBtn {
+	width: 70%;
+	height: 50px;
+	overflow: hidden;
+	text-align: center;
+	background: #70cacd;
+	border: 3px solid #007f86;
+	border-radius: 15px;
+	box-shadow: 0px 5px 0px 0px #007f86;
+	cursor: pointer;
+}
+
+#nextBtn p {
+	color: white;
+	padding: 8.5px 0;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.btnOne {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: #70cacd;
+	left: 0px;
+	transition: 0.8s;
+}
+
+.btnTwo {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-top: -50px;
+	background: #72cd70;
+	left: -272px;
+	transition: 0.5s;
+}
+
+.nextBtn:hover .btnOne {
+	left: 272px;
+}
+
+.nextBtn:hover .btnTwo {
+	left: 0px;
+}
+
+.nextBtn:active {
+	margin-top: 5px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+/************** signUpForm2 **************/
+
+#parentInfo {
+	padding-bottom: 10px;
+}
+
+#signUpHr {
+	width: 100%;
+	border: 1px dashed #70cacd;
+	margin-bottom: 30px;
+}
+
+#childInfo {
+	padding-top: 45px;
+}
+
+#childGender {
+	height: 96px;
+}
+
+/************** radioBox **************/
+
+#boyBtnBox, #girlBtnBox {
+	width: 49%;
+	display: inline-block;
+}
+
+#girlBtnBox {
+	float: right;
+}
+
+.inputArea input[type=radio] {
+	display: none;
+}
+
+.inputArea input[type=radio]+label {
+	box-sizing: border-box;
+	display: inline-block;
+	height: 43px;
+	width: 100%;
+	border: 3px solid #007f86;
+	border-radius: 15px;
+	box-shadow: 0px 5px 0px 0px #007f86;
+	text-align: center;
+	margin: 10px 0 20px 0;
+	padding: 1px 6px;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: Noto Sans KR;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+
+.inputArea input[type=radio]+label {
+	background-color: #70cacd;
+	color: white;
+}
+
+#boyBtn:checked+label, #girlBtn:checked+label {
+	margin: 15px 0 15px 0;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+/************** selectBox **************/
+
+.info#childBirth {
+	display: flex;
+	margin: 10px 0 20px 0;
+	height: 48px;
+}
+
+.selectBox::-ms-expand {
+	display: none;
+}
+
+.selectBox {
+	width: 100%;
+	color: #757575;
+	font-size: 15px;
+	font-weight: bold;
+	box-sizing: border-box;
+	padding: 5px 10px 5px 20px;
+	border: 3px solid #70cacd;
+	border-radius: 15px;
+	background:url("/images/selectNotFocus.png") no-repeat center;
+	-o-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.selectBox::-ms-expand {
+	display: none;
+}
+
+.selectBox:focus {
+	animation-name: border-focus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background:url("/images/selectFocus.png") no-repeat center;
+	border-color: #627db2;
+	outline: none;
+}
+
+.selectBox:not(:focus) {
+	animation-name: border-notFocus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+option {
+	color: #627db2;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.info#childBirth select {
+	margin-left: 20px;
+}
+
+.info#childBirth select:first-child {
+	margin-left: 0px;
+}
+
+.info#childBirth select::-webkit-scrollbar {
+	width: 10px;
+}
+
+.info#childBirth select::-webkit-scrollbar-thumb {
+	background-color: #627db2;
+}
+
+.info#childBirth select::-webkit-scrollbar-track {
+	background-color: #70cacd;
+}
+
+.selectBox option[disabled] {
+	display: none;
+}

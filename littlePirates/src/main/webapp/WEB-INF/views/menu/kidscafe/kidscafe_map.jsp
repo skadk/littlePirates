@@ -12,8 +12,8 @@
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<!-- API 로드하기 -->
-	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk"></script>
-		<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gqkrw3jvwk&submodules=geocoder"></script>	
+	    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId="></script>
+		<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=&submodules=geocoder"></script>	
 		<script src="<c:url value='/js/kidscafe.js' />"></script>
 		<script src="<c:url value='/js/kidscafe_geocoder.js' />"></script>
 		<script src="<c:url value='/js/kidscafeSearch.js' />"></script>
