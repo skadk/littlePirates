@@ -6,6 +6,9 @@ import com.littlePirates.project.model.KcreviewVO;
 
 public interface IKcreviewDAO {
 	public ArrayList<KcreviewVO> listAll(); //게시판 전체 조회
+	public ArrayList<KcreviewVO> listAllpage(int pagenum); 
+	public int total_kcinfo(); 
+
 	public void write(KcreviewVO kcr); // 글 쓰기
 	public KcreviewVO read(String kcrNo); // 세부 글 보기
 	public void update(KcreviewVO kcr); // 글 수정
