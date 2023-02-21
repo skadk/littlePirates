@@ -129,7 +129,7 @@ public class KidscafeController {
 		
 		return "menu/kidscafe/kidscafeSearch";	
 	}
-	
+/*	
 	// 키즈카페 후기 목록
 	@RequestMapping("/kidscafeReview")
 	public String kidscafeReview(Model model) {
@@ -138,7 +138,35 @@ public class KidscafeController {
 		
 		return "menu/kidscafe/kidscafeReview";
 	}
+*/
+	//키즈카페 후기 목록
+	@RequestMapping("/kidscafeReview")
+	public String kidscafeReview(Model model) {
+		int cur_page = 1;
+		int total_count = kcservice.total_kcinfo();
+		
+		ArrayList<KcreviewVO> revewList = kcservice.listAllpage(cur_page);
+		
+		model.addAttribute("cur_page", cur_page);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("reviewList", revewList);
+		
+		return "menu/kidscafe/kidscafeReview";
+	}
 	
+	@RequestMapping("/kidscafeReview_page")
+	public String kidscafeReview_page(@RequestParam int pagenum, Model model) {
+		int total_count = kcservice.total_kcinfo();
+		
+		ArrayList<KcreviewVO> revewList = kcservice.listAllpage(pagenum);
+		
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("reviewList", revewList);
+		
+		return "menu/kidscafe/kidscafeSearch_page";
+	}
+		
 	// 키즈카페 글 쓰기(시간관련)
 	@RequestMapping("/kidscafeReviewWrite")
 	public String kidscafeReviewWrite(Model model) {

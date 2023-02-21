@@ -8,11 +8,18 @@
 		<meta charset="UTF-8">
 		<title>키즈카페 후기 게시판</title>
 		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+		<script src="<c:url value='/js/paging/kcpage.js' />"></script>
 		<script src="<c:url value='/js/kcSearch.js'/>"></script>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
 	<!-- 	head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 	</head>
+<style>
+li {
+	display: inline-block;
+	margin: 10px;
+}
+</style>
 	<body>
 		<div id="wrap">
 			<!-- background & header -->
@@ -44,7 +51,8 @@
 						</div>
 					</div>
 				</div>
-
+			
+				
 				<!-- board list area -->
 				<div id="board-list">
 					<div class="container">
@@ -57,6 +65,8 @@
 								</tr>
 							</thead>
 							<tbody>
+								<input type="hidden" id="cur_page" value="${cur_page}" /><br>
+								<input type="hidden" id="total_count" value="${total_count }" /><br>
 								<c:forEach var="reviewinfo" items="${reviewList }">
 									<tr>
 										<td><a id="click" name="click"
@@ -69,7 +79,13 @@
 								</c:forEach>
 							</tbody>
 						</table>
-					</div>
+					</div>	
+						<div>
+							<nav>
+								<br>
+						        <ul class="pagination" id="pagination"></ul>
+						    </nav>
+						</div>		
 				</div>
 
 			</section>

@@ -19,6 +19,18 @@
 		FROM kidscafereview
 	</select>
 
+	<select id="listAllpage" resultMap="reviewResult">
+		SELECT * 
+		FROM kidscafereview
+		where kcrNo > (#{pagenum}-1)*10 
+		Limit 10;
+	</select>
+	
+	<select id="total_kcinfo" resultType="int">
+		select count(*) 
+		FROM kidscafereview
+	</select>
+
 	<!-- 글쓰기 -->
 	<insert id="write" parameterType="com.littlePirates.project.model.KcreviewVO">
 		INSERT INTO kidscafereview(memId,kcrTitle,kcrText,kcrDate)
