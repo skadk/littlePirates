@@ -13,8 +13,6 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	overflow: hidden;
 }
-
-
 .card-header {
 	position: relative;
 	transition: 0.5s;
@@ -22,7 +20,7 @@
 	height: 245px;
 	border-radius: 15px 15px 0 0;
 	background-size: 100% 280px;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 }
 .card:hover .card-header  {
 	opacity: 0.8;
@@ -51,6 +49,7 @@
 .card-body-header{
 	line-height: 25px;
 	margin: 4px 8px 0px 8px;
+	/* background-color: #f6f6f9; */
 }
 .card-body-description  {
     opacity: 0;
@@ -64,6 +63,7 @@
 .card:hover .card-body-description {
     opacity: 1;
     overflow-y: scroll;
+    transition : .5s ease-in-out;
 }
 .card:hover .card-body-description::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */

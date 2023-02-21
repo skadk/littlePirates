@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>나눔장터페이지</title>
+<title>상품검색결과</title>
 
 <!-- CSS  -->
 <link rel="stylesheet" type="text/css"
@@ -84,13 +84,13 @@
 									<option value="mem_nm">작성자</option>
 								</select>
 							</div>
-							<!-- <form id="flSearchFrm"> -->
+							<form id="flSearchFrm">
 							<div class="ipt_box">
 								<input type="text" id="srchWord" name="srchWord" class="ipt"
 									value="" placeholder="검색어를 입력해 주세요."> 
 								<input type="submit" id="srchBtn" class="btn" value="검색">
 							</div>
-							
+							</form>
 						</div>
 
 						<%-- <c:set var="i" value="0" />

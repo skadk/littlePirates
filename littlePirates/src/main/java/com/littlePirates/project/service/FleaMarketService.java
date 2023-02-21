@@ -1,6 +1,7 @@
 package com.littlePirates.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -59,6 +60,10 @@ public class FleaMarketService implements IFleaMarketService {
 		return dao.listAllFlCmt(flNo);
 	}
 
+	/*
+	 * @Override public ArrayList<FleaMarketVO> flSearch(HashMap<String, Object>
+	 * map) { return dao.flSearch(map); }
+	 */
 	
 
 }

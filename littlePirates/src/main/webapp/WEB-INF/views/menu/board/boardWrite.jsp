@@ -37,7 +37,7 @@
 								<td><textarea id="summernote" name="brdText"></textarea></td>
 							</tr>
 							<tr>
-								<td><input type="submit"></td>
+								<td><input type="submit" value = "글작성"></td>
 							</tr>
 						</tbody>
 					</form>
