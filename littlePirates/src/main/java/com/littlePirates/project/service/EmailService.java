@@ -63,6 +63,50 @@ public class EmailService implements IEmailService {
 		return sendResult;
 	}
 
+	@Override // 아이디 찾기 인증 이메일 보내기
+	public String findIdSendEamil(String memEmail, String body) {
+
+		EmailHandler mail;
+
+		try {
+			mail = new EmailHandler(mailSender);
+			mail.setFrom("dev.dkska0306@gmail.com", "Little Pirates");
+			mail.setTo(memEmail);
+			mail.setSubject("꼬마 해적단(Little Pirates) 아이디를 찾기 위해 인증해 주세요!");
+			mail.setText(body);
+			mail.send();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 3분 후 만료됩니다.";
+
+		return sendResult;
+	}
+	
+	@Override // 비밀번호 변경 인증 이메일 보내기
+	public String findPwdSendEamil(String memEmail, String body) {
+		
+		EmailHandler mail;
+		
+		try {
+			mail = new EmailHandler(mailSender);
+			mail.setFrom("dev.dkska0306@gmail.com", "Little Pirates");
+			mail.setTo(memEmail);
+			mail.setSubject("꼬마 해적단(Little Pirates) 비밀번호를 변결 하기 위해 인증해 주세요!");
+			mail.setText(body);
+			mail.send();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 3분 후 만료됩니다.";
+		
+		return sendResult;
+	}
+
 	@Override // 인증키와 시간 DB에서 가져오기
 	public HashMap<String, Object> getKeyAndTime(String memId) {
 		
@@ -86,7 +130,7 @@ public class EmailService implements IEmailService {
 		dao.updateEmailAuth1(map);
 	}
 	
-	@Override
+	@Override // 인증 상태 변경2
 	public void updateEmailAuth2(String memId) {
 		dao.updateEmailAuth2(memId);
 	}

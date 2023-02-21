@@ -343,9 +343,9 @@
  	}).open();
  }
  
- // 회원가입 창 나가면 인증 DB 삭제
+ // 창 나가면 인증 DB 삭제
  window.addEventListener('beforeunload', function(event) {
- 	console.log('거 회원가입 안하니까 인증 삭제합니다 ㅡㅡ');
+ 	console.log('회원가입 안하니까 인증 삭제합니다');
  	
  	$.ajax({
  		type:"post",
