@@ -3,7 +3,6 @@ package com.littlePirates.project.controller;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,7 +32,6 @@ public class ChecklistController {
 		System.out.println(memId);
 		return "/checkList/checkList_Manner";
 	}
-	
 
 	// 빙고 체크리스트 최초생성
 	@RequestMapping("/checkList/checkList_Clean")
@@ -94,15 +93,56 @@ public class ChecklistController {
 		System.out.println(memId);
 		return "/checkList/checkList_Eat";
 	}
+
 	
 	@ResponseBody
-	@RequestMapping(value = "/getCheckedValues")
-	public List<String> getCheckedValues(HttpSession session, Model model) {
-		String memId = (String) session.getAttribute("memId");
-		List<String> checkedValues = service.getCheckedValues(memId);
-		model.addAttribute("checkedValues", checkedValues);
-		return checkedValues;
+	@RequestMapping("/checklist/checked")
+	public String insert(@RequestParam("checkedNo") int checkedNo, HttpSession session) {
+
+		String memId = (String) session.getAttribute("sid");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date now = new Date();
+		String nowTime = sdf.format(now);
+
+//		System.out.println(checkedNo);
+
+		String checkDate = service.checkDate(memId, nowTime);
+		String result="success";
+
+//		System.out.println(checkDate);
+		if (checkDate == null) {
+
+			String checkNo = service.checkNo(memId, checkedNo);
+
+//			System.out.println(checkNo);
+			if (checkNo == null) {
+
+				service.updateChecked(memId, checkedNo, nowTime);
+			} else {
+				result="fail";
+			}
+		} else {
+			result="fail";
+		}
+		return result;
 	}
 	
+	@ResponseBody
+    @RequestMapping("/checkList/checkList_Image")
+    public ChecklistVO checklist(Model model, HttpSession session) {
+        String memId = (String) session.getAttribute("sid");
+        ChecklistVO checklistVO = service.getChecked(memId);
+        System.out.println(checklistVO.getChlNo1_Checked());
+        return checklistVO;
+    }
+
+	/*
+	 * @RequestMapping("/checkList/checkList_Image") public String checklist(Model
+	 * model, HttpSession session) { String memId = (String)
+	 * session.getAttribute("memId"); ChecklistVO checklistVO =
+	 * service.getChecked(memId); model.addAttribute("checklistVO", checklistVO);
+	 * return "/checkList/checkList_Clean"; }
+	 */
 }
 

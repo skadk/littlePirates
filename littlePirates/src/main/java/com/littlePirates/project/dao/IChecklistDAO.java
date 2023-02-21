@@ -52,11 +52,7 @@ public interface IChecklistDAO {
 	public void updateChecked8(HashMap<String, Object> map);
 	public void updateChecked9(HashMap<String, Object> map);
 
-	public Map<String, Object> getChl_Checked(HashMap<String, Object> map);
+    public ChecklistVO getChecked(String memId);
 
-	public List<ChecklistVO> getUncheckedHistories(String memId);
-
-	 // memId와 chh_Checked 값을 기준으로 chlNo1_Checked~chlNo9_Checked 값을 조회하는 메소드
-	public List<String> getCheckedValues(String memId);
 
 }
