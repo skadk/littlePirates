@@ -107,17 +107,13 @@ public class ChecklistController {
 		Date now = new Date();
 		String nowTime = sdf.format(now);
 
-//		System.out.println(checkedNo);
-
 		String checkDate = service.checkDate(memId, nowTime);
 		String result="success";
 
-//		System.out.println(checkDate);
 		if (checkDate == null) {
 
 			String checkNo = service.checkNo(memId, checkedNo);
 
-//			System.out.println(checkNo);
 			if (checkNo == null) {
 
 				service.updateChecked(memId, checkedNo, nowTime);
