@@ -136,12 +136,5 @@ public class ChecklistController {
         return checklistVO;
     }
 
-	/*
-	 * @RequestMapping("/checkList/checkList_Image") public String checklist(Model
-	 * model, HttpSession session) { String memId = (String)
-	 * session.getAttribute("memId"); ChecklistVO checklistVO =
-	 * service.getChecked(memId); model.addAttribute("checklistVO", checklistVO);
-	 * return "/checkList/checkList_Clean"; }
-	 */
 }
 
