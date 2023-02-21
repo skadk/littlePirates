@@ -16,9 +16,11 @@ public interface IMemberDAO {
 	
 	public String loginCheck(String id); // 로그인 확인
 	
-	public String findId(HashMap<String, Object> map);
+	public String selectMemId(HashMap<String, Object> map); // 아이디 찾기위해 메일 인증
 	
-	public String findPwd(HashMap<String, Object> map);
+	public String findId(HashMap<String, Object> map); // 아이디 찾기
 	
-	public void changePwd(MemberVO vo);
+	public String findPwd(HashMap<String, Object> map); // 비밀번호 변경 전 memId 가져오기
+	
+	public void changePwd(MemberVO vo); // 비밀번호 변경하기
 }

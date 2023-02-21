@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+/* changePwd.css */
+
+/************** changePwdBox **************/
+
+#changePwdBox {
+	width: 100%;
+}
+
+/************** changeFormBox **************/
+
+#changeFormBox {
+    width: 480px;
+    padding: 50px;
+    text-align: left;
+    background-color: white;
+	border: 3px dashed #70cacd;
+	border-radius: 50px;
+    box-shadow: 10px 10px 15px #cccccc;
+    margin: 60px auto 50px auto;
+}
+
+#changePwdLogo {
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	margin: 0 165px;
+	height: 200px;
+}
+
+#changePwdLogo img {
+	display: block;
+	height: 150px;
+	margin: 25px 0;
+}
+
+#changePwdInfo {
+	width: 100%;
+}
+
+#changePwdInfo h1 {
+	font-size: 24px;
+	padding: 0 0 0 5px;
+}
+
+#changePwdInfo p {
+	font-size: 15px;
+	padding: 0 0 0 5px;
+}
+
+/************** findIdForm & findPwdForm **************/
+
+#changePwdForm {
+	position: relative;
+	padding-top: 45px;
+}
+
+#changePwdForm  p {
+	font-size: 14px;
+	padding: 0 0 0 5px;
+}
+
+.inputArea {
+    width: 100%;
+}
+
+.input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 48px;
+	margin: 10px 0 20px 0;
+	padding: 0 15px;
+	background-color: #f9fafb;
+	border: 3px solid #70cacd;
+	border-radius: 15px;
+	font-size: 15px;
+}
+
+.input:placeholder-shown {
+	background-color: #f9fafb;
+	border-color: #70cacd;
+}
+
+.input:focus {
+	animation-name: border-focus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	background-color: white;
+	border-color: #627db2;
+	outline: none;
+}
+
+.input:not(:focus) {
+	animation-name: border-notFocus;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes border-focus {
+	from {
+		border-radius:15px;
+	}
+	to {
+		border-radius: 30px;
+	}
+}
+
+@keyframes border-notFocus {
+	from {
+		border-radius:30px;
+	} to {
+		border-radius: 15px;
+	}
+}
+
+.input:not(:placeholder-shown) {
+	border-color: #627db2;
+}
+
+#memPwd, #memPwd2, #memPwdShow1, #memPwdShow2 {
+	width: 63%;
+}
+
+#memPwd, #memPwdShow1 {
+	margin: 10px 0 3.5px 0;
+}
+
+#memPwd2, #memPwdShow2 {
+	margin: 3.5px 0 15px 0;
+}
+
+.hidden {
+	position: relative;
+	display: none;
+}
+
+.show {
+	position: relative;
+	background: rgb(248, 249, 250);
+}
+
+.btn {
+	width: 100%;
+	height: 43px;
+	background: #70cacd;
+	border: 3px solid #007f86;
+	border-radius: 15px;
+	box-shadow: 0px 5px 0px 0px #007f86;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Noto Sans KR;
+	color: white;
+	cursor: pointer;
+	transition: all 0.05s;
+}
+
+#pwdShowBtn:active {
+	margin-top: 15px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}
+
+#pwdShowBtn {
+	float: right;
+	width: 35%;
+	margin: 10px 0 3.5px 0;
+}
+
+#changePwdBtnBox {
+	height: 58px;
+}
+
+#changePwdBtn {
+	width: 100%;
+	margin: 10px 0 5px 0;
+}
+
+#changePwdBtn:active {
+	margin-top: 15px;
+	box-shadow: 0px 0px 0px 0px #007f86;
+}

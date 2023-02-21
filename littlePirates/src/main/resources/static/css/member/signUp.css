@@ -126,8 +126,7 @@
 @keyframes border-focus {
 	from {
 		border-radius:15px;
-	}
-	to {
+	} to {
 		border-radius: 30px;
 	}
 }

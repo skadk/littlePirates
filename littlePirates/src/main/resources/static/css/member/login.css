@@ -8,6 +8,19 @@
 	width: 100%;
 }
 
+/************** loginFormBox **************/
+
+#loginFormBox {
+    width: 480px;
+    padding: 50px;
+    text-align: left;
+    background-color: white;
+	border: 3px dashed #70cacd;
+	border-radius: 50px;
+    box-shadow: 10px 10px 15px #cccccc;
+    margin: 60px auto 50px auto;
+}
+
 #loginLogo {
 	position: relative;
 	display: inline-block;
@@ -38,16 +51,6 @@
 
 /************** loginForm **************/
 
-#loginFormBox {
-    width: 480px;
-    padding: 50px;
-    text-align: left;
-    background-color: white;
-	border: 3px dashed #70cacd;
-	border-radius: 50px;
-    box-shadow: 10px 10px 15px #cccccc;
-    margin: 60px auto 50px auto;
-}
 
 #loginForm {
 	position: relative;

@@ -57,7 +57,7 @@
    	<delete id="emailAuthDelete" parameterType="string">
   		DELETE
   		FROM email
-  		WHERE memId=#{memId}
+  		WHERE memId=#{memId} OR emailAuth=0
   	</delete>
   	
   </mapper>
