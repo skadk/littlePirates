@@ -42,6 +42,9 @@
 									<a href="/kidscafe_sec">간편하게 보기</a>
 									<img src="<c:url value='/images/간편하게.png' />" width="35" height="25">
 								</div>
+								<div class="on">
+									<a href="/kidscafeReview">후기 게시판</a>
+								</div>
 							</div>
 						</nav>						
 					</div>
