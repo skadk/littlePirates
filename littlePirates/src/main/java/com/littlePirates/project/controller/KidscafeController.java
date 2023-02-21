@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.littlePirates.project.model.KBoardVO;
 import com.littlePirates.project.model.KcreviewVO;
 import com.littlePirates.project.model.KidscafeVO;
 import com.littlePirates.project.service.KcreviewService;
@@ -52,7 +51,7 @@ public class KidscafeController {
 		
 		return address;
 	}
-	
+	/*
 	// 간편하게 보기 페이지 열기
 	@RequestMapping("/kidscafe_sec")
 	public String kidscafe_sec(Model model) {
@@ -62,12 +61,43 @@ public class KidscafeController {
 		
 		return "menu/kidscafe/kidscafe_sec";
 	}
+*/
+	// 간편하게 보기 페이지 열기
+	@RequestMapping("/kidscafe_sec")
+	public String kidscafe_sec(Model model) {
+		int cur_page = 1;
+		int total_count = service.total_kidscafeinfo();
+		
+		ArrayList<KidscafeVO> voList = service.listKidscafeInfopage(cur_page);
+		
+		model.addAttribute("cur_page", cur_page);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("voList", voList);
+		
+		return "menu/kidscafe/kidscafe_sec";
+	}
+	
+	@RequestMapping("/kidscafe_sec_page")
+	public String kidscafe_sec_page(@RequestParam int pagenum, Model model) {
+		int total_count = service.total_kidscafeinfo();
+		
+		ArrayList<KidscafeVO> voList = service.listKidscafeInfopage(pagenum);
+		
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
+		model.addAttribute("voList", voList);
+		
+		return "menu/kidscafe/kidscafeSearch_page";
+	}
 
 	// 시/도 선택시 해당되는 시/도 출력
 	@RequestMapping("/kidscafe_sec/search")
-	public String kidscafe_sec_search(@RequestParam String sido, Model model) {
-		ArrayList<KidscafeVO> voList = service.kidscafeSearchsido(sido);
-		
+	public String kidscafe_sec_search(@RequestParam String sido, @RequestParam int pagenum, Model model) {
+		int total_count = service.total_kidscafeSearchsido(sido);
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchsidopage(sido, pagenum);
+
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
 		model.addAttribute("voList", voList);
 		
 		return "menu/kidscafe/kidscafe_sec_sido";
@@ -77,9 +107,13 @@ public class KidscafeController {
 	@RequestMapping("/kidscafe_sec/search_gu")
 	public String kidscafe_sec_search_gu(@RequestParam String sido, 
 										 @RequestParam String gu, 
+										 @RequestParam int pagenum,
 										 Model model) {
-		ArrayList<KidscafeVO> voList = service.kidscafeSearchgu(sido, gu);
+		int total_count = service.total_kidscafeSearchgu(sido, gu);
+		ArrayList<KidscafeVO> voList = service.kidscafeSearchgupage(sido, gu, pagenum);
 		
+		model.addAttribute("cur_page", pagenum);
+		model.addAttribute("total_count", total_count);
 		model.addAttribute("voList", voList);
 		
 		return "menu/kidscafe/kidscafe_sec_gu";
