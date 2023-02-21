@@ -32,7 +32,7 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<form action="">
+							<form>
 								<div class="search-wrap">
 									<input id="kckeyword" name="kckeyword" placeholder="검색어를 입력해주세요." value="">
 									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>

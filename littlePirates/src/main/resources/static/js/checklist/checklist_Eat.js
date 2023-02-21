@@ -1,7 +1,6 @@
 /**
  * 	checklist_Eat.js
  */
- 
 
 $(document).ready(function(){
   	$(".dropdown_trigger").click(function(){
@@ -52,5 +51,10 @@ $(document).ready(function(){
 			});
  				  	document.body.appendChild(select);
   	
-  	
 });
+
+ document.addEventListener("DOMContentLoaded", function() {
+  var table = document.querySelector("table");
+  table.classList.add("fade-in");
+});
+

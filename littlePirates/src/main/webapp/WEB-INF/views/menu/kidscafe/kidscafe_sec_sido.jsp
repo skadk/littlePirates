@@ -20,7 +20,7 @@
 					width="180" height="120"></td>
 				<td>가게명: ${mapInfo.kcName }<br> 
 					주소: ${mapInfo.kcAddress}<br>
-					운영시간: <br> 
+					운영시간: 10:00 ~ 21:00<br> 
 					전화번호: ${mapInfo.kcphone }
 				</td>
 			<c:if test="${(status.index mod 2) ne 0}">	

@@ -31,13 +31,34 @@
 		<result property="chlNo8_Checked" column="chlNo8_Checked" />
 		<result property="chlNo9_Checked" column="chlNo9_Checked" />
 		<result property="chh_Checked" column="chh_Checked" />
+		
+		<result property="selfNo" column="selfNo"/>
+		<result property="pgNo" column="pgNo"/>
+		<result property="sclNo1" column="sclNo1"/>
+		<result property="sclNo2" column="sclNo2"/>
+		<result property="sclNo3" column="sclNo3"/>
+		<result property="sclNo4" column="sclNo4"/>
+		<result property="sclNo5" column="sclNo5"/>
+		<result property="sclNo1_Checked" column="sclNo1_Checked"/>
+		<result property="sclNo2_Checked" column="sclNo2_Checked"/>
+		<result property="sclNo3_Checked" column="sclNo3_Checked"/>
+		<result property="sclNo4_Checked" column="sclNo4_Checked"/>
+		<result property="sclNo5_Checked" column="sclNo5_Checked"/>
+		<result property="sclDate" column="sclDate"/>
+		<result property="scl_photoName" column="scl_photoName"/>
+		<result property="scl_photoPath" column="scl_photoPath"/>		
+		<result property="scl_Text" column="scl_Text"/>		
+		
 	  </resultMap>	
-<!-- 활동 체크리스트 랜덤으로 빙고 4개 정보 띄우기 -->	  
-	<select id ="checklistInfo" resultMap="checklistResult">
-		SELECT chlImageName FROM checklist
-		WHERE chlImageName Like "AC%"
-		ORDER BY RAND() LIMIT 4;
+
+	<select id ="checklistInfo" parameterType="string" resultMap="checklistResult">
+		SELECT pgNO,sclNo1,sclNo2,sclNo3,sclNo4,sclNo5,sclNo1_Checked,
+		sclNo2_Checked,sclNo3_Checked,sclNo4_Checked,sclNo5_Checked,
+		sclDate,scl_photoName,scl_Text,scl_photoPath
+		 FROM self_checklist
+		WHERE memId=#{memId};
 	</select>
+	
 <!-- 활동 체크리스트 랜덤으로 빙고 9개 정보 띄우기 -->	
 	<select id="checklistInfo2" resultType="string">
 		SELECT chlNo FROM checklist
@@ -221,6 +242,30 @@
 		SET chlNo9_Checked=#{nowTime}
 		WHERE memId=#{memId} AND chh_checked=0
 	</update>
+
+	    <select id="getChecklist" resultType="com.littlePirates.project.model.ChecklistVO">
+        SELECT * FROM self_checklist WHERE memId=#{memId}
+    </select>
+
+    <update id="updateChecklist2">
+        UPDATE self_checklist SET
+        sclNo1=#{sclNo1}, sclNo1_Checked=#{sclNo1Checked},
+        sclNo2=#{sclNo2}, sclNo2_Checked=#{sclNo2Checked},
+        sclNo3=#{sclNo3}, sclNo3_Checked=#{sclNo3Checked},
+        sclNo4=#{sclNo4}, sclNo4_Checked=#{sclNo4Checked},
+        sclNo5=#{sclNo5}, sclNo5_Checked=#{sclNo5Checked}
+        WHERE memId=#{memId}
+    </update>
+	
+  <!-- chlNo1_Checked~chlNo9_Checked 값을 가져오는 쿼리문 -->
+  <select id="getCheckedValues" parameterType="map" resultMap="checklistResult">
+    SELECT chlNo1_Checked, chlNo2_Checked, chlNo3_Checked, chlNo4_Checked, chlNo5_Checked,
+           chlNo6_Checked, chlNo7_Checked, chlNo8_Checked, chlNo9_Checked
+    FROM checklist_history
+    WHERE memId = #{memId} AND chhChecked=0
+  </select>
+	
+	
 	
   </mapper>
   

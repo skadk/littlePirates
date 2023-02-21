@@ -13,13 +13,15 @@
 }
 
 .eatHeader{
+	left: 200px;
+	position: absolute;
 	width:1080px;
 	height:100px;
 	grid-area: eatHeader; 
 	font-family: 'Dongle', sans-serif;
 	font-size:70px;
-	color: white;
-    text-shadow: 4px 4px #2d63a7;
+/* 	color: white;
+    text-shadow: 4px 4px #2d63a7; */
 }
 /*
 .checklist_Section {
@@ -46,28 +48,160 @@
 }	
 
 /*********************** grid area 설정 *******************/	
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: blanchedalmond;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  * {
+    position: relative;
+  }
 
+  td,
+  th {
+    padding-left: 8px;
+  }
+
+  thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+  }
+
+  tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  td,
+  th {
+    text-align: left;
+    &.l {
+      text-align: right;
+    }
+    &.c {
+      text-align: center;
+    }
+    &.r {
+      text-align: center;
+    }
+  }
+}
+
+table.fade-in {
+  opacity: 1;
+}
+
+@media #{$gl-xs} {
+  table {
+    display: block;
+    > *,
+    tr,
+    td,
+    th {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+    tbody tr {
+      height: auto;
+      padding: 8px 0;
+      td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          position: absolute;
+          font-weight: 700;
+          width: 40%;
+          left: 10px;
+          top: 0;
+        }
+
+        &:nth-child(1):before {
+          content: "Code";
+        }
+        &:nth-child(2):before {
+          content: "Stock";
+        }
+        &:nth-child(3):before {
+          content: "Cap";
+        }
+        &:nth-child(4):before {
+          content: "Inch";
+        }
+        &:nth-child(5):before {
+          content: "Box Type";
+        }
+      }
+    }
+  }
+}
+
+/* 추가 애니메이션 효과 */
+.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+/*   background:#70c9cd; */
+  font: 400 14px "Calibri", "Arial";
+  padding: 20px;
+}
+
+.checklist_Section_back2{
+    left: 0px;
+    top: 0px;
+    height: 1185px;
+    width: 1950px;
+    position: absolute;
+}
+blockquote {
+  color: white;
+  text-align: center;
+ }
+/************************************************************/
 .dropdown {
-
     width:500px;
     font-family: 'Dongle', sans-serif;
 	font-size:35px;
-	color: white;
-    text-shadow: 4px 4px #2d63a7;
+
 }
 .selectBtn{
 	top: 120px;
-    left: 120px;
+    left: 190px;
     height: 50px;
     width: 150px;
     position: absolute;
     text-align:center;
     margin-left:50px;
     border-radius:15%;
- 	background-color:#a8ccff;
+ 	background-color:blanchedalmond;
 	font-size:25px;
-	color: white;
-    text-shadow: 2px 2px #2d63a7;
+
 }
 .search{
 	grid-area:search;
@@ -102,15 +236,14 @@
     display: none;
     height:50px;
 }
-.searchResult{
+ .searchResult{
 	width:1800px;
 	grid-area:searchResult;
 	font-family: 'Dongle', sans-serif;
-    font-size: 55px;
-	color: white;
-    text-shadow: 4px 4px #2d63a7;
-}
-.searchResult table{
+    font-size: 35px;
+	text-align:center;
+} 
+/* .searchResult table{
 	width:1800px;
 	height:900px;
 }
@@ -149,7 +282,7 @@
 }
 .searchResult td:nth-child(3){
 	width:500px;
-}
+} */
 /*
 
 
