@@ -44,10 +44,12 @@ public class ChecklistController {
 		// (1) 체크리스트가 존재 하는지 확인 (생성 날짜가 없으면 없는 것)
 		int count = service.ischhChecked(memId);
 		int chhTimes = vo.getChhTimes();
-
+		String chh_Checked =service.getChh_Checked(memId);
+		System.out.println(chh_Checked);
 		
-		if (count == 0) { // (2) 체크리스트 존재하지 않으면(count==0) 체크리스트 추가
+		if (count == 0 || chh_Checked !=null) { // (2) 체크리스트 존재하지 않으면(count==0) 체크리스트 추가
 			vo.setMemId(memId);
+			
 			ArrayList<String> rnd = service.checklistInfo2();
 			for (int i = 0; i < rnd.size(); i++)
 				vo.setChlNo(i, rnd.get(i));
@@ -57,6 +59,7 @@ public class ChecklistController {
 			String nowTime = sdf.format(now);
 			System.out.println(nowTime);
 			vo.setChhDate(nowTime);
+			
 			service.insertChecklist(vo);
 			int countMemId = service.searchMemId(memId);
 
@@ -119,6 +122,7 @@ public class ChecklistController {
 			if (checkNo == null) {
 
 				service.updateChecked(memId, checkedNo, nowTime);
+				service.update_chhChecked(memId);
 			} else {
 				result="fail";
 			}
@@ -133,7 +137,6 @@ public class ChecklistController {
     public ChecklistVO checklist(Model model, HttpSession session) {
         String memId = (String) session.getAttribute("sid");
         ChecklistVO checklistVO = service.getChecked(memId);
-        System.out.println(checklistVO.getChlNo1_Checked());
         return checklistVO;
     }
 

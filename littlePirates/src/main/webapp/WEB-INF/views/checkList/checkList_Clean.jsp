@@ -8,12 +8,11 @@
 <title>체크리스트 BINGO</title>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/checklist_Clean.css'/>">
+
 <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 <script src="<c:url value='/js/checklist/checklist_Clean.js'/>"></script>
 <script src="<c:url value='/js/checklist/checked.js'/>"></script>
-<link
-	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 </head>
 <body>
 

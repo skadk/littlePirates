@@ -98,18 +98,6 @@
 		WHERE memId=#{memId}   
 	</select>
 	
-	<!-- <update id="updateChh_Checked" parameterType="com.littlePirates.project.model.ChecklistVO">
-		UPDATE checklist_history
-		SET chh_Chekced=1
-		WHERE memId=#{memId} AND chlNo1_Checked!=NULL AND chlNo2_Checked!=NULL AND chlNo3_Checked!=NULL AND
-								 chlNo4_Checked!=NULL AND chlNo5_Checked!=NULL AND chlNo6_Checked!=NULL AND
-								 chlNo7_Checked!=NULL AND chlNo8_Checked!=NULL AND chlNo9_Checked!=NULL
-	</update>
-	
-	<select id="select_Chl_Checked" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
-		SELECT chh_Checked FROM checklist_history
-		WHERE memId=#{memId} AND chhTimes=(SELECT MAX(chhTimes) from checklist_history);
-	</select> -->
 	
 	<select id="selectChecklist" parameterType="string" resultType="com.littlePirates.project.model.ChecklistVO">
 		SELECT * FROM checklist_history
@@ -258,8 +246,30 @@
         SELECT chlNo1_Checked, chlNo2_Checked, chlNo3_Checked, chlNo4_Checked, chlNo5_Checked,
             chlNo6_Checked, chlNo7_Checked, chlNo8_Checked, chlNo9_Checked
         FROM checklist_history
-        WHERE memId = #{memId} 
+        WHERE memId = #{memId} AND chh_Checked=0
     </select>
-
+	
+	<update id="update_chhChecked" parameterType="string">
+	  UPDATE checklist_history
+	  SET chh_Checked = 1
+	  WHERE memId = #{memId} 
+	    AND chlNo1_Checked IS NOT NULL
+	    AND chlNo2_Checked IS NOT NULL
+	    AND chlNo3_Checked IS NOT NULL
+	    AND chlNo4_Checked IS NOT NULL
+	    AND chlNo5_Checked IS NOT NULL
+	    AND chlNo6_Checked IS NOT NULL
+	    AND chlNo7_Checked IS NOT NULL
+	    AND chlNo8_Checked IS NOT NULL
+	    AND chlNo9_Checked IS NOT NULL
+	    AND chh_Checked = 0
+	</update>
+	
+	<select id="getChh_Checked" parameterType="string" resultType="string">
+		SELECT chh_Checked
+		FROM checklist_history
+		WHERE memId=#{memId}
+	    AND chh_Checked = 1
+	</select>
   </mapper>
   

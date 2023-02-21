@@ -172,5 +172,18 @@ public class ChecklistService implements IChecklistService{
     public ChecklistVO getChecked(String memId) {
        return dao.getChecked(memId);
     }
+
+	@Override
+	public void update_chhChecked(String memId) {
+		// TODO Auto-generated method stub
+		dao.update_chhChecked(memId);
+	}
+
+	@Override
+	public String getChh_Checked(String memId) {
+		// TODO Auto-generated method stub
+		return dao.getChh_Checked(memId);
+	}
+    
 }
 
