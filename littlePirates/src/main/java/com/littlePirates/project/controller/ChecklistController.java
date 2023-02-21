@@ -1,17 +1,17 @@
 package com.littlePirates.project.controller;
 
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,24 +27,22 @@ public class ChecklistController {
 	@RequestMapping("/checkList/checkList_Manner")
 	public String checkList_Manner(Model model,HttpSession session) {
 		String memId = (String) session.getAttribute("sid");
-		if (memId != null) {
+
 		ArrayList<ChecklistVO> voList = service.checklistInfo(memId);
 		model.addAttribute("voList", voList);
 		System.out.println(memId);
 		return "/menu/checkList/checkList_Manner";
-		}
-		else {
-			return"redirect:/member/login";	
-		}
+		
+
 	}
 
 	// 빙고 체크리스트 최초생성
 	@RequestMapping("/checkList/checkList_Clean")
-	public String checkList_Clean(HttpSession session, Model model) {
+	public String checkList_Clean(HttpSession session, Model model, HttpServletRequest request) {
 		// memId에 저장
 		// 로그인 성공 시 설정한 세션 sid 값 가져와서 사용
 		String memId = (String) session.getAttribute("sid");
-		if (memId != null) {
+
 			
 			ChecklistVO vo = new ChecklistVO();
 			// (1) 체크리스트가 존재 하는지 확인 (생성 날짜가 없으면 없는 것)
@@ -89,10 +87,7 @@ public class ChecklistController {
 		
 		model.addAttribute("vo", vo);
 		return "/menu/checkList/checkList_Clean";
-		}
-		else {
-			return"redirect:/member/login";
-		}
+		
 	}
 
 
@@ -100,17 +95,14 @@ public class ChecklistController {
 	@RequestMapping("/checkList/checkList_Eat")
 	public String checkList_Eat(HttpSession session, Model model) {
 		String memId = (String) session.getAttribute("sid");
-		if (memId != null) {
+
 		
 		ArrayList<ChecklistVO> checkList = service.checklistInfo3(memId);
 		model.addAttribute("checkList", checkList);
 		System.out.println(memId);
 		return "/menu/checkList/checkList_Eat";
-		}
 		
-		else {
-			return"redirect:/member/login";
-		}
+		
 	}
 
 	
