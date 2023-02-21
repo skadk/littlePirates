@@ -12,6 +12,9 @@
 			<th>내부 사진</th>
 			<th>상세정보</th>
 		</tr>
+		<input type="hidden" id="s_cur_page" value="${cur_page}" /><br>
+		<input type="hidden" id="s_total_count" value="${total_count }" /><br>
+		<input type="hidden" id="s_type" value="gu" />
 		<c:forEach var="mapInfo" items="${voList }" varStatus="status">
 			<c:if test="${(status.index mod 2) eq 0}">
 			<tr>

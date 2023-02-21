@@ -21,11 +21,7 @@ a{
 	color:black;
 }
 
-#ie {
-	position: relative;
-	background: rgba(250, 250, 250, 0.5);
-    backdrop-filter: blur(20px);
-}
+
 
 /* 사이드 메뉴 박스*/
 
@@ -39,8 +35,6 @@ a{
     background: #ffffff;
     vertical-align: top;
     padding-right:20px;
-    margin-top:30px;
-    margin-right:10px;
 }
 .as_hgroup{
 	width: 185px;
@@ -153,102 +147,35 @@ a:visited {
 	background-repeat: no-repeat;
 }
 
-.table {
+/* 테이블 css */
+li {
 	display: inline-block;
-	width:1300px;
-	border:none;
-	/* border-spacing: td간의 간격) */
-	border-spacing: 20px;
-	font-weight: 300;
-	font-weight: bolder;
+	margin: 10px;
 }
-
-.table tr:first-child {
+td {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}	
+table tr:first-child {
   border-top: none;
   background: #627db2;
   color: #fff;
 }
 
-.table tr {
+table tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #f5f9fc;
 }
 
-.table tr:nth-child(odd):not(:first-child) {
+table tr:nth-child(odd):not(:first-child) {
   background-color: #ebf3f9;
 }
 
-.table th {
-  display: none;
-}
-
-.table td {
-  display: block;
-}
-
-.table td:first-child {
-  margin-top: .5em;
-}
-
-.table td:last-child {
-  margin-bottom: .5em;
-}
-
-.table td:before {
-  content: attr(data-th) ": ";
-  font-weight: bold;
-  width: 120px;
-  display: inline-block;
-  color: #000;
-}
-
-.table th,
-.table td {
-  text-align: left;
-}
-
-.table {
-  color: #333;
-  border-radius: .4em;
-  overflow: hidden;
-}
-
-.table tr {
-  border-color: #bfbfbf;
-}
-
-.table th,
-.table td {
-  padding: .5em 1em;
-}
-@media screen and (max-width: 601px) {
-  .table tr:nth-child(2) {
-    border-top: none;
-  }
-}
-@media screen and (min-width: 600px) {
-  .table tr:hover:not(:first-child) {
-    background-color: #d8e7f3;
-  }
-  .table td:before {
-    display: none;
-  }
-  .table th,
-  .table td {
-    display: table-cell;
-    padding: .25em .5em;
-  }
-  .table th:first-child,
-  .table td:first-child {
-    padding-left: 0;
-  }
-  .table th:last-child,
-  .table td:last-child {
-    padding-right: 0;
-  }
-  .table th,
-  .table td {
-    padding: 0.7em !important;
-  }
-}
+ td > img {
+ 	width: 130px;
+ 	height: 80px;
+ }
