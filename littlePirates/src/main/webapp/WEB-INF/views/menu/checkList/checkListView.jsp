@@ -107,10 +107,10 @@
 					<div class="pageGuide" id="pageGuide2">
 						<div class="pageNo" id="pageNo2">
 							<img id="pageNoImg2" src="<c:url value='/images/No2.png'/>">
-							<h1>페이지 별 체크리스트 달성하기</h1>
+							<h1>체크리스트 달성하기</h1>
 						</div>
 						<div class="pageGuideImgBox">
-						<img id="pageGuideNoImg2" src="<c:url value='/images/Guide1.png'/>">
+						<img id="pageGuideNoImg2" src="<c:url value='/images/Guide2.JPG'/>">
 						</div>
 					</div>
 					<div class="pageGuide" id="pageGuide3">
@@ -119,7 +119,7 @@
 							<h1>체크리스트 달성 현황 확인</h1>
 						</div>
 						<div class="pageGuideImgBox">
-						<img id="pageGuideNoImg3" src="<c:url value='/images/Guide1.png'/>">
+						<img id="pageGuideNoImg3" src="<c:url value='/images/Guide3.JPG'/>">
 						</div>
 					</div>
 					<%-- <video width="900px" src="<c:url value='/video/Guide.mp4'/>" controls></video> --%>

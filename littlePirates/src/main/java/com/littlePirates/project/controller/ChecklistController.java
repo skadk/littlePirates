@@ -30,7 +30,7 @@ public class ChecklistController {
 		ArrayList<ChecklistVO> voList = service.checklistInfo(memId);
 		model.addAttribute("voList", voList);
 		System.out.println(memId);
-		return "/checkList/checkList_Manner";
+		return "/menu/checkList/checkList_Manner";
 	}
 
 	// 빙고 체크리스트 최초생성
@@ -82,9 +82,8 @@ public class ChecklistController {
 		}
 
 		model.addAttribute("vo", vo);
-		return "/checkList/checkList_Clean";
+		return "/menu/checkList/checkList_Clean";
 	}
-	// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
 
 
 	// 체크리스트 통계
@@ -94,7 +93,7 @@ public class ChecklistController {
 		ArrayList<ChecklistVO> checkList = service.checklistInfo3(memId);
 		model.addAttribute("checkList", checkList);
 		System.out.println(memId);
-		return "/checkList/checkList_Eat";
+		return "/menu/checkList/checkList_Eat";
 	}
 
 	
@@ -108,20 +107,17 @@ public class ChecklistController {
 		Date now = new Date();
 		String nowTime = sdf.format(now);
 
-//		System.out.println(checkedNo);
-
 		String checkDate = service.checkDate(memId, nowTime);
 		String result="success";
 
-//		System.out.println(checkDate);
 		if (checkDate == null) {
 
 			String checkNo = service.checkNo(memId, checkedNo);
 
-//			System.out.println(checkNo);
 			if (checkNo == null) {
 
 				service.updateChecked(memId, checkedNo, nowTime);
+				// 체크리스트 모두 완료시 체크리스트 빙고 완료 업데이트
 				service.update_chhChecked(memId);
 			} else {
 				result="fail";
@@ -140,12 +136,5 @@ public class ChecklistController {
         return checklistVO;
     }
 
-	/*
-	 * @RequestMapping("/checkList/checkList_Image") public String checklist(Model
-	 * model, HttpSession session) { String memId = (String)
-	 * session.getAttribute("memId"); ChecklistVO checklistVO =
-	 * service.getChecked(memId); model.addAttribute("checklistVO", checklistVO);
-	 * return "/checkList/checkList_Clean"; }
-	 */
 }
 
