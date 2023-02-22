@@ -20,8 +20,7 @@ $(document).ready(function(){
  				
  				$("#firstresult").hide();
  							
-				addsearchpaging();
-				
+				addsearchpaging();				
  			},
  			error:function(){
  				alert("실패");
@@ -48,8 +47,6 @@ $(document).ready(function(){
  				$("#firstresult").hide();
  							
 				addsearchpaging();
-				
-
  			},
  			error:function(){
  				alert("실패");
@@ -155,8 +152,7 @@ function gosearch(page) {
  				
  				$("#firstresult").hide();
  							
-				addsearchpaging();
-				
+				addsearchpaging();				
  			},
  			error:function(){
  				alert("실패");
@@ -180,9 +176,7 @@ function gosearch(page) {
  				
  				$("#firstresult").hide();
  							
-				addsearchpaging();
-				
-
+				addsearchpaging();				
  			},
  			error:function(){
  				alert("실패");
@@ -192,7 +186,5 @@ function gosearch(page) {
  			}
  		}); // ajax 종료 	
 	}
-	
-
- 		
+		
  }
