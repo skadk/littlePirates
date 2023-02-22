@@ -53,12 +53,18 @@
 							class="this">자유게시판</strong>
 					</div>
 				</div>
+				<input type="hidden" id="memId" value="${brd.memId}">
+				<!-- 작성자 -->
+				<input type="hidden" id="sid" value="${sid}">
+				<!-- 로그인한회원 -->
 				<div class="viewbody">
 					<div class="hgroup">
 						<div class="tit">테스트1</div>
 						<div class="util">
-							<div class="name">hong</div>
-							<div class="date">2023.01.25</div>
+							<div class="name">${ brd.memId }</div>
+							<div class="date">
+								<fmt:formatDate value="${ brd.brdDate }" pattern="yyyy-MM-dd" />
+							</div>
 							<div class="hit">조회수 : 0</div>
 						</div>
 					</div>
@@ -66,9 +72,7 @@
 					<div class="content">
 						<!-- 내용 -->
 						<div class="editor ck-content">
-							<p>안녕하세요.</p>
-							<p>테스트입니다.</p>
-
+							${ brd.brdText }
 						</div>
 					</div>
 					<!-- 파일첨부 -->
@@ -76,26 +80,13 @@
 					<div class="bottom">
 						<div class="utils">
 							<div class="function">
-								<button type="button" class="scrap actionBtn "
-									onclick="$(this).toggleClass('on');" data-seq="188677"
-									data-tt_tb="MNT.BOD.TA" data-tt_key="cont_no"
-									data-tt_dir="contents/bod" data-mst_no="18" data-tmp="scrap"
-									data-cntid="scrapCnt">
-									<span class="ico">스크랩</span><span class="val" id="scrapCnt">0</span>
-								</button>
-								<!-- 활성화 addClass : on -->
-								<button type="button" class="recom actionBtn "
-									onclick="$(this).toggleClass('on');" data-seq="188677"
-									data-tt_tb="MNT.BOD.TA" data-tt_key="cont_no"
-									data-tt_dir="contents/bod" data-mst_no="18"
-									data-tmp="recommend" data-cntid="rdnCnt">
-									<span class="ico">추천</span><span class="val" id="rdnCnt">0</span>
-								</button>
-								<!-- 활성화 addClass : on -->
-								<button type="button" class="report reportBtn "
-									data-seq="188677">
-									<span class="ico">신고</span><span class="val" id="repCnt">0</span>
-								</button>
+								<button type="button" class="scrap actionBtn ">
+										<span class="ico">추천</span><span class="val" id="scrapCnt">0</span>
+									</button>
+									<!-- 활성화 addClass : on -->
+									<button type="button" class="recom actionBtn ">
+										<span class="ico">찜하기</span><span class="val" id="rdnCnt">0</span>
+									</button>
 								<!-- 활성화 addClass : on -->
 							</div>
 
@@ -107,7 +98,7 @@
 							</div>
 						</div>
 						</div>
-						<div class="conwrap">
+						<!-- <div class="conwrap">
 							<div class="h4group">
 								<h4 class="tit">한줄 의견을 나눠 보세요</h4>
 								<p class="length">
@@ -120,7 +111,7 @@
 									<form name="cmtForm" id="cmtForm" method="post" data-reply="N">
 										<textarea name="cmt_contents" class="cmt_contents"
 											placeholder="댓글을 입력해 주세요. 500자 이내로 작성 가능합니다." maxlength="500">
-								</textarea>
+										</textarea>
 										<div class="attach">
 											<button type="button" class="btn">사진첨부</button>
 										</div>
@@ -150,12 +141,13 @@
 								</div>
 							</div>
 
-						</div>
+						</div> -->
 
 					
 
 				</div>
 
+			</div>
 			</div>
 			</section>
 			<!-- bottom -->

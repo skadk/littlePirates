@@ -137,6 +137,7 @@
 									<button id="deleteBtn" class="write" width = "240">
 										<a href="javascript:deleteCheck()"> 삭제</a>
 									</button>
+									
 									<br>
 									<!--  삭제 확인 메시지 출력 -->
 									<script>
@@ -192,7 +193,10 @@
 										<div class="cmt_util">
 											<div class="utils">
 												<div class="writer">${flc.memId}</div>
-												<div class="date">${flc.flcDate}</div>
+												
+												<div class="date"><fmt:formatDate value="${flc.flcDate}"
+														pattern="yyyy-MM-dd" />
+												</div>
 											</div>
 										</div>
 										<div class="cmt_text">

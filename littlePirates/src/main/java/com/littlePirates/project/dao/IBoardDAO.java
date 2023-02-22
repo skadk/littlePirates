@@ -2,6 +2,8 @@ package com.littlePirates.project.dao;
 
 import java.util.ArrayList;
 import com.littlePirates.project.model.BoardVO;
+import com.littlePirates.project.model.FleaMarketVO;
+
 import java.util.HashMap;
 
 public interface IBoardDAO {
@@ -13,5 +15,7 @@ public interface IBoardDAO {
 	public void insertBoardText(HashMap<String, Object> map);
 	
 	public ArrayList<BoardVO> boardView(String memId);
+	
+	public BoardVO boardText(int brdNo);
 	
 }

@@ -175,8 +175,8 @@
 											<td class="obj">
 												<div class="tbox">
 													<div class="tit">
-														<a href="/board/boardText" class="view" tmp="contents/bod"
-															mn="18" cn="186313"> ${ brd.brdTitle } </a>
+													<a href="<c:url value='/board/boardText/${brd.brdNo}'/>" class="view" tmp="contents/bod" mn="18" cn="186313">
+														 ${ brd.brdTitle } </a>
 													</div>
 													<div class="comt">(${ brd.brdResCount })</div>
 													<div class="info"></div>
@@ -231,9 +231,20 @@
 						<!-- 글작성 버튼 -->
 						<div class="btn_wrap mt30">
 							<div class="fl_c">
-								<a href="/board/brdWrite" class="btn50 c3 reg"
-									style="width: 240px;" tmp="contents/bod" mn="18" cn="0"><span
-									class="write">글작성</span></a>
+								<c:choose>
+									<c:when test="${empty sessionScope.sid}">
+										<a href="/member/login?returnUrl=<c:url value='/board/brdWriteForm' />"
+											class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod">
+											<span class="write"> 글작성 </span>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a href="<c:url value='/board/brdWriteForm' />"
+											class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod">
+											<span class="write">글작성</span>
+										</a>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
