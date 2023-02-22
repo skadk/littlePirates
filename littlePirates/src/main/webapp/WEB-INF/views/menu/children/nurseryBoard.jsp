@@ -30,6 +30,7 @@
 
 		<section>
 			<h3>게시판</h3>
+			<table>
 			<c:forEach var="NBoard" items="${boaList}">
 				<tr>
 					<td><a id="click" name="click"
