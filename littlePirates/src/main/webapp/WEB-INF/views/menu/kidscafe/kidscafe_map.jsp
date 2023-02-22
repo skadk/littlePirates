@@ -65,10 +65,8 @@
 							<div id="searchresult" class="scroll_box"></div>
 
 						</div>
-					</div>
-					
+					</div>					
 				</div>
-
 			</section>
 			<!-- bottom -->
             <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
