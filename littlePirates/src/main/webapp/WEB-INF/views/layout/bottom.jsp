@@ -7,7 +7,8 @@
 						<c:if test="${ empty sessionScope.parentSid }">
 							<p><a href="<c:url value='/'/>" tabindex="-1">꼬마 해적단</a></p>
 							<p><a href="<c:url value='/paintDiary'/>" tabindex="-1">항해 일지</a></p>					
-							<p><a href="<c:url value='/checklist'/>" tabindex="-1">오늘의 빙고</a></p>					
+							<p><a href="<c:url value='/checklist'/>" tabindex="-1">오늘의 빙고</a></p>
+							<p><a href="<c:url value='/kidscafe_map'/>" tabindex="-1">키즈카페 탐방</a></p>
 						</c:if>
 						<c:if test="${ not empty sessionScope.parentSid }">
 							<p><a href="<c:url value='/'/>" tabindex="-1">꼬마 해적단</a></p>
