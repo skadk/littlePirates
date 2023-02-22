@@ -274,3 +274,16 @@ header {
 }
 
 /*------------- ParentsNav 끝 -------------*/
+
+#chatbot {
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+#chatbot img {
+	width: 70px;
+	height: 70px;
+}
