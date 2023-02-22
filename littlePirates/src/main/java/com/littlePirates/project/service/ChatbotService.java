@@ -21,7 +21,7 @@ public class ChatbotService {
 	public String main(String voiceMessage) {
 
 		String apiURL = "https://0kotwrfxhh.apigw.ntruss.com/custom/v1/9434/a860b858265b22dad3aaf1165cfc2936daf1d3d86e0b7b77e3cc07f59f96858f";
-		String secretKey = "VlhFQ2tNZ0dWRnRhQlJwR1pHUVlCaEFRZGtsdG1wbUU=";
+		String secretKey = "S3J1UGVoS2JGTGdrUUJZWWRicU9xU3FyUW1NcHFLUXE=";
 		
 		String chatbotMessage = ""; // 응답 메시지
 
