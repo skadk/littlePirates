@@ -27,7 +27,7 @@
   	
   	<!-- 인증키와 시간 DB에서 가져오기 -->
   	<select id="getKeyAndTime" parameterType="string" resultType="java.util.HashMap">
-  		SELECT emailAuth, authKey, ADDTIME(authTime, '0:03:00')
+  		SELECT emailAuth, authKey, ADDTIME(authTime, '0:00:30')
   		FROM email
   		WHERE memId=#{memId}
   	</select>
