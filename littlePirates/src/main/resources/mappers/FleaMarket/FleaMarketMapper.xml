@@ -54,10 +54,11 @@
   		INSERT INTO fleamarket_comment ( memId, flcText, flNo)
   		VALUES ( #{memId}, #{flcText}, #{flNo})
   </insert>
+  
   <select id="listAllFlCmt" parameterType="int" resultType="com.littlePirates.project.model.FleaMarketCommentVO">
   		SELECT * FROM fleamarket_comment
   		WHERE flNo = #{flNo} 
-  		ORDER BY flcNo DESC
+  		ORDER BY flcNo ASC
   </select>
   
 </mapper>

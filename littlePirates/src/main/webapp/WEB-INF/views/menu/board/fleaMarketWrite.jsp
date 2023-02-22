@@ -72,7 +72,7 @@
 									<div class="boxed">
 										<input type="text" name="flTitle"
 											id="flTitle" title="제목" maxlength="50"
-											placeholder="제목을 입력해 주세요."><!-- cont_nm -->
+											placeholder="제목을 입력해 주세요.">
 									</div>
 								</div>
 								<div class="section">
@@ -127,10 +127,7 @@
 							<!-- 글등록 버튼 -->
 							<div class="btn_wrap mt30">
 								<div class="fl_c">
-									<!-- <a href="/fleaMarket" class="btn50 c3 reg" style="width: 240px;"
-									tmp="contents/bod" mn="18" cn="0"><span class="write">글등록</span></a> -->
-									<input type="submit" class="btn50 c3 reg" style="width: 240px;"
-										value="글등록">
+									<input type="submit" class="btn50 c3 reg" style="width: 240px;" value="글등록">
 								</div>
 							</div>
 

@@ -63,7 +63,7 @@
 							<a href="javascript:;" class="rtn40 e2 fl_r allyn">전체게시물 보기</a>
 						</div>
 						<!-- 위 버튼 -->
-						<div class="buttonA">
+						<!-- <div class="buttonA">
 							<button class="custom-btn btn-3">
 								<span>나눔&장터</span>
 							</button>
@@ -73,7 +73,7 @@
 							<button class="custom-btn btn-3">
 								<span>장터</span>
 							</button>
-						</div>
+						</div> -->
 						<!-- 검색영역 -->
 						<div class="data_srch_wrap bdt_n ">
 							<div class="slt_box">
@@ -87,10 +87,9 @@
 							<div class="ipt_box">
 								<input type="text" id="srchWord" name="srchWord" class="ipt"
 									value="" placeholder="검색어를 입력해 주세요."> <input
-									type="button" id="srchBtn" class="btn" value="검색">
+									type="submit" id="srchBtn" class="btn" value="검색">
 							</div>
 						</div>
-
 						<%-- <c:set var="i" value="0" />
 							<c:set var="j" value="3" /> --%>
 
@@ -103,7 +102,8 @@
 											<div class="card-header-is_closed">
 												<div class="card-header-text">${fl.flCategory}</div>
 											</div>
-											<img src="<c:url value='/image/${fl.flImageName}' />" width= "100%" height= "245px">
+											<img src="<c:url value='/images/${fl.flImageName}' />"
+												width="100%" height="245px">
 										</div>
 										<!--  카드 바디 -->
 										<div class="card-body">
@@ -117,10 +117,12 @@
 										</div>
 										<!--  카드 바디 푸터 -->
 										<div class="card-body-footer">
-											<hr style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
-											<i class="icon icon-view_count"></i>조회수 : ${fl.flViewCount} 
-											<i class="icon icon-comments_count"></i>댓글수 : ${fl.flResCount}											 
-											<i class="reg_date"> <fmt:formatDate value="${frd.flDate}"  pattern="yyyy-MM-dd" /> ${frd.flDate} </i>
+											<hr
+												style="margin-bottom: 10px; opacity: 0.5; border-color: #EF5A31">
+											<i class="icon icon-view_count"></i>조회수 : ${fl.flViewCount} <i
+												class="icon icon-comments_count"></i>댓글수 : ${fl.flResCount}
+											<i class="reg_date"></i>
+											<fmt:formatDate value="${frd.flDate}" pattern="yyyy-MM-dd" />${frd.flDate}
 										</div>
 									</div>
 								</a>
@@ -153,9 +155,22 @@
 						<!-- 글작성 버튼 -->
 						<div class="btn_wrap mt30">
 							<div class="fl_c">
-								<a href="<c:url value='/fleaMarket/fleaMarketWriteForm' />"
-									class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod"
-									mn="18" cn="0"> <span class="write">글작성</span></a>
+
+								<c:choose>
+									<c:when test="${empty sessionScope.sid}">
+										<a
+											href="/member/login?returnUrl=<c:url value='/fleaMarket/fleaMarketWriteForm' />"
+											class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod">
+											<span class="write"> 글작성 </span>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a href="<c:url value='/fleaMarket/fleaMarketWriteForm' />"
+											class="btn50 c3 reg" style="width: 240px;" tmp="contents/bod"> 
+											<span class="write">글작성</span></a>
+									</c:otherwise>
+								</c:choose>
+
 							</div>
 						</div>
 
