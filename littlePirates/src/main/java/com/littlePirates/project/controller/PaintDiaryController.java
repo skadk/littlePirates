@@ -16,7 +16,7 @@ public class PaintDiaryController {
 	public String paintFileUpload(@RequestParam("paintFile") MultipartFile file) throws IOException {
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
 		// 마지막에 / 있어야 함
-		String uploadPath = "C:/springWorkspace/littlePiratesUpload/";
+		String uploadPath = "usr/local/project/pirates_upload/";
 		//String uploadPath = "/usr/littlePiratesUpload/";
 		// 2. 원본 파일 이름 저장
 		String originalFileName = file.getOriginalFilename();
@@ -29,17 +29,4 @@ public class PaintDiaryController {
 		
 		return result;
 	}
-	
-	@RequestMapping("/ex2")
-	public String ex2() {
-		
-		return "menu/paintDiary/ex2";
-	}
-	
-	@RequestMapping("/ex1")
-	public String ex1() {
-		
-		return "menu/paintDiary/ex1";
-	}
-	
 }
