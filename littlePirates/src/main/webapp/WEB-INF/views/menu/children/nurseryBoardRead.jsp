@@ -59,7 +59,8 @@
 				</tr>
 				<tr>
 					<td>내용</td>
-					<td height="300px" colspan="3">>${boa.nBrdText }</td>
+					<td height="300px" colspan="3">${boa.nBrdText }</td>
+					<td></td>
 				</tr>
 			</table>
 			<br> <br> <br> <a
