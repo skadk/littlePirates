@@ -153,20 +153,20 @@
     /* ***************	생활 습관 모달	 끝	**************** */
           
     .modal_wrap2{
-        display: none;
-        width: 100%;
+    display: none;
+    width: 100%;
     height: 1200px;
-        position: absolute;
-        top:25%;
-    left: 64%;
-        margin: -250px 0 0 -250px;
-        z-index: 101;
+    position: absolute;
+    top: 25%;
+    left: 70%;
+    margin: -250px 0 0 0;
+    z-index: 101;
     }
   
     .modal_close2{
-        width: 150px;
-		height: 45px;
-        margin-right: 20px;
+	width: 150px;
+    height: 45px;
+    margin-left: 1350px;
     }
     
     .modal_close2> a{
