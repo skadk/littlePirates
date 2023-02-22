@@ -16,7 +16,7 @@ public class PaintDiaryController {
 	public String paintFileUpload(@RequestParam("paintFile") MultipartFile file) throws IOException {
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
 		// 마지막에 / 있어야 함
-		String uploadPath = "usr/local/project/pirates_upload/";
+		String uploadPath = "/usr/local/project/pirates_upload/";
 		//String uploadPath = "/usr/littlePiratesUpload/";
 		// 2. 원본 파일 이름 저장
 		String originalFileName = file.getOriginalFilename();
