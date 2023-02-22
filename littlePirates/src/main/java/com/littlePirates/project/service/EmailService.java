@@ -58,7 +58,7 @@ public class EmailService implements IEmailService {
 			e.printStackTrace();
 		}
 
-		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 3분 후 만료됩니다.";
+		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 30초 후 만료됩니다.";
 
 		return sendResult;
 	}
@@ -80,7 +80,7 @@ public class EmailService implements IEmailService {
 			e.printStackTrace();
 		}
 
-		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 3분 후 만료됩니다.";
+		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 30초 후 만료됩니다.";
 
 		return sendResult;
 	}
@@ -102,7 +102,7 @@ public class EmailService implements IEmailService {
 			e.printStackTrace();
 		}
 		
-		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 3분 후 만료됩니다.";
+		String sendResult = "인증 메일이 발송되었으니 확인해 주세요. 인증키는 30초 후 만료됩니다.";
 		
 		return sendResult;
 	}

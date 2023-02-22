@@ -273,7 +273,7 @@
 	 				} else if (result == "timeOut") {
 				 		$("#checkedAuth").val('');
 	 					//console.log($("#checkedAuth").val());
-	 					alert("3분이 지나 만료된 인증키입니다. 인증 이메일 보내기부터 다시 진행해 주세요.");
+	 					alert("30초가 지나 만료된 인증키입니다. 인증 이메일 보내기부터 다시 진행해 주세요.");
 	 				} else if (result == "sendPlease") {
 				 		$("#checkedAuth").val('');
 	 					//console.log($("#checkedAuth").val());

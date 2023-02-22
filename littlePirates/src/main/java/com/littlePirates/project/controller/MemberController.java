@@ -145,8 +145,8 @@ public class MemberController {
 		
 		String result = "sendPlease";
 		
-		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:03:00')") != null) {
-			String authTimeS = map.get("ADDTIME(authTime, '0:03:00')").toString();			
+		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:00:30')") != null) {
+			String authTimeS = map.get("ADDTIME(authTime, '0:00:30')").toString();			
 			String emailAuth = map.get("emailAuth").toString();
 			
 			LocalDateTime authTimePlus = LocalDateTime.parse(authTimeS);
@@ -307,8 +307,8 @@ public class MemberController {
 		
 		String result = "sendPlease";
 		
-		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:03:00')") != null) {
-			String authTimeS = map.get("ADDTIME(authTime, '0:03:00')").toString();			
+		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:00:30')") != null) {
+			String authTimeS = map.get("ADDTIME(authTime, '0:00:30')").toString();			
 			String emailAuth = map.get("emailAuth").toString();
 			
 			LocalDateTime authTimePlus = LocalDateTime.parse(authTimeS);
@@ -426,8 +426,8 @@ public class MemberController {
 		
 		String result = "sendPlease";
 		
-		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:03:00')") != null) {
-			String authTimeS = map.get("ADDTIME(authTime, '0:03:00')").toString();			
+		if (map.get("authKey") != null && map.get("ADDTIME(authTime, '0:00:30')") != null) {
+			String authTimeS = map.get("ADDTIME(authTime, '0:00:30')").toString();			
 			String emailAuth = map.get("emailAuth").toString();
 			
 			LocalDateTime authTimePlus = LocalDateTime.parse(authTimeS);
