@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+			<script>
+			function openchatbot() {
+	            var chat = window.open("/chatbotForm", "chatbot", "width=400, height=560");
+	        }
+			</script>
 <!-- 
 			<div id="backgroundBox">
 			    <div class="blur">
@@ -36,5 +42,8 @@
 							<p>해적 ${sessionScope.sid} 님 출항!</p>
 						</c:if>
 					</div>
+				</div>
+				<div id="chatbot">
+					<img src="<c:url value='/images/챗봇.png'/>" onclick="openchatbot();">
 				</div>
 			</header>

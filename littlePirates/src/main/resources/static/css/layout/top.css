@@ -89,7 +89,6 @@ header {
 	height: 600px;
 	background: #70cacd;
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(20px);
 	border-bottom: 3px dashed #627db2;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -99,7 +98,6 @@ header {
 #kidsMainBox {
 	width: 90%;
 	height: 600px;
-	font-size: 0;
 	letter-spacing: 0;
 	word-spacing: 0;
 }
@@ -109,6 +107,33 @@ header {
 	height: 100%;
 	display: inline-block;
 	float: left;
+}
+
+#kidsMainMenu1 a {	
+	animation: motion 0.7s linear 0s infinite alternate;
+}
+
+#kidsMainMenu2 a {	
+	animation: motion 0.3s linear 0s infinite alternate;
+}
+
+#kidsMainMenu3 a {	
+	animation: motion 0.5s linear 0s infinite alternate;
+}
+
+#kidsMainMenu4 a {	
+	animation: motion 0.8s linear 0s infinite alternate;
+}
+
+@keyframes motion {
+    0% {margin-top: 0px;}
+    100% {margin-top: 10px;}
+}
+
+.kidsMainMenu p {
+	font-family: 'Gamja Flower', cursive;
+	font-weight: 400;
+	font-size: 160%;
 }
 
 .none, .img {
@@ -134,6 +159,7 @@ header {
 
 #none1b {
 	height: 10%;
+	color: black;
 }
 
 #img1 img {
@@ -248,3 +274,16 @@ header {
 }
 
 /*------------- ParentsNav 끝 -------------*/
+
+#chatbot {
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+#chatbot img {
+	width: 70px;
+	height: 70px;
+}
