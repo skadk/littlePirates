@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>그림 일기</title>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/paintDiary/paintDiary.css'/>">
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/paintDiary/paintDiaryWrite.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
 		<script src="<c:url value='/js/paintDiary/paintDiary.js'/>"></script>
@@ -33,6 +33,24 @@
 					<p>${entry.description}</p>
 				</div>
 			</c:forEach>
+		    <div class="wrap">
+			        <div>
+			            <form name="form_sm_paper" action="#" onsubmit="syncSmPaper(this.text.value);return false;" style="text-align: center">
+			                <input type="text" value="오늘 아이와의 하루는 어땠나요? 이곳에 써주세요!" maxlength="500" style="width:700px;font-size: 30px;" name="text" oninput="this.form.onsubmit(); return false" onblur="this.form.onsubmit(); return false">
+			            </form>
+			        </div>
+			        <br>                <br>
+			        <div class="sm-paper" data-line-length="20" id="sm_paper" style="margin:0 auto;">
+			            <span>한</span>
+			            <span>글</span>
+			            <span>작</span>
+			            <span>성</span>
+			            <span> </span>
+			            <span>.</span>
+			            <span>?</span>
+			            <span>!</span>
+			        </div>
+		        </div>
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>

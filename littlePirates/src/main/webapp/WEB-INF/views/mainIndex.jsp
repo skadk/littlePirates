@@ -73,8 +73,7 @@
 								</iframe>
 							</div>
 							<div class="video" id="video3">
-								<iframe src="https://www.youtube.com/embed/pQPdmcLfoFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-								</iframe>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/tnbJzfhWTis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</div>
 						</div>
 					</article>

@@ -69,11 +69,5 @@ public class HomeController {
 		
 		return "menu/paintDiary/paintDiary";
 	}
-	
-	@RequestMapping("/paintDiaryWrite")
-	public String paintDiaryWrite() {
-		
-		return "menu/paintDiary/paintDiaryWrite";
-	}
 
 }

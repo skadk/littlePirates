@@ -42,7 +42,27 @@
           $('.main_image img').attr('src',$(this).children('img').attr('src'));
     });
 	
+	
  });
+function syncSmPaper(text){
+    let sm_paper = document.querySelector('#sm_paper');
+    sm_paper.innerHTML = '';
+    text = text.trim();
+    let len = text.length;
+    let ll = parseInt(sm_paper.dataset.lineLength,10)
+    
+
+    let mlen = (len > ll*4)?ll*8:ll*4;
+    text += ' '.repeat(Math.max(0,Math.min(mlen-len,ll*8)));
+    text.split('').forEach(ch => {
+        let span = document.createElement('span')
+        span.textContent = ch;
+        sm_paper.append(span)
+    });
+}
+window.addEventListener('load',(event)=>{
+    document.form_sm_paper.onsubmit();
+})
  	/*
  	for (i = 1; i < 6; i++) {
  	

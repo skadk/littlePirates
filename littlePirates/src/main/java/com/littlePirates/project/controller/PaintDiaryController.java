@@ -29,4 +29,11 @@ public class PaintDiaryController {
 		
 		return result;
 	}
+	
+	@RequestMapping("/paintDiaryWrite")
+	public String paintDiaryWrite() {
+		
+		return "menu/paintDiary/paintDiaryWrite";
+	}
+
 }
