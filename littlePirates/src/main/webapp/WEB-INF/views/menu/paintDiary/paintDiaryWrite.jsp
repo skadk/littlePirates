@@ -17,23 +17,23 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
-			
-			<h1>그림 업로드</h1>
-
-			<form id="paintFileForm">
-				파일 : <input type="file" id="paintFile" name="paintFile">
-				<input type="submit" value="upload">
-			</form>
-			
-			<h1>그림 보여주기</h1>
-			<div id="imageBox"></div>
-			<c:forEach var="entry" items="${entries}">
-				<div>
-					<img src="${entry.image}" alt="업로드한 그림">
-					<p>${entry.description}</p>
-				</div>
-			</c:forEach>
-		    <div class="wrap">
+			<div id="writeBox">
+				<h1>그림 업로드</h1>
+	
+				<form id="paintFileForm">
+					파일 : <input type="file" id="paintFile" name="paintFile">
+					<input type="submit" value="upload">
+				</form>
+				
+				<h1>그림 보여주기</h1>
+				<div id="imageBox"></div>
+				<c:forEach var="entry" items="${entries}">
+					<div>
+						<img src="${entry.image}" alt="업로드한 그림">
+						<p>${entry.description}</p>
+					</div>
+				</c:forEach>
+			    <div class="wrap">
 			        <div>
 			            <form name="form_sm_paper" action="#" onsubmit="syncSmPaper(this.text.value);return false;" style="text-align: center">
 			                <input type="text" value="오늘 아이와의 하루는 어땠나요? 이곳에 써주세요!" maxlength="500" style="width:700px;font-size: 30px;" name="text" oninput="this.form.onsubmit(); return false" onblur="this.form.onsubmit(); return false">
@@ -51,6 +51,7 @@
 			            <span>!</span>
 			        </div>
 		        </div>
+			</div>
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
