@@ -51,6 +51,7 @@ $(document).ready(function(){
 			});
  				  	document.body.appendChild(select);
   	
+  	
 });
 
  document.addEventListener("DOMContentLoaded", function() {
