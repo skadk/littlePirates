@@ -59,7 +59,7 @@
 				<!-- 로그인한회원 -->
 				<div class="viewbody">
 					<div class="hgroup">
-						<div class="tit">${ brd.brdTitle }</div>
+						<div class="tit">테스트1</div>
 						<div class="util">
 							<div class="name">${ brd.memId }</div>
 							<div class="date">
@@ -73,7 +73,6 @@
 						<!-- 내용 -->
 						<div class="editor ck-content">
 							${ brd.brdText }
-
 						</div>
 					</div>
 					<!-- 파일첨부 -->

@@ -1,9 +1,9 @@
 package com.littlePirates.project.service;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,14 +13,15 @@ import com.littlePirates.project.model.ChecklistVO;
 
 @Service
 public class ChecklistService implements IChecklistService{
-
+	
+	
 	@Autowired
 	@Qualifier("IChecklistDAO")
 	private IChecklistDAO dao;
 	
 	@Override
-	public ArrayList<ChecklistVO> checklistInfo(){
-		return dao.checklistInfo();
+	public ArrayList<ChecklistVO> checklistInfo(String memId){
+		return dao.checklistInfo(memId);
 	}
 	
 	@Override
@@ -160,11 +161,29 @@ public class ChecklistService implements IChecklistService{
 		}
 	}
 
-	public ArrayList<String> select_Chl_Checked(String memId) {
+	@Override
+	public ArrayList<ChecklistVO> checklistInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
+    @Override
+    public ChecklistVO getChecked(String memId) {
+       return dao.getChecked(memId);
+    }
+
+	@Override
+	public void update_chhChecked(String memId) {
+		// TODO Auto-generated method stub
+		dao.update_chhChecked(memId);
+	}
+
+	@Override
+	public String getChh_Checked(String memId) {
+		// TODO Auto-generated method stub
+		return dao.getChh_Checked(memId);
+	}
+    
 }
 

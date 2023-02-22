@@ -15,7 +15,6 @@
 
 <!-- head -->
 <c:import url="/WEB-INF/views/layout/head.jsp" />
-
 <body>
 	<div id="wrap">
 
@@ -24,7 +23,7 @@
 		<!-- parentsNav -->
 		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
 		<section>
-		
+
 			<section class="notice">
 				<div class="page-title">
 					<div class="container">
@@ -32,19 +31,29 @@
 					</div>
 				</div>
 
-				<!-- board seach area -->
+				<!-- board search area -->
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<a href="<c:url value='/nurseryBoardWrite'/>">
-								<button type="button" class="write">Write</button>
-							</a>
+							<c:choose>
+								<c:when test="${empty sessionScope.sid}">
+									<a
+										href="/member/login?returnUrl=<c:url value='/nurseryBoardWrite'/>">
+										<button type="button" class="write">Write</button>
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="<c:url value='/nurseryBoardWrite'/>">
+										<button type="button" class="write">Write</button>
+									</a>
+								</c:otherwise>
+							</c:choose>
 							<form action="">
 								<div class="search-wrap">
 									<label for="search" class="blind">공지사항 내용 검색</label> <input
 										id="keyword" name="keyword" placeholder="검색어를 입력해주세요."
 										value="">
-									<button id="searchBtn" type="submit" class="btn btn-dark" >Search</button>
+									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
 								</div>
 							</form>
 						</div>
@@ -64,15 +73,15 @@
 							</thead>
 							<tbody>
 								<c:forEach var="board" items="${boaList }">
-					            <tr>
-					               <td><a id="click" name="click"
-						href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdNo }</a></td>
-					               <td><a id="click" name="click"
-						href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdTitle }</a></td>
-					               
-					               <td>${board.nBrdDate }</td>               
-					            </tr>
-					         </c:forEach>
+									<tr>
+										<td><a id="click" name="click"
+											href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdNo }</a></td>
+										<td><a id="click" name="click"
+											href="<c:url value='/nurseryBoard/nurseryBoardRead/${board.nBrdNo }'/>">${board.nBrdTitle }</a></td>
+
+										<td>${board.nBrdDate }</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

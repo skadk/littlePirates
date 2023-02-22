@@ -89,7 +89,6 @@
 										value="글등록">
 								</div>
 							</div>
-
 						</div>
 					</form>
 				</div>

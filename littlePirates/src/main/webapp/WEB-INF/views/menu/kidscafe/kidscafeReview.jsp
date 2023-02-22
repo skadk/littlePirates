@@ -1,24 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>키즈카페 후기 게시판</title>
-		<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-		<script src="<c:url value='/js/kcSearch.js'/>"></script>
-		<link rel="stylesheet" type="text/css" href="<c:url value='/css/kcReview.css'/>">
-	<!-- 	head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
-	</head>
-	<body>
-		<div id="wrap">
-			<!-- background & header -->
-			<c:import url="/WEB-INF/views/layout/header.jsp"/>
-			<!-- parentsNav -->
-			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>키즈카페 후기 게시판</title>
+			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+			<script src="<c:url value='/js/paging/kcpage.js' />"></script>
+			<script src="<c:url value='/js/kcSearch.js'/>"></script>
+			<link rel="stylesheet" type="text/css"
+				href="<c:url value='/css/kcReview.css'/>">
+			<!-- 	head -->
+			<c:import url="/WEB-INF/views/layout/head.jsp" />
+		</head>
+<style>
+li {
+	display: inline-block;
+	margin: 10px;
+}
+</style>
+<body>
+	<div id="wrap">
+		<!-- background & header -->
+		<c:import url="/WEB-INF/views/layout/header.jsp" />
+		<!-- parentsNav -->
+		<c:import url="/WEB-INF/views/layout/parentsNav.jsp" />
 		<section>
 
 			<section class="notice">
@@ -32,18 +40,32 @@
 				<div id="board-search">
 					<div class="container">
 						<div class="search-window">
-							<form action="">
+							<form>
 								<div class="search-wrap">
-									<input id="kckeyword" name="kckeyword" placeholder="검색어를 입력해주세요." value="">
+									<input id="kckeyword" name="kckeyword"
+										placeholder="검색어를 입력해주세요." value="">
 									<button id="searchBtn" type="submit" class="btn btn-dark">Search</button>
 								</div>
 								<a href="<c:url value='kidscafeReviewWrite'/>">
-									<button type="button" class="hSMJOX">글 작성</button>
+								<!-- 	<button type="button" class="hSMJOX">글 작성</button> --> 
+									<c:choose>
+										<c:when test="${empty sessionScope.sid}">
+											<a href="/member/login?returnUrl=<c:url value='/kidscafeReviewWrite'/>">
+												<button type="button" class="hSMJOX">글 작성</button>
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a href="<c:url value='/kidscafeReviewWrite'/>">
+												<button type="button" class="hSMJOX">글 작성</button>
+											</a>
+										</c:otherwise>
+									</c:choose>
 								</a>
 							</form>
 						</div>
 					</div>
 				</div>
+
 
 				<!-- board list area -->
 				<div id="board-list">
@@ -57,6 +79,10 @@
 								</tr>
 							</thead>
 							<tbody>
+								<input type="hidden" id="cur_page" value="${cur_page}" />
+								<br>
+								<input type="hidden" id="total_count" value="${total_count }" />
+								<br>
 								<c:forEach var="reviewinfo" items="${reviewList }">
 									<tr>
 										<td><a id="click" name="click"
@@ -70,14 +96,18 @@
 							</tbody>
 						</table>
 					</div>
+					<div>
+						<nav>
+							<br>
+							<ul class="pagination" id="pagination"></ul>
+						</nav>
+					</div>
 				</div>
-
 			</section>
-		
-
+			
 			<!-- bottom -->
-            <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+			<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 		</section>
-		</div>
-	</body>
+	</div>
+</body>
 </html>

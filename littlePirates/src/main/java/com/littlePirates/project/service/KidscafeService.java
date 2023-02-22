@@ -52,6 +52,57 @@ public class KidscafeService implements IKidscafeService {
 		return dao.kidscafeSearchgu(map);
 	}
 
+	@Override
+	public ArrayList<KidscafeVO> listKidscafeInfopage(int pagenum) {
+		// TODO Auto-generated method stub
+		return dao.listKidscafeInfopage(pagenum);
+	}
+
+	@Override
+	public int total_kidscafeinfo() {
+		// TODO Auto-generated method stub
+		return dao.total_kidscafeinfo();
+	}
+
+	@Override
+	public ArrayList<KidscafeVO> kidscafeSearchsidopage(String sido, int pagenum) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("sido", sido);
+		int start_num = ((pagenum-1)*10)+1;
+		map.put("start_num", start_num);
+		
+		return dao.kidscafeSearchsidopage(map);
+	}
+
+	@Override
+	public int total_kidscafeSearchsido(String sido) {
+		// TODO Auto-generated method stub
+		return dao.total_kidscafeSearchsido(sido);
+	}
+
+	@Override
+	public ArrayList<KidscafeVO> kidscafeSearchgupage(String sido, String gu, int pagenum) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("sido", sido);
+		map.put("gu", gu);
+		int start_num = ((pagenum-1)*10)+1;
+		map.put("start_num", start_num);
+		
+		return dao.kidscafeSearchgupage(map);
+	}
+
+	@Override
+	public int total_kidscafeSearchgu(String sido, String gu) {
+		// TODO Auto-generated method stub
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("sido", sido);
+		map.put("gu", gu);
+		
+		return dao.total_kidscafeSearchgu(map);
+	}
+
+
+
 	
 	
 }

@@ -71,27 +71,20 @@ public class BoardController {
 		/* this.sservice = sservice; */
 	}
 	
-	@RequestMapping("/board/brdWriteForm")
-	public String fleaMarketWriteForm() {
-		
-		return "menu/board/boardWrite";
-
-	}
-	
 	// 글쓰기
 	@RequestMapping("/board/brdWrite")
-	public String boardWrite(BoardVO brdVO,
+	public String boardWrite(@RequestParam String brdTitle, 
+							 @RequestParam String brdText, 
 							 Model model, HttpSession session) {
 		
-			String memId = (String)session.getAttribute("sid");
-			brdVO.setMemId(memId);
+			String memId = "abc";
 			
-			bservice.insertBoardText(brdVO);
+			bservice.insertBoardText(memId, brdTitle, brdText);
 			
 			ArrayList<BoardVO> brdList = bservice.boardView(memId);
 			model.addAttribute("brdList", brdList);
 			
-			return "redirect:/board";
+			return "menu/board/boardText";
 	}
 	
 	

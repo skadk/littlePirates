@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.littlePirates.project.dao.IChildrenDAO;
 
 import com.littlePirates.project.model.ChildrenVO;
+import com.littlePirates.project.model.KBoardVO;
 import com.littlePirates.project.model.KindergartenVO;
-import com.littlePirates.project.model.PagingVO;
 
 @Service
 public class ChildrenService implements IChildrenService {
@@ -19,21 +19,25 @@ public class ChildrenService implements IChildrenService {
 	private IChildrenDAO dao;
 
 	@Override
-	public ArrayList<ChildrenVO> NurseryList(PagingVO vo) {
-		return dao.NurseryList(vo);
+	public ArrayList<ChildrenVO> NurseryList() {
+		return dao.NurseryList();
 	}
 
 	@Override
-	public ArrayList<KindergartenVO> KindergartenList() {
-		return dao.KindergartenList();
-
-	}
-
-	@Override
-	public int countBoard() {
+	public ArrayList<ChildrenVO> NurseryListPage(int pagenum) {
 		// TODO Auto-generated method stub
-		return dao.countBoard();
+		return dao.NurseryListPage(pagenum);
 	}
 
+	@Override
+	public int total_nurseryInfo() {
+		// TODO Auto-generated method stub
+		return dao.total_nurseryInfo();
+	}
 	
+	// 어린이집 검색
+		@Override
+		public ArrayList<ChildrenVO> nurserySearch(String keyword) {
+			return dao.nurserySearch(keyword);
+		}
 }

@@ -25,9 +25,19 @@ public class BoardService implements IBoardService {
 	}
 
 	@Override
-	public void insertBoardText(BoardVO brdVO) {
+	public void insertBoard(BoardVO prd) {
+		// TODO Auto-generated method stub
+	}
 
-		dao.insertBoardText(brdVO);
+	@Override
+	public void insertBoardText(String memId, String brdTitle, String brdText) {
+		
+		HashMap<String, Object>	map = new HashMap<String, Object>();
+		map.put("memId", memId);
+		map.put("brdTitle", brdTitle);
+		map.put("brdText", brdText);
+
+		dao.insertBoardText(map);
 	}
 
 	@Override

@@ -54,23 +54,45 @@ public class MemberService implements IMemberService {
 		dao.memberDelete();
 	}
 
-	@Override
+	@Override // 로그인 확인
 	public String loginCheck(HashMap<String, Object> map) {
 
 		// 전달된 아이디로 암호화된 비밀번호 알아오기
-		String encodedPw = dao.loginCheck((String) map.get("id"));
+		String encodedPw = dao.loginCheck((String) map.get("memId"));
 
 		String result = "fail";
 		// 암호화된 비밀번호와 입력해서 전달된 비밀번호와 일치하는지 확인
-		if (encodedPw != null && passwordEncoder.matches((String) map.get("pwd"), encodedPw)) {
-
+		if (encodedPw != null && passwordEncoder.matches((String) map.get("memPwd"), encodedPw)) {
 			result = "success";
+			
+			System.out.println(map.get("memParentNo"));
+			if (!map.get("memParentNo").equals("")) {
+				String parentLogin = dao.parentLoginCheck(map);
+				
+				System.out.println(parentLogin);
+				if (parentLogin.equals((String) map.get("memParentNo"))) {
+					result = "parentSuccess";
+				} else {
+					result = "parentFail";
+				}
+			}
 		}
 
 		return result;
 	}
 
-	@Override
+	@Override // 아이디 찾기위해 메일 인증
+	public String selectMemId(String memName, String memEmail) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("memName", memName);
+		map.put("memEmail", memEmail);
+		
+		String memId = dao.selectMemId(map);
+		
+		return memId;
+	}
+
+	@Override // 아이디 찾기
 	public String findId(String memName, String memEmail) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("memName", memName);
@@ -81,7 +103,7 @@ public class MemberService implements IMemberService {
 		return result;
 	}
 
-	@Override
+	@Override // 비밀번호 변경 전 memId 가져오기
 	public String findPwd(String memName, String memEmail) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("memName", memName);
@@ -92,12 +114,14 @@ public class MemberService implements IMemberService {
 		return result;
 	}
 
-	@Override
+	@Override // 비밀번호 변경하기
 	public void changePwd(MemberVO vo) {
 		String encodedPassword = passwordEncoder.encode(vo.getMemPwd());
 
 		vo.setMemPwd(encodedPassword);
+		
 		dao.changePwd(vo);
 	}
+
 
 }

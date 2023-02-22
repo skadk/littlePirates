@@ -2,6 +2,8 @@ package com.littlePirates.project.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.littlePirates.project.model.ChecklistVO;
 
@@ -30,11 +32,11 @@ public interface IChecklistService {
 	public String checkNo(String memId, int checkedNo);
 
 	void updateChecked(String memId, int checkedNo, String nowTime);
-	
-	/*
-	 * public void updateChecked(String memId, int checkedNo, String nowTime);
-	 */
+
+	public ArrayList<ChecklistVO> checklistInfo(String memId);
 
 
-	
+	public ChecklistVO getChecked(String memId);
+	public void update_chhChecked(String memId);
+    public String getChh_Checked(String memId);
 }

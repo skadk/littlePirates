@@ -3,6 +3,7 @@
 /* signUp.css */
 
 /************** signUpBox **************/
+
 #signUpBox {
 	width: 100%;
 }
@@ -23,12 +24,6 @@
 	float: left;
 	width: 100%;
 	border: 5px dashed #70cacd;
-}
-
-#signUpForm1Box {
-	width: 480px;
-	padding: 0 20px 0 20px;
-	text-align: left;
 }
 
 #signUpLogo {
@@ -60,6 +55,17 @@
 }
 
 /************** signUpForm1 **************/
+
+#signUpForm1Box {
+	width: 480px;
+	padding: 50px;
+	text-align: left;
+	background: white;
+	border: 3px dashed #70cacd;
+	border-radius: 50px;
+	box-shadow: 10px 10px 15px #cccccc;
+	margin: 50px auto;
+}
 #signUpForm1 {
 	position: relative;
 	padding-top: 45px;
@@ -120,8 +126,7 @@
 @keyframes border-focus {
 	from {
 		border-radius:15px;
-	}
-	to {
+	} to {
 		border-radius: 30px;
 	}
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.littlePirates.project.dao.IKindergartenDAO">
+
+	<resultMap id="KdResult" type="com.littlePirates.project.model.KindergartenVO">
+		<result property="kdNo" column="kdNo" />
+		<result property="kdRegion" column="kdRegion" />
+		<result property="kdName" column="kdName" />
+		<result property="kdType" column="kdType" />
+		<result property="kdAddress" column="kdAddress" />
+		<result property="kdTel" column="kdTel" />
+	</resultMap>
+	
+	<select id="KindergartenList" resultMap="KdResult">
+		SELECT * FROM KindergartenInfo 
+	</select>
+
+	
+</mapper>

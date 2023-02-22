@@ -50,6 +50,18 @@ public class KcreviewService implements IKcreviewService {
 		// TODO Auto-generated method stub
 		return dao.kcSearch(kckeyword);
 	}
+
+	@Override
+	public ArrayList<KcreviewVO> listAllpage(int pagenum) {
+		// TODO Auto-generated method stub
+		return dao.listAllpage(pagenum);
+	}
+
+	@Override
+	public int total_kcinfo() {
+		// TODO Auto-generated method stub
+		return dao.total_kcinfo();
+	}
 	
 
 }

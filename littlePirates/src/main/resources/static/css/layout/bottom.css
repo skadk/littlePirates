@@ -21,48 +21,43 @@ footer {
 
 hr {
 	width: 100%;
-	border: 1px dashed #fff4e9;
+	border: 1px dashed white;
 }
 
 /************** footerNav **************/
 #footerNav {
-	display: inline-block;
-	width: 50%;
-	height: 232px;
-	font-size: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	width: 70%;
+	height: 174px;
+	font-size: 25px;
 	text-align: left;
 	font-weight: bold;
+	align-items: center;
 	float: left;
+	margin-top: 58px;
 }
 
 #footerNav p {
-	float: left;
-	margin-right: 50%;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	display: grid;
+	width: 100%;
+	height: 100%;
 	cursor: pointer;
-}
-
-#footerNav p:first-child {
-	padding-top: 10px;
-}
-
-#footerNav p:last-child {
-	padding-bottom: 10px;
+	align-items: end;
+	justify-content: start;
 }
 
 #footerNav a {
-	text-decoration-line : none;
+	text-decoration-line: none;
 }
 
 #footerNav a:link {
-	color: #fff4e9;
+	color: white;
 }
 
 #footerNav a:visited {
-	color: #fff4e9;
+	color: white;
 }
 
 #footerNav a:hover {
@@ -72,14 +67,14 @@ hr {
 /************** footerLogoBox **************/
 #footerLogoBox {
 	display: inline-block;
-	width: 50%;
+	width: 30%;
 	height: 232px;
 }
 
 #footerLogo {
 	display: inline-block;
-	width: 52%;
-	margin-left: 48%;
+	width: 92%;
+	margin-left: 8%;
 	height: 232px;
 }
 
@@ -98,7 +93,7 @@ hr {
 	width: 100%;
 	height: 55px;
 	font-size: 15px;
-	color: #fff4e9;
+	color: white;
 }
 
 #infoBox p {
@@ -115,7 +110,7 @@ hr {
 }
 
 #infoBox p:last-child:hover {
-	color: #fff4e9;
+	color: white;
 }
 
 #infoBox p:hover {

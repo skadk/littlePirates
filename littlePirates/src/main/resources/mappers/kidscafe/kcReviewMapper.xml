@@ -11,7 +11,6 @@
 		<result property="kcrText" column="kcrText" />
 		<result property="kcrDate" column="kcrDate" />
 		<result property="memId" column="memId" />
-		<result property="kcNo" column="kcNo" />
 	</resultMap>
 
 	<!-- 게시판 전체 보기 -->
@@ -20,9 +19,21 @@
 		FROM kidscafereview
 	</select>
 
+	<select id="listAllpage" resultMap="reviewResult">
+		SELECT * 
+		FROM kidscafereview
+		where kcrNo > (#{pagenum}-1)*10 
+		Limit 10;
+	</select>
+	
+	<select id="total_kcinfo" resultType="int">
+		select count(*) 
+		FROM kidscafereview
+	</select>
+
 	<!-- 글쓰기 -->
 	<insert id="write" parameterType="com.littlePirates.project.model.KcreviewVO">
-		INSERT INTO kidscafereview (memId,kcrTitle,kcrText,kcrDate)
+		INSERT INTO kidscafereview(memId,kcrTitle,kcrText,kcrDate)
 		VALUES ( #{memId}, #{kcrTitle}, #{kcrText}, #{kcrDate})
 	</insert>
 

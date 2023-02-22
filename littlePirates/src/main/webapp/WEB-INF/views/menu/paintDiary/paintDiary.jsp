@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>그림 일기</title>
+		<title>항해 일지</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/paintDiary/paintDiary.css'/>">
 		<!-- head -->
 		<c:import url="/WEB-INF/views/layout/head.jsp"/>
@@ -17,24 +17,58 @@
 			<c:import url="/WEB-INF/views/layout/header.jsp"/>
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
-			
-			<h1>그림 업로드</h1>
-
-			<form id="paintFileForm">
-				파일 : <input type="file" id="paintFile" name="paintFile">
-				<input type="submit" value="upload">
-			</form>
-			
-			<h1>그림 보여주기</h1>
-			<div id="imageBox"></div>
-			<c:forEach var="entry" items="${entries}">
-				<div>
-					<img src="${entry.image}" alt="업로드한 그림">
-					<p>${entry.description}</p>
+			<div id="paintingWall">
+				<div id="paintingWallInfo">
+					<h1>항해 일지</h1>
+					<p>지금까지 아이와 함께한 모험의 기록</p>
 				</div>
-			</c:forEach>
+				<div class="gallery">
+				    <div class="main_image">
+				        <img src="images/아이그림1.jpg" />
+				    </div>
+				
+				    <div class="selection_image">
+				        <div class="thumb">
+				        	<div class="overlay"></div>
+				        	<img src="images/아이그림1.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림2.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림3.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림4.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림5.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림6.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림7.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림8.jpg"/>
+				        </div>
+				        <div class="thumb">
+			                <div class="overlay"></div>
+			                <img src="images/아이그림9.jpg"/>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<!-- bottom -->
+			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
-		<!-- bottom -->
-		<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 	</body>
 </html>
