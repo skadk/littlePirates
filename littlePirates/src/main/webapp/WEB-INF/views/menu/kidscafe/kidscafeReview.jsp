@@ -3,18 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>키즈카페 후기 게시판</title>
-<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-<script src="<c:url value='/js/paging/kcpage.js' />"></script>
-<script src="<c:url value='/js/kcSearch.js'/>"></script>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/kcReview.css'/>">
-<!-- 	head -->
-<c:import url="/WEB-INF/views/layout/head.jsp" />
-</head>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>키즈카페 후기 게시판</title>
+			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+			<script src="<c:url value='/js/paging/kcpage.js' />"></script>
+			<script src="<c:url value='/js/kcSearch.js'/>"></script>
+			<link rel="stylesheet" type="text/css"
+				href="<c:url value='/css/kcReview.css'/>">
+			<!-- 	head -->
+			<c:import url="/WEB-INF/views/layout/head.jsp" />
+		</head>
 <style>
 li {
 	display: inline-block;
@@ -103,10 +103,8 @@ li {
 						</nav>
 					</div>
 				</div>
-
 			</section>
-
-
+			
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp" />
 		</section>
