@@ -18,7 +18,7 @@
 			<!-- parentsNav -->
 			<c:import url="/WEB-INF/views/layout/parentsNav.jsp"/>
 			
-			<h1>그림 업로f드</h1>
+			<h1>그림 업로드</h1>
 
 			<form id="paintFileForm">
 				파일 : <input type="file" id="paintFile" name="paintFile">

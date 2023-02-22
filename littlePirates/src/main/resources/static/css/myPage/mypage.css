@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #f0f0f0;
+}
+
+#myPageForm td {
+    text-align: left;
+}
+
+.mypagebox {
+	width: 780px;
+	height: 550px;
+	margin: 0 auto;
+	margin-top: 128px;
+	margin-bottom: 128px;
+}
+
+.mypagebox h1 {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+}
+
+.mypagebox form {
+	width: 100%;
+	background: rgb(248, 249, 250);
+	padding: 60px;
+	box-sizing: border-box;
+}
+
+.mypagebox input {
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin-top:20px;
+	margin-bottom: 25px;
+	border: none;
+	background-color: #fff;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.mypagebox #button {
+	display: block;
+	width: 175px;
+	height: 50px;
+	margin: 10px;
+	border: none;
+	background-color: #282A35;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+}
+
+button {
+	width: 100px;
+	height: 35px;
+	border: 0px;
+	color: white;
+	background: #282A35;
+	margin: 5px;
+	cursor: pointer;
+}

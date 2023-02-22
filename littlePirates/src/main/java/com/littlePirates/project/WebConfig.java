@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
 		.addResourceLocations("file:///usr/local/project/pirates_images/");
 		
 		registry.addResourceHandler("/uploadImage/**")
-		.addResourceLocations("file:///usr/local/project/piratees_upload/");
+		.addResourceLocations("file:///usr/local/project/pirates_upload/");
 		
 		registry.addResourceHandler("/summernoteImage/**")
 		.addResourceLocations("file:///C:/springWorkspace/summernoteImg/");
