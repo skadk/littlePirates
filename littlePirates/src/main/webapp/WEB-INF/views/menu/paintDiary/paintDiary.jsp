@@ -67,6 +67,9 @@
 				    </div>
 				</div>
 			</div>
+			<div class="inputArea" id="paintDiaryBtnBox">
+				<button type="button" class="btn" id="paintDiaryBtn" tabindex="-1" onClick="location.href='/paintDiaryWrite'">그림 일기 쓰기</button>
+			</div>
 			<!-- bottom -->
 			<c:import url="/WEB-INF/views/layout/bottom.jsp"/>
 		</div>
