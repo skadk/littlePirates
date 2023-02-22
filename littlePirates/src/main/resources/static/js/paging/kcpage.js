@@ -30,7 +30,7 @@ $(document).ready(function(){
 	    }		   
 		
  		if(start_page > page_count) {
- 			strpage += "<li class='page-item'><a href='javascript:prevpaging();' > ◀이전 </a></li>" 			
+ 			strpage += "<li class='page-item'><a href='javascript:prevpaging();' > </a></li>" 			
  		}
  		
  		for(var i = start_page; i<end; i++) {
@@ -58,10 +58,8 @@ function prevpaging() {
  			data:{"pagenum": cur_page},
  			success:function(result){
  				$("#board-list").html(result);
- 				
- 				
- 			 	addpaging();
-				
+ 							
+ 			 	addpaging();				
  			},
  			error:function(){
  				alert("실패");
@@ -82,10 +80,8 @@ function nextpaging() {
  			data:{"pagenum": cur_page},
  			success:function(result){
  				$("#board-list").html(result);
- 				
- 			
- 			 	addpaging();
-				
+ 						
+ 			 	addpaging();				
  			},
  			error:function(){
  				alert("실패");
@@ -104,10 +100,8 @@ function go(page) {
  			data:{"pagenum": page},
  			success:function(result){
  				$("#board-list").html(result);
- 				
- 				
- 			 	addpaging();
-				
+ 								
+ 			 	addpaging();				
  			},
  			error:function(){
  				alert("실패");
