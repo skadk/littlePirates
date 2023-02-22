@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.littlePirates.project.dao.IBoardDAO;
 import com.littlePirates.project.model.BoardVO;
+import com.littlePirates.project.model.FleaMarketVO;
+
 import java.util.HashMap;
 
 @Service
@@ -34,4 +36,9 @@ public class BoardService implements IBoardService {
 		return dao.boardView(memId);
 	}
 
+	@Override
+	public BoardVO boardText(int brdNo) {
+		// TODO Auto-generated method stub
+		return dao.boardText(brdNo);
+	}
 }

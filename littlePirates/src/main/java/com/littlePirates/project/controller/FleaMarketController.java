@@ -27,7 +27,9 @@ public class FleaMarketController {
 
 	// 게시판 리스트(productlistall)
 	@RequestMapping("/fleaMarket")
-	public String fleaMarket(Model model) {
+	public String fleaMarket(Model model, HttpSession session) {
+		
+		String memId = (String)session.getAttribute("sid");
 		
 		// ProductService의 listAllProduct() 호출 (ProductService의 객체 필요 : DI 설정필요)
 		ArrayList<FleaMarketVO> flList = service.listAllBoard();
@@ -57,7 +59,7 @@ public class FleaMarketController {
 
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
 		// 마지막에 / 있어야 함
-		String uploadPath = "C:/springWorkspace/pirates_images/";
+		String uploadPath = "C:/springWorkspace/git_test/littlePirates/littlePirates/src/main/resources/static/images/";
 
 		// 2. 원본 파일 이름 저장
 		String originalFileName = memId + "_" + file.getOriginalFilename();
@@ -158,7 +160,6 @@ public class FleaMarketController {
 		
 		System.out.println(flc.getFlcText());
 		service.insertFleaMarketComment(flc);
-		
 		
 		return "redirect:/fleaMarket/fleaMarketText/"+flc.getFlNo();
 

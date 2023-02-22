@@ -16,7 +16,8 @@
 	</resultMap>
 	
 	<select id="listAllBoard" resultMap="boardResult">
-		SELECT * FROM board ORDER BY brdNo
+		SELECT * FROM board 
+		ORDER BY brdNo DESC
 	</select>
 
   	<insert id="insertBoardText" parameterType="com.littlePirates.project.model.BoardVO">
@@ -27,7 +28,15 @@
   	<select id="boardView" parameterType="string" resultMap="boardResult">
   		SELECT *
         FROM board
-  		WHERE memId=#{memId} AND brdNo = (SELECT max(brdNo) FROM board);
+  		WHERE memId=#{memId} AND brdNo = (SELECT max(brdNo) FROM board)
+  		<!-- ORDER BY brdNo DESC -->
   	</select>
+  	
+  	 <!-- 상품 상세 조회 : 상품 번호(prdNo) 전달 받아서 상품 정보(ProductVO) 반환-->
+	<select id="boardText" parameterType="int" 
+  		resultType="com.littlePirates.project.model.BoardVO">
+  		SELECT * FROM board WHERE brdNo = #{brdNo}
+ 	</select>
+  	
 </mapper>
 

@@ -21,7 +21,7 @@ public interface IFleaMarketDAO {
 
 	public void insertFleaMarketComment(FleaMarketCommentVO flc);// 댓글 등록
 	
-	public ArrayList<FleaMarketCommentVO> listAllFlCmt( int flNo);
+	public ArrayList<FleaMarketCommentVO> listAllFlCmt(int flNo);
 	
 	/*
 	 * public ArrayList<FleaMarketVO> productSearch(HashMap<String, Object> map);//

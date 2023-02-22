@@ -12,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,12 +21,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.JsonObject;
 import com.littlePirates.project.model.BoardVO;
+import com.littlePirates.project.model.FleaMarketVO;
 import com.littlePirates.project.service.BoardService;
 
 
 @Controller
 public class BoardController {
 	/*********************** 보드리스트 ***************************/
+	
 	
 	@RequestMapping("/board")
 	public String board(Model model) {
@@ -34,9 +37,13 @@ public class BoardController {
 		return "menu/board/board";
 	}
 	
-	@RequestMapping("/board/boardText")
-	public String boardText() {
-
+	@RequestMapping("/board/boardText/{brdNo}")
+	public String boardText(@PathVariable int brdNo, Model model) {
+		
+		// 서비스에게 상품번호 전달하고 상품 정보 받아옴
+		BoardVO brd = bservice.boardText(brdNo);
+		model.addAttribute("brd", brd);
+		
 		return "menu/board/boardText";
 	}
 
@@ -54,7 +61,6 @@ public class BoardController {
 		return "menu/board/anonymusBoardText";
 
 	}
-
 
 	private BoardService bservice;
 	/* private SummernoteService sservice; */
